@@ -64,7 +64,7 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 
 ### 🚁 Bonus Track
 
-17. [Inglés](./cursos/resources/english/readme.md)
+17. [English for Techo: A2 to C1](./cursos/resources/english/readme.md)
 18. [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./cursos/helicopter) 🚧
 
 ---

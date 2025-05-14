@@ -89,10 +89,12 @@ Si bien el objetivo no es obtener un título oficial, tras completar el curso po
 
 ---
 
-🏷️ Etiquetas
+## 🏷️ Etiquetas
 
 #EnglishForTech #QA #DeveloperEnglish #InglésLaboral #Autodidacta #EFSET #Pronunciación #CI_CD #OpenSourceLearning
 
 ---
+
+## Licencia
 
 Licencia MIT

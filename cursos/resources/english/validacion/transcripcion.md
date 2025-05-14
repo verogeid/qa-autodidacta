@@ -49,9 +49,9 @@ Ideal si prefieres trabajar desde una interfaz visual y combinar edición + tran
 
 3. Clasifica los errores:
 
-- Pronunciación incompleta o confusa.
-- Omisión de conectores o sonidos clave.
-- Ritmo inadecuado.
+  - Pronunciación incompleta o confusa.
+  - Omisión de conectores o sonidos clave.
+  - Ritmo inadecuado.
 
 ---
 

@@ -1,0 +1,12 @@
+{
+    "prettier.printWidth": 80,
+    "editor.formatOnSave": true,
+    "markdownlint.config": {
+        "MD003": { "style": "atx" },
+        "MD013": false,
+        "MD029": false,
+        "MD033": false,
+        "MD041": false,
+        "MD053": false
+    }
+}

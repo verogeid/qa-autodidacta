@@ -1,4 +1,4 @@
-[![LinkedIn][linkedin-logo]][linkedin-link] (C) Diego González Fernández. 
+[![LinkedIn][linkedin-logo]][linkedin-link] (C) Diego González Fernández
 ---
 
 ![sstqb-logo]
@@ -28,36 +28,43 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 
 ## Índice de Cursos
 
-### 🧠 Fundamentos QA  
+### 🧠 Fundamentos QA
+
 1. [SSTQB Foundation Level 4](./sstqb) En Construcción Activa
 
-### 🛠️ Gestión y Herramientas  
-2. [Jira: Introducción y Configuración](./jira) 🚧  
-3. [Docker para testers](./docker) 🚧  
-4. [Kubernetes](./kubernetes) 🚧  
+### 🛠️ Gestión y Herramientas
 
-### 🧪 Automatización de Pruebas  
-5. [Playwright: Automatización de pruebas](./playwright) 🚧  
-6. [Katalon Studio: Pruebas Mobile](./katalon) 🚧  
+2. [Jira: Introducción y Configuración](./jira) 🚧
+3. [Docker para testers](./docker) 🚧
+4. [Kubernetes](./kubernetes) 🚧
 
-### ⚙️ Integración y Entrega Continua  
-7. [Jenkins](./jenkins) 🚧  
-8. [GitHub Actions](./github-actions) 🚧  
+### 🧪 Automatización de Pruebas
 
-### 📈 Performance y Carga  
-9. [JMeter](./jmeter) 🚧  
-10. [K6](./k6) 🚧  
-11. [LightHouse](./lighthouse) 🚧  
+5. [Playwright: Automatización de pruebas](./playwright) 🚧
+6. [Katalon Studio: Pruebas Mobile](./katalon) 🚧
 
-### ⚡ Desarrollo e IA  
-12. [HTML5 y CSS3](./html5) 🚧
+### ⚙️ Integración y Entrega Continua
+
+7. [Jenkins](./jenkins) 🚧
+8. [GitHub Actions](./github-actions) 🚧
+
+### 📈 Performance y Carga
+
+9. [JMeter](./jmeter) 🚧
+10. [K6](./k6) 🚧
+11. [LightHouse](./lighthouse) 🚧
+
+### ⚡ Desarrollo e IA
+
+12. [HTML5 y CSS3](./html5)
 13. [React con TypeScript](./react) 🚧
 14. [C# en profundidad](./csharp) 🚧
 15. [IA Developer con Python](./ia-python) 🚧
-16. [n8n: automatización de flujos](./n8n) 🚧  
+16. [n8n: automatización de flujos](./n8n) 🚧
 
-### 🚁 Bonus Track  
-17. [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./helicopter) 🚧  
+### 🚁 Bonus Track
+
+17. [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./helicopter) 🚧
 
 ---
 

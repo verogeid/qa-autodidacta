@@ -30,41 +30,41 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 
 ### 🧠 Fundamentos QA
 
-1. [SSTQB Foundation Level 4](./sstqb) En Construcción Activa
+1. [SSTQB Foundation Level 4](./cursos/sstqb) En Construcción Activa
 
 ### 🛠️ Gestión y Herramientas
 
-2. [Jira: Introducción y Configuración](./jira) 🚧
-3. [Docker para testers](./docker) 🚧
-4. [Kubernetes](./kubernetes) 🚧
+2. [Jira: Introducción y Configuración](./cursos/jira) 🚧
+3. [Docker para testers](./cursos/docker) 🚧
+4. [Kubernetes](./cursos/kubernetes) 🚧
 
 ### 🧪 Automatización de Pruebas
 
-5. [Playwright: Automatización de pruebas](./playwright) 🚧
-6. [Katalon Studio: Pruebas Mobile](./katalon) 🚧
+5. [Playwright: Automatización de pruebas](./cursos/playwright) 🚧
+6. [Katalon Studio: Pruebas Mobile](./cursos/katalon) 🚧
 
 ### ⚙️ Integración y Entrega Continua
 
-7. [Jenkins](./jenkins) 🚧
-8. [GitHub Actions](./github-actions) 🚧
+7. [Jenkins](./cursos/jenkins) 🚧
+8. [GitHub Actions](./cursos/github-actions) 🚧
 
 ### 📈 Performance y Carga
 
-9. [JMeter](./jmeter) 🚧
+9. [JMeter](./cursos/jmeter) 🚧
 10. [K6](./k6) 🚧
-11. [LightHouse](./lighthouse) 🚧
+11. [LightHouse](./cursos/lighthouse) 🚧
 
 ### ⚡ Desarrollo e IA
 
-12. [HTML5 y CSS3](./html5)
-13. [React con TypeScript](./react) 🚧
-14. [C# en profundidad](./csharp) 🚧
-15. [IA Developer con Python](./ia-python) 🚧
-16. [n8n: automatización de flujos](./n8n) 🚧
+12. [HTML5 y CSS3](./cursos/html5)
+13. [React con TypeScript](./cursos/react) 🚧
+14. [C# en profundidad](./cursos/csharp) 🚧
+15. [IA Developer con Python](./cursos/ia-python) 🚧
+16. [n8n: automatización de flujos](./cursos/n8n) 🚧
 
 ### 🚁 Bonus Track
 
-17. [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./helicopter) 🚧
+17. [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./cursos/helicopter) 🚧
 
 ---
 

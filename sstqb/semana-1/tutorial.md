@@ -1,42 +1,49 @@
-# Tutorial Semana 1 - Introducción al Testing
+# Tutorial Semana 1 - Fundamentos del Testing (v4.0)
 
-## Paso 1: Definir qué es testing
+## 1. ¿Por qué se prueba software?
 
-- El *testing* es un proceso de evaluación de un producto software para verificar si cumple con los requisitos especificados.
-- No se trata de demostrar que funciona, sino de **detectar defectos**.
+El testing ayuda a encontrar defectos antes de que afecten al usuario final, mejora la calidad del software y reduce el coste total del ciclo de vida.
 
-## Paso 2: Conoce los conceptos clave
+## 2. Términos clave
 
-- **Error (mistake)**: acción humana que produce un resultado incorrecto.
-- **Defecto (bug)**: fallo en el código o artefactos del sistema.
-- **Fallo (failure)**: manifestación visible de un defecto al ejecutar el software.
+- **Error** (*mistake*): acción humana incorrecta.
+- **Defecto** (*defect*): fallo en el software o artefactos derivados del error.
+- **Fallo** (*failure*): comportamiento incorrecto observado al ejecutar el software.
 
-## Paso 3: Principios del testing (ISTQB)
+## 3. Aportes del testing
 
-1. El testing muestra la presencia de defectos, no su ausencia.
-2. Las pruebas exhaustivas son imposibles.
-3. Las pruebas tempranas ahorran costes.
-4. La agrupación de defectos es común (80/20).
-5. La paradoja del pesticida.
-6. El testing depende del contexto.
-7. La ausencia de errores no es calidad.
+- Reducción de riesgos.
+- Mejora de la calidad percibida.
+- Visibilidad del progreso del desarrollo.
 
-## Paso 4: Fases del proceso de pruebas
+## 4. Principios del testing (v4.0)
 
-1. **Planificación**: definir enfoque, recursos y cronograma.
-2. **Análisis**: revisar documentación y definir qué probar.
-3. **Diseño**: elaborar casos de prueba.
-4. **Ejecución**: ejecutar los tests y reportar.
-5. **Evaluación de criterios de salida**: decidir si se han cumplido los objetivos.
-6. **Cierre**: recopilar métricas y lecciones aprendidas.
+1. Testing muestra la presencia de defectos, no su ausencia.
+2. Testing temprano ahorra tiempo y dinero.
+3. Pruebas exhaustivas no son posibles.
+4. Agrupación de defectos.
+5. Pesticide paradox.
+6. Contexto importa.
+7. Testing contribuye a la confianza.
 
-## Paso 5: Explora el rol del tester
+## 5. Actividades clave del proceso de pruebas
 
-- No es quien prueba “al final”, sino quien acompaña al equipo en prevenir errores.
-- Debe tener **mentalidad crítica**, *soft skills* y comprensión técnica.
+- Planificación y control.
+- Análisis y diseño.
+- Implementación y ejecución.
+- Evaluación de criterios de salida.
+- Cierre.
+
+## 6. Mentalidad del tester
+
+- Pensamiento crítico.
+- Colaboración con desarrolladores.
+- Comunicación efectiva con stakeholders.
+- Visión de negocio y usuario.
 
 ## Recursos recomendados
 
-- [glossary.istqb.org](https://glossary.istqb.org)
-- [ISTQB syllabus](https://www.istqb.org/downloads/send/2-foundation-level-documents/3-foundation-level-syllabus-2018.html)
+- [ISTQB v4.0 Syllabus PDF](https://www.istqb.org/downloads/send/72-foundation-level-core/297-foundation-level-syllabus-4-0.html)
+- [Glossary oficial de ISTQB](https://glossary.istqb.org)
 - [Software Testing Fundamentals](https://softwaretestingfundamentals.com/)
+

@@ -64,7 +64,8 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 
 ### 🚁 Bonus Track
 
-17. [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./cursos/helicopter) 🚧
+17. [Inglés](./cursos/resources/english/)
+18. [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./cursos/helicopter) 🚧
 
 ---
 

@@ -32,7 +32,7 @@ Versión en línea de Whisper. Sube el archivo y obtienes la transcripción.
 **Ventajas**: sin instalación.
 **Desventajas**: menos configurable.
 
-### 3. Descript
+### 3. [Descript](https://www.descript.com/)
 
 Ideal si prefieres trabajar desde una interfaz visual y combinar edición + transcripción.
 

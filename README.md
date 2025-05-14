@@ -22,7 +22,7 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 ## Índice de Cursos
 
 ### 🧠 Fundamentos QA  
-  1. [SSTQB Foundation Level 4](./sstqb-foundation)
+  1. [SSTQB Foundation Level 4](./sstqb)
 
 ### 🛠️ Gestión y Herramientas  
   2. [Jira: Introducción y Configuración](./jira)

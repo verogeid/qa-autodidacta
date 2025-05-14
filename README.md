@@ -1,8 +1,6 @@
 [![LinkedIn][linkedin-logo]][linkedin-link] (C) Diego González Fernández. 
 ---
 
-<h1 align="center">📚 Colección de Cursos Autodidactas</h1>
-
 ![sstqb-logo]
 ![jira-logo]
 ![playwright-logo]
@@ -13,40 +11,53 @@
 ![kubernetes-logo]
 ![JMeter-logo]
 ![k6-logo]
+![lighthouse-logo]
+![vscode-logo]
+![typescript-logo]
 ![python-logo]
 ![n8n-logo]
+![html5-logo]
+![css3-logo]
+![react-logo]
+![csharp-logo]
+
+<h1 align="center">📚 Colección de Cursos Autodidactas</h1>
 
 Este repositorio recopila una serie de cursos autodidactas organizados por carpetas. Cada uno está diseñado para reforzar competencias clave en *QA*, *automatización*, *performance* y *fundamentos de desarrollo*.  
-Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y contexto aplicado al rol de QA.
+Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y contexto aplicado al rol de QA o Dev.
 
 ## Índice de Cursos
 
 ### 🧠 Fundamentos QA  
-  1. [SSTQB Foundation Level 4](./sstqb)
+1. [SSTQB Foundation Level 4](./sstqb) En Construcción Activa
 
 ### 🛠️ Gestión y Herramientas  
-  2. [Jira: Introducción y Configuración](./jira)
-  3. [Docker para testers](./docker)
-  4. [Kubernetes](./kubernetes)
+2. [Jira: Introducción y Configuración](./jira) 🚧  
+3. [Docker para testers](./docker) 🚧  
+4. [Kubernetes](./kubernetes) 🚧  
 
 ### 🧪 Automatización de Pruebas  
-  5. [Playwright: Automatización de pruebas](./playwright)
-  6. [Katalon Studio: Pruebas Mobile](./katalon)
+5. [Playwright: Automatización de pruebas](./playwright) 🚧  
+6. [Katalon Studio: Pruebas Mobile](./katalon) 🚧  
 
 ### ⚙️ Integración y Entrega Continua  
-  7. [Jenkins](./jenkins)
-  8. [GitHub Actions](./github-actions)
+7. [Jenkins](./jenkins) 🚧  
+8. [GitHub Actions](./github-actions) 🚧  
 
 ### 📈 Performance y Carga  
-  9. [JMeter](./jmeter)
-  10. [K6](./k6)
+9. [JMeter](./jmeter) 🚧  
+10. [K6](./k6) 🚧  
+11. [LightHouse](./lighthouse) 🚧  
 
 ### ⚡ Desarrollo e IA  
-  11. [IA Developer con Python](./ia-python)
-  12. [n8n: automatización de flujos](./n8n)
+12. [HTML5 y CSS3](./html5) 🚧
+13. [React con TypeScript](./react) 🚧
+14. [C# en profundidad](./csharp) 🚧
+15. [IA Developer con Python](./ia-python) 🚧
+16. [n8n: automatización de flujos](./n8n) 🚧  
 
-### 🚁 Bonus Track
-  13. [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./helicopter)
+### 🚁 Bonus Track  
+17. [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./helicopter) 🚧  
 
 ---
 
@@ -75,6 +86,9 @@ Licencia MIT
 <!-- Programming Languages -->
 [typescript-logo]: https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white
 [python-logo]: https://img.shields.io/badge/Python-black?logo=python&style=for-the-badge
+[html5-logo]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
+[css3-logo]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+[csharp-logo]: https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white
 
 <!-- Testing Frameworks -->
 [cypress-logo]: https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e
@@ -87,9 +101,13 @@ Licencia MIT
 [axe-core-logo]: https://img.shields.io/badge/axe--core-darkgreen?style=for-the-badge&logo=axe&logoColor=white
 [lighthouse-logo]: https://img.shields.io/badge/Lighthouse-orange?style=for-the-badge&logo=lighthouse&logoColor=white
 
+<!-- Dev Tools -->
+[vscode-logo]: https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white
+[react-logo]: https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black
+
 <!-- IA -->
 [n8n-logo]: https://img.shields.io/badge/n8n-EF6533?style=for-the-badge&logo=n8n&logoColor=white
 
-<!-- Othen -->
+<!-- Other -->
 [linkedin-logo]: https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-link]: https://www.linkedin.com/in/diego-gonzalez-fernandez/

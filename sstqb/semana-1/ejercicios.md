@@ -1,24 +1,24 @@
-# Ejercicios - Semana 1
+# Ejercicios - Semana 1 (Fundamentos del Testing)
 
-## Teoría
+## Parte teórica
 
-1. Define con tus palabras los siguientes términos: *error*, *defecto*, *fallo*.
-2. Enumera y explica los 7 principios del testing.
-3. ¿Por qué no se puede hacer una prueba exhaustiva?
+1. Define con tus palabras: *error*, *defecto*, *fallo*.
+2. Explica por qué el testing no puede demostrar la ausencia de errores.
+3. Resume los 7 principios del testing v4.0 en una tabla.
 
-## Prácticos
+## Parte práctica
 
-4. Lee este caso real: [Bug en British Airways (2019)](https://www.bbc.com/news/business-49468903).  
-   - ¿En qué fase del proceso de pruebas crees que fallaron?
-   - ¿Qué principios del testing se violaron?
+4. Analiza este incidente: [Slack outage 2023](https://status.slack.com/2023-01-04).  
+   - ¿Qué falló?
+   - ¿Cómo habría ayudado el testing?
 
-5. Simula un proceso de testing para un formulario de login:  
-   - ¿Qué podrías probar?
-   - ¿Qué datos usarías?
-   - ¿Qué errores esperas encontrar?
+5. Estudia un login sencillo (usuario + contraseña).  
+   - Enumera al menos 5 pruebas posibles.
+   - ¿Qué defectos podrían encontrarse?
 
-6. Crea un documento en Markdown donde expliques qué aporta el rol de tester en un equipo ágil y qué desafíos enfrentas.
+6. Crea un diagrama con las fases del proceso de pruebas. Puedes usar [PlantUML](https://plantuml.com/markdown).
 
-## Bonus
+## Reflexión
 
-7. Explora el glosario oficial de ISTQB y elige 5 términos nuevos que no conocías. Escríbelos con una breve definición en tus propias palabras.
+7. Escribe un párrafo sobre el valor que aporta el testing al negocio. Piensa en términos de prevención de errores, confianza del cliente y reputación de marca.
+

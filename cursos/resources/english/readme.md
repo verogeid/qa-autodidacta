@@ -83,7 +83,7 @@ Permite comparar tu audio con el original y obtener *feedback* sobre tu pronunci
 ## ✨ Recomendación
 
 Si bien el objetivo no es obtener un título oficial, tras completar el curso podrás:
-- Superar autoevaluaciones como EF SET (<*https://www.efset.org/*>).
+- Superar autoevaluaciones como EF SET (https://www.efset.org/).
 - Mantener una conversación fluida en entrevistas técnicas.
 - Participar activamente en dailies, retros y reuniones 1:1.
 

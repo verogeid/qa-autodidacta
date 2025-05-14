@@ -25,7 +25,7 @@ whisper tu_audio.mp3 --language English --model small
 **Ventajas**: muy preciso, incluso con acentos.
 **Requiere**: *Python 3.8+*, *ffmpeg*, entorno local.
 
-### 2. Whispr (Web)
+### 2. [Whispr (Web)](https://whispr.ai/)
 
 Versión en línea de Whisper. Sube el archivo y obtienes la transcripción.
 

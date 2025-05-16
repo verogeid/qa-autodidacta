@@ -32,3 +32,15 @@ Tiempo estimado por semana: **5 a 8 horas**.
 6. Análisis de Resultados y Reportes  
 7. Funcionalidades Avanzadas (Webhooks, BD)  
 8. Optimización y Buenas Prácticas  
+
+---
+
+## Licencia 
+
+Licencia MIT 
+
+---
+
+## Aitor
+
+© Diego González Fernández 

@@ -1,0 +1,39 @@
+Semana 3: Estado con useState
+
+Esta semana aprenderás a manejar el estado interno de un componente usando el hook useState.
+
+Vamos a crear un contador.
+
+En el archivo App punto jsx, reemplaza su contenido por lo siguiente.
+
+Escribe:
+
+import React, { useState } from 'react'
+
+function App() {
+  const [cuenta, setCuenta] = useState(0)
+
+  return (
+    <div>
+      <h1>Contador: {cuenta}</h1>
+      <button onClick={() => setCuenta(cuenta + 1)}>Aumentar</button>
+      <button onClick={() => setCuenta(cuenta - 1)}>Disminuir</button>
+    </div>
+  )
+}
+
+export default App
+
+Explicación:
+
+useState es un hook que permite a un componente recordar valores entre renderizados.
+
+En este ejemplo, cuenta es el valor actual del estado y setCuenta es la función para actualizarlo.
+
+Cuando haces clic en un botón, React actualiza el estado y vuelve a renderizar el componente con el nuevo valor.
+
+Resumen:
+
+Has aprendido a controlar el estado de un componente con el hook useState.
+
+Esto es esencial para hacer componentes interactivos en React.

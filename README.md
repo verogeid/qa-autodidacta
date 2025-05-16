@@ -34,7 +34,6 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 
 ### 🛠️ Gestión y Herramientas
 
-2. [Jira: Introducción y Configuración](./cursos/jira) 🚧
 3. [Docker para testers](./cursos/docker) 🚧
 4. [Kubernetes](./cursos/kubernetes) 🚧
 
@@ -42,30 +41,31 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 
 5. [Playwright: Automatización de pruebas](./cursos/playwright) 🚧
 6. [Katalon Studio: Pruebas Mobile](./cursos/katalon) 🚧
+7. [Postman y Newman: Pruebas API](./cursos/Postman/readme.md)
 
 ### ⚙️ Integración y Entrega Continua
 
-7. [Jenkins](./cursos/jenkins) 🚧
-8. [GitHub Actions](./cursos/github-actions) 🚧
+8. [Jenkins](./cursos/jenkins) 🚧
+9. [GitHub Actions](./cursos/github-actions) 🚧
 
 ### 📈 Performance y Carga
 
-9. [JMeter](./cursos/jmeter) 🚧
-10. [K6](./k6) 🚧
-11. [LightHouse](./cursos/lighthouse) 🚧
+10. [JMeter](./cursos/jmeter) 🚧
+11. [K6](./k6) 🚧
+12. [LightHouse](./cursos/lighthouse) 🚧
 
 ### ⚡ Desarrollo e IA
 
-12. [HTML5 y CSS3](./cursos/html5)
-13. [React con TypeScript](./cursos/react) 🚧
-14. [C# en profundidad](./cursos/csharp) 🚧
-15. [IA Developer con Python](./cursos/ia-python) 🚧
-16. [n8n: automatización de flujos](./cursos/n8n) 🚧
+13. [HTML5 y CSS3](./cursos/html5)
+14. [React con TypeScript](./cursos/react) 🚧
+15. [C# en profundidad](./cursos/csharp) 🚧
+16. [IA Developer con Python](./cursos/ia-python) 🚧
+17. [n8n: automatización de flujos](./cursos/n8n) 🚧
 
 ### 🚁 Bonus Track
 
-17. [English for Tech: A2 to C1](./cursos/resources/english/readme.md)
-18. [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./cursos/helicopter) 🚧
+18. [English for Tech: A2 to C1](./cursos/resources/english/readme.md)
+19. [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./cursos/helicopter) 🚧
 
 ---
 

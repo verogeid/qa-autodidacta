@@ -1,0 +1,40 @@
+Semana 6: Renderizado condicional
+
+Esta semana aprenderás a mostrar contenido diferente según el estado o las condiciones.
+
+Vamos a crear un componente que muestre un mensaje distinto si el usuario está logueado o no.
+
+Escribe:
+
+import React, { useState } from 'react'
+
+function App() {
+  const [logueado, setLogueado] = useState(false)
+
+  return (
+    <div>
+      {logueado ? (
+        <h1>Bienvenido de nuevo</h1>
+      ) : (
+        <h1>Por favor, inicia sesión</h1>
+      )}
+      <button onClick={() => setLogueado(!logueado)}>
+        {logueado ? 'Cerrar sesión' : 'Iniciar sesión'}
+      </button>
+    </div>
+  )
+}
+
+export default App
+
+Explicación:
+
+Usamos un operador ternario para decidir qué contenido mostrar.
+
+El botón cambia el estado logueado y actualiza la vista.
+
+Resumen:
+
+El renderizado condicional te permite crear interfaces dinámicas que responden al estado de tu aplicación.
+
+Esto es fundamental para construir experiencias de usuario interactivas.

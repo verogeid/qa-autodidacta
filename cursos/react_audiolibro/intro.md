@@ -1,0 +1,1 @@
+echo "Contenido de introducción" > intro.md

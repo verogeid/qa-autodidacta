@@ -1,4 +1,4 @@
-# Curso: Postman (Newman) desde 0 hasta experto
+# Curso: Postman (Newman) desde 0
 
 ## Descripción
 Este curso autodidacta te guía paso a paso desde los fundamentos de *Postman* hasta su integración en flujos *CI/CD*, cubriendo buenas prácticas, control de errores, depuración, análisis de resultados y reportes. Está diseñado para completarse en 8 semanas (5-8 horas semanales), con ejercicios prácticos y guías detalladas.

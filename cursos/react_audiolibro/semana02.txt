@@ -1,0 +1,46 @@
+Semana 2: Props y componentes reutilizables
+
+Esta semana aprenderás a crear componentes reutilizables y a pasarles datos mediante props.
+
+Vamos a crear un nuevo componente llamado Saludo punto jsx.
+
+En la carpeta src, crea un archivo nuevo llamado Saludo punto jsx.
+
+Escribe:
+
+import React from 'react'
+
+function Saludo(props) {
+  return <h2>Hola, {props.nombre}</h2>
+}
+
+export default Saludo
+
+Este componente recibe una prop llamada nombre y la muestra en pantalla.
+
+Ahora edita el archivo App punto jsx para usar tu nuevo componente.
+
+Escribe:
+
+import React from 'react'
+import Saludo from './Saludo'
+
+function App() {
+  return (
+    <div>
+      <Saludo nombre="Diego" />
+      <Saludo nombre="María" />
+    </div>
+  )
+}
+
+export default App
+
+Abre el navegador. Verás los textos Hola Diego y Hola María.
+
+Eso significa que tu componente está funcionando y es reutilizable.
+
+Resumen:
+
+Aprendiste a crear componentes independientes y a comunicarte entre ellos usando props.  
+Esto es la base para construir interfaces complejas con React.

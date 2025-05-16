@@ -1,0 +1,42 @@
+Semana 5: Efectos con useEffect
+
+En esta semana aprenderás a usar el hook useEffect para ejecutar código cuando algo cambie en tu componente.
+
+Vamos a simular una llamada a una API que muestra un mensaje al cargar el componente.
+
+Escribe:
+
+import React, { useState, useEffect } from 'react'
+
+function App() {
+  const [mensaje, setMensaje] = useState('Cargando...')
+
+  useEffect(() => {
+    setTimeout(() => {
+      setMensaje('¡Bienvenido a React!')
+    }, 2000)
+  }, [])
+
+  return (
+    <div>
+      <h1>{mensaje}</h1>
+    </div>
+  )
+}
+
+export default App
+
+Explicación:
+
+useEffect permite ejecutar código después del renderizado.
+
+En este ejemplo, simulamos una espera de dos segundos como si estuviéramos esperando una respuesta de un servidor.
+
+El array vacío al final indica que este efecto solo debe ejecutarse una vez, cuando el componente se monta.
+
+Resumen:
+
+Con useEffect puedes sincronizar tu componente con el mundo exterior: peticiones HTTP, suscripciones, temporizadores y más.
+
+Es un hook muy poderoso que usarás constantemente en tus proyectos React.
+

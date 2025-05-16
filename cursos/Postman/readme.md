@@ -19,7 +19,7 @@ Cada semana tiene:
 7. **Modularización y mantenimiento**
 8. **Errores comunes y proyectos reales**
 
-## Cómo usar este cursi
+## Cómo usar este curso
 1. Entra en la carpeta de cada semana y sigue los tutoriales.
 
 2. Ejecuta Newman si deseas validar desde terminal:

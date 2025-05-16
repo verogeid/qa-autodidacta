@@ -1,0 +1,56 @@
+Semana 4: Formularios y eventos
+
+Hoy aprenderás a capturar texto desde un formulario y manejar eventos en React.
+
+Vamos a crear un pequeño formulario que salude al usuario por su nombre.
+
+Abre App punto jsx y reemplaza su contenido.
+
+Escribe:
+
+import React, { useState } from 'react'
+
+function App() {
+  const [nombre, setNombre] = useState('')
+  const [saludo, setSaludo] = useState('')
+
+  function manejarCambio(evento) {
+    setNombre(evento.target.value)
+  }
+
+  function manejarEnvio(evento) {
+    evento.preventDefault()
+    setSaludo(`Hola, ${nombre}`)
+  }
+
+  return (
+    <div>
+      <form onSubmit={manejarEnvio}>
+        <input 
+          type="text" 
+          placeholder="Escribe tu nombre" 
+          value={nombre} 
+          onChange={manejarCambio} 
+        />
+        <button type="submit">Saludar</button>
+      </form>
+      <h2>{saludo}</h2>
+    </div>
+  )
+}
+
+export default App
+
+Explicación:
+
+Creamos dos estados: uno para guardar el texto escrito por el usuario y otro para mostrar el saludo.
+
+El evento onChange actualiza el estado en tiempo real mientras el usuario escribe.
+
+El evento onSubmit evita que la página se recargue y genera el saludo.
+
+Resumen:
+
+Ahora sabes cómo manejar formularios en React y cómo responder a eventos del usuario.
+
+Esto te permite interactuar con datos introducidos por quien use tu aplicación.

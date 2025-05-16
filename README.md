@@ -56,7 +56,7 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 
 ### ⚡ Desarrollo e IA
 
-13. [HTML5 y CSS3](./cursos/html5)
+13. [HTML5 y CSS3](./cursos/html5/readme.md)
 14. [React con TypeScript](./cursos/react) 🚧
 15. [C# en profundidad](./cursos/csharp) 🚧
 16. [IA Developer con Python](./cursos/ia-python) 🚧

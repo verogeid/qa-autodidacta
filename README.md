@@ -58,14 +58,15 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 
 13. [HTML5 y CSS3](./cursos/html5/readme.md)
 14. 🚧 [React con TypeScript](./cursos/react/readme.md) 🚧
-15. 🚧 [C# en profundidad](./cursos/csharp/readme.md) 🚧
-16. 🚧 [IA Developer con Python](./cursos/ia-python/readme.md) 🚧
-17. [n8n: automatización de flujos](./cursos/n8n/readme.md)
+15. 🚧 [FastAPI](./cursos/FastAPI/readme.md) 🚧
+16. 🚧 [C# en profundidad](./cursos/csharp/readme.md) 🚧
+17. 🚧 [IA Developer con Python](./cursos/ia-python/readme.md) 🚧
+18. [n8n: automatización de flujos](./cursos/n8n/readme.md)
 
 ### 🚁 Bonus Track
 
-18. [English for Tech: A2 to C1](./cursos/resources/english/readme.md)
-19. 🚧 [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./cursos/helicopter/readme.md) 🚧
+19. [English for Tech: A2 to C1](./cursos/resources/english/readme.md)
+20. 🚧 [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./cursos/helicopter/readme.md) 🚧
 
 ---
 

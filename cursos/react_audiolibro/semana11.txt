@@ -1,0 +1,59 @@
+Semana 11: Manejo de errores y estados de carga
+
+Hoy aprenderás a mejorar la experiencia del usuario mostrando mensajes de carga y errores.
+
+Vamos a modificar el ejemplo anterior para incluir esos estados.
+
+Escribe:
+
+import React, { useState, useEffect } from 'react'
+
+function App() {
+  const [usuarios, setUsuarios] = useState([])
+  const [cargando, setCargando] = useState(true)
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(res => {
+        if (!res.ok) throw new Error('Error en la red')
+        return res.json()
+      })
+      .then(data => {
+        setUsuarios(data)
+        setCargando(false)
+      })
+      .catch(err => {
+        setError(err.message)
+        setCargando(false)
+      })
+  }, [])
+
+  if (cargando) return <p>Cargando...</p>
+  if (error) return <p>Error: {error}</p>
+
+  return (
+    <div>
+      <h1>Usuarios</h1>
+      <ul>
+        {usuarios.map(user => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+export default App
+
+Explicación:
+
+Manejamos tres estados: datos, carga y error.
+
+Mostramos diferentes mensajes según el estado actual.
+
+Resumen:
+
+Un buen manejo de errores y carga mejora la usabilidad.
+
+El usuario debe saber siempre qué está pasando.

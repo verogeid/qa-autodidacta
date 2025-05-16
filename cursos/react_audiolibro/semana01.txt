@@ -2,7 +2,7 @@ Semana 1: Configuración inicial y primer componente
 
 En esta primera semana, nos centraremos en preparar tu entorno de desarrollo y crear tu primer componente React.
 
-**Paso 1: Instalación de Vite y React**
+Paso 1: Instalación de Vite y React
 
 Vite es una herramienta de construcción extremadamente rápida, ideal para proyectos de React. Para instalarlo, sigue estos pasos:
 
@@ -25,17 +25,16 @@ npm install
 
 npm run dev
 
-Ahora, abre tu navegador y ve a `http://localhost:5173` para ver tu aplicación React en funcionamiento.
+Ahora, abre tu navegador y ve a http://localhost:5173 para ver tu aplicación React en funcionamiento.
 
-**Paso 2: Crear el primer componente**
+Paso 2: Crear el primer componente
 
 Ahora que tenemos nuestro proyecto en marcha, es hora de crear un componente de React.
 
-1. Dentro de la carpeta `src`, abre el archivo `App.jsx`. Este es el componente principal de nuestra aplicación.
+1. Dentro de la carpeta src, abre el archivo App.jsx. Este es el componente principal de nuestra aplicación.
 
-2. Modifica el contenido de `App.jsx` para que luzca algo como esto:
+2. Modifica el contenido de App.jsx para que luzca algo como esto:
 
-```jsx
 import React from 'react';
 
 function App() {
@@ -48,7 +47,6 @@ function App() {
 }
 
 export default App;
-```
 
 3. Guarda los cambios y vuelve a tu navegador. Verás que ahora se muestra un mensaje de bienvenida.
 

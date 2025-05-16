@@ -60,7 +60,7 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 14. [React con TypeScript](./cursos/react) 🚧
 15. [C# en profundidad](./cursos/csharp) 🚧
 16. [IA Developer con Python](./cursos/ia-python) 🚧
-17. [n8n: automatización de flujos](./cursos/n8n) 🚧
+17. [n8n: automatización de flujos](./cursos/n8n/readme.md)
 
 ### 🚁 Bonus Track
 

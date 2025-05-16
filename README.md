@@ -30,42 +30,42 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 
 ### 🧠 Fundamentos QA
 
-1. [SSTQB Foundation Level 4](./cursos/sstqb) En Construcción Activa
+1. 🚧 [SSTQB Foundation Level 4](./cursos/sstqb/readme.md) 🚧
 
 ### 🛠️ Gestión y Herramientas
 
-3. [Docker para testers](./cursos/docker) 🚧
-4. [Kubernetes](./cursos/kubernetes) 🚧
+3. 🚧 [Docker para testers](./cursos/docker/readme.md) 🚧
+4. 🚧 [Kubernetes](./cursos/kubernetes/readme.md) 🚧
 
 ### 🧪 Automatización de Pruebas
 
-5. [Playwright: Automatización de pruebas](./cursos/playwright) 🚧
-6. [Katalon Studio: Pruebas Mobile](./cursos/katalon) 🚧
+5. 🚧 [Playwright: Automatización de pruebas](./cursos/playwright/readme.md) 🚧
+6. 🚧 [Katalon Studio: Pruebas Mobile](./cursos/katalon/readme.md) 🚧
 7. [Postman y Newman: Pruebas API](./cursos/Postman/readme.md)
 
 ### ⚙️ Integración y Entrega Continua
 
-8. [Jenkins](./cursos/jenkins) 🚧
-9. [GitHub Actions](./cursos/github-actions) 🚧
+8. 🚧 [Jenkins](./cursos/jenkins/readme.md) 🚧
+9. 🚧 [GitHub Actions](./cursos/github-actions/readme.md) 🚧
 
 ### 📈 Performance y Carga
 
-10. [JMeter](./cursos/jmeter) 🚧
-11. [K6](./k6) 🚧
-12. [LightHouse](./cursos/lighthouse) 🚧
+10. 🚧 [JMeter](./cursos/jmeter/readme.md) 🚧
+11. 🚧 [K6](./cursos/k6/readme.md) 🚧
+12. 🚧 [LightHouse](./cursos/lighthouse/readme.md) 🚧
 
 ### ⚡ Desarrollo e IA
 
 13. [HTML5 y CSS3](./cursos/html5/readme.md)
-14. [React con TypeScript](./cursos/react) 🚧
-15. [C# en profundidad](./cursos/csharp) 🚧
-16. [IA Developer con Python](./cursos/ia-python) 🚧
+14. 🚧 [React con TypeScript](./cursos/react/readme.md) 🚧
+15. 🚧 [C# en profundidad](./cursos/csharp/readme.md) 🚧
+16. 🚧 [IA Developer con Python](./cursos/ia-python/readme.md) 🚧
 17. [n8n: automatización de flujos](./cursos/n8n/readme.md)
 
 ### 🚁 Bonus Track
 
 18. [English for Tech: A2 to C1](./cursos/resources/english/readme.md)
-19. [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./cursos/helicopter) 🚧
+19. 🚧 [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./cursos/helicopter/readme.md) 🚧
 
 ---
 

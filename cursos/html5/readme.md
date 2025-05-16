@@ -1,54 +1,60 @@
-# Curso Autodidacta: HTML5 y CSS3 desde 0
+# HTML y CSS desde 0
 
-## Descripción
+Curso autodidacta, intensivo y práctico para dominar HTML y CSS desde cero. En 12 semanas, aprenderás a construir sitios web accesibles, optimizados, mantenibles y listos para producción. Ideal para reforzar fundamentos, preparar portfolio o complementar tu perfil técnico como QA, frontend o fullstack.
 
-Este curso autodidacta está diseñado para aprender *HTML* y *CSS* desde cero, sin necesidad de conocimientos previos. El contenido está dividido por semanas, cada una con una duración estimada de entre 5 y 8 horas. Cada semana incluye una guía paso a paso (`tutorial.md`), contenidos teóricos (`README.md`) y ejercicios prácticos (`ejercicios.md`) para reforzar los conocimientos adquiridos.
+## Descripción del curso
 
-## Objetivos del curso
+- Duración estimada: 12 semanas (5–8 horas semanales)
+- Modalidad: Autodidacta
+- Enfoque: Práctico y profesional
+- Incluye: Buenas prácticas, integración con CI/CD, validaciones, depuración, análisis de resultados y deploy final
 
-- Comprender y aplicar la estructura básica de una página web.
-- Dominar el uso de etiquetas HTML5 y selectores CSS3.
-- Adoptar buenas prácticas de desarrollo web.
-- Implementar control de errores, validación y herramientas de depuración.
-- Integrar herramientas de CI/CD básicas para proyectos frontend.
-- Generar reportes de accesibilidad, rendimiento y buenas prácticas.
+## Estructura
 
-## Estructura del curso
+Cada semana contiene:
+- `README.md`: descripción teórica y contenidos
+- `tutorial.md`: guía paso a paso para aplicar lo aprendido
+- `ejercicios.md`: práctica para validar conocimientos
 
-| Semana | Contenido |
-|--------|-----------|
-| Semana 1 | Introducción a HTML, estructura básica y primeras etiquetas |
-| Semana 2 | HTML semántico y enlaces externos |
-| Semana 3 | Introducción a CSS: sintaxis, selectores y propiedades básicas |
-| Semana 4 | Modelo de caja, tipografías y colores |
-| Semana 5 | Posicionamiento y diseño responsive básico |
-| Semana 6 | Formularios en HTML y estilos asociados |
-| Semana 7 | Buenas prácticas, accesibilidad y SEO básico |
-| Semana 8 | Integración con CI/CD y análisis de resultados |
+## Temario
 
-Cada carpeta semanal incluye:
+| Semana | Contenidos |
+|--------|------------|
+| 01 | Fundamentos HTML: estructura, etiquetas, atributos |
+| 02 | CSS básico: selectores, colores, cajas, unidades |
+| 03 | Maquetación con Flexbox |
+| 04 | Grid Layout: diseño responsivo en columnas |
+| 05 | Formularios accesibles y validados |
+| 06 | Posicionamiento, z-index, float, inline-block |
+| 07 | Animaciones, transiciones y pseudo-elementos |
+| 08 | Componentes y organización de estilos |
+| 09 | Responsive design: mobile-first, media queries |
+| 10 | Integración CI/CD y validaciones automatizadas |
+| 11 | Accesibilidad, semántica y performance |
+| 12 | Proyecto final integrador y deploy |
 
-- `README.md` – Contenidos teóricos de la semana
-- `tutorial.md` – Guía paso a paso con ejemplos prácticos
-- `ejercicios.md` – Ejercicios para practicar y validar conocimientos
+## Requisitos
 
-## Requisitos previos
+Solo necesitas:
+- Un navegador moderno
+- Visual Studio Code (o tu editor favorito)
+- Ganas de aprender desde cero
 
-Ninguno. Solo necesitarás un navegador moderno y un editor de texto como [Visual Studio Code](https://code.visualstudio.com/).
+## ¿Para quién es este curso?
 
-## Recomendaciones
+- Personas que quieren aprender web desde cero
+- QA Engineers que buscan mejorar su entendimiento del frontend
+- Estudiantes autodidactas que quieren un plan completo
+- Perfiles técnicos que necesiten maquetar con calidad
 
-- Utiliza [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) para visualizar tus cambios en tiempo real.
-- Usa [W3C Validator](https://validator.w3.org/) y [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) para validar tus prácticas.
+---
 
-## CI/CD y análisis
+## Licencia 
 
-A partir de la semana 8 se incluye:
+Licencia MIT
 
-- Integración con GitHub Actions para análisis automático con Lighthouse CI.
-- Reportes automatizados de rendimiento, accesibilidad y buenas prácticas.
-- Control de errores mediante validaciones y debugging.
+---
 
-## Licencia
+## Autor
 
-MIT – Puedes usar, modificar y compartir este curso libremente.
+Curso creado por Diego González Fernández, QA Automation Engineer y Computer Tech Engineer

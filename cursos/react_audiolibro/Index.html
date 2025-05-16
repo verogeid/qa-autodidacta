@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mini IA con Audiolibros</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; margin: 1rem; background: #fafafa; }
+  #face { width: 120px; height: 120px; margin: auto; background: #ffcba4; position: relative; border-radius: 20px; }
+  #eye-left, #eye-right {
+    width: 20px; height: 20px; background: black; border-radius: 50%;
+    position: absolute; top: 30px;
+  }
+  #eye-left { left: 25px; }
+  #eye-right { right: 25px; }
+  #mouth {
+    width: 60px; height: 20px; background: #800000; border-radius: 0 0 30px 30px;
+    position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+    transition: height 0.1s;
+  }
+  #inputText { width: 90%; height: 100px; margin-top: 1rem; font-size: 1rem; }
+  #output { margin-top: 1rem; min-height: 50px; background: white; padding: 0.5rem; border-radius: 8px; white-space: pre-wrap; }
+  label { margin: 0 1rem; font-size: 0.9rem; }
+  button { margin-top: 0.5rem; font-size: 1rem; padding: 0.5rem 1rem; }
+  select { margin-top: 1rem; font-size: 1rem; padding: 0.3rem; }
+</style>
+</head>
+<body>
+
+<h1>Mini IA con Audiolibros</h1>
+
+<select id="fileSelector">
+  <option value="">Selecciona un archivo</option>
+  <option value="intro.md">Introducción</option>
+  <option value="semana1.md">Semana 1</option>
+  <option value="semana2.md">Semana 2</option>
+</select>
+
+<div id="face">
+  <div id="eye-left"></div>
+  <div id="eye-right"></div>
+  <div id="mouth"></div>
+</div>
+
+<textarea id="inputText" placeholder="Escribe algo o selecciona un archivo..."></textarea><br>
+<button id="sendBtn">Enviar</button><br>
+
+<label><input type="checkbox" id="toggleSpeech" checked> Voz activada</label>
+<label><input type="checkbox" id="toggleFace" checked> Mostrar cara</label>
+
+<div id="output"></div>
+
+<script>
+  const mouth = document.getElementById('mouth');
+  const face = document.getElementById('face');
+  const inputText = document.getElementById('inputText');
+  const sendBtn = document.getElementById('sendBtn');
+  const output = document.getElementById('output');
+  const toggleSpeech = document.getElementById('toggleSpeech');
+  const toggleFace = document.getElementById('toggleFace');
+  const fileSelector = document.getElementById('fileSelector');
+
+  let speaking = false;
+
+  function animateMouth(on) {
+    mouth.style.height = on ? '40px' : '20px';
+    mouth.style.transition = on ? 'height 0.2s' : 'height 0.3s';
+  }
+
+  function speak(text) {
+    if (!toggleSpeech.checked || !window.speechSynthesis) return;
+
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = 'es-ES';
+    utter.onstart = () => {
+      speaking = true;
+      animateMouth(true);
+    };
+    utter.onend = () => {
+      speaking = false;
+      animateMouth(false);
+    };
+    speechSynthesis.speak(utter);
+  }
+
+  sendBtn.onclick = () => {
+    const text = inputText.value.trim();
+    if (!text) return;
+    output.textContent = text;
+    speak(text);
+  };
+
+  toggleFace.onchange = () => {
+    face.style.display = toggleFace.checked ? 'block' : 'none';
+  };
+
+  fileSelector.onchange = async function() {
+    const filename = this.value;
+    if (!filename) return;
+    try {
+      const response = await fetch(filename);
+      const text = await response.text();
+      inputText.value = text;
+      output.textContent = '';
+      if (toggleSpeech.checked) speak(text);
+    } catch (e) {
+      inputText.value = '';
+      output.textContent = 'Error al cargar el archivo.';
+    }
+  };
+</script>
+
+</body>
+</html>

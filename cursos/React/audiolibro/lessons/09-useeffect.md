@@ -1,4 +1,4 @@
-Semana 9: ¿Qué hace exactamente useEffect?
+09: ¿Qué hace exactamente useEffect?
 
 useEffect es como una alarma que le dices a React que dispare cuando pase algo. La mayoría lo usa mal al principio porque no se entiende bien qué observa y cuándo actúa.
 

@@ -1,69 +1,72 @@
-# tutorial.md
+# Semana 1 – Fundamentos de React y TypeScript
 
-## 1. ¿Qué es React? ¿Qué es TypeScript?
+## 1. ¿Qué es React?
 
-React es una biblioteca para construir interfaces de usuario. Su modelo declarativo y basado en componentes facilita la creación de aplicaciones interactivas. TypeScript añade tipado estático a JavaScript, permitiendo detectar errores antes de ejecutar el código.
+React es una *librería* de JavaScript para construir interfaces de usuario. Está basada en componentes reutilizables que gestionan su propio estado.
 
-## 2. Crear proyecto con Vite
+## 2. ¿Qué es TypeScript?
 
-Vite es una herramienta rápida para crear proyectos modernos. Permite usar React y TypeScript de forma integrada.
+TypeScript es un *superset* de JavaScript que añade tipado estático. Esto mejora la mantenibilidad y previene errores comunes en tiempo de compilación.
+
+## 3. Configuración del entorno con Vite
 
 ```bash
-yarn create vite react-ts-app --template react-ts
-cd react-ts-app
-yarn install
-yarn dev
+npm create vite@latest mi-proyecto --template react-ts
+cd mi-proyecto
+npm install
+npm run dev
 ```
 
-## 3. Primer componente
+Abre `src/App.tsx`. Este será tu punto de partida.
 
-En `src/App.tsx`, puedes escribir tu primer componente.
+## 4. Primer componente con TSX
 
-```ts
-function App() {
-  return <h1>Hello React + TypeScript</h1>;
+Crea un archivo `src/components/Hello.tsx`:
+
+```tsx
+type Props = {
+  name: string
+}
+
+export function Hello({ name }: Props) {
+  return <h1>Hello, {name}!</h1>
 }
 ```
 
-## 4. Tipado básico
+En `App.tsx`, úsalo así:
 
-Puedes definir tipos explícitos para *props* o variables.
-
-```ts
-type User = {
-  name: string;
-  age: number;
-};
-
-const user: User = { name: 'Ana', age: 30 };
+```html
+<Hello name="Diego" />
 ```
 
-## 5. *Props* y Estado
+## 5. Tipado básico en *TypeScript*
 
-Las *props* son valores que se pasan a un componente. El estado permite guardar datos internos que cambian con el tiempo.
+TypeScript permite declarar tipos para las props, variables, funciones y más.
 
-```ts
-function Welcome({ name }: { name: string }) {
-  return <h2>Hello, {name}!</h2>;
-}
-
-function App() {
-  const [count, setCount] = useState(0);
-  return (
-    <>
-      <Welcome name="Diego" />
-      <button onClick={() => setCount(count + 1)}>Clicks: {count}</button>
-    </>
-  );
-}
+```tsx
+const age: number = 35
+const isQA: boolean = true
 ```
 
-## 6. Introducción a *useState*
+## 6. Estado con *useState*
 
-El hook *useState* permite gestionar variables que *React* "escucha" para volver a renderizar al cambiar su valor.
+Importa el hook y define estado:
 
-```ts
-const [name, setName] = useState('');
+```tsx
+import { useState } from 'react'
+
+const [count, setCount] = useState(0)
 ```
 
-Con él puedes construir formularios, contadores, flags, etc.
+## 7. Interacción con el usuario
+
+```html
+<button onClick={() => setCount(count + 1)}>Incrementar</button>
+```
+
+Al pulsar el botón, el valor count cambia y el componente se vuelve a renderizar.
+
+## 8. Repaso
+
+En esta semana has creado tu primer proyecto, aprendido sobre componentes y estado, y comenzado a tipar tu código.
+

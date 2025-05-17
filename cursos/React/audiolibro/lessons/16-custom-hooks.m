@@ -1,4 +1,4 @@
-Semana 16: Custom Hooks, reutilizando lógica con estilo
+16: Custom Hooks, reutilizando lógica con estilo
 
 Cuando tienes trozos de lógica que se repiten en varios componentes, escribirla una y otra vez es un error.
 

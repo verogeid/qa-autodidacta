@@ -11,7 +11,7 @@ npm run dev
 
 ## 2. Estructura básica de un componente
 
-```javascript
+```ts
 function Welcome(props: { name: string }) {
   return <h1>Hello, {props.name}</h1>;
 }
@@ -19,7 +19,7 @@ function Welcome(props: { name: string }) {
 
 ## 3. Uso de `useState`
 
-```javascript
+```ts
 import { useState } from 'react';
 
 function Counter() {
@@ -35,7 +35,7 @@ function Counter() {
 
 ## 4. Tipado de `props`
 
-```javascript
+```ts
 type UserProps = {
   name: string;
   age?: number;

@@ -1,104 +1,91 @@
-# Semana 02: soluciones
+# Semana 2 - Soluciones a ejercicios
+
+## Ejercicio 1: Crea un componente con un input controlado que actualice un estado
 
 ```tsx
-// EmailForm.tsx
-import { useState } from 'react';
+// src/components/ControlledInput.tsx
+import React, { useState } from 'react';
 
-export function EmailForm() {
-  const [email, setEmail] = useState('');
-  const isValid = email.includes('@');
-
-  return (
-    <div>
-      <input value={email} onChange={(e) => setEmail(e.target.value)} />
-      <button disabled={!isValid}>Enviar</button>
-    </div>
-  );
-}
-```
-
-```tsx
-// Parent.tsx
-import { useState } from 'react';
-import { Input } from './Input';
-import { Display } from './Display';
-
-export function Parent() {
+export const ControlledInput = () => {
   const [text, setText] = useState('');
-  return (
-    <>
-      <Input onChange={setText} />
-      <Display value={text} />
-    </>
-  );
-}
-```
-
-```tsx
-// Input.tsx
-export function Input({ onChange }: { onChange: (value: string) => void }) {
-  return <input onChange={(e) => onChange(e.target.value)} />;
-}
-```
-
-```tsx
-// Display.tsx
-export function Display({ value }: { value: string }) {
-  return <p>{value}</p>;
-}
-```
-
-```tsx
-// RefInput.tsx
-import { useRef } from 'react';
-
-export function RefInput() {
-  const inputRef = useRef<HTMLInputElement>(null);
 
   return (
     <div>
-      <input ref={inputRef} />
-      <button onClick={() => alert(inputRef.current?.value)}>Mostrar</button>
+      <input value={text} onChange={(e) => setText(e.target.value)} />
+      <p>Value: {text}</p>
     </div>
   );
-}
+};
 ```
 
-```tsx
-// Timer.tsx
-import { useEffect, useState } from 'react';
+---
 
-export function Timer() {
-  const [seconds, setSeconds] = useState(0);
+## Ejercicio 2: Crea un componente que use *useEffect* para actualizar el título del documento
+
+```tsx
+// src/components/DocumentTitle.tsx
+import React, { useEffect, useState } from 'react';
+
+export const DocumentTitle = () => {
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => setSeconds((s) => s + 1), 1000);
-    return () => clearInterval(interval);
-  }, []);
+    document.title = `Clicked ${count} times`;
+  }, [count]);
 
-  return <p>Tiempo: {seconds}s</p>;
-}
+  return <button onClick={() => setCount(count + 1)}>Click me</button>;
+};
 ```
 
+---
+
+## Ejercicio 3: Crea un componente que use *useRef* para enfocar un input al hacer clic
+
 ```tsx
-// context.tsx
-import { createContext, useContext, useState } from 'react';
+// src/components/FocusInput.tsx
+import React, { useRef } from 'react';
 
-const LanguageContext = createContext({
-  lang: 'es',
-  setLang: (l: string) => {},
-});
+export const FocusInput = () => {
+  const inputRef = useRef<HTMLInputElement>(null);
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLang] = useState('es');
+  const handleFocus = () => {
+    inputRef.current?.focus();
+  };
+
   return (
-    <LanguageContext.Provider value={{ lang, setLang }}>
-      {children}
-    </LanguageContext.Provider>
+    <div>
+      <input ref={inputRef} type="text" />
+      <button onClick={handleFocus}>Focus input</button>
+    </div>
   );
-}
+};
+```
 
-export function useLanguage() {
-  return useContext(LanguageContext);
-}
+---
+
+## Ejercicio 4: Usa *useContext* para compartir un tema de color entre componentes
+
+```tsx
+// src/context/ThemeContext.tsx
+import { createContext } from 'react';
+
+export const ThemeContext = createContext<'light' | 'dark'>('light');
+
+// src/components/ThemeProvider.tsx
+import React from 'react';
+import { ThemeContext } from '../context/ThemeContext';
+
+export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+  return <ThemeContext.Provider value="dark">{children}</ThemeContext.Provider>;
+};
+
+// src/components/ThemedText.tsx
+import React, { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
+
+export const ThemedText = () => {
+  const theme = useContext(ThemeContext);
+
+  return <p style={{ color: theme === 'dark' ? 'white' : 'black' }}>Theme is {theme}</p>;
+};
 ```

@@ -1,24 +1,21 @@
-## Ejercicio 1: Input controlado
+# Ejercicios – Semana 2
 
-Crea un input de texto controlado que muestre el valor en pantalla.
+## 1. Componente de formulario con validación
 
-## Ejercicio 2: *useEffect*
+Crea un formulario con un campo de email y un botón de envío. Valida que el email tenga `@`.
 
-Usa useEffect para registrar en consola cada vez que cambia un contador.
+## 2. Lifting state up
 
-## Ejercicio 3: *useRef*
+Crea dos componentes hermanos. Uno debe contener un input de texto, y el otro debe mostrar el contenido a medida que se escribe.
 
-Usa useRef para acceder al valor de un input no controlado al hacer clic en un botón.
+## 3. useRef
 
-## Ejercicio 4: *useContext*
+Crea un input no controlado con un botón que muestre su valor con `alert`.
 
-Crea un contexto de idioma que se comparta entre dos componentes.
+## 4. useEffect
 
-## Ejercicio 5: Lifting state up
+Muestra un contador que se actualiza automáticamente cada segundo. Asegúrate de limpiar el efecto.
 
-Crea dos componentes hijos que compartan un input a través del padre.
+## 5. useContext
 
-
----
-
-Validación: Asegúrate de que los componentes funcionan, que los estados se actualizan correctamente y que no hay errores en consola.
+Crea un contexto de idioma (`"es" | "en"`). Permite cambiar el idioma desde un selector y mostrar textos traducidos en componentes hijos.

@@ -21,8 +21,7 @@
   #inputText { width: 90%; height: 100px; margin-top: 1rem; font-size: 1rem; }
   #output { margin-top: 1rem; min-height: 50px; background: white; padding: 0.5rem; border-radius: 8px; white-space: pre-wrap; }
   label { margin: 0 1rem; font-size: 0.9rem; }
-  select { margin-top: 1rem; font-size: 1rem; padding: 0.3rem; }
-  option.read { font-weight: bold; color: green; }
+  select, #voiceSelect { margin-top: 1rem; font-size: 1rem; padding: 0.3rem; }
 </style>
 </head>
 <body>
@@ -55,18 +54,19 @@
   <option value="lessons/epilogo.md">Resumen final</option>
 </select>
 
+<br>
+
+<select id="voiceSelect">
+  <option value="">Selecciona una voz</option>
+</select>
+
 <div id="face">
   <div id="eye-left"></div>
   <div id="eye-right"></div>
   <div id="mouth"></div>
 </div>
 
-<textarea id="inputText" placeholder="Escribe algo o selecciona un archivo..."></textarea><br>
-
-<label><input type="checkbox" id="toggleSpeech" checked> Voz activada</label>
-<label><input type="checkbox" id="toggleFace" checked> Mostrar cara</label>
-
-<select id="voiceSelect" title="Selecciona voz para lectura"></select>
+<textarea id="inputText" placeholder="Selecciona un archivo para leer..." readonly></textarea>
 
 <div id="output"></div>
 
@@ -75,51 +75,28 @@
   const face = document.getElementById('face');
   const inputText = document.getElementById('inputText');
   const output = document.getElementById('output');
-  const toggleSpeech = document.getElementById('toggleSpeech');
-  const toggleFace = document.getElementById('toggleFace');
+  const toggleSpeech = { checked: true }; // voz activada fija
   const fileSelector = document.getElementById('fileSelector');
   const voiceSelect = document.getElementById('voiceSelect');
 
-  let voices = [];
   let speaking = false;
+  let mouthInterval = null;
+  let voices = [];
   let currentUtterance = null;
-  const readFiles = new Set();
 
-  function populateVoices() {
-    voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith("es"));
-    if (voices.length === 0) {
-      voiceSelect.innerHTML = '<option value="">No hay voces en español disponibles</option>';
-      return;
+  function animateMouthStart() {
+    if (mouthInterval) clearInterval(mouthInterval);
+    mouthInterval = setInterval(() => {
+      mouth.style.height = mouth.style.height === '20px' ? '40px' : '20px';
+    }, 200);
+  }
+
+  function animateMouthStop() {
+    if (mouthInterval) {
+      clearInterval(mouthInterval);
+      mouthInterval = null;
     }
-    voiceSelect.innerHTML = voices.map((v, i) =>
-      `<option value="${i}">${v.name} (${v.lang})</option>`
-    ).join("");
-    voiceSelect.selectedIndex = 0;
-  }
-
-  speechSynthesis.onvoiceschanged = populateVoices;
-  populateVoices();
-
-  function animateMouth(on) {
-    mouth.style.height = on ? '40px' : '20px';
-    mouth.style.transition = on ? 'height 0.2s' : 'height 0.3s';
-  }
-
-  function markAsRead(filename) {
-    [...fileSelector.options].forEach(opt => {
-      if (opt.value === filename) opt.classList.add('read');
-    });
-    readFiles.add(filename);
-  }
-
-  function getNextFile(currentFile) {
-    const options = [...fileSelector.options];
-    const currentIndex = options.findIndex(o => o.value === currentFile);
-    for (let i = currentIndex + 1; i < options.length; i++) {
-      const next = options[i].value;
-      if (next && !readFiles.has(next)) return next;
-    }
-    return null;
+    mouth.style.height = '20px';
   }
 
   function speak(text, onEnd) {
@@ -127,49 +104,64 @@
     if (speechSynthesis.speaking) speechSynthesis.cancel();
 
     const utter = new SpeechSynthesisUtterance(text);
-    const selectedVoice = voices[voiceSelect.value] || voices[0];
+    const selectedVoiceIndex = voiceSelect.value;
+    const selectedVoice = voices[selectedVoiceIndex] || voices[0];
     if (selectedVoice) utter.voice = selectedVoice;
-    utter.lang = 'es-ES';
+    utter.lang = selectedVoice?.lang || 'es-ES';
+
     utter.onstart = () => {
       speaking = true;
-      animateMouth(true);
+      animateMouthStart();
     };
     utter.onend = () => {
       speaking = false;
-      animateMouth(false);
+      animateMouthStop();
       if (onEnd) onEnd();
     };
+    utter.onerror = () => {
+      speaking = false;
+      animateMouthStop();
+    };
+
     currentUtterance = utter;
     speechSynthesis.speak(utter);
   }
 
-  toggleFace.onchange = () => {
-    face.style.display = toggleFace.checked ? 'block' : 'none';
-  };
+  function loadVoices() {
+    voices = speechSynthesis.getVoices();
+    voiceSelect.innerHTML = '<option value="">Selecciona una voz</option>';
+    voices.forEach((voice, i) => {
+      const option = document.createElement('option');
+      option.value = i;
+      option.textContent = `${voice.name} (${voice.lang})`;
+      voiceSelect.appendChild(option);
+    });
+  }
 
-  fileSelector.onchange = async function () {
+  speechSynthesis.onvoiceschanged = loadVoices;
+  loadVoices();
+
+  fileSelector.onchange = async function() {
     const filename = this.value;
     if (!filename) return;
-    if (speechSynthesis.speaking) speechSynthesis.cancel();
     try {
       const response = await fetch(filename);
       const text = await response.text();
       inputText.value = text;
-      output.textContent = '';
-      markAsRead(filename);
-      if (toggleSpeech.checked) {
-        speak(text, () => {
-          const next = getNextFile(filename);
-          if (next) {
-            fileSelector.value = next;
-            fileSelector.dispatchEvent(new Event('change'));
-          }
-        });
-      }
+      output.textContent = text;
+      speak(text);
     } catch (e) {
       inputText.value = '';
       output.textContent = 'Error al cargar el archivo.';
     }
+  };
+
+  voiceSelect.onchange = () => {
+    if (!inputText.value) return;
+    if (speechSynthesis.speaking) {
+      speechSynthesis.cancel();
+    }
+    speak(inputText.value);
   };
 </script>
 

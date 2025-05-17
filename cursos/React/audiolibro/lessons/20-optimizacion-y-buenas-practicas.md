@@ -1,4 +1,4 @@
-Semana 20: Optimización y buenas prácticas en React
+20: Optimización y buenas prácticas en React
 
 A medida que crece tu aplicación, la optimización cobra importancia para mantener velocidad y buena experiencia.
 

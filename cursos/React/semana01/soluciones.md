@@ -1,55 +1,73 @@
-# Semana 01: soluciones
+# Semana 1 - Soluciones a ejercicios
+
+## Ejercicio 1: Crea un componente que reciba un nombre por props y lo muestre en pantalla
 
 ```tsx
-// ProfileCard.tsx
-type Props = {
+// src/components/Welcome.tsx
+import React from 'react';
+
+type WelcomeProps = {
   name: string;
-  age: number;
-  profession: string;
 };
 
-export function ProfileCard({ name, age, profession }: Props) {
-  return (
-    <div>
-      <h2>{name}</h2>
-      <p>Edad: {age}</p>
-      <p>Profesión: {profession}</p>
-    </div>
-  );
-}
+export const Welcome = ({ name }: WelcomeProps) => {
+  return <h1>Hello, {name}!</h1>;
+};
 ```
 
-```tsx
-// ClickCounter.tsx
-import { useState } from 'react';
+---
 
-export function ClickCounter() {
+## Ejercicio 2: Crea un componente con un estado que se incremente al hacer clic en un botón
+
+```tsx
+// src/components/Counter.tsx
+import React, { useState } from 'react';
+
+export const Counter = () => {
   const [count, setCount] = useState(0);
-  const color = count % 2 === 0 ? 'green' : 'red';
 
   return (
     <div>
-      <p style={{ color }}>{count}</p>
-      <button onClick={() => setCount(count + 1)}>Incrementar</button>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
   );
-}
+};
 ```
 
-```tsx
-// GreetingInput.tsx
-import { useState } from 'react';
+---
 
-export function GreetingInput() {
-  const [name, setName] = useState('');
-  const [greeting, setGreeting] = useState('');
+## Ejercicio 3: Crea un componente que reciba un número y diga si es par o impar
+
+```tsx
+// src/components/EvenOrOdd.tsx
+import React from 'react';
+
+type Props = {
+  number: number;
+};
+
+export const EvenOrOdd = ({ number }: Props) => {
+  return <p>{number % 2 === 0 ? 'Even' : 'Odd'}</p>;
+};
+```
+
+---
+
+## Ejercicio 4: Usa useState para guardar el valor de un input y mostrarlo en pantalla
+
+```tsx
+// src/components/InputMirror.tsx
+import React, { useState } from 'react';
+
+export const InputMirror = () => {
+  const [value, setValue] = useState('');
 
   return (
     <div>
-      <input value={name} onChange={(e) => setName(e.target.value)} />
-      <button onClick={() => setGreeting(`Hola, ${name}`)}>Saludar</button>
-      <p>{greeting}</p>
+      <input value={value} onChange={(e) => setValue(e.target.value)} />
+      <p>{value}</p>
     </div>
   );
-}
+};
 ```

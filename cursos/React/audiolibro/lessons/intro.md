@@ -1,13 +1,11 @@
-Bienvenido a este curso autodidacta de React con Vite, desde cero hasta experto.
+Bienvenido al audiolibro del curso autodidacta de React con Vite, desde cero hasta experto.
 
-Este curso está diseñado para quienes ya tienen conocimientos básicos de HTML, CSS y JavaScript, pero quieren dar el salto al desarrollo de aplicaciones modernas con React.
+Este curso está pensado para quienes ya dominan lo básico de HTML, CSS y JavaScript, y quieren dar el salto al desarrollo de interfaces modernas con React.
 
-A lo largo de las semanas, exploraremos conceptos clave como componentes, hooks, manejo de estado, ruteo, testing, buenas prácticas y despliegue.
+Cada semana escucharás una entrega corta, clara y progresiva. Exploraremos componentes, hooks, manejo de estado, ruteo, testing, buenas prácticas y despliegue.
 
-Lo haremos con un enfoque práctico, acompañando cada bloque teórico de ejemplos y ejercicios que podrás adaptar a tus propios proyectos.
+El contenido está en texto plano y puedes leerlo si lo prefieres, pero el enfoque principal es escucharlo: repítelo tantas veces como necesites, sin prisas ni distracciones visuales.
 
-Todo el contenido está disponible como texto plano, lo que te permite avanzar a tu ritmo, sin depender de plataformas externas ni conexiones permanentes.
+Es un curso para aprender con los oídos, interiorizar los conceptos y aplicarlos después en tus propios proyectos.
 
-Recuerda: no necesitas entenderlo todo a la primera. La clave está en repetir, practicar y volver a escuchar si es necesario.
-
-¿Listo para empezar? ¡Vamos allá!
+¿Listo para empezar? ¡Dale al play!

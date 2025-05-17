@@ -1,90 +1,83 @@
-## tutorial.md
+# Semana 2 – Componentes y hooks esenciales
 
-### 1. Componentes controlados vs no controlados
+## 1. Componentes controlados vs no controlados
 
-Un input *controlado* está vinculado al estado del componente, mientras que uno *no controlado* usa referencias.
+Un input controlado:
 
 ```tsx
-// Controlado
-const [value, setValue] = useState('');
-<input value={value} onChange={(e) => setValue(e.target.value)} />
-
-// No controlado
-const inputRef = useRef<HTMLInputElement>(null);
-<input ref={inputRef} />
+const [value, setValue] = useState('')
 ```
 
-### 2. *useEffect*: efectos secundarios
+```html
+<input value={value} onChange={(e) => setValue(e.target.value)} />
+```
 
-Este hook ejecuta código tras el renderizado. Se usa para llamadas a APIs, temporizadores o sincronización.
+Uno no controlado:
+
+```tsx
+const inputRef = useRef<HTMLInputElement>(null)
+```
+
+```html
+<input ref={inputRef} />
+<button onClick={() => alert(inputRef.current?.value)}>Enviar</button>
+```
+
+## 2. *useEffect*: sincronización
 
 ```tsx
 useEffect(() => {
-  console.log('Componente montado');
-  return () => console.log('Desmontado');
-}, []);
+  document.title = `Clicks: ${count}`
+}, [count])
 ```
 
-### 3. *useRef*: referencias
+Este hook se ejecuta cuando count cambia.
 
-*useRef* guarda valores que sobreviven a los renders. Útil para inputs, contadores que no re-renderizan, etc.
+## 3. *useRef* y persistencia
+
+useRef mantiene valores entre renders sin re-renderizar el componente.
+
+## 4. *useContext*: contexto global
+
+Crea un contexto:
 
 ```tsx
-const countRef = useRef(0);
-countRef.current += 1;
+const ThemeContext = createContext('light')
 ```
 
-### 4. *useContext*: compartir estado
+Provee y consume:
 
-Ideal para estados globales simples, sin necesidad de Redux.
+```html
+<ThemeContext.Provider value="dark">
+  <MiComponente />
+</ThemeContext.Provider>
+```
 
 ```tsx
-const ThemeContext = createContext('light');
-
-function App() {
-  return (
-    <ThemeContext.Provider value="dark">
-      <MyComponent />
-    </ThemeContext.Provider>
-  );
-}
-
-function MyComponent() {
-  const theme = useContext(ThemeContext);
-  return <div>Theme: {theme}</div>;
-}
+const theme = useContext(ThemeContext)
 ```
 
-### 5. Manejo de eventos y formularios
+## 5. Lifting State Up
 
-```tsx
-function Form() {
-  const [email, setEmail] = useState('');
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert(`Email: ${email}`);
-  };
-  return (
-    <form onSubmit={handleSubmit}>
-      <input value={email} onChange={(e) => setEmail(e.target.value)} />
-      <button type="submit">Enviar</button>
-    </form>
-  );
-}
+Cuando dos componentes necesitan compartir estado, se eleva al ancestro común.
+
+```html
+<Contenedor>
+  <Hijo1 setValor={setValor} />
+  <Hijo2 valor={valor} />
+</Contenedor>
 ```
 
-### 6. Lifting state up
+## 6. Formularios
 
-Cuando varios componentes necesitan el mismo estado, este se sube al ancestro común.
+Manejo básico de formularios con validación mínima:
 
-```tsx
-function Parent() {
-  const [value, setValue] = useState('');
-  return <Child value={value} onChange={setValue} />;
-}
-
-function Child({ value, onChange }: { value: string; onChange: (v: string) => void }) {
-  return <input value={value} onChange={(e) => onChange(e.target.value)} />;
-}
+```html
+<form onSubmit={handleSubmit}>
+  <input value={name} onChange={(e) => setName(e.target.value)} />
+</form>
 ```
 
+## 7. Repaso
+
+Ahora sabes manejar hooks esenciales, eventos y compartir estado. Esto es la base de apps dinámicas.

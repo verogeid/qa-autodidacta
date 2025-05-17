@@ -1,4 +1,4 @@
-Semana 3: Props, la forma de pasar información
+03: Props, la forma de pasar información
 
 En React, props son los datos que un componente recibe desde su padre para mostrar contenido dinámico o personalizar su comportamiento.
 

@@ -1,29 +1,21 @@
-# Ejercicios Semana 3: Enrutamiento y vistas
+# Ejercicios – Semana 3
 
-## 1. Crear un sistema de navegación
+## 1. Rutas básicas
 
-Implementa un menú con rutas hacia "Inicio", "Acerca de", y "Contacto".
+Crea dos vistas: `Inicio` y `Contacto`, y navega entre ellas con `Link`.
 
-## 2. Rutas anidadas
+## 2. Ruta protegida
 
-Crea una sección de "Panel" con subrutas: "Perfil", "Ajustes" y "Historial".
+Simula una autenticación: si el usuario no está autenticado, redirígelo a la vista `Login`.
 
-## 3. Rutas dinámicas
+## 3. Rutas anidadas
 
-Haz una ruta `/producto/:id` que muestre detalles del producto usando datos ficticios.
+Crea un layout con encabezado fijo y dos rutas hijas: `Perfil` y `Ajustes`.
 
-## 4. Layouts
+## 4. TailwindCSS
 
-Crea un `MainLayout` con header, nav y `Outlet`. Úsalo en todas las páginas excepto login.
+Estiliza un formulario con Tailwind usando clases como `bg-gray-100`, `p-4`, `rounded`.
 
-## 5. Rutas privadas
+## 5. 404 personalizado
 
-Implementa una ruta protegida que solo se muestra si hay un token ficticio en `localStorage`.
-
-## 6. TailwindCSS
-
-Rediseña tu SPA usando Tailwind para todos los componentes.
-
-## 7. Reto final
-
-Desarrolla una mini aplicación con autenticación ficticia y navegación completa.
+Agrega una ruta `*` para mostrar un mensaje de “Página no encontrada” cuando la URL no coincida con ninguna ruta.

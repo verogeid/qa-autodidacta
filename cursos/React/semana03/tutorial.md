@@ -1,62 +1,76 @@
-# Tutorial: Enrutamiento y diseño de vistas
+# Semana 3 – Enrutamiento y diseño de vistas
 
-## 1. Instalación de *React Router* y *TailwindCSS*
+## 1. Instalación de React Router
 
 ```bash
-yarn add react-router-dom
+npm install react-router-dom
 ```
 
-Sigue la guía oficial para Tailwind: <https://tailwindcss.com/docs/guides/vite>
-
-## 2. Configuración de rutas básicas
-
-Crea un archivo App.tsx:
+## 2. Rutas básicas
 
 ```tsx
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
-
-export default App;
+<BrowserRouter>
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/about" element={<About />} />
+  </Routes>
+</BrowserRouter>
 ```
 
 ## 3. Rutas anidadas
 
-```html
+```tsx
 <Route path="/dashboard" element={<Dashboard />}>
-  <Route path="profile" element={<Profile />} />
+  <Route path="settings" element={<Settings />} />
 </Route>
 ```
 
-## 4. Rutas dinámicas
+## 4. Navegación
 
-```html
-<Route path="/user/:id" element={<UserPage />} />
+```tsx
+import { Link } from 'react-router-dom'
+
+<Link to="/about">Acerca de</Link>
 ```
 
-## 5. *Layouts*
+## 5. Diseño con *TailwindCSS*
 
-Crea un layout que contenga cabecera y navegación. Usa *Outlet* para representar subrutas.
+Instalación:
 
-## 6. Vistas protegidas (privadas)
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
 
-Crea un componente *PrivateRoute* que verifique si el usuario está autenticado y redirige en caso contrario.
+Configura `tailwind.config.js` y usa las clases:
 
-## 7. Aplicación de estilos con *TailwindCSS*
+```tsx
+<h1 className="text-2xl font-bold text-blue-600">Hola</h1>
+```
 
-Usa clases como *flex*, *grid*, *p-4*, *bg-blue-500*, etc., para estilizar tus componentes rápidamente.
+## 6. Layouts y rutas privadas
 
-## Resultado esperado
+Ejemplo simple de layout:
 
-Una SPA con navegación fluida, rutas anidadas y diseño responsive.
+```tsx
+function Layout() {
+  return (
+    <div>
+      <Header />
+      <Outlet />
+    </div>
+  )
+}
+```
+
+Ruta privada (solo si hay autenticación):
+
+```tsx
+<Route path="/admin" element={isAuth ? <Admin /> : <Navigate to="/login" />} />
+```
+
+## 7. Repaso
+
+Has aprendido a estructurar la navegación de tu app, organizar vistas y aplicar estilos modernos.

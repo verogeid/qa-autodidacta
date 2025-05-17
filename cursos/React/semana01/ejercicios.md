@@ -1,28 +1,21 @@
-# ejercicios.md
+# Ejercicios – Semana 1
 
-## Ejercicio 1: Crea tu primer componente
-Crea un componente `Greeting` que reciba como `props` un nombre y lo muestre en pantalla.
+## 1. Crear tu primer componente personalizado
 
-## Ejercicio 2: Contador interactivo
-Crea un componente `Counter` con un botón que incremente el valor al hacer clic. Usa `useState`.
+Crea un componente llamado `ProfileCard` que reciba como props `name`, `age` y `profession`, y los muestre en una tarjeta estilizada.
 
-## Ejercicio 3: Tarjeta de usuario
-Crea un componente `UserCard` que reciba `name`, `email` y `age`. Tipa las `props` correctamente.
+## 2. Usa estado para contar clicks
 
-## Ejercicio 4: Refactoriza
-Refactoriza los componentes anteriores en archivos separados y organízalos en una carpeta `components/`.
+Crea un botón que cuente cuántas veces se ha hecho clic. Muestra el número en pantalla.
 
-## Ejercicio 5: Reto adicional
-Muestra una lista de usuarios desde un array y renderiza un `UserCard` por cada uno. Usa `map()`.
+## 3. Añadir condiciones
 
-### Datos de prueba
-```ts
-const users = [
-  { name: 'Alice', email: 'alice@example.com', age: 30 },
-  { name: 'Bob', email: 'bob@example.com', age: 25 },
-];
-```
+Modifica el componente anterior para que el color del número cambie si es par o impar.
 
----
+## 4. Tipado de props
 
-Validación: Verifica que la aplicación compila sin errores y se ve correctamente en el navegador.
+Asegúrate de que todos los componentes usen tipos explícitos para las props.
+
+## 5. Estado con texto
+
+Crea un input controlado donde el usuario pueda escribir su nombre, y al pulsar un botón se muestre un saludo personalizado.

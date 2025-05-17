@@ -1,4 +1,4 @@
-Semana 7: Formularios y cómo controlar lo que escribe el usuario
+07: Formularios y cómo controlar lo que escribe el usuario
 
 Toda aplicación interactiva necesita formularios: para buscar, registrarse, escribir un comentario o enviar datos. React nos da una forma muy concreta de trabajar con ellos: los inputs controlados.
 

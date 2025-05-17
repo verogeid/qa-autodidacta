@@ -1,6 +1,6 @@
 # tutorial.md
 
-## 1. Crear el proyecto con Vite
+## 1. Crear el proyecto con `Vite`
 
 ```bash
 npm create vite@latest mi-app-react -- --template react-ts

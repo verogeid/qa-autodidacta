@@ -1,60 +1,69 @@
 # tutorial.md
 
-## 1. Crear el proyecto con `Vite`
+## 1. ¿Qué es React? ¿Qué es TypeScript?
+
+React es una biblioteca para construir interfaces de usuario. Su modelo declarativo y basado en componentes facilita la creación de aplicaciones interactivas. TypeScript añade tipado estático a JavaScript, permitiendo detectar errores antes de ejecutar el código.
+
+## 2. Crear proyecto con Vite
+
+Vite es una herramienta rápida para crear proyectos modernos. Permite usar React y TypeScript de forma integrada.
 
 ```bash
-npm create vite@latest mi-app-react -- --template react-ts
-cd mi-app-react
-npm install
-npm run dev
+yarn create vite react-ts-app --template react-ts
+cd react-ts-app
+yarn install
+yarn dev
 ```
 
-## 2. Estructura básica de un componente
+## 3. Primer componente
+
+En `src/App.tsx`, puedes escribir tu primer componente.
 
 ```ts
-function Welcome(props: { name: string }) {
-  return <h1>Hello, {props.name}</h1>;
+function App() {
+  return <h1>Hello React + TypeScript</h1>;
 }
 ```
 
-## 3. Uso de `useState`
+## 4. Tipado básico
+
+Puedes definir tipos explícitos para *props* o variables.
 
 ```ts
-import { useState } from 'react';
+type User = {
+  name: string;
+  age: number;
+};
 
-function Counter() {
+const user: User = { name: 'Ana', age: 30 };
+```
+
+## 5. *Props* y Estado
+
+Las *props* son valores que se pasan a un componente. El estado permite guardar datos internos que cambian con el tiempo.
+
+```ts
+function Welcome({ name }: { name: string }) {
+  return <h2>Hello, {name}!</h2>;
+}
+
+function App() {
   const [count, setCount] = useState(0);
   return (
-    <div>
-      <p>Count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-    </div>
+    <>
+      <Welcome name="Diego" />
+      <button onClick={() => setCount(count + 1)}>Clicks: {count}</button>
+    </>
   );
 }
 ```
 
-## 4. Tipado de `props`
+## 6. Introducción a *useState*
+
+El hook *useState* permite gestionar variables que *React* "escucha" para volver a renderizar al cambiar su valor.
 
 ```ts
-type UserProps = {
-  name: string;
-  age?: number;
-};
-
-function UserCard({ name, age }: UserProps) {
-  return <div>{name} - {age ?? 'N/A'}</div>;
-}
+const [name, setName] = useState('');
 ```
 
-## 5. Ejecutar y comprobar
-
-```bash
-npm run dev
-```
-
-Verifica en `http://localhost:5173/` que todo funciona.
-
-
----
-
-Consejo: mantén tu código limpio y modular desde el principio.
+Con él puedes construir formularios, contadores, flags, etc.

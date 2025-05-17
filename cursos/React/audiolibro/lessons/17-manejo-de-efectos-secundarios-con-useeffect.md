@@ -1,4 +1,4 @@
-Semana 17: Manejo de efectos secundarios con useEffect
+17: Manejo de efectos secundarios con useEffect
 
 useEffect es uno de los hooks más importantes en React. Permite ejecutar código cuando un componente se monta, actualiza o desmonta.
 

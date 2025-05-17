@@ -1,4 +1,4 @@
-Semana 15: useMemo, useCallback y rendimiento sin obsesiones
+15: useMemo, useCallback y rendimiento sin obsesiones
 
 React es rápido. Muy rápido. Pero no mágico. Hay veces en las que recalcula cosas que no han cambiado o vuelve a crear funciones innecesariamente. Ahí es donde entran useMemo y useCallback.
 

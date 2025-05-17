@@ -21,14 +21,14 @@
   #inputText { width: 90%; height: 100px; margin-top: 1rem; font-size: 1rem; }
   #output { margin-top: 1rem; min-height: 50px; background: white; padding: 0.5rem; border-radius: 8px; white-space: pre-wrap; }
   label { margin: 0 1rem; font-size: 0.9rem; }
-  button { margin-top: 0.5rem; font-size: 1rem; padding: 0.5rem 1rem; }
   select { margin-top: 1rem; font-size: 1rem; padding: 0.3rem; }
+  option.read { font-weight: bold; color: green; }
 </style>
 </head>
 <body>
 
 <h1>Mini IA con Audiolibros</h1>
-  
+
 <select id="fileSelector">
   <option value="">Selecciona un archivo</option>
   <option value="lessons/intro.md">Introducción</option>
@@ -62,10 +62,11 @@
 </div>
 
 <textarea id="inputText" placeholder="Escribe algo o selecciona un archivo..."></textarea><br>
-<button id="sendBtn">Enviar</button><br>
 
 <label><input type="checkbox" id="toggleSpeech" checked> Voz activada</label>
 <label><input type="checkbox" id="toggleFace" checked> Mostrar cara</label>
+
+<select id="voiceSelect" title="Selecciona voz para lectura"></select>
 
 <div id="output"></div>
 
@@ -73,23 +74,61 @@
   const mouth = document.getElementById('mouth');
   const face = document.getElementById('face');
   const inputText = document.getElementById('inputText');
-  const sendBtn = document.getElementById('sendBtn');
   const output = document.getElementById('output');
   const toggleSpeech = document.getElementById('toggleSpeech');
   const toggleFace = document.getElementById('toggleFace');
   const fileSelector = document.getElementById('fileSelector');
+  const voiceSelect = document.getElementById('voiceSelect');
 
+  let voices = [];
   let speaking = false;
+  let currentUtterance = null;
+  const readFiles = new Set();
+
+  function populateVoices() {
+    voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith("es"));
+    if (voices.length === 0) {
+      voiceSelect.innerHTML = '<option value="">No hay voces en español disponibles</option>';
+      return;
+    }
+    voiceSelect.innerHTML = voices.map((v, i) =>
+      `<option value="${i}">${v.name} (${v.lang})</option>`
+    ).join("");
+    voiceSelect.selectedIndex = 0;
+  }
+
+  speechSynthesis.onvoiceschanged = populateVoices;
+  populateVoices();
 
   function animateMouth(on) {
     mouth.style.height = on ? '40px' : '20px';
     mouth.style.transition = on ? 'height 0.2s' : 'height 0.3s';
   }
 
-  function speak(text) {
+  function markAsRead(filename) {
+    [...fileSelector.options].forEach(opt => {
+      if (opt.value === filename) opt.classList.add('read');
+    });
+    readFiles.add(filename);
+  }
+
+  function getNextFile(currentFile) {
+    const options = [...fileSelector.options];
+    const currentIndex = options.findIndex(o => o.value === currentFile);
+    for (let i = currentIndex + 1; i < options.length; i++) {
+      const next = options[i].value;
+      if (next && !readFiles.has(next)) return next;
+    }
+    return null;
+  }
+
+  function speak(text, onEnd) {
     if (!toggleSpeech.checked || !window.speechSynthesis) return;
+    if (speechSynthesis.speaking) speechSynthesis.cancel();
 
     const utter = new SpeechSynthesisUtterance(text);
+    const selectedVoice = voices[voiceSelect.value] || voices[0];
+    if (selectedVoice) utter.voice = selectedVoice;
     utter.lang = 'es-ES';
     utter.onstart = () => {
       speaking = true;
@@ -98,30 +137,35 @@
     utter.onend = () => {
       speaking = false;
       animateMouth(false);
+      if (onEnd) onEnd();
     };
+    currentUtterance = utter;
     speechSynthesis.speak(utter);
   }
-
-  sendBtn.onclick = () => {
-    const text = inputText.value.trim();
-    if (!text) return;
-    output.textContent = text;
-    speak(text);
-  };
 
   toggleFace.onchange = () => {
     face.style.display = toggleFace.checked ? 'block' : 'none';
   };
 
-  fileSelector.onchange = async function() {
+  fileSelector.onchange = async function () {
     const filename = this.value;
     if (!filename) return;
+    if (speechSynthesis.speaking) speechSynthesis.cancel();
     try {
       const response = await fetch(filename);
       const text = await response.text();
       inputText.value = text;
       output.textContent = '';
-      if (toggleSpeech.checked) speak(text);
+      markAsRead(filename);
+      if (toggleSpeech.checked) {
+        speak(text, () => {
+          const next = getNextFile(filename);
+          if (next) {
+            fileSelector.value = next;
+            fileSelector.dispatchEvent(new Event('change'));
+          }
+        });
+      }
     } catch (e) {
       inputText.value = '';
       output.textContent = 'Error al cargar el archivo.';

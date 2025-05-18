@@ -29,120 +29,147 @@
     let text = '';
     let utterance;
     let voices = [];
-    let lastSentence = '';
-    let charIndex = 0;
+    let wordIndices = [];
+    let currentWordIndex = 0;
+    let lastSentenceText = '';
 
-    const files = [
-      "01-introduction.md",
-      "02-job-skills.md",
-      "03-daily-meetings.md",
-      "04-technical-interview.md",
-      "05-asking-for-help.md",
-      "06-sprint-retrospective.md",
-      "07-daily-standup.md",
-      "08-managing-priorities.md",
-      "09-negotiation-product-owner.md",
-      "10-code-review-communication.md",
-      "11-bug-reporting-qa.md",
-      "12-sprint-planning-dependencies.md",
-      "13-technical-interviews.md",
-      "14-daily-standups.md",
-      "15-pull-request-reviews.md",
-      "16-explaining-bugs.md",
-      "17-1on1-manager-meetings.md",
-      "18-writing-docs.md",
-      "19-it-job-interviews.md",
-      "20-leading-meetings.md",
-      "21-conflict-management.md",
-      "22-professional-feedback.md",
-      "23-communication-with-recruiters.md",
-      "24-team-meetings.md",
-      "25-client-meetings.md",
-      "26-technical-interviews-advanced.md",
-      "27-giving-and-receiving-feedback-in-it-teams.md",
-      "28-bug-reporting-and-documentation.md",
-      "29-explaining-agile-processes-and-methodologies.md",
-      "30-describe-your-typical-workday.md",
-      "31-handling-blockers-and-delays.md"
-    ];
-
-    window.speechSynthesis.onvoiceschanged = () => {
+    // Carga las voces disponibles (en inglés preferiblemente)
+    function loadVoices() {
       voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'));
-    };
+    }
+    if (speechSynthesis.onvoiceschanged !== undefined) {
+      speechSynthesis.onvoiceschanged = loadVoices;
+    }
+    loadVoices();
 
-    function loadSelector() {
-      const selector = document.getElementById('selector');
-      selector.innerHTML = '';
-      files.forEach(file => {
-        const option = document.createElement('option');
-        option.value = file;
-        option.textContent = file.replace('.md', '').replace(/-/g, ' ');
-        selector.appendChild(option);
-      });
-      selector.addEventListener('change', loadTextAndRead);
-      if (files[0]) {
-        selector.value = files[0];
-        loadTextAndRead();
+    // Carga la lista de temas
+    async function loadSelector() {
+      try {
+        const res = await fetch('https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/speechs.md');
+        if (!res.ok) throw new Error('No se pudo cargar la lista');
+        const lines = (await res.text()).split('\n').filter(Boolean);
+        const selector = document.getElementById('selector');
+        selector.innerHTML = '';
+        lines.forEach(file => {
+          const option = document.createElement('option');
+          option.value = file.trim();
+          option.textContent = file.replace('.md', '').replace(/-/g, ' ');
+          selector.appendChild(option);
+        });
+        selector.addEventListener('change', () => {
+          loadTextAndRead();
+        });
+        if (lines.length) {
+          selector.value = lines[0].trim();
+          loadTextAndRead();
+        }
+      } catch (e) {
+        alert('Error cargando lista de temas: ' + e.message);
       }
     }
 
+    // Carga el texto y prepara indices de palabras para subrayar
     async function loadTextAndRead() {
-      const file = document.getElementById('selector').value;
       try {
+        const file = document.getElementById('selector').value;
         const res = await fetch(`https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/${file}`);
+        if (!res.ok) throw new Error('No se pudo cargar el texto');
         text = await res.text();
         document.getElementById('text').innerHTML = escapeHtml(text).replace(/\n/g, '<br>');
+        prepareWordIndices();
         readText();
-      } catch(e) {
-        alert('No se pudo cargar el archivo ' + file);
+      } catch (e) {
+        alert('Error cargando texto: ' + e.message);
       }
     }
 
+    // Prepara array de índices donde empiezan las palabras (para highlight)
+    function prepareWordIndices() {
+      wordIndices = [];
+      const wordRegex = /\b\w+\b/g;
+      let match;
+      while ((match = wordRegex.exec(text)) !== null) {
+        wordIndices.push({start: match.index, length: match[0].length});
+      }
+      currentWordIndex = 0;
+    }
+
+    // Lee el texto y resalta palabra por palabra
     function readText() {
       if (!text) return;
       speechSynthesis.cancel();
       utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = 'en-GB';
       utterance.rate = parseFloat(document.getElementById('rate').value);
-      utterance.voice = voices.find(v => v.lang === 'en-GB') || voices.find(v => v.lang.startsWith('en'));
+      utterance.voice = voices.find(v => v.lang === 'en-GB') || voices[0];
 
-      utterance.onboundary = function(event) {
+      utterance.onboundary = (event) => {
         if (event.name === 'word') {
-          charIndex = event.charIndex;
-          highlightWord(event.charIndex, event.charLength);
-        } else if (event.name === 'sentence') {
-          lastSentence = text.slice(event.charIndex, event.charIndex + event.charLength);
+          const charIndex = event.charIndex;
+          highlightWordByCharIndex(charIndex);
+          currentWordIndex = wordIndices.findIndex(w => w.start === charIndex);
         }
+      };
+
+      utterance.onend = () => {
+        clearHighlight();
       };
 
       speechSynthesis.speak(utterance);
     }
 
+    function highlightWordByCharIndex(charIndex) {
+      const element = document.getElementById('text');
+      // Busca la palabra que empieza en charIndex o justo antes
+      let wi = wordIndices.find(w => w.start === charIndex);
+      if (!wi) return;
+      const before = text.slice(0, wi.start);
+      const word = text.slice(wi.start, wi.start + wi.length);
+      const after = text.slice(wi.start + wi.length);
+      element.innerHTML = escapeHtml(before) + '<span class="highlight">' + escapeHtml(word) + '</span>' + escapeHtml(after);
+      element.innerHTML = element.innerHTML.replace(/\n/g, '<br>');
+    }
+
+    function clearHighlight() {
+      document.getElementById('text').innerHTML = escapeHtml(text).replace(/\n/g, '<br>');
+    }
+
     function pauseSpeech() {
-      if (speechSynthesis.speaking && !speechSynthesis.paused) speechSynthesis.pause();
+      if (speechSynthesis.speaking && !speechSynthesis.paused) {
+        speechSynthesis.pause();
+      }
     }
 
     function resumeSpeech() {
-      if (speechSynthesis.paused) speechSynthesis.resume();
+      if (speechSynthesis.paused) {
+        speechSynthesis.resume();
+      }
     }
 
+    // Extrae y repite la última frase, busca el punto final antes de la palabra actual
     function repeatLastSentence() {
-      if (!lastSentence) return;
+      if (!text || !wordIndices.length) return alert('No hay texto cargado.');
+      let startIndex = 0;
+      if (currentWordIndex > 0) {
+        // Busca el último punto antes de la palabra actual para obtener la frase entera
+        startIndex = text.lastIndexOf('.', wordIndices[currentWordIndex].start - 1);
+        startIndex = startIndex === -1 ? 0 : startIndex + 1;
+      }
+      let endIndex = text.indexOf('.', wordIndices[currentWordIndex].start);
+      endIndex = endIndex === -1 ? text.length : endIndex + 1;
+      lastSentenceText = text.substring(startIndex, endIndex).trim();
+
+      if (!lastSentenceText) return alert('No se encontró frase para repetir.');
+
       speechSynthesis.cancel();
-      const repeat = new SpeechSynthesisUtterance(lastSentence);
-      repeat.lang = 'en-GB';
-      repeat.voice = voices.find(v => v.lang === 'en-GB') || voices.find(v => v.lang.startsWith('en'));
-      speechSynthesis.speak(repeat);
+      const repeatUtterance = new SpeechSynthesisUtterance(lastSentenceText);
+      repeatUtterance.lang = 'en-GB';
+      repeatUtterance.rate = parseFloat(document.getElementById('rate').value);
+      repeatUtterance.voice = voices.find(v => v.lang === 'en-GB') || voices[0];
+      speechSynthesis.speak(repeatUtterance);
     }
 
-    function highlightWord(start, length) {
-      const element = document.getElementById('text');
-      const before = text.slice(0, start);
-      const word = text.slice(start, start + length);
-      const after = text.slice(start + length);
-      element.innerHTML = `${escapeHtml(before)}<span class="highlight">${escapeHtml(word)}</span>${escapeHtml(after)}`.replace(/\n/g, '<br>');
-    }
-
+    // Escape HTML para evitar inyección
     function escapeHtml(str) {
       return str.replace(/&/g, '&amp;')
                 .replace(/</g, '&lt;')

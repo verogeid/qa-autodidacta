@@ -38,6 +38,10 @@ Este repositorio contiene un curso completo de inglés, organizado por semanas, 
 
 Además de los contenidos semanales, puedes usar herramientas como:
 
+### Audiolibro especializado.
+
+[Audiobook IT profesional](https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/Index.html)
+
 ### Comparador de pronunciación (Python)
 
 Permite comparar tu audio con el original y obtener *feedback* sobre tu pronunciación.

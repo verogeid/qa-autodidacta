@@ -1,156 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Inglés Técnico - Audiolibro</title>
-<style>
-  body { font-family: sans-serif; max-width: 700px; margin: 2rem auto; }
-  select, button, input[type=range] { margin: 0.5rem 0; padding: 0.5rem; }
-  #text { white-space: pre-wrap; line-height: 1.6; margin-top: 1rem; }
-  .highlight { background: yellow; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inglés Técnico - Audiolibro con pausas</title>
+  <style>
+    body { font-family: sans-serif; max-width: 700px; margin: auto; padding: 2rem; }
+    select, button, input[type="range"] { margin: 0.5rem 0; padding: 0.5rem; }
+    #text { white-space: pre-wrap; line-height: 1.6; margin-top: 1rem; }
+    .highlight { background: yellow; }
+  </style>
 </head>
 <body>
-<h1>Inglés Técnico - Audiolibro</h1>
-<label for="selector">Selecciona un tema:</label>
-<select id="selector"></select><br/>
-<label for="rate">Velocidad:</label>
-<input type="range" id="rate" min="0.5" max="2" step="0.1" value="1" /><br/>
-<div>
-  <button onclick="readText()">Leer</button>
-  <button onclick="pauseSpeech()">Pausar</button>
-  <button onclick="resumeSpeech()">Reanudar</button>
-  <button onclick="repeatLastSentence()">Repetir frase</button>
-</div>
-<div id="text"></div>
+  <h1>Inglés Técnico - Audiolibro con pausas</h1>
 
-<script>
-let text = '';
-let utterance = null;
-let voices = [];
-let lastSentence = '';
-let lastBoundaryCharIndex = 0;
+  <label for="selector">Selecciona un tema:</label>
+  <select id="selector"></select><br/>
 
-window.speechSynthesis.onvoiceschanged = () => {
-  voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'));
-};
+  <label for="rate">Velocidad:</label>
+  <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1" />
 
-async function loadSelector() {
-  const res = await fetch('https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/speechs.md');
-  const lines = (await res.text()).split('\n').filter(Boolean);
-  const selector = document.getElementById('selector');
-  selector.innerHTML = '';
-  lines.forEach(file => {
-    const option = document.createElement('option');
-    option.value = file;
-    option.textContent = file.replace('.md', '');
-    selector.appendChild(option);
-  });
-  selector.addEventListener('change', loadTextAndRead);
-  if (lines[0]) {
-    selector.value = lines[0];
-    loadTextAndRead();
-  }
-}
+  <div>
+    <button id="btnRead">Leer</button>
+    <button id="btnPause">Pausar</button>
+    <button id="btnResume">Reanudar</button>
+    <button id="btnRepeat">Repetir frase</button>
+  </div>
 
-async function loadTextAndRead() {
-  const file = document.getElementById('selector').value;
-  const res = await fetch(`https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/${file}`);
-  text = await res.text();
-  document.getElementById('text').innerHTML = escapeHtml(text);
-  readText();
-}
+  <div id="text"></div>
 
-function readText() {
-  if (!text) return;
-  speechSynthesis.cancel();
-  utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = 'en-GB';
-  utterance.rate = parseFloat(document.getElementById('rate').value);
-  utterance.voice = voices.find(v => v.lang === 'en-GB') || voices[0];
+  <script>
+    let voices = [];
+    let text = '';
+    let phrases = [];
+    let currentIndex = 0;
+    let utterance;
+    let isPaused = false;
+    let repeatPhrase = '';
+    let timeoutId;
 
-  lastSentence = '';
-  lastBoundaryCharIndex = 0;
+    window.speechSynthesis.onvoiceschanged = () => {
+      voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'));
+    };
 
-  utterance.onboundary = event => {
-    if (event.name === 'word') {
-      highlightWord(event.charIndex, event.charLength);
-      // Actualizamos última frase guardada buscando frases alrededor
-      lastSentence = extractCurrentSentence(event.charIndex);
+    async function loadSelector() {
+      const res = await fetch('https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/speechs.md');
+      const lines = (await res.text()).split('\n').filter(Boolean);
+      const selector = document.getElementById('selector');
+      selector.innerHTML = '';
+      lines.forEach(file => {
+        const option = document.createElement('option');
+        option.value = file;
+        option.textContent = file.replace('.md', '');
+        selector.appendChild(option);
+      });
+      selector.addEventListener('change', loadText);
+      if (lines[0]) {
+        selector.value = lines[0];
+        loadText();
+      }
     }
-  };
 
-  utterance.onend = () => {
-    clearHighlight();
-  };
-
-  speechSynthesis.speak(utterance);
-}
-
-function pauseSpeech() {
-  if (speechSynthesis.speaking && !speechSynthesis.paused) {
-    speechSynthesis.pause();
-  }
-}
-
-function resumeSpeech() {
-  if (speechSynthesis.paused) {
-    speechSynthesis.resume();
-  }
-}
-
-function repeatLastSentence() {
-  if (!lastSentence) {
-    alert('No hay frase para repetir');
-    return;
-  }
-  speechSynthesis.cancel();
-  const repeatUtterance = new SpeechSynthesisUtterance(lastSentence);
-  repeatUtterance.lang = 'en-GB';
-  repeatUtterance.rate = parseFloat(document.getElementById('rate').value);
-  repeatUtterance.voice = voices.find(v => v.lang === 'en-GB') || voices[0];
-
-  repeatUtterance.onboundary = event => {
-    if (event.name === 'word') {
-      highlightWord(event.charIndex, event.charLength);
+    async function loadText() {
+      clearTimeout(timeoutId);
+      speechSynthesis.cancel();
+      currentIndex = 0;
+      repeatPhrase = '';
+      const file = document.getElementById('selector').value;
+      const res = await fetch(`https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/${file}`);
+      text = await res.text();
+      document.getElementById('text').textContent = text;
+      phrases = splitTextToPhrases(text);
+      highlightCurrentPhrase();
     }
-  };
 
-  repeatUtterance.onend = () => {
-    clearHighlight();
-  };
+    // Divide el texto en frases y pausa especiales [pause], [long pause]
+    function splitTextToPhrases(txt) {
+      // RegEx para dividir por frases, incluyendo pausas
+      const regex = /(/[pause/]|/[long pause/]|[^.!?]+[.!?]?)/gi;
+      const arr = txt.match(regex).map(s => s.trim()).filter(Boolean);
+      return arr;
+    }
 
-  speechSynthesis.speak(repeatUtterance);
-}
+    function speakCurrentPhrase() {
+      if (currentIndex >= phrases.length) return;
 
-function extractCurrentSentence(charIndex) {
-  const before = text.lastIndexOf('.', charIndex);
-  const start = before === -1 ? 0 : before + 1;
-  const after = text.indexOf('.', charIndex);
-  const end = after === -1 ? text.length : after + 1;
-  return text.substring(start, end).trim();
-}
+      const phrase = phrases[currentIndex];
+      repeatPhrase = phrase;
 
-function highlightWord(start, length) {
-  const container = document.getElementById('text');
-  const before = escapeHtml(text.substring(0, start));
-  const word = escapeHtml(text.substring(start, start + length));
-  const after = escapeHtml(text.substring(start + length));
-  container.innerHTML = before + '<span class="highlight">' + word + '</span>' + after;
-}
+      if (phrase.toLowerCase() === '[pause]') {
+        timeoutId = setTimeout(() => {
+          currentIndex++;
+          highlightCurrentPhrase();
+          speakCurrentPhrase();
+        }, 2000);
+        return;
+      }
 
-function clearHighlight() {
-  document.getElementById('text').innerHTML = escapeHtml(text);
-}
+      if (phrase.toLowerCase() === '[long pause]') {
+        timeoutId = setTimeout(() => {
+          currentIndex++;
+          highlightCurrentPhrase();
+          speakCurrentPhrase();
+        }, 5000);
+        return;
+      }
 
-function escapeHtml(str) {
-  return str.replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
-}
+      utterance = new SpeechSynthesisUtterance(phrase);
+      utterance.lang = 'en-GB';
+      utterance.rate = parseFloat(document.getElementById('rate').value);
+      utterance.voice = voices.find(v => v.lang === 'en-GB') || voices.find(v => v.lang.startsWith('en'));
 
-window.onload = loadSelector;
-</script>
+      utterance.onend = () => {
+        currentIndex++;
+        highlightCurrentPhrase();
+        if (!isPaused) speakCurrentPhrase();
+      };
+
+      speechSynthesis.speak(utterance);
+    }
+
+    function highlightCurrentPhrase() {
+      const container = document.getElementById('text');
+      const phrase = phrases[currentIndex] || '';
+      const escaped = escapeHtml(text);
+      // Para simplificar: no resaltamos exacto, solo mostramos texto plano.
+      // Mejoraría para resaltar frase exacta si se quiere.
+      container.innerHTML = escaped.replace(/\n/g, '<br>');
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    // Botones
+
+    document.getElementById('btnRead').onclick = () => {
+      if (speechSynthesis.speaking) speechSynthesis.cancel();
+      isPaused = false;
+      speakCurrentPhrase();
+    };
+
+    document.getElementById('btnPause').onclick = () => {
+      if (speechSynthesis.speaking && !speechSynthesis.paused) {
+        speechSynthesis.pause();
+        isPaused = true;
+      }
+      if(timeoutId) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+      }
+    };
+
+    document.getElementById('btnResume').onclick = () => {
+      if (speechSynthesis.paused) {
+        speechSynthesis.resume();
+        isPaused = false;
+      } else if (!speechSynthesis.speaking) {
+        speakCurrentPhrase();
+      }
+    };
+
+    document.getElementById('btnRepeat').onclick = () => {
+      if (speechSynthesis.speaking) speechSynthesis.cancel();
+      if (!repeatPhrase) return alert('No phrase to repeat');
+      isPaused = false;
+      utterance = new SpeechSynthesisUtterance(repeatPhrase);
+      utterance.lang = 'en-GB';
+      utterance.rate = parseFloat(document.getElementById('rate').value);
+      utterance.voice = voices.find(v => v.lang === 'en-GB') || voices.find(v => v.lang.startsWith('en'));
+      utterance.onend = () => {
+        highlightCurrentPhrase();
+      };
+      speechSynthesis.speak(utterance);
+    };
+
+    window.onload = loadSelector;
+  </script>
 </body>
 </html>

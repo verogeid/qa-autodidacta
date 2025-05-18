@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Inglés Técnico - Audiolibro</title>
 <style>
-  body { font-family: sans-serif; max-width: 700px; margin: 2rem auto; padding: 1rem; }
-  select, button, input[type="range"] { margin: 0.5rem 0; padding: 0.5rem; }
+  body { font-family: sans-serif; max-width: 700px; margin: 2rem auto; }
+  select, button, input[type=range] { margin: 0.5rem 0; padding: 0.5rem; }
   #text { white-space: pre-wrap; line-height: 1.6; margin-top: 1rem; }
-  .highlight { background-color: yellow; }
+  .highlight { background: yellow; }
 </style>
 </head>
 <body>
@@ -16,12 +16,12 @@
 <label for="selector">Selecciona un tema:</label>
 <select id="selector"></select><br/>
 <label for="rate">Velocidad:</label>
-<input type="range" id="rate" min="0.5" max="2" step="0.1" value="1" />
+<input type="range" id="rate" min="0.5" max="2" step="0.1" value="1" /><br/>
 <div>
-  <button id="btnRead">Leer</button>
-  <button id="btnPause">Pausar</button>
-  <button id="btnResume">Reanudar</button>
-  <button id="btnRepeat">Repetir frase</button>
+  <button onclick="readText()">Leer</button>
+  <button onclick="pauseSpeech()">Pausar</button>
+  <button onclick="resumeSpeech()">Reanudar</button>
+  <button onclick="repeatLastSentence()">Repetir frase</button>
 </div>
 <div id="text"></div>
 
@@ -29,106 +29,60 @@
 let text = '';
 let utterance = null;
 let voices = [];
-let wordBoundaries = [];
-let currentWordIndex = 0;
+let lastSentence = '';
+let lastBoundaryCharIndex = 0;
 
-function loadVoices() {
+window.speechSynthesis.onvoiceschanged = () => {
   voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'));
-}
-if (speechSynthesis.onvoiceschanged !== undefined) {
-  speechSynthesis.onvoiceschanged = loadVoices;
-}
-loadVoices();
+};
 
 async function loadSelector() {
-  try {
-    const res = await fetch('https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/speechs.md');
-    if (!res.ok) throw new Error('No se pudo cargar la lista');
-    const lines = (await res.text()).split('\n').filter(Boolean);
-    const selector = document.getElementById('selector');
-    selector.innerHTML = '';
-    lines.forEach(file => {
-      const option = document.createElement('option');
-      option.value = file.trim();
-      option.textContent = file.replace('.md', '').replace(/-/g, ' ');
-      selector.appendChild(option);
-    });
-    selector.addEventListener('change', () => {
-      loadTextAndRead();
-    });
-    if (lines.length) {
-      selector.value = lines[0].trim();
-      loadTextAndRead();
-    }
-  } catch (e) {
-    alert('Error cargando lista de temas: ' + e.message);
+  const res = await fetch('https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/speechs.md');
+  const lines = (await res.text()).split('\n').filter(Boolean);
+  const selector = document.getElementById('selector');
+  selector.innerHTML = '';
+  lines.forEach(file => {
+    const option = document.createElement('option');
+    option.value = file;
+    option.textContent = file.replace('.md', '');
+    selector.appendChild(option);
+  });
+  selector.addEventListener('change', loadTextAndRead);
+  if (lines[0]) {
+    selector.value = lines[0];
+    loadTextAndRead();
   }
 }
 
 async function loadTextAndRead() {
-  try {
-    const file = document.getElementById('selector').value;
-    const res = await fetch(`https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/${file}`);
-    if (!res.ok) throw new Error('No se pudo cargar el texto');
-    text = await res.text();
-    currentWordIndex = 0;
-    wordBoundaries = [];
-    renderText(text);
-    prepareWordBoundaries();
-    startReading(text);
-  } catch (e) {
-    alert('Error cargando texto: ' + e.message);
-  }
+  const file = document.getElementById('selector').value;
+  const res = await fetch(`https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/${file}`);
+  text = await res.text();
+  document.getElementById('text').innerHTML = escapeHtml(text);
+  readText();
 }
 
-function renderText(t, highlightStart = -1, highlightEnd = -1) {
-  if (highlightStart >= 0 && highlightEnd > highlightStart) {
-    const before = escapeHtml(t.substring(0, highlightStart));
-    const highlighted = escapeHtml(t.substring(highlightStart, highlightEnd));
-    const after = escapeHtml(t.substring(highlightEnd));
-    document.getElementById('text').innerHTML = before + '<span class="highlight">' + highlighted + '</span>' + after;
-  } else {
-    document.getElementById('text').innerHTML = escapeHtml(t);
-  }
-}
-
-function escapeHtml(str) {
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>');
-}
-
-function prepareWordBoundaries() {
-  const regex = /\b\w+\b/g;
-  let match;
-  while ((match = regex.exec(text)) !== null) {
-    wordBoundaries.push({ start: match.index, end: match.index + match[0].length });
-  }
-}
-
-function startReading(content) {
+function readText() {
+  if (!text) return;
   speechSynthesis.cancel();
-  utterance = new SpeechSynthesisUtterance(content);
+  utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'en-GB';
   utterance.rate = parseFloat(document.getElementById('rate').value);
   utterance.voice = voices.find(v => v.lang === 'en-GB') || voices[0];
-  currentWordIndex = 0;
+
+  lastSentence = '';
+  lastBoundaryCharIndex = 0;
 
   utterance.onboundary = event => {
     if (event.name === 'word') {
-      currentWordIndex = wordBoundaries.findIndex(w => w.start === event.charIndex);
-      if (currentWordIndex === -1) {
-        // fallback: find closest start
-        currentWordIndex = wordBoundaries.findIndex(w => w.start > event.charIndex);
-        if (currentWordIndex > 0) currentWordIndex--;
-      }
-      if (currentWordIndex >= 0) {
-        const w = wordBoundaries[currentWordIndex];
-        renderText(text, w.start, w.end);
-      }
+      highlightWord(event.charIndex, event.charLength);
+      // Actualizamos última frase guardada buscando frases alrededor
+      lastSentence = extractCurrentSentence(event.charIndex);
     }
   };
 
   utterance.onend = () => {
-    renderText(text);
+    clearHighlight();
   };
 
   speechSynthesis.speak(utterance);
@@ -147,48 +101,54 @@ function resumeSpeech() {
 }
 
 function repeatLastSentence() {
-  if (!text || wordBoundaries.length === 0) return alert('No hay texto cargado.');
-
-  // Encuentra el inicio de la frase: busca el punto anterior a la palabra actual
-  let startPos = 0;
-  if (currentWordIndex > 0) {
-    startPos = text.lastIndexOf('.', wordBoundaries[currentWordIndex].start - 1);
-    startPos = startPos === -1 ? 0 : startPos + 1;
+  if (!lastSentence) {
+    alert('No hay frase para repetir');
+    return;
   }
-
-  // Encuentra el fin de la frase: el próximo punto o final del texto
-  let endPos = text.indexOf('.', wordBoundaries[currentWordIndex].start);
-  endPos = endPos === -1 ? text.length : endPos + 1;
-
-  const sentence = text.substring(startPos, endPos).trim();
-  if (!sentence) return alert('No se encontró frase para repetir.');
-
   speechSynthesis.cancel();
-  utterance = new SpeechSynthesisUtterance(sentence);
-  utterance.lang = 'en-GB';
-  utterance.rate = parseFloat(document.getElementById('rate').value);
-  utterance.voice = voices.find(v => v.lang === 'en-GB') || voices[0];
-  utterance.onboundary = event => {
+  const repeatUtterance = new SpeechSynthesisUtterance(lastSentence);
+  repeatUtterance.lang = 'en-GB';
+  repeatUtterance.rate = parseFloat(document.getElementById('rate').value);
+  repeatUtterance.voice = voices.find(v => v.lang === 'en-GB') || voices[0];
+
+  repeatUtterance.onboundary = event => {
     if (event.name === 'word') {
-      // Solo subrayar dentro de la frase repetida, calcula índice relativo
-      const relIndex = event.charIndex + startPos;
-      const idx = wordBoundaries.findIndex(w => w.start === relIndex);
-      if (idx !== -1) {
-        const w = wordBoundaries[idx];
-        renderText(text, w.start, w.end);
-      }
+      highlightWord(event.charIndex, event.charLength);
     }
   };
-  utterance.onend = () => {
-    renderText(text);
+
+  repeatUtterance.onend = () => {
+    clearHighlight();
   };
-  speechSynthesis.speak(utterance);
+
+  speechSynthesis.speak(repeatUtterance);
 }
 
-document.getElementById('btnRead').addEventListener('click', () => startReading(text));
-document.getElementById('btnPause').addEventListener('click', pauseSpeech);
-document.getElementById('btnResume').addEventListener('click', resumeSpeech);
-document.getElementById('btnRepeat').addEventListener('click', repeatLastSentence);
+function extractCurrentSentence(charIndex) {
+  const before = text.lastIndexOf('.', charIndex);
+  const start = before === -1 ? 0 : before + 1;
+  const after = text.indexOf('.', charIndex);
+  const end = after === -1 ? text.length : after + 1;
+  return text.substring(start, end).trim();
+}
+
+function highlightWord(start, length) {
+  const container = document.getElementById('text');
+  const before = escapeHtml(text.substring(0, start));
+  const word = escapeHtml(text.substring(start, start + length));
+  const after = escapeHtml(text.substring(start + length));
+  container.innerHTML = before + '<span class="highlight">' + word + '</span>' + after;
+}
+
+function clearHighlight() {
+  document.getElementById('text').innerHTML = escapeHtml(text);
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
 
 window.onload = loadSelector;
 </script>

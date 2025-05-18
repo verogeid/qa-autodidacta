@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Inglés Técnico - Audiolibro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inglés Técnico - Audiolibro Mejorado</title>
   <style>
     body { font-family: sans-serif; padding: 2rem; max-width: 700px; margin: auto; }
     select, button, input[type="range"] { margin: 0.5rem 0; padding: 0.5rem; }
@@ -12,25 +12,37 @@
   </style>
 </head>
 <body>
-  <h1>Inglés Técnico - Audiolibro</h1>
+  <h1>Inglés Técnico - Audiolibro Mejorado</h1>
   <label for="selector">Selecciona un tema:</label>
-  <select id="selector"></select><br/>
+  <select id="selector"></select><br />
   <label for="rate">Velocidad:</label>
-  <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1">
+  <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1" />
   <div>
-    <button onclick="readText()">Leer</button>
-    <button onclick="pauseSpeech()">Pausar</button>
-    <button onclick="resumeSpeech()">Reanudar</button>
-    <button onclick="repeatLastSentence()">Repetir frase</button>
+    <button id="btnRead">Leer</button>
+    <button id="btnPause">Pausar</button>
+    <button id="btnResume" disabled>Reanudar</button>
+    <button id="btnRepeat">Repetir frase</button>
   </div>
   <div id="text"></div>
 
   <script>
     let text = '';
-    let utterance;
+    let utterance = null;
     let voices = [];
     let lastSentence = '';
     let charIndex = 0;
+    let wordIndex = 0;
+    let words = [];
+    let intervalId = null;
+    let isPausedInternal = false;
+
+    const btnRead = document.getElementById('btnRead');
+    const btnPause = document.getElementById('btnPause');
+    const btnResume = document.getElementById('btnResume');
+    const btnRepeat = document.getElementById('btnRepeat');
+    const rateControl = document.getElementById('rate');
+    const selector = document.getElementById('selector');
+    const textDiv = document.getElementById('text');
 
     window.speechSynthesis.onvoiceschanged = () => {
       voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'));
@@ -38,9 +50,7 @@
 
     async function loadSelector() {
       const res = await fetch('https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/speechs.md');
-      alert(red);
       const lines = (await res.text()).split('\n').filter(Boolean);
-      const selector = document.getElementById('selector');
       selector.innerHTML = '';
       lines.forEach(file => {
         const option = document.createElement('option');
@@ -51,49 +61,94 @@
       selector.addEventListener('change', loadTextAndRead);
       if (lines[0]) {
         selector.value = lines[0];
-        loadTextAndRead();
+        await loadTextAndRead();
       }
     }
 
     async function loadTextAndRead() {
-      const file = document.getElementById('selector').value;
+      if (speechSynthesis.speaking) speechSynthesis.cancel();
+      clearInterval(intervalId);
+      wordIndex = 0;
+      charIndex = 0;
+      lastSentence = '';
+      const file = selector.value;
       const res = await fetch(`https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/${file}`);
       text = await res.text();
-      document.getElementById('text').innerHTML = escapeHtml(text).replace(/\n/g, '<br>');
+      textDiv.innerHTML = escapeHtml(text).replace(/\n/g, '<br>');
+      words = text.split(/\s+/);
       readText();
     }
 
     function readText() {
       if (!text) return;
       speechSynthesis.cancel();
+      removeHighlight();
       utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = 'en-GB';
-      utterance.rate = parseFloat(document.getElementById('rate').value);
+      utterance.rate = parseFloat(rateControl.value);
       utterance.voice = voices.find(v => v.lang === 'en-GB') || voices.find(v => v.lang.startsWith('en'));
 
-      utterance.onboundary = function(event) {
-        if (event.name === 'word') {
-          charIndex = event.charIndex;
-          highlightWord(event.charIndex, event.charLength);
-        } else if (event.name === 'sentence') {
-          lastSentence = text.slice(event.charIndex, event.charIndex + event.charLength);
-        }
+      isPausedInternal = false;
+      btnPause.disabled = false;
+      btnResume.disabled = true;
+
+      if ('onboundary' in SpeechSynthesisUtterance.prototype) {
+        utterance.onboundary = (event) => {
+          if (event.name === 'word') {
+            charIndex = event.charIndex;
+            highlightWord(charIndex, event.charLength);
+          } else if (event.name === 'sentence') {
+            lastSentence = text.slice(event.charIndex, event.charIndex + event.charLength);
+          }
+        };
+      } else {
+        // Fallback simple highlight para navegadores sin onboundary
+        let approxIndex = 0;
+        clearInterval(intervalId);
+        intervalId = setInterval(() => {
+          if (wordIndex >= words.length) {
+            clearInterval(intervalId);
+            removeHighlight();
+            return;
+          }
+          let before = words.slice(0, wordIndex).join(' ') + ' ';
+          let currentWord = words[wordIndex];
+          let after = words.slice(wordIndex + 1).join(' ');
+          textDiv.innerHTML = escapeHtml(before) + '<span class="highlight">' + escapeHtml(currentWord) + '</span>' + escapeHtml(after);
+          wordIndex++;
+        }, 400 / parseFloat(rateControl.value));
+      }
+
+      utterance.onend = () => {
+        removeHighlight();
+        btnPause.disabled = true;
+        btnResume.disabled = true;
       };
 
       speechSynthesis.speak(utterance);
     }
 
     function pauseSpeech() {
-      if (speechSynthesis.speaking) speechSynthesis.pause();
+      if (speechSynthesis.speaking && !speechSynthesis.paused) {
+        speechSynthesis.pause();
+        isPausedInternal = true;
+        btnPause.disabled = true;
+        btnResume.disabled = false;
+      }
     }
 
     function resumeSpeech() {
-      if (speechSynthesis.paused) speechSynthesis.resume();
+      if (speechSynthesis.paused && isPausedInternal) {
+        speechSynthesis.resume();
+        isPausedInternal = false;
+        btnPause.disabled = false;
+        btnResume.disabled = true;
+      }
     }
 
     function repeatLastSentence() {
-      if (!lastSentence) return;
-      speechSynthesis.cancel();
+      if (!lastSentence) return alert('No hay frase para repetir');
+      if (speechSynthesis.speaking) speechSynthesis.cancel();
       const repeat = new SpeechSynthesisUtterance(lastSentence);
       repeat.lang = 'en-GB';
       repeat.voice = voices.find(v => v.lang === 'en-GB') || voices.find(v => v.lang.startsWith('en'));
@@ -101,11 +156,14 @@
     }
 
     function highlightWord(start, length) {
-      const element = document.getElementById('text');
       const before = text.slice(0, start);
       const word = text.slice(start, start + length);
       const after = text.slice(start + length);
-      element.innerHTML = `${escapeHtml(before)}<span class="highlight">${escapeHtml(word)}</span>${escapeHtml(after)}`.replace(/\n/g, '<br>');
+      textDiv.innerHTML = `${escapeHtml(before)}<span class="highlight">${escapeHtml(word)}</span>${escapeHtml(after)}`.replace(/\n/g, '<br>');
+    }
+
+    function removeHighlight() {
+      textDiv.innerHTML = escapeHtml(text).replace(/\n/g, '<br>');
     }
 
     function escapeHtml(str) {
@@ -113,6 +171,23 @@
                 .replace(/</g, '&lt;')
                 .replace(/>/g, '&gt;');
     }
+
+    rateControl.addEventListener('input', () => {
+      if (speechSynthesis.speaking) {
+        speechSynthesis.cancel();
+        readText();
+      }
+    });
+
+    btnRead.addEventListener('click', () => {
+      if (!speechSynthesis.speaking) {
+        readText();
+      }
+    });
+
+    btnPause.addEventListener('click', pauseSpeech);
+    btnResume.addEventListener('click', resumeSpeech);
+    btnRepeat.addEventListener('click', repeatLastSentence);
 
     window.onload = loadSelector;
   </script>

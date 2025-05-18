@@ -1,182 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Inglés Técnico - Audiolibro</title>
-  <style>
-    body { font-family: sans-serif; padding: 2rem; max-width: 700px; margin: auto; }
-    select, button, input[type="range"] { margin: 0.5rem 0; padding: 0.5rem; }
-    #text { white-space: pre-wrap; margin-top: 1rem; line-height: 1.6; }
-    .highlight { background: yellow; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Inglés Técnico - Audiolibro</title>
+<style>
+  body { font-family: sans-serif; max-width: 700px; margin: 2rem auto; padding: 1rem; }
+  select, button, input[type="range"] { margin: 0.5rem 0; padding: 0.5rem; }
+  #text { white-space: pre-wrap; line-height: 1.6; margin-top: 1rem; }
+  .highlight { background-color: yellow; }
+</style>
 </head>
 <body>
-  <h1>Inglés Técnico - Audiolibro</h1>
-  <label for="selector">Selecciona un tema:</label>
-  <select id="selector"></select><br/>
-  <label for="rate">Velocidad:</label>
-  <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1">
-  <div>
-    <button onclick="readText()">Leer</button>
-    <button onclick="pauseSpeech()">Pausar</button>
-    <button onclick="resumeSpeech()">Reanudar</button>
-    <button onclick="repeatLastSentence()">Repetir frase</button>
-  </div>
-  <div id="text"></div>
+<h1>Inglés Técnico - Audiolibro</h1>
+<label for="selector">Selecciona un tema:</label>
+<select id="selector"></select><br/>
+<label for="rate">Velocidad:</label>
+<input type="range" id="rate" min="0.5" max="2" step="0.1" value="1" />
+<div>
+  <button id="btnRead">Leer</button>
+  <button id="btnPause">Pausar</button>
+  <button id="btnResume">Reanudar</button>
+  <button id="btnRepeat">Repetir frase</button>
+</div>
+<div id="text"></div>
 
-  <script>
-    let text = '';
-    let utterance;
-    let voices = [];
-    let wordIndices = [];
-    let currentWordIndex = 0;
-    let lastSentenceText = '';
+<script>
+let text = '';
+let utterance = null;
+let voices = [];
+let wordBoundaries = [];
+let currentWordIndex = 0;
 
-    // Carga las voces disponibles (en inglés preferiblemente)
-    function loadVoices() {
-      voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'));
+function loadVoices() {
+  voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'));
+}
+if (speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = loadVoices;
+}
+loadVoices();
+
+async function loadSelector() {
+  try {
+    const res = await fetch('https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/speechs.md');
+    if (!res.ok) throw new Error('No se pudo cargar la lista');
+    const lines = (await res.text()).split('\n').filter(Boolean);
+    const selector = document.getElementById('selector');
+    selector.innerHTML = '';
+    lines.forEach(file => {
+      const option = document.createElement('option');
+      option.value = file.trim();
+      option.textContent = file.replace('.md', '').replace(/-/g, ' ');
+      selector.appendChild(option);
+    });
+    selector.addEventListener('change', () => {
+      loadTextAndRead();
+    });
+    if (lines.length) {
+      selector.value = lines[0].trim();
+      loadTextAndRead();
     }
-    if (speechSynthesis.onvoiceschanged !== undefined) {
-      speechSynthesis.onvoiceschanged = loadVoices;
-    }
-    loadVoices();
+  } catch (e) {
+    alert('Error cargando lista de temas: ' + e.message);
+  }
+}
 
-    // Carga la lista de temas
-    async function loadSelector() {
-      try {
-        const res = await fetch('https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/speechs.md');
-        if (!res.ok) throw new Error('No se pudo cargar la lista');
-        const lines = (await res.text()).split('\n').filter(Boolean);
-        const selector = document.getElementById('selector');
-        selector.innerHTML = '';
-        lines.forEach(file => {
-          const option = document.createElement('option');
-          option.value = file.trim();
-          option.textContent = file.replace('.md', '').replace(/-/g, ' ');
-          selector.appendChild(option);
-        });
-        selector.addEventListener('change', () => {
-          loadTextAndRead();
-        });
-        if (lines.length) {
-          selector.value = lines[0].trim();
-          loadTextAndRead();
-        }
-      } catch (e) {
-        alert('Error cargando lista de temas: ' + e.message);
+async function loadTextAndRead() {
+  try {
+    const file = document.getElementById('selector').value;
+    const res = await fetch(`https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/${file}`);
+    if (!res.ok) throw new Error('No se pudo cargar el texto');
+    text = await res.text();
+    currentWordIndex = 0;
+    wordBoundaries = [];
+    renderText(text);
+    prepareWordBoundaries();
+    startReading(text);
+  } catch (e) {
+    alert('Error cargando texto: ' + e.message);
+  }
+}
+
+function renderText(t, highlightStart = -1, highlightEnd = -1) {
+  if (highlightStart >= 0 && highlightEnd > highlightStart) {
+    const before = escapeHtml(t.substring(0, highlightStart));
+    const highlighted = escapeHtml(t.substring(highlightStart, highlightEnd));
+    const after = escapeHtml(t.substring(highlightEnd));
+    document.getElementById('text').innerHTML = before + '<span class="highlight">' + highlighted + '</span>' + after;
+  } else {
+    document.getElementById('text').innerHTML = escapeHtml(t);
+  }
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>');
+}
+
+function prepareWordBoundaries() {
+  const regex = /\b\w+\b/g;
+  let match;
+  while ((match = regex.exec(text)) !== null) {
+    wordBoundaries.push({ start: match.index, end: match.index + match[0].length });
+  }
+}
+
+function startReading(content) {
+  speechSynthesis.cancel();
+  utterance = new SpeechSynthesisUtterance(content);
+  utterance.lang = 'en-GB';
+  utterance.rate = parseFloat(document.getElementById('rate').value);
+  utterance.voice = voices.find(v => v.lang === 'en-GB') || voices[0];
+  currentWordIndex = 0;
+
+  utterance.onboundary = event => {
+    if (event.name === 'word') {
+      currentWordIndex = wordBoundaries.findIndex(w => w.start === event.charIndex);
+      if (currentWordIndex === -1) {
+        // fallback: find closest start
+        currentWordIndex = wordBoundaries.findIndex(w => w.start > event.charIndex);
+        if (currentWordIndex > 0) currentWordIndex--;
+      }
+      if (currentWordIndex >= 0) {
+        const w = wordBoundaries[currentWordIndex];
+        renderText(text, w.start, w.end);
       }
     }
+  };
 
-    // Carga el texto y prepara indices de palabras para subrayar
-    async function loadTextAndRead() {
-      try {
-        const file = document.getElementById('selector').value;
-        const res = await fetch(`https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/${file}`);
-        if (!res.ok) throw new Error('No se pudo cargar el texto');
-        text = await res.text();
-        document.getElementById('text').innerHTML = escapeHtml(text).replace(/\n/g, '<br>');
-        prepareWordIndices();
-        readText();
-      } catch (e) {
-        alert('Error cargando texto: ' + e.message);
+  utterance.onend = () => {
+    renderText(text);
+  };
+
+  speechSynthesis.speak(utterance);
+}
+
+function pauseSpeech() {
+  if (speechSynthesis.speaking && !speechSynthesis.paused) {
+    speechSynthesis.pause();
+  }
+}
+
+function resumeSpeech() {
+  if (speechSynthesis.paused) {
+    speechSynthesis.resume();
+  }
+}
+
+function repeatLastSentence() {
+  if (!text || wordBoundaries.length === 0) return alert('No hay texto cargado.');
+
+  // Encuentra el inicio de la frase: busca el punto anterior a la palabra actual
+  let startPos = 0;
+  if (currentWordIndex > 0) {
+    startPos = text.lastIndexOf('.', wordBoundaries[currentWordIndex].start - 1);
+    startPos = startPos === -1 ? 0 : startPos + 1;
+  }
+
+  // Encuentra el fin de la frase: el próximo punto o final del texto
+  let endPos = text.indexOf('.', wordBoundaries[currentWordIndex].start);
+  endPos = endPos === -1 ? text.length : endPos + 1;
+
+  const sentence = text.substring(startPos, endPos).trim();
+  if (!sentence) return alert('No se encontró frase para repetir.');
+
+  speechSynthesis.cancel();
+  utterance = new SpeechSynthesisUtterance(sentence);
+  utterance.lang = 'en-GB';
+  utterance.rate = parseFloat(document.getElementById('rate').value);
+  utterance.voice = voices.find(v => v.lang === 'en-GB') || voices[0];
+  utterance.onboundary = event => {
+    if (event.name === 'word') {
+      // Solo subrayar dentro de la frase repetida, calcula índice relativo
+      const relIndex = event.charIndex + startPos;
+      const idx = wordBoundaries.findIndex(w => w.start === relIndex);
+      if (idx !== -1) {
+        const w = wordBoundaries[idx];
+        renderText(text, w.start, w.end);
       }
     }
+  };
+  utterance.onend = () => {
+    renderText(text);
+  };
+  speechSynthesis.speak(utterance);
+}
 
-    // Prepara array de índices donde empiezan las palabras (para highlight)
-    function prepareWordIndices() {
-      wordIndices = [];
-      const wordRegex = /\b\w+\b/g;
-      let match;
-      while ((match = wordRegex.exec(text)) !== null) {
-        wordIndices.push({start: match.index, length: match[0].length});
-      }
-      currentWordIndex = 0;
-    }
+document.getElementById('btnRead').addEventListener('click', () => startReading(text));
+document.getElementById('btnPause').addEventListener('click', pauseSpeech);
+document.getElementById('btnResume').addEventListener('click', resumeSpeech);
+document.getElementById('btnRepeat').addEventListener('click', repeatLastSentence);
 
-    // Lee el texto y resalta palabra por palabra
-    function readText() {
-      if (!text) return;
-      speechSynthesis.cancel();
-      utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'en-GB';
-      utterance.rate = parseFloat(document.getElementById('rate').value);
-      utterance.voice = voices.find(v => v.lang === 'en-GB') || voices[0];
-
-      utterance.onboundary = (event) => {
-        if (event.name === 'word') {
-          const charIndex = event.charIndex;
-          highlightWordByCharIndex(charIndex);
-          currentWordIndex = wordIndices.findIndex(w => w.start === charIndex);
-        }
-      };
-
-      utterance.onend = () => {
-        clearHighlight();
-      };
-
-      speechSynthesis.speak(utterance);
-    }
-
-    function highlightWordByCharIndex(charIndex) {
-      const element = document.getElementById('text');
-      // Busca la palabra que empieza en charIndex o justo antes
-      let wi = wordIndices.find(w => w.start === charIndex);
-      if (!wi) return;
-      const before = text.slice(0, wi.start);
-      const word = text.slice(wi.start, wi.start + wi.length);
-      const after = text.slice(wi.start + wi.length);
-      element.innerHTML = escapeHtml(before) + '<span class="highlight">' + escapeHtml(word) + '</span>' + escapeHtml(after);
-      element.innerHTML = element.innerHTML.replace(/\n/g, '<br>');
-    }
-
-    function clearHighlight() {
-      document.getElementById('text').innerHTML = escapeHtml(text).replace(/\n/g, '<br>');
-    }
-
-    function pauseSpeech() {
-      if (speechSynthesis.speaking && !speechSynthesis.paused) {
-        speechSynthesis.pause();
-      }
-    }
-
-    function resumeSpeech() {
-      if (speechSynthesis.paused) {
-        speechSynthesis.resume();
-      }
-    }
-
-    // Extrae y repite la última frase, busca el punto final antes de la palabra actual
-    function repeatLastSentence() {
-      if (!text || !wordIndices.length) return alert('No hay texto cargado.');
-      let startIndex = 0;
-      if (currentWordIndex > 0) {
-        // Busca el último punto antes de la palabra actual para obtener la frase entera
-        startIndex = text.lastIndexOf('.', wordIndices[currentWordIndex].start - 1);
-        startIndex = startIndex === -1 ? 0 : startIndex + 1;
-      }
-      let endIndex = text.indexOf('.', wordIndices[currentWordIndex].start);
-      endIndex = endIndex === -1 ? text.length : endIndex + 1;
-      lastSentenceText = text.substring(startIndex, endIndex).trim();
-
-      if (!lastSentenceText) return alert('No se encontró frase para repetir.');
-
-      speechSynthesis.cancel();
-      const repeatUtterance = new SpeechSynthesisUtterance(lastSentenceText);
-      repeatUtterance.lang = 'en-GB';
-      repeatUtterance.rate = parseFloat(document.getElementById('rate').value);
-      repeatUtterance.voice = voices.find(v => v.lang === 'en-GB') || voices[0];
-      speechSynthesis.speak(repeatUtterance);
-    }
-
-    // Escape HTML para evitar inyección
-    function escapeHtml(str) {
-      return str.replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;');
-    }
-
-    window.onload = loadSelector;
-  </script>
+window.onload = loadSelector;
+</script>
 </body>
 </html>

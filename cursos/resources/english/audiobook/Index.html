@@ -56,7 +56,7 @@
 
     async function loadTextAndRead() {
       const file = document.getElementById('selector').value;
-      const res = await fetch(`https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/speechs/${file}`);
+      const res = await fetch(`https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/${file}`);
       text = await res.text();
       document.getElementById('text').innerHTML = escapeHtml(text).replace(/\n/g, '<br>');
       readText();

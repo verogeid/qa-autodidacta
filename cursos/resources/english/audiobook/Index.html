@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inglés Técnico - Audiolibro</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; max-width: 600px; margin: auto; }
+    select, button { margin: 0.5rem 0; padding: 0.5rem; }
+    #text { white-space: pre-wrap; margin-top: 1rem; }
+    .highlight { background: yellow; }
+  </style>
+</head>
+<body>
+  <h1>Inglés Técnico - Audiolibro</h1>
+  <label for="selector">Selecciona un tema:</label>
+  <select id="selector">
+    <option value="commands.txt">Comandos</option>
+    <option value="ci-cd.txt">CI/CD</option>
+    <option value="soft-skills.txt">Soft Skills</option>
+  </select><br/>
+  <button onclick="loadText()">Cargar texto</button>
+  <button onclick="readText()">Leer en voz alta</button>
+  <label for="rate">Velocidad:</label>
+  <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1">
+  <div id="text"></div>
+
+  <script>
+    let text = '';
+    let utterance;
+
+    function loadText() {
+      const file = document.getElementById('selector').value;
+      fetch(`https://verogeid.github.io/qa-autodidacta/cursos/resources/english/${file}`)
+        .then(response => response.text())
+        .then(data => {
+          text = data;
+          document.getElementById('text').textContent = text;
+        });
+    }
+
+    function readText() {
+      if (!text) return alert('Primero carga un texto.');
+      if (utterance) speechSynthesis.cancel();
+
+      utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      utterance.rate = parseFloat(document.getElementById('rate').value);
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>

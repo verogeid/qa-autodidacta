@@ -76,11 +76,10 @@
 
     // Divide el texto en frases y pausa especiales [pause], [long pause]
     function splitTextToPhrases(txt) {
-      // RegEx para dividir por frases, incluyendo pausas
-      const regex = /(\[pause\]|\[long pause\]|[^.!?]+[.!?]?)/gi;
-      const arr = txt.match(regex).map(s => s.trim()).filter(Boolean);
-      return arr;
+      const regex = /\[pause\]|\[long pause\]|[^.!?\n]+[.!?]+/gi;
+      return txt.match(regex)?.map(s => s.trim()) || [];
     }
+
 
     function speakCurrentPhrase() {
       if (currentIndex >= phrases.length) return;

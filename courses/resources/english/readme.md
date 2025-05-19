@@ -40,6 +40,7 @@ Además de los contenidos semanales, puedes usar herramientas como:
 
 ### Audiolibro especializado
 
+⚠️ Only works in Google Chrome browser
 [Audiobook IT profesional](https://verogeid.github.io/qa-autodidacta/courses/resources/english/audiobook/index.html)
 
 ### Comparador de pronunciación (Python)

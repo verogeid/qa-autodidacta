@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>React - Audiolibro</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      align-items: center;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+      align-items: center;
+    }
+
+    /* Móvil: controles en columna */
+    @media (max-width: 599px) {
+      .controls {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* Escritorio: controles en fila */
+    @media (min-width: 600px) {
+      .controls {
+        flex-direction: row;
+      }
+    }
+
+    main {
+      padding: 1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      overflow-y: auto;
+      flex: 2;
+    }
+
+    #controls {
+      position: fixed;
+      bottom: 0;
+      left: 0; right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background: #fff;
+      border-top: 1px solid #ccc;
+      padding: 0.5rem;
+      z-index: 100;
+    }
+
+    button {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    div.buttons-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>React</h1>
+    <div class="controls">
+      <div class="control-group">
+        <label for="selector">Tema:</label>
+        <select id="selector"></select>
+      </div>
+    </div>
+  </header>
+
+  <main><div id="text"></div></main>
+
+  <div class="buttons-container">
+    <button id="btnRead">▶️ Leer</button>
+    <button id="btnPause">⏸️ Pausar</button>
+    <button id="btnRepeat">🔁 Repetir frase</button>
+  </div>
+
+  <script>
+    let voices = [];
+    let text = '';
+    let phrases = [];
+    let currentIndex = 0;
+    let utterance;
+    let isPaused = false;
+    let repeatPhrase = '';
+    let timeoutId;
+    const secPause = 2000;
+    const secLongPause = 4000;
+    const lang = 'es';
+    const langCountry = 'es-ES';
+
+    window.speechSynthesis.onvoiceschanged = () => {
+      voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'));
+    };
+
+    async function loadSelector() {
+      const res = await fetch('https://verogeid.github.io/qa-autodidacta/courses/dev-and-ia/react/audiolibro/lessons.md');
+      const lines = (await res.text()).split('\n').filter(Boolean);
+      const selector = document.getElementById('selector');
+      selector.innerHTML = '';
+      lines.forEach(file => {
+        const option = document.createElement('option');
+        option.value = file;
+        option.textContent = file.replace('.md', '');
+        selector.appendChild(option);
+      });
+      selector.addEventListener('change', loadText);
+      if (lines[0]) {
+        selector.value = lines[0];
+        loadText();
+      }
+    }
+
+    async function loadText() {
+      clearTimeout(timeoutId);
+      speechSynthesis.cancel();
+      currentIndex = 0;
+      repeatPhrase = '';
+      const file = document.getElementById('selector').value;
+      const res = await fetch(`https://verogeid.github.io/qa-autodidacta/courses/dev-and-ia/react/audiolibro/lessons/${file}`);
+      text = await res.text();
+      document.getElementById('text').textContent = text;
+      phrases = splitTextToPhrases(text);
+      highlightCurrentPhrase();
+    }
+
+    function splitTextToPhrases(txt) {
+      const lines = txt.split('\n');
+      const result = [];
+      for (let line of lines) {
+        if (line.trim() === '') {
+          result.push('\n');
+          continue;
+        }
+        let parts = [];
+        const regex = /\[pause\]|\[long pause\]|[^.!?\[\]]+[.!?]?/gi;
+        let match;
+        while ((match = regex.exec(line)) !== null) {
+          let phrase = match[0].trim();
+          if (phrase) parts.push(phrase);
+        }
+        if (parts.length === 0) parts.push(line);
+        result.push(...parts, '\n');
+      }
+      return result.filter(p => p !== '');
+    }
+
+    function speakCurrentPhrase() {
+      if (currentIndex >= phrases.length) return;
+
+      const phrase = phrases[currentIndex];
+      repeatPhrase = phrase;
+
+      if (phrase === '\n') {
+        currentIndex++;
+        highlightCurrentPhrase();
+        speakCurrentPhrase();
+        return;
+      }
+
+      if ((phrase.toLowerCase() === '[pause]') || (phrase.toLowerCase() === '---')) {
+        timeoutId = setTimeout(() => {
+          currentIndex++;
+          highlightCurrentPhrase();
+          speakCurrentPhrase();
+        }, secPause);
+        return;
+      }
+
+      if (phrase.toLowerCase() === '[long pause]') {
+        timeoutId = setTimeout(() => {
+          currentIndex++;
+          highlightCurrentPhrase();
+          speakCurrentPhrase();
+        }, secLongPause);
+        return;
+      }
+
+      utterance = new SpeechSynthesisUtterance(phrase);
+      utterance.lang = langCountry;
+      utterance.rate = parseFloat(document.getElementById('rate').value);
+      utterance.voice = voices.find(v => v.lang === langCountry) || voices.find(v => v.lang.startsWith(lang));
+
+      utterance.onend = () => {
+        currentIndex++;
+        highlightCurrentPhrase();
+        if (!isPaused) speakCurrentPhrase();
+      };
+
+      speechSynthesis.speak(utterance);
+    }
+
+    function highlightCurrentPhrase() {
+      const container = document.getElementById('text');
+      const highlighted = phrases.map((p, i) => {
+        let display = p;
+        if (p === '---') return '<hr>';
+        if (p === '\n') return '<br>';
+        if (p === '[pause]') return '';
+        if (p === '[long pause]') return '_________';
+        const safe = escapeHtml(display);
+        return (i === currentIndex) ? `<mark>${safe}</mark>` : safe;
+      });
+      container.innerHTML = highlighted.join(' ');
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    document.getElementById('btnRead').onclick = () => {
+      if (speechSynthesis.speaking) speechSynthesis.cancel();
+      isPaused = false;
+      speakCurrentPhrase();
+    };
+
+    document.getElementById('btnPause').onclick = () => {
+      if (speechSynthesis.speaking && !speechSynthesis.paused) {
+        speechSynthesis.pause();
+        isPaused = true;
+      }
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+      }
+    };
+
+    document.getElementById('btnRepeat').onclick = () => {
+      if (speechSynthesis.speaking) speechSynthesis.cancel();
+      if (!repeatPhrase) return alert('No phrase to repeat');
+      isPaused = false;
+      utterance = new SpeechSynthesisUtterance(repeatPhrase);
+      utterance.lang = 'en-GB';
+      utterance.rate = parseFloat(document.getElementById('rate').value);
+      utterance.voice = voices.find(v => v.lang === 'en-GB') || voices.find(v => v.lang.startsWith('en'));
+      utterance.onend = () => {
+        highlightCurrentPhrase();
+      };
+      speechSynthesis.speak(utterance);
+    };
+
+    window.onload = loadSelector;
+  </script>
+</body>
+</html>

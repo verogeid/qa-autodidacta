@@ -7,7 +7,7 @@ Listen, repeat, and speak with confidence.
 ---
 
 My name is Diego. [pause].
-I am a QA Engineer. [pause].
+I am a QA Automation Engineer. [pause].
 I live in Spain. [pause].
 I have two children. [pause].
 I work with Cypress. [pause].

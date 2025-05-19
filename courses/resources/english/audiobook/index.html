@@ -13,7 +13,7 @@
       border-bottom: 1px solid #ccc;
       padding: 1rem;
       z-index: 10;
-      align: center;
+      align-content: center;
     }
     main {
       margin-top: 200px;
@@ -106,10 +106,10 @@
           result.push('\n');
           continue;
         }
-        if (line.trim() === '---') {
-          result.push('[pause]');
+        /*if (line.trim() === '---') {
+          result.push('<hr>');
           continue;
-        }
+        }*/
         let parts = [];
         const regex = /\[pause\]|\[long pause\]|[^.!?\[\]]+[.!?]?/gi;
         let match;
@@ -172,7 +172,7 @@
       const container = document.getElementById('text');
       const highlighted = phrases.map((p, i) => {
         let display = p;
-        if (p === '[pause]') display = '---';
+        //if (p === '[pause]') display = '---';
         if (p === '\n') return '<br>';
         const safe = escapeHtml(display);
         return (i === currentIndex) ? `<mark>${safe}</mark>` : safe;

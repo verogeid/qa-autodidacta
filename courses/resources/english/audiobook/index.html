@@ -67,7 +67,7 @@
       currentIndex = 0;
       repeatPhrase = '';
       const file = document.getElementById('selector').value;
-      const res = await fetch(`https://verogeid.github.io/qa-autodidacta/courses/resources/english/audiobook/${file}`);
+      const res = await fetch(`https://verogeid.github.io/qa-autodidacta/courses/resources/english/audiobook/speechs/${file}`);
       text = await res.text();
       document.getElementById('text').textContent = text;
       phrases = splitTextToPhrases(text);

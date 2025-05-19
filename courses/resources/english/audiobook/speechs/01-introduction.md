@@ -36,7 +36,7 @@ Do you work in a team? [long pause]
 
 Mini dialogue:  
 — Hello, Diego. Can you introduce yourself?  
-— Sure. My name is Diego. I’m a QA Engineer from Spain. I work with Cypress and Postman. I have more than five years of experience. I love working in agile teams.  
+— Sure. My name is Diego. I’m a QA Engineer from Spain. I work with Cypress and Postman. I have more than seven years of experience. I love working in agile teams.  
 
 — What kind of testing do you do?  
 — I test APIs and web applications. I write automated tests and integrate them into CI/CD pipelines.

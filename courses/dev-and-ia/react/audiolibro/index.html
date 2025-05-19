@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,14 +12,12 @@
       flex-direction: column;
       height: 100vh;
     }
-
     header {
       display: flex;
       flex-direction: column;
       padding: 1rem;
       align-items: center;
     }
-
     .controls {
       display: flex;
       flex-wrap: wrap;
@@ -27,22 +25,17 @@
       margin-top: 1rem;
       align-items: center;
     }
-
-    /* Móvil: controles en columna */
     @media (max-width: 599px) {
       .controls {
         flex-direction: column;
         align-items: flex-start;
       }
     }
-
-    /* Escritorio: controles en fila */
     @media (min-width: 600px) {
       .controls {
         flex-direction: row;
       }
     }
-
     main {
       padding: 1rem;
       max-width: 700px;
@@ -50,32 +43,23 @@
       overflow-y: auto;
       flex: 2;
     }
-
-    #controls {
-      position: fixed;
-      bottom: 0;
-      left: 0; right: 0;
+    .buttons-container {
       display: flex;
       justify-content: center;
       gap: 1rem;
+      padding: 0.5rem;
+      position: fixed;
+      bottom: 0;
+      left: 0; right: 0;
       background: #fff;
       border-top: 1px solid #ccc;
-      padding: 0.5rem;
       z-index: 100;
     }
-
     button {
       font-size: 1.5rem;
       background: none;
       border: none;
       cursor: pointer;
-    }
-
-    div.buttons-container {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      padding: 0.5rem;
     }
   </style>
 </head>
@@ -89,9 +73,7 @@
       </div>
     </div>
   </header>
-
   <main><div id="text"></div></main>
-
   <div class="buttons-container">
     <button id="btnRead">▶️ Leer</button>
     <button id="btnPause">⏸️ Pausar</button>
@@ -105,15 +87,13 @@
     let currentIndex = 0;
     let utterance;
     let isPaused = false;
-    let repeatPhrase = '';
-    let timeoutId;
-    const secPause = 2000;
-    const secLongPause = 4000;
+    let isRepeating = false;
     const lang = 'es';
     const langCountry = 'es-ES';
+    const pitch = 1.2;
 
     window.speechSynthesis.onvoiceschanged = () => {
-      voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'));
+      voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith(lang));
     };
 
     async function loadSelector() {
@@ -135,10 +115,11 @@
     }
 
     async function loadText() {
-      clearTimeout(timeoutId);
       speechSynthesis.cancel();
+      if (utterance) utterance.onend = null;
+      isPaused = false;
+      isRepeating = false;
       currentIndex = 0;
-      repeatPhrase = '';
       const file = document.getElementById('selector').value;
       const res = await fetch(`https://verogeid.github.io/qa-autodidacta/courses/dev-and-ia/react/audiolibro/lessons/${file}`);
       text = await res.text();
@@ -170,44 +151,28 @@
 
     function speakCurrentPhrase() {
       if (currentIndex >= phrases.length) return;
+      if (isPaused || isRepeating) return;
 
       const phrase = phrases[currentIndex];
-      repeatPhrase = phrase;
-
-      if (phrase === '\n') {
+      if (phrase === '[pause]' || phrase === '[long pause]') {
         currentIndex++;
-        highlightCurrentPhrase();
-        speakCurrentPhrase();
-        return;
-      }
-
-      if ((phrase.toLowerCase() === '[pause]') || (phrase.toLowerCase() === '---')) {
-        timeoutId = setTimeout(() => {
-          currentIndex++;
-          highlightCurrentPhrase();
-          speakCurrentPhrase();
-        }, secPause);
-        return;
-      }
-
-      if (phrase.toLowerCase() === '[long pause]') {
-        timeoutId = setTimeout(() => {
-          currentIndex++;
-          highlightCurrentPhrase();
-          speakCurrentPhrase();
-        }, secLongPause);
+        setTimeout(speakCurrentPhrase, phrase === '[pause]' ? 2000 : 4000);
         return;
       }
 
       utterance = new SpeechSynthesisUtterance(phrase);
       utterance.lang = langCountry;
-      utterance.rate = parseFloat(document.getElementById('rate').value);
-      utterance.voice = voices.find(v => v.lang === langCountry) || voices.find(v => v.lang.startsWith(lang));
+      utterance.pitch = pitch;
+      utterance.rate = 1;
+      utterance.voice = voices.find(v => v.name.includes('Google español')) || voices[0];
+
+      highlightCurrentPhrase();
 
       utterance.onend = () => {
-        currentIndex++;
-        highlightCurrentPhrase();
-        if (!isPaused) speakCurrentPhrase();
+        if (!isPaused && !isRepeating) {
+          currentIndex++;
+          speakCurrentPhrase();
+        }
       };
 
       speechSynthesis.speak(utterance);
@@ -216,12 +181,9 @@
     function highlightCurrentPhrase() {
       const container = document.getElementById('text');
       const highlighted = phrases.map((p, i) => {
-        let display = p;
-        if (p === '---') return '<hr>';
         if (p === '\n') return '<br>';
-        if (p === '[pause]') return '';
-        if (p === '[long pause]') return '_________';
-        const safe = escapeHtml(display);
+        if (p === '[pause]' || p === '[long pause]') return '';
+        const safe = escapeHtml(p);
         return (i === currentIndex) ? `<mark>${safe}</mark>` : safe;
       });
       container.innerHTML = highlighted.join(' ');
@@ -232,34 +194,51 @@
     }
 
     document.getElementById('btnRead').onclick = () => {
-      if (speechSynthesis.speaking) speechSynthesis.cancel();
-      isPaused = false;
-      speakCurrentPhrase();
+      if (speechSynthesis.speaking && isPaused) {
+        speechSynthesis.resume();
+        isPaused = false;
+      } else {
+        if (speechSynthesis.speaking) speechSynthesis.cancel();
+        isPaused = false;
+        isRepeating = false;
+        speakCurrentPhrase();
+      }
     };
 
     document.getElementById('btnPause').onclick = () => {
-      if (speechSynthesis.speaking && !speechSynthesis.paused) {
+      if (speechSynthesis.speaking && !isPaused) {
         speechSynthesis.pause();
         isPaused = true;
-      }
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-        timeoutId = null;
       }
     };
 
     document.getElementById('btnRepeat').onclick = () => {
-      if (speechSynthesis.speaking) speechSynthesis.cancel();
-      if (!repeatPhrase) return alert('No phrase to repeat');
-      isPaused = false;
-      utterance = new SpeechSynthesisUtterance(repeatPhrase);
-      utterance.lang = 'en-GB';
-      utterance.rate = parseFloat(document.getElementById('rate').value);
-      utterance.voice = voices.find(v => v.lang === langCountry) || voices.find(v => v.lang.startsWith(lang));
-      utterance.onend = () => {
+      if (phrases.length === 0 || currentIndex >= phrases.length) return;
+
+      const phraseToRepeat = phrases[currentIndex];
+      if (phraseToRepeat === '[pause]' || phraseToRepeat === '[long pause]') return;
+
+      if (speechSynthesis.speaking) {
+        speechSynthesis.cancel();
+      }
+
+      isRepeating = true;
+
+      const repeatUtterance = new SpeechSynthesisUtterance(phraseToRepeat);
+      repeatUtterance.lang = langCountry;
+      repeatUtterance.pitch = pitch;
+      repeatUtterance.rate = 1;
+      repeatUtterance.voice = voices.find(v => v.name.includes('Google español')) || voices[0];
+
+      highlightCurrentPhrase();
+
+      repeatUtterance.onend = () => {
+        isRepeating = false;
+        isPaused = true; // queda en pausa tras repetir
         highlightCurrentPhrase();
       };
-      speechSynthesis.speak(utterance);
+
+      speechSynthesis.speak(repeatUtterance);
     };
 
     window.onload = loadSelector;

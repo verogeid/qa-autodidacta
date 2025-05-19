@@ -22,7 +22,7 @@ Aquí encontrarás las lecciones en formato texto, pensadas para ser leídas en 
 
 ## Enlace para abrir el audiolibro
 
-Puedes abrir el archivo principal [index.html](https://verogeid.github.io/qa-autodidacta/courses/react/audiolibro/index.html) directamente en tu navegador para empezar a escuchar.
+Puedes abrir el archivo principal [index.html](https://verogeid.github.io/qa-autodidacta/courses/dev-and-ia/react/audiolibro/index.html) directamente en tu navegador para empezar a escuchar.
 
 ---
 

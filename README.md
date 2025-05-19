@@ -30,43 +30,43 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 
 ### 🧠 Fundamentos QA
 
-1. 🚧 [SSTQB Foundation Level 4](./cursos/sstqb/readme.md) 🚧
+1. 🚧 [SSTQB Foundation Level 4]<!-- (./courses/qa-fundaments/sstqb/readme.md)--> 🚧
 
 ### 🛠️ Gestión y Herramientas
 
-3. 🚧 [Docker para testers](./cursos/docker/readme.md) 🚧
-4. 🚧 [Kubernetes](./cursos/kubernetes/readme.md) 🚧
+3. 🚧 [Docker para testers]<!-- (./courses/containers/docker/readme.md)--> 🚧
+4. 🚧 [Kubernetes]<!-- (./courses/containers/kubernetes/readme.md)--> 🚧
 
 ### 🧪 Automatización de Pruebas
 
-5. 🚧 [Playwright: Automatización de pruebas](./cursos/playwright/readme.md) 🚧
-6. 🚧 [Katalon Studio: Pruebas Mobile](./cursos/katalon/readme.md) 🚧
-7. [Postman y Newman: Pruebas API](./cursos/Postman/readme.md)
+5. 🚧 [Playwright: Automatización de pruebas]<!-- (./courses/automation/playwright/readme.md)--> 🚧
+6. 🚧 [Katalon Studio: Pruebas Mobile]<!-- (./courses/automation/katalon/readme.md)--> 🚧
+7. [Postman y Newman: Pruebas API](./courses/automation/postman/readme.md)
 
 ### ⚙️ Integración y Entrega Continua
 
-8. 🚧 [Jenkins](./cursos/jenkins/readme.md) 🚧
-9. 🚧 [GitHub Actions](./cursos/github-actions/readme.md) 🚧
+8. 🚧 [Jenkins]<!-- (./courses/ci-cd/jenkins/readme.md)--> 🚧
+9. 🚧 [GitHub Actions]<!-- (./courses/ci-cd/github-actions/readme.md)--> 🚧
 
 ### 📈 Performance y Carga
 
-10. 🚧 [JMeter](./cursos/jmeter/readme.md) 🚧
-11. 🚧 [K6](./cursos/k6/readme.md) 🚧
-12. 🚧 [LightHouse](./cursos/lighthouse/readme.md) 🚧
+10. 🚧 [JMeter]<!-- (./courses/performance/jmeter/readme.md)--> 🚧
+11. 🚧 [K6]<!-- (./courses/performance/k6/readme.md)--> 🚧
+12. 🚧 [LightHouse]<!-- (./courses/performance/lighthouse/lighthouse/readme.md)--> 🚧
 
 ### ⚡ Desarrollo e IA
 
-13. [HTML5 y CSS3](./cursos/html5/readme.md)
-14. 🚧 [React con TypeScript](./cursos/react/readme.md) 🚧
-15. 🚧 [FastAPI](./cursos/FastAPI/readme.md) 🚧
-16. 🚧 [C# en profundidad](./cursos/csharp/readme.md) 🚧
-17. 🚧 [IA Developer con Python](./cursos/ia-python/readme.md) 🚧
-18. [n8n: automatización de flujos](./cursos/n8n/readme.md)
+13. [HTML5 y CSS3](./courses/dev-and-ia/html5/readme.md)
+14. 🚧 [React con TypeScript]<!-- (./courses/dev-and-ia/react/readme.md)--> 🚧
+15. 🚧 [FastAPI]<!-- (./courses/dev-and-ia/fastapi/readme.md)--> 🚧
+16. 🚧 [C# en profundidad]<!-- (./courses/dev-and-ia/csharp/readme.md)--> 🚧
+17. 🚧 [IA Developer con Python]<!-- (./courses/dev-and-ia/ia-python/readme.md)--> 🚧
+18. [n8n: automatización de flujos](./courses/dev-and-ia/n8n/readme.md)
 
 ### 🚁 Bonus Track
 
-19. [English for Tech: A2 to C1](./cursos/resources/english/readme.md)
-20. 🚧 [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./cursos/helicopter/readme.md) 🚧
+19. [English for Tech: A2 to C1](./courses/resources/english/readme.md)
+20. 🚧 [Trinity: "Operator, I need a pilot program for a B-212 helicopter"]<!-- (./courses/resources/helicopter/readme.md)--> 🚧
 
 ---
 

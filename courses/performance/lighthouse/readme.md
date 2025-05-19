@@ -93,4 +93,13 @@ Cada semana incluye:
 
 ---
 
-Curso creado por Diego González Fernández — QA autodidacta, compartido con fines formativos.
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+2025 © Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

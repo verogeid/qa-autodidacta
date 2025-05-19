@@ -57,13 +57,13 @@ Cada semana contiene:
 
 ---
 
-## Licencia 
+## Licencia
 
-Licencia MIT 
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
 
 ---
 
 ## Autor
 
-Curso creado por Diego González Fernández  
-**QA Automation Engineer | Computer Tech Engineer**
+2025 © Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

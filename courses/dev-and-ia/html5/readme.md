@@ -12,6 +12,7 @@ Curso autodidacta, intensivo y práctico para dominar HTML y CSS desde cero. En 
 ## Estructura
 
 Cada semana contiene:
+
 - `README.md`: descripción teórica y contenidos
 - `tutorial.md`: guía paso a paso para aplicar lo aprendido
 - `ejercicios.md`: práctica para validar conocimientos
@@ -36,6 +37,7 @@ Cada semana contiene:
 ## Requisitos
 
 Solo necesitas:
+
 - Un navegador moderno
 - Visual Studio Code (o tu editor favorito)
 - Ganas de aprender desde cero
@@ -49,12 +51,13 @@ Solo necesitas:
 
 ---
 
-## Licencia 
+## Licencia
 
-Licencia MIT
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
 
 ---
 
 ## Autor
 
-Curso creado por Diego González Fernández, QA Automation Engineer y Computer Tech Engineer
+2025 © Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

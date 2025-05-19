@@ -102,4 +102,13 @@ Tu IA nunca debe filtrar contraseñas ni datos sensibles. Si no puede operar con
 
 ---
 
-**¡Prepárate para crear una IA útil, práctica y responsable desde cero!**
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+2025 © Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

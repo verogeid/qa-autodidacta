@@ -65,4 +65,13 @@ Curso autodidacta de React con TypeScript, orientado a desarrolladores que desea
 
 ---
 
-## Licencia: MIT
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+2025 © Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

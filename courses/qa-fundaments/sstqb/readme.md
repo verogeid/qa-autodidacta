@@ -21,42 +21,50 @@ Cada semana cuenta con:
 ## Contenido semanal
 
 ### Semana 1: Introducción al testing
+
 - ¿Qué es testing?
 - Por qué es necesario.
 - Principios del testing.
 - Actividades básicas del proceso de pruebas.
 
 ### Semana 2: Ciclo de vida del software y pruebas
+
 - Modelos de desarrollo.
 - Niveles y tipos de testing.
 - Pruebas en diferentes fases del desarrollo.
 
 ### Semana 3: Técnicas estáticas
+
 - Revisión de documentos.
 - Análisis estático de código.
 - Herramientas y buenas prácticas.
 
 ### Semana 4: Técnicas de diseño de pruebas (I)
+
 - Partición de clases de equivalencia.
 - Análisis de valores límite.
 - Pruebas de decisión.
 
 ### Semana 5: Técnicas de diseño de pruebas (II)
+
 - Tablas de decisión.
 - Transición de estados.
 - Casos de uso.
 
 ### Semana 6: Gestión de pruebas
+
 - Planificación.
 - Seguimiento y control.
 - Trazabilidad y métricas.
 
 ### Semana 7: Herramientas de prueba y automatización
+
 - Categorías de herramientas.
 - CI/CD básico con GitHub Actions.
 - Introducción a Cypress.
 
 ### Semana 8: Revisión general y simulacro de examen
+
 - Revisión por temas.
 - Simulacro real.
 - Consejos y errores comunes.
@@ -69,6 +77,15 @@ Cada semana cuenta con:
 - **Cypress / Playwright**
 - **Markdown / PlantUML**
 
+---
+
 ## Licencia
 
-MIT License
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+2025 © Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

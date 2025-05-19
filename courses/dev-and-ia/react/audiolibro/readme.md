@@ -37,8 +37,11 @@ Puedes abrir el archivo principal [index.html](https://verogeid.github.io/qa-aut
 
 ## Licencia
 
-Este proyecto es de uso libre para aprendizaje personal.
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
 
 ---
 
-© Diego González Fernández
+## Autor
+
+2025 © Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

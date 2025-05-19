@@ -48,5 +48,3 @@ Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
 
 © Diego González Fernández  
 [LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)
-
-

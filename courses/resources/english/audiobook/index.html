@@ -144,15 +144,14 @@
 
     function highlightCurrentPhrase() {
       const container = document.getElementById('text');
-      // Aquí el índice actual es el que se ilumina (no el siguiente)
       const highlighted = phrases.map((p, i) => {
         if (p === '\n') return '<br>';
         const safe = escapeHtml(p);
         return (i === currentIndex) ? `<mark>${safe}</mark>` : safe;
       });
-      // Unimos sin espacios para respetar saltos y que <br> funcione
-      container.innerHTML = highlighted.join('');
+      container.innerHTML = highlighted.join(' ');
     }
+
 
     function escapeHtml(str) {
       return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

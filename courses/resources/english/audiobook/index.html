@@ -76,9 +76,10 @@
 
     // Divide el texto en frases y pausa especiales [pause], [long pause]
     function splitTextToPhrases(txt) {
-      const regex = /\[pause\]|\[long pause\]|[^.!?\n]+[.!?]+/gi;
+      const regex = /\[pause\]|\[long pause\]|[^\n.!?\[]+[.!?]+|\n+/gi;
       return txt.match(regex)?.map(s => s.trim()) || [];
     }
+
 
 
     function speakCurrentPhrase() {
@@ -123,10 +124,14 @@
       const container = document.getElementById('text');
       let highlighted = '';
       for (let i = 0; i < phrases.length; i++) {
-        const clean = escapeHtml(phrases[i]);
-        highlighted += i === currentIndex ? `<mark>${clean}</mark> ` : `${clean} `;
+        let clean = escapeHtml(phrases[i]);
+        if (phrases[i] === '\n') {
+          highlighted += '<br>';
+        } else {
+          highlighted += i === currentIndex ? `<mark>${clean}</mark> ` : `${clean} `;
+        }
       }
-      container.innerHTML = highlighted.trim().replace(/\n/g, '<br>');
+      container.innerHTML = highlighted.trim();
     }
 
     function escapeHtml(str) {

@@ -67,7 +67,7 @@
       currentIndex = 0;
       repeatPhrase = '';
       const file = document.getElementById('selector').value;
-      const res = await fetch(`https://verogeid.github.io/qa-autodidacta/courses/resources/english/audiobook/${file}`);
+      const res = await fetch(https://verogeid.github.io/qa-autodidacta/courses/resources/english/audiobook/${file});
       text = await res.text();
       document.getElementById('text').textContent = text;
       phrases = splitTextToPhrases(text);
@@ -139,10 +139,11 @@
 
     function highlightCurrentPhrase() {
       const container = document.getElementById('text');
+      const highlightIndex = currentIndex === 0 ? 0 : currentIndex - 1;
       const highlighted = phrases.map((p, i) => {
         if (p === '\n') return '<br>';
         const safe = escapeHtml(p);
-        return (i === currentIndex) ? `<mark>${safe}</mark>` : safe;
+        return (i === highlightIndex) ? <mark>${safe}</mark> : safe;
       });
       container.innerHTML = highlighted.join(' ');
     }

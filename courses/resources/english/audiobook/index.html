@@ -38,6 +38,8 @@
     let isPaused = false;
     let repeatPhrase = '';
     let timeoutId;
+    const secPause = 2000;
+    const secLongPause = 4000;
 
     window.speechSynthesis.onvoiceschanged = () => {
       voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'));
@@ -90,7 +92,7 @@
           let phrase = match[0].trim();
           if (phrase) parts.push(phrase);
         }
-        if (parts.length === 0) parts.push(line.trim());
+        if (parts.length === 0) parts.push(line); //line.trim());
         result.push(...parts, '\n');
       }
       return result.filter(p => p !== '');
@@ -115,7 +117,7 @@
           currentIndex++;
           highlightCurrentPhrase();
           speakCurrentPhrase();
-        }, 2000);
+        }, secPause);
         return;
       }
 
@@ -124,7 +126,7 @@
           currentIndex++;
           highlightCurrentPhrase();
           speakCurrentPhrase();
-        }, 5000);
+        }, secLongPause);
         return;
       }
 

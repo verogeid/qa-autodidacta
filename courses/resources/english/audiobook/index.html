@@ -81,17 +81,21 @@
       for (let line of lines) {
         if (line.trim() === '') {
           result.push('\n');
-        } else {
-          const parts = line.match(/\[pause\]|\[long pause\]|[^.!?\[\]]+[.!?]/gi);
-          if (parts) {
-            result.push(...parts.map(s => s.trim()));
-          } else {
-            result.push(line.trim());
-          }
+          continue;
         }
+        let parts = [];
+        const regex = /\[pause\]|\[long pause\]|[^.!?\[\]]+[.!?]?/gi;
+        let match;
+        while ((match = regex.exec(line)) !== null) {
+          let phrase = match[0].trim();
+          if (phrase) parts.push(phrase);
+        }
+        if (parts.length === 0) parts.push(line.trim());
+        result.push(...parts, '\n');
       }
-      return result;
+      return result.filter(p => p !== '');
     }
+
 
     function speakCurrentPhrase() {
       if (currentIndex >= phrases.length) return;

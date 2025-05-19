@@ -13,25 +13,16 @@ Aquí encontrarás las lecciones en formato texto, pensadas para ser leídas en 
 
 ---
 
-## Contenidos
-
-- `lessons/intro.txt` - Introducción al curso  
-- `lessons/semana01.txt` - Semana 1: Fundamentos de React  
-- `lessons/semana02.txt` - Semana 2: Componentes y Props  
-- (Y más lecciones que irán sumándose)
-
----
-
 ## Notas
 
-- Cada archivo `.txt` contiene el contenido de la lección en texto plano para facilitar la lectura y comprensión.  
+- Cada archivo `.md` contiene el contenido de la lección en texto plano para facilitar la lectura y comprensión.  
 - La síntesis de voz utiliza la API nativa del navegador, por lo que no requiere conexión externa.
 
 ---
 
 ## Enlace para abrir el audiolibro
 
-Puedes abrir el archivo principal [index.html](https://verogeid.github.io/qa-autodidacta/cursos/React/audiolibro/index.html) directamente en tu navegador para empezar a escuchar.
+Puedes abrir el archivo principal [index.html](https://verogeid.github.io/qa-autodidacta/courses/react/audiolibro/index.html) directamente en tu navegador para empezar a escuchar.
 
 ---
 

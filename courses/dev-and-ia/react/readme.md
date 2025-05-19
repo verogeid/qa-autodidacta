@@ -65,6 +65,12 @@ Curso autodidacta de React con TypeScript, orientado a desarrolladores que desea
 
 ---
 
+## Audiolibro
+
+Puede adquirir conocimientos también con el [audiolibro](./audiolibro/readme.md)
+
+---
+
 ## Licencia
 
 Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.

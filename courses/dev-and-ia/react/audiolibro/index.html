@@ -1,169 +1,268 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mini IA con Audiolibros</title>
-<style>
-  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; margin: 1rem; background: #fafafa; }
-  #face { width: 120px; height: 120px; margin: auto; background: #ffcba4; position: relative; border-radius: 20px; }
-  #eye-left, #eye-right {
-    width: 20px; height: 20px; background: black; border-radius: 50%;
-    position: absolute; top: 30px;
-  }
-  #eye-left { left: 25px; }
-  #eye-right { right: 25px; }
-  #mouth {
-    width: 60px; height: 20px; background: #800000; border-radius: 0 0 30px 30px;
-    position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
-    transition: height 0.1s;
-  }
-  #inputText { width: 90%; height: 100px; margin-top: 1rem; font-size: 1rem; }
-  #output { margin-top: 1rem; min-height: 50px; background: white; padding: 0.5rem; border-radius: 8px; white-space: pre-wrap; }
-  label { margin: 0 1rem; font-size: 0.9rem; }
-  select, #voiceSelect { margin-top: 1rem; font-size: 1rem; padding: 0.3rem; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>React - Audiolibro</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      align-items: center;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+      align-items: center;
+    }
+
+    /* Móvil: controles en columna */
+    @media (max-width: 599px) {
+      .controls {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* Escritorio: controles en fila */
+    @media (min-width: 600px) {
+      .controls {
+        flex-direction: row;
+      }
+    }
+
+    main {
+      padding: 1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      overflow-y: auto;
+      flex: 2;
+    }
+
+    #controls {
+      position: fixed;
+      bottom: 0;
+      left: 0; right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background: #fff;
+      border-top: 1px solid #ccc;
+      padding: 0.5rem;
+      z-index: 100;
+    }
+
+    button {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    div.buttons-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.5rem;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>React</h1>
+    <div class="controls">
+      <div class="control-group">
+        <label for="selector">Tema:</label>
+        <select id="selector"></select>
+      </div>
+    </div>
+  </header>
 
-<h1>Mini IA con Audiolibros</h1>
+  <main><div id="text"></div></main>
 
-<select id="fileSelector">
-  <option value="">Selecciona un archivo</option>
-  <option value="lessons/intro.md">Introducción</option>
-  <option value="lessons/01-que-es-un-componente-en-react.md">01-¿Qué es un componente en React?</option>
-  <option value="lessons/02-jsx.md">02-JSX</option>
-  <option value="lessons/03-props.md">03-Props</option>
-  <option value="lessons/04-state.md">04-State</option>
-  <option value="lessons/05-eventos.md">05-Eventos</option>
-  <option value="lessons/06-como-hablar-entre-componentes.md">06-Como hablar entre componentes</option>
-  <option value="lessons/07-formularios.md">07-Formularios</option>
-  <option value="lessons/08-como-pasan-los-datos-de-un-componente-a-otro.md">08-Cómo pasan los datos de un componente a otro</option>
-  <option value="lessons/09-useeffect.md">09-useEffect</option>
-  <option value="lessons/10-el-truco-del-limpiador.md">10-El truco del limpiador</option>
-  <option value="lessons/11-useref.md">11-useRef</option>
-  <option value="lessons/12-usememo-usecallback.md">12-useMemo y useCallback</option>
-  <option value="lessons/13-usereducer.md">13-useReducer</option>
-  <option value="lessons/14-context.md">14-Context</option>
-  <option value="lessons/15-usememo-usecallback-y-rendimiento-sin-obsesiones.md">15-useMemo useCallback y rendimiento sin obsesiones</option>
-  <option value="lessons/16-custom-hooks.md">16-Custom Hooks</option>
-  <option value="lessons/17-manejo-de-efectos-secundarios-con-useeffect.md">17-Manejo de efectos secundarios con useEffect</option>
-  <option value="lessons/18-manejo-de-formularios-con-react-y-librerias.md">18-manejo de formularios con React y librerías</option>
-  <option value="lessons/19-gestion-del-estado-global-con-context-api-y-redux.md">19-Gestión del estado global con Context API y Redux</option>
-  <option value="lessons/20-optimizacion-y-buenas-practicas.md">20-Optimización y buenas prácticas</option>
-  <option value="lessons/epilogo.md">Resumen final</option>
-</select>
+  <div class="buttons-container">
+    <button id="btnRead">▶️ Leer</button>
+    <button id="btnPause">⏸️ Pausar</button>
+    <button id="btnRepeat">🔁 Repetir frase</button>
+  </div>
 
-<br>
+  <script>
+    let voices = [];
+    let text = '';
+    let phrases = [];
+    let currentIndex = 0;
+    let utterance;
+    let isPaused = false;
+    let repeatPhrase = '';
+    let timeoutId;
+    const secPause = 2000;
+    const secLongPause = 4000;
+    const lang = 'es';
+    const langCountry = 'es-ES';
 
-<select id="voiceSelect">
-  <option value="">Selecciona una voz</option>
-</select>
+    window.speechSynthesis.onvoiceschanged = () => {
+      voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'));
+    };
 
-<div id="face">
-  <div id="eye-left"></div>
-  <div id="eye-right"></div>
-  <div id="mouth"></div>
-</div>
-
-<textarea id="inputText" placeholder="Selecciona un archivo para leer..." readonly></textarea>
-
-<div id="output"></div>
-
-<script>
-  const mouth = document.getElementById('mouth');
-  const face = document.getElementById('face');
-  const inputText = document.getElementById('inputText');
-  const output = document.getElementById('output');
-  const toggleSpeech = { checked: true }; // voz activada fija
-  const fileSelector = document.getElementById('fileSelector');
-  const voiceSelect = document.getElementById('voiceSelect');
-
-  let speaking = false;
-  let mouthInterval = null;
-  let voices = [];
-  let currentUtterance = null;
-
-  function animateMouthStart() {
-    if (mouthInterval) clearInterval(mouthInterval);
-    mouthInterval = setInterval(() => {
-      mouth.style.height = mouth.style.height === '20px' ? '40px' : '20px';
-    }, 200);
-  }
-
-  function animateMouthStop() {
-    if (mouthInterval) {
-      clearInterval(mouthInterval);
-      mouthInterval = null;
+    async function loadSelector() {
+      const res = await fetch('https://verogeid.github.io/qa-autodidacta/courses/dev-and-ia/react/audiolibro/lessons.md');
+      const lines = (await res.text()).split('\n').filter(Boolean);
+      const selector = document.getElementById('selector');
+      selector.innerHTML = '';
+      lines.forEach(file => {
+        const option = document.createElement('option');
+        option.value = file;
+        option.textContent = file.replace('.md', '');
+        selector.appendChild(option);
+      });
+      selector.addEventListener('change', loadText);
+      if (lines[0]) {
+        selector.value = lines[0];
+        loadText();
+      }
     }
-    mouth.style.height = '20px';
-  }
 
-  function speak(text, onEnd) {
-    if (!toggleSpeech.checked || !window.speechSynthesis) return;
-    if (speechSynthesis.speaking) speechSynthesis.cancel();
-
-    const utter = new SpeechSynthesisUtterance(text);
-    const selectedVoiceIndex = voiceSelect.value;
-    const selectedVoice = voices[selectedVoiceIndex] || voices[0];
-    if (selectedVoice) utter.voice = selectedVoice;
-    utter.lang = selectedVoice?.lang || 'es-ES';
-
-    utter.onstart = () => {
-      speaking = true;
-      animateMouthStart();
-    };
-    utter.onend = () => {
-      speaking = false;
-      animateMouthStop();
-      if (onEnd) onEnd();
-    };
-    utter.onerror = () => {
-      speaking = false;
-      animateMouthStop();
-    };
-
-    currentUtterance = utter;
-    speechSynthesis.speak(utter);
-  }
-
-  function loadVoices() {
-    voices = speechSynthesis.getVoices();
-    voiceSelect.innerHTML = '<option value="">Selecciona una voz</option>';
-    voices.forEach((voice, i) => {
-      const option = document.createElement('option');
-      option.value = i;
-      option.textContent = `${voice.name} (${voice.lang})`;
-      voiceSelect.appendChild(option);
-    });
-  }
-
-  speechSynthesis.onvoiceschanged = loadVoices;
-  loadVoices();
-
-  fileSelector.onchange = async function() {
-    const filename = this.value;
-    if (!filename) return;
-    try {
-      const response = await fetch(filename);
-      const text = await response.text();
-      inputText.value = text;
-      output.textContent = text;
-      speak(text);
-    } catch (e) {
-      inputText.value = '';
-      output.textContent = 'Error al cargar el archivo.';
-    }
-  };
-
-  voiceSelect.onchange = () => {
-    if (!inputText.value) return;
-    if (speechSynthesis.speaking) {
+    async function loadText() {
+      clearTimeout(timeoutId);
       speechSynthesis.cancel();
+      currentIndex = 0;
+      repeatPhrase = '';
+      const file = document.getElementById('selector').value;
+      const res = await fetch(`https://verogeid.github.io/qa-autodidacta/courses/dev-and-ia/react/audiolibro/lessons/${file}`);
+      text = await res.text();
+      document.getElementById('text').textContent = text;
+      phrases = splitTextToPhrases(text);
+      highlightCurrentPhrase();
     }
-    speak(inputText.value);
-  };
-</script>
 
+    function splitTextToPhrases(txt) {
+      const lines = txt.split('\n');
+      const result = [];
+      for (let line of lines) {
+        if (line.trim() === '') {
+          result.push('\n');
+          continue;
+        }
+        let parts = [];
+        const regex = /\[pause\]|\[long pause\]|[^.!?\[\]]+[.!?]?/gi;
+        let match;
+        while ((match = regex.exec(line)) !== null) {
+          let phrase = match[0].trim();
+          if (phrase) parts.push(phrase);
+        }
+        if (parts.length === 0) parts.push(line);
+        result.push(...parts, '\n');
+      }
+      return result.filter(p => p !== '');
+    }
+
+    function speakCurrentPhrase() {
+      if (currentIndex >= phrases.length) return;
+
+      const phrase = phrases[currentIndex];
+      repeatPhrase = phrase;
+
+      if (phrase === '\n') {
+        currentIndex++;
+        highlightCurrentPhrase();
+        speakCurrentPhrase();
+        return;
+      }
+
+      if ((phrase.toLowerCase() === '[pause]') || (phrase.toLowerCase() === '---')) {
+        timeoutId = setTimeout(() => {
+          currentIndex++;
+          highlightCurrentPhrase();
+          speakCurrentPhrase();
+        }, secPause);
+        return;
+      }
+
+      if (phrase.toLowerCase() === '[long pause]') {
+        timeoutId = setTimeout(() => {
+          currentIndex++;
+          highlightCurrentPhrase();
+          speakCurrentPhrase();
+        }, secLongPause);
+        return;
+      }
+
+      utterance = new SpeechSynthesisUtterance(phrase);
+      utterance.lang = langCountry;
+      utterance.rate = parseFloat(document.getElementById('rate').value);
+      utterance.voice = voices.find(v => v.lang === langCountry) || voices.find(v => v.lang.startsWith(lang));
+
+      utterance.onend = () => {
+        currentIndex++;
+        highlightCurrentPhrase();
+        if (!isPaused) speakCurrentPhrase();
+      };
+
+      speechSynthesis.speak(utterance);
+    }
+
+    function highlightCurrentPhrase() {
+      const container = document.getElementById('text');
+      const highlighted = phrases.map((p, i) => {
+        let display = p;
+        if (p === '---') return '<hr>';
+        if (p === '\n') return '<br>';
+        if (p === '[pause]') return '';
+        if (p === '[long pause]') return '_________';
+        const safe = escapeHtml(display);
+        return (i === currentIndex) ? `<mark>${safe}</mark>` : safe;
+      });
+      container.innerHTML = highlighted.join(' ');
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    document.getElementById('btnRead').onclick = () => {
+      if (speechSynthesis.speaking) speechSynthesis.cancel();
+      isPaused = false;
+      speakCurrentPhrase();
+    };
+
+    document.getElementById('btnPause').onclick = () => {
+      if (speechSynthesis.speaking && !speechSynthesis.paused) {
+        speechSynthesis.pause();
+        isPaused = true;
+      }
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+      }
+    };
+
+    document.getElementById('btnRepeat').onclick = () => {
+      if (speechSynthesis.speaking) speechSynthesis.cancel();
+      if (!repeatPhrase) return alert('No phrase to repeat');
+      isPaused = false;
+      utterance = new SpeechSynthesisUtterance(repeatPhrase);
+      utterance.lang = 'en-GB';
+      utterance.rate = parseFloat(document.getElementById('rate').value);
+      utterance.voice = voices.find(v => v.lang === langCountry) || voices.find(v => v.lang.startsWith(lang));
+      utterance.onend = () => {
+        highlightCurrentPhrase();
+      };
+      speechSynthesis.speak(utterance);
+    };
+
+    window.onload = loadSelector;
+  </script>
 </body>
 </html>

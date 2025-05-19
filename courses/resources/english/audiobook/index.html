@@ -129,9 +129,11 @@
       utterance.voice = voices.find(v => v.lang === 'en-GB') || voices.find(v => v.lang.startsWith('en'));
 
       utterance.onend = () => {
-        currentIndex++;
-        highlightCurrentPhrase();
-        if (!isPaused) speakCurrentPhrase();
+        if (!isPaused) {
+          currentIndex++;
+          highlightCurrentPhrase();
+          speakCurrentPhrase();
+        }
       };
 
       speechSynthesis.speak(utterance);
@@ -139,10 +141,11 @@
 
     function highlightCurrentPhrase() {
       const container = document.getElementById('text');
+      const highlightIndex = currentIndex === 0 ? 0 : currentIndex - 1;
       const highlighted = phrases.map((p, i) => {
         if (p === '\n') return '<br>';
         const safe = escapeHtml(p);
-        return (i === currentIndex) ? `<mark>${safe}</mark>` : safe;
+        return (i === highlightIndex) ? `<mark>${safe}</mark>` : safe;
       });
       container.innerHTML = highlighted.join(' ');
     }

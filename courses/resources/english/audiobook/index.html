@@ -44,7 +44,7 @@
     };
 
     async function loadSelector() {
-      const res = await fetch('https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/speechs.md');
+      const res = await fetch('https://verogeid.github.io/qa-autodidacta/courses/resources/english/audiobook/speechs.md');
       const lines = (await res.text()).split('\n').filter(Boolean);
       const selector = document.getElementById('selector');
       selector.innerHTML = '';
@@ -67,7 +67,7 @@
       currentIndex = 0;
       repeatPhrase = '';
       const file = document.getElementById('selector').value;
-      const res = await fetch(`https://verogeid.github.io/qa-autodidacta/cursos/resources/english/audiobook/${file}`);
+      const res = await fetch(`https://verogeid.github.io/qa-autodidacta/courses/resources/english/audiobook/${file}`);
       text = await res.text();
       document.getElementById('text').textContent = text;
       phrases = splitTextToPhrases(text);

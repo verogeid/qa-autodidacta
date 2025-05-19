@@ -38,10 +38,9 @@ Este repositorio contiene un curso completo de inglés, organizado por semanas, 
 
 Además de los contenidos semanales, puedes usar herramientas como:
 
-### Audiolibro especializado
+### Technical English for IT Professionals (Audiobook)
 
-⚠️ Only works in Google Chrome browser
-[Audiobook IT profesional](https://verogeid.github.io/qa-autodidacta/courses/resources/english/audiobook/index.html)
+⚠️ [Audiobook](https://verogeid.github.io/qa-autodidacta/courses/resources/english/audiobook/index.html)
 
 ### Comparador de pronunciación (Python)
 

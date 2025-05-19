@@ -67,7 +67,7 @@
       currentIndex = 0;
       repeatPhrase = '';
       const file = document.getElementById('selector').value;
-      const res = await fetch(`https://verogeid.github.io/qa-autodidacta/courses/resources/english/audiobook/speechs/${file}`);
+      const res = await fetch(`https://verogeid.github.io/qa-autodidacta/courses/resources/english/audiobook/${file}`);
       text = await res.text();
       document.getElementById('text').textContent = text;
       phrases = splitTextToPhrases(text);
@@ -122,11 +122,12 @@
 
     function highlightCurrentPhrase() {
       const container = document.getElementById('text');
-      const phrase = phrases[currentIndex] || '';
-      const escaped = escapeHtml(text);
-      // Para simplificar: no resaltamos exacto, solo mostramos texto plano.
-      // Mejoraría para resaltar frase exacta si se quiere.
-      container.innerHTML = escaped.replace(/\n/g, '<br>');
+      let highlighted = '';
+      for (let i = 0; i < phrases.length; i++) {
+        const clean = escapeHtml(phrases[i]);
+        highlighted += i === currentIndex ? `<mark>${clean}</mark> ` : `${clean} `;
+      }
+      container.innerHTML = highlighted.trim().replace(/\n/g, '<br>');
     }
 
     function escapeHtml(str) {

@@ -5,51 +5,114 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Inglés Técnico - Audiolibro con pausas</title>
   <style>
-    body { font-family: sans-serif; margin: 0; }
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: #fff;
-      border-bottom: 1px solid #ccc;
-      padding: 1rem;
-      z-index: 10;
-      align-content: center;
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
     }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      align-items: center;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+      align-items: center;
+    }
+
+    .control-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Móvil: controles en columna */
+    @media (max-width: 599px) {
+      .controls {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .control-group {
+        width: 100%;
+      }
+    }
+
+    /* Escritorio: controles en fila */
+    @media (min-width: 600px) {
+      .controls {
+        flex-direction: row;
+      }
+      .control-group {
+        width: auto;
+      }
+    }
+
     main {
-      margin-top: 200px;
       padding: 1rem;
       max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      height: calc(100vh - 200px);
+      margin: 0 auto;
       overflow-y: auto;
+      flex: 2;
     }
-    select, button, input[type="range"] {
-      margin: 0.5rem 0;
+
+    #controls {
+      position: fixed;
+      bottom: 0;
+      left: 0; right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background: #fff;
+      border-top: 1px solid #ccc;
+      padding: 0.5rem;
+      z-index: 100;
+    }
+
+    button {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    div.buttons-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
       padding: 0.5rem;
     }
-    #text { white-space: pre-wrap; line-height: 1.6; margin-top: 1rem; }
-    mark { background: yellow; }
   </style>
 </head>
 <body>
   <header>
     <h1>Inglés Técnico - Audiolibro</h1>
-    <label for="selector">Selecciona un tema:</label>
-    <select id="selector"></select><br/>
-
-    <label for="rate">Velocidad:</label>
-    <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1" />
-
-    <div>
-      <button id="btnRead">Leer</button>
-      <button id="btnPause">Pausar</button>
-      <button id="btnResume">Reanudar</button>
-      <button id="btnRepeat">Repetir frase</button>
+    <div class="controls">
+      <div class="control-group">
+        <label for="selector">Tema:</label>
+        <select id="selector"></select>
+      </div>
+      <div class="control-group">
+        <label for="rate">🔊</label>
+        <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1" />
+      </div>
     </div>
   </header>
 
   <main><div id="text"></div></main>
+
+  <div class="buttons-container">
+    <button id="btnRead">▶️ Leer</button>
+    <button id="btnPause">⏸️ Pausar</button>
+    <button id="btnRepeat">🔁 Repetir frase</button>
+  </div>
 
   <script>
     let voices = [];
@@ -106,10 +169,6 @@
           result.push('\n');
           continue;
         }
-        /*if (line.trim() === '---') {
-          result.push('<hr>');
-          continue;
-        }*/
         let parts = [];
         const regex = /\[pause\]|\[long pause\]|[^.!?\[\]]+[.!?]?/gi;
         let match;
@@ -198,15 +257,6 @@
       if (timeoutId) {
         clearTimeout(timeoutId);
         timeoutId = null;
-      }
-    };
-
-    document.getElementById('btnResume').onclick = () => {
-      if (speechSynthesis.paused) {
-        speechSynthesis.resume();
-        isPaused = false;
-      } else if (!speechSynthesis.speaking) {
-        speakCurrentPhrase();
       }
     };
 

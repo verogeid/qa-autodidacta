@@ -131,16 +131,17 @@
 
     function highlightCurrentPhrase() {
       const container = document.getElementById('text');
-      let highlighted = '';
-      for (let i = 0; i < phrases.length; i++) {
-        let clean = escapeHtml(phrases[i]);
-        if (phrases[i] === '\n') {
-          highlighted += '<br>';
-        } else {
-          highlighted += i === currentIndex ? `<mark>${clean}</mark> ` : `${clean} `;
-        }
+      let result = [];
+      let i = 0;
+
+      for (let phrase of phrases) {
+        const clean = escapeHtml(phrase);
+        const html = (i === currentIndex) ? `<mark>${clean}</mark>` : clean;
+        result.push(html);
+        i++;
       }
-      container.innerHTML = highlighted.trim();
+
+      container.innerHTML = result.join('\n').replace(/\n/g, '<br>');
     }
 
     function escapeHtml(str) {

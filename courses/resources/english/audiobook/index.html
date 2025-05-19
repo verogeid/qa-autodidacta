@@ -76,11 +76,20 @@
 
     // Divide el texto en frases y pausa especiales [pause], [long pause]
     function splitTextToPhrases(txt) {
-      const regex = /\[pause\]|\[long pause\]|[^\n.!?\[]+[.!?]+|\n+/gi;
-      return txt.match(regex)?.map(s => s.trim()) || [];
+      const lines = txt.split('\n');
+      const result = [];
+
+      for (let line of lines) {
+        const parts = line.match(/\[pause\]|\[long pause\]|[^.!?\[\]]+[.!?]/gi);
+        if (parts) {
+          result.push(...parts.map(s => s.trim()));
+        } else {
+          result.push('');
+        }
+      }
+
+      return result;
     }
-
-
 
     function speakCurrentPhrase() {
       if (currentIndex >= phrases.length) return;

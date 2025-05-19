@@ -6,31 +6,31 @@ Listen, repeat, and speak with confidence.
 
 ---
 
-My name is Diego. [pause]  
-I am a QA Engineer. [pause]  
-I live in Spain. [pause]  
-I have two children. [pause]  
-I work with Cypress. [pause]  
-I use GitHub every day. [pause]  
-I work in agile teams. [pause]  
-I like testing APIs. [pause]  
-I write automated tests. [pause]  
-I use Postman and Newman. [pause]  
+My name is Diego. [pause].
+I am a QA Engineer. [pause].
+I live in Spain. [pause].
+I have two children. [pause].
+I work with Cypress. [pause].
+I use GitHub every day. [pause].
+I work in agile teams. [pause].
+I like testing APIs. [pause].
+I write automated tests. [pause].
+I use Postman and Newman. [pause].
 
 Repeat with me:  
-I am a QA Engineer. [pause]  
-I live in Spain. [pause]  
-I work in agile teams. [pause]  
-I use GitHub. [pause]  
-I like testing. [pause]  
-I have two children. [pause]  
+I am a QA Engineer. [pause].
+I live in Spain. [pause].
+I work in agile teams. [pause].
+I use GitHub. [pause].
+I like testing. [pause].
+I have two children. [pause].
 
 Now, answer the questions. Say your answers aloud.  
-What is your name? [long pause]  
-Where do you live? [long pause]  
-What do you do? [long pause]  
-What tools do you use? [long pause]  
-Do you work in a team? [long pause]  
+What is your name? [long pause].
+Where do you live? [long pause].
+What do you do? [long pause].
+What tools do you use? [long pause].
+Do you work in a team? [long pause].
 
 ---
 
@@ -45,20 +45,20 @@ Mini dialogue:
 
 Now, shadowing. Repeat after each sentence. Speak clearly and slowly.
 
-I am a QA Engineer. [pause]  
-I work with Cypress. [pause]  
-I test APIs. [pause]  
-I use GitHub. [pause]  
-I write automated tests. [pause]  
-I work in agile teams. [pause]  
+I am a QA Engineer. [pause].
+I work with Cypress. [pause].
+I test APIs. [pause].
+I use GitHub. [pause].
+I write automated tests. [pause].
+I work in agile teams. [pause].
 
 ---
 
 Final questions. Try to answer without help.
 
-Who are you? [long pause]  
-What is your job? [long pause]  
-What tools do you use? [long pause]  
-What kind of projects do you work on? [long pause]  
+Who are you? [long pause].
+What is your job? [long pause].
+What tools do you use? [long pause].
+What kind of projects do you work on? [long pause].
 
 End of session.

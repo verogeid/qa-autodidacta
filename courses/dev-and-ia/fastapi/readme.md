@@ -2,11 +2,16 @@
 
 Curso autodidacta, intensivo y práctico para construir una aplicación web completa desde cero con FastAPI, pruebas automatizadas y un frontend funcional sin frameworks pesados. Diseñado para desarrolladores con conocimientos previos en HTML y CSS que quieren crear soluciones profesionales, seguras y mantenibles.
 
+> **Enfoque pedagógico**:  
+> Este curso está estructurado de forma clara y progresiva para facilitar el aprendizaje autodidacta. Cada semana combina teoría, ejemplos guiados y ejercicios prácticos para que afiances los conceptos y ganes autonomía real.
+
+---
+
 ## Descripción general
 
 - **Duración**: 12 semanas (5–8 horas por semana)
 - **Nivel**: Intermedio / Avanzado
-- **Modalidad**: Autodidacta
+- **Modalidad**: Autodidacta y pedagógica
 - **Enfoque**: Backend robusto + pruebas + frontend mínimo + CI/CD
 - **Tecnologías**: FastAPI, SQLModel, Vite, Pytest, GitHub Actions, JMeter, K6, axe-core, Lighthouse
 
@@ -16,7 +21,7 @@ Curso autodidacta, intensivo y práctico para construir una aplicación web comp
 
 Cada semana contiene:
 - `README.md`: teoría y fundamentos
-- `tutorial.md`: guía paso a paso
+- `tutorial.md`: guía paso a paso con explicaciones
 - `ejercicios.md`: prácticas para validar lo aprendido
 
 ---
@@ -42,7 +47,7 @@ Cada semana contiene:
 
 ## Requisitos previos
 
-- HTML y CSS
+- HTML y CSS (ya superado)
 - Fundamentos de Python
 - Conocimiento básico de Git y control de versiones
 
@@ -65,5 +70,5 @@ Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
 
 ## Autor
 
-2025 © Diego González Fernández  
+© 2025 Diego González Fernández  
 [LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

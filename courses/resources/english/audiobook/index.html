@@ -131,17 +131,31 @@
 
     function highlightCurrentPhrase() {
       const container = document.getElementById('text');
-      let result = [];
-      let i = 0;
+      const originalLines = text.split('\n');
 
-      for (let phrase of phrases) {
-        const clean = escapeHtml(phrase);
-        const html = (i === currentIndex) ? `<mark>${clean}</mark>` : clean;
-        result.push(html);
-        i++;
+      let phraseIndex = 0;
+      const result = [];
+
+      for (let line of originalLines) {
+        if (!line.trim()) {
+          result.push('');
+          continue;
+        }
+
+        const linePhrases = splitTextToPhrases(line);
+        const lineResult = [];
+
+        for (let phrase of linePhrases) {
+          const clean = escapeHtml(phrase);
+          const html = (phraseIndex === currentIndex) ? `<mark>${clean}</mark>` : clean;
+          lineResult.push(html);
+          phraseIndex++;
+        }
+
+        result.push(lineResult.join(' '));
       }
 
-      container.innerHTML = result.join('\n').replace(/\n/g, '<br>');
+      container.innerHTML = result.join('<br>');
     }
 
     function escapeHtml(str) {

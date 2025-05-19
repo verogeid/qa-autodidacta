@@ -231,8 +231,10 @@
       const container = document.getElementById('text');
       const highlighted = phrases.map((p, i) => {
         let display = p;
-        //if (p === '[pause]') display = '---';
+        if (p === '---') return '<hr>';
         if (p === '\n') return '<br>';
+        if (p === '[pause]') return '';
+        if (p === '[long pause]') return '_________';
         const safe = escapeHtml(display);
         return (i === currentIndex) ? `<mark>${safe}</mark>` : safe;
       });

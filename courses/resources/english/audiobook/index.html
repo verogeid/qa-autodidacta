@@ -8,7 +8,7 @@
     body { font-family: sans-serif; max-width: 700px; margin: auto; padding: 2rem; }
     select, button, input[type="range"] { margin: 0.5rem 0; padding: 0.5rem; }
     #text { white-space: pre-wrap; line-height: 1.6; margin-top: 1rem; }
-    .highlight { background: yellow; }
+    mark { background: yellow; }
   </style>
 </head>
 <body>
@@ -74,20 +74,21 @@
       highlightCurrentPhrase();
     }
 
-    // Divide el texto en frases y pausa especiales [pause], [long pause]
     function splitTextToPhrases(txt) {
       const lines = txt.split('\n');
       const result = [];
-
       for (let line of lines) {
-        const parts = line.match(/\[pause\]|\[long pause\]|[^.!?\[\]]+[.!?]/gi);
-        if (parts) {
-          result.push(...parts.map(s => s.trim()));
+        if (line.trim() === '') {
+          result.push('\n');
         } else {
-          result.push('');
+          const parts = line.match(/\[pause\]|\[long pause\]|[^.!?\[\]]+[.!?]/gi);
+          if (parts) {
+            result.push(...parts.map(s => s.trim()));
+          } else {
+            result.push(line.trim());
+          }
         }
       }
-
       return result;
     }
 
@@ -96,6 +97,13 @@
 
       const phrase = phrases[currentIndex];
       repeatPhrase = phrase;
+
+      if (phrase === '\n') {
+        currentIndex++;
+        highlightCurrentPhrase();
+        speakCurrentPhrase();
+        return;
+      }
 
       if (phrase.toLowerCase() === '[pause]') {
         timeoutId = setTimeout(() => {
@@ -131,38 +139,17 @@
 
     function highlightCurrentPhrase() {
       const container = document.getElementById('text');
-      const originalLines = text.split('\n');
-
-      let phraseIndex = 0;
-      const result = [];
-
-      for (let line of originalLines) {
-        if (!line.trim()) {
-          result.push('');
-          continue;
-        }
-
-        const linePhrases = splitTextToPhrases(line);
-        const lineResult = [];
-
-        for (let phrase of linePhrases) {
-          const clean = escapeHtml(phrase);
-          const html = (phraseIndex === currentIndex) ? `<mark>${clean}</mark>` : clean;
-          lineResult.push(html);
-          phraseIndex++;
-        }
-
-        result.push(lineResult.join(' '));
-      }
-
-      container.innerHTML = result.join('<br>');
+      const highlighted = phrases.map((p, i) => {
+        if (p === '\n') return '<br>';
+        const safe = escapeHtml(p);
+        return (i === currentIndex) ? `<mark>${safe}</mark>` : safe;
+      });
+      container.innerHTML = highlighted.join(' ');
     }
 
     function escapeHtml(str) {
       return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
-
-    // Botones
 
     document.getElementById('btnRead').onclick = () => {
       if (speechSynthesis.speaking) speechSynthesis.cancel();
@@ -175,7 +162,7 @@
         speechSynthesis.pause();
         isPaused = true;
       }
-      if(timeoutId) {
+      if (timeoutId) {
         clearTimeout(timeoutId);
         timeoutId = null;
       }

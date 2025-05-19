@@ -5,29 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Inglés Técnico - Audiolibro con pausas</title>
   <style>
-    body { font-family: sans-serif; max-width: 700px; margin: auto; padding: 2rem; }
-    select, button, input[type="range"] { margin: 0.5rem 0; padding: 0.5rem; }
+    body { font-family: sans-serif; margin: 0; }
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #fff;
+      border-bottom: 1px solid #ccc;
+      padding: 1rem;
+      z-index: 10;
+    }
+    main {
+      margin-top: 200px;
+      padding: 1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      height: calc(100vh - 200px);
+      overflow-y: auto;
+    }
+    select, button, input[type="range"] {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+    }
     #text { white-space: pre-wrap; line-height: 1.6; margin-top: 1rem; }
     mark { background: yellow; }
   </style>
 </head>
 <body>
-  <h1>Inglés Técnico - Audiolibro con pausas</h1>
+  <header>
+    <h1>Inglés Técnico - Audiolibro con pausas</h1>
+    <label for="selector">Selecciona un tema:</label>
+    <select id="selector"></select><br/>
 
-  <label for="selector">Selecciona un tema:</label>
-  <select id="selector"></select><br/>
+    <label for="rate">Velocidad:</label>
+    <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1" />
 
-  <label for="rate">Velocidad:</label>
-  <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1" />
+    <div>
+      <button id="btnRead">Leer</button>
+      <button id="btnPause">Pausar</button>
+      <button id="btnResume">Reanudar</button>
+      <button id="btnRepeat">Repetir frase</button>
+    </div>
+  </header>
 
-  <div>
-    <button id="btnRead">Leer</button>
-    <button id="btnPause">Pausar</button>
-    <button id="btnResume">Reanudar</button>
-    <button id="btnRepeat">Repetir frase</button>
-  </div>
-
-  <div id="text"></div>
+  <main><div id="text"></div></main>
 
   <script>
     let voices = [];
@@ -63,7 +84,6 @@
       }
     }
 
-
     async function loadText() {
       clearTimeout(timeoutId);
       speechSynthesis.cancel();
@@ -85,6 +105,10 @@
           result.push('\n');
           continue;
         }
+        if (line.trim() === '---') {
+          result.push('[pause]');
+          continue;
+        }
         let parts = [];
         const regex = /\[pause\]|\[long pause\]|[^.!?\[\]]+[.!?]?/gi;
         let match;
@@ -92,12 +116,11 @@
           let phrase = match[0].trim();
           if (phrase) parts.push(phrase);
         }
-        if (parts.length === 0) parts.push(line); //line.trim());
+        if (parts.length === 0) parts.push(line);
         result.push(...parts, '\n');
       }
       return result.filter(p => p !== '');
     }
-
 
     function speakCurrentPhrase() {
       if (currentIndex >= phrases.length) return;
@@ -147,13 +170,14 @@
     function highlightCurrentPhrase() {
       const container = document.getElementById('text');
       const highlighted = phrases.map((p, i) => {
+        let display = p;
+        if (p === '[pause]') display = '---';
         if (p === '\n') return '<br>';
-        const safe = escapeHtml(p);
+        const safe = escapeHtml(display);
         return (i === currentIndex) ? `<mark>${safe}</mark>` : safe;
       });
       container.innerHTML = highlighted.join(' ');
     }
-
 
     function escapeHtml(str) {
       return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

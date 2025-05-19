@@ -129,11 +129,9 @@
       utterance.voice = voices.find(v => v.lang === 'en-GB') || voices.find(v => v.lang.startsWith('en'));
 
       utterance.onend = () => {
-        if (!isPaused) {
-          currentIndex++;
-          highlightCurrentPhrase();
-          speakCurrentPhrase();
-        }
+        currentIndex++;
+        highlightCurrentPhrase();
+        if (!isPaused) speakCurrentPhrase();
       };
 
       speechSynthesis.speak(utterance);

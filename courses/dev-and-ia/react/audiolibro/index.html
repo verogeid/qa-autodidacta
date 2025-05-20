@@ -38,6 +38,7 @@
     }
     main {
       padding: 1rem;
+      padding-bottom: 5rem; 
       max-width: 700px;
       margin: 0 auto;
       overflow-y: auto;
@@ -65,7 +66,7 @@
 </head>
 <body>
   <header>
-    <h1>React</h1>
+    <h1>React (Audiobook)</h1>
     <div class="controls">
       <div class="control-group">
         <label for="selector">Tema:</label>
@@ -82,6 +83,7 @@
 
   <script>
     let voices = [];
+    const predefVoice = 'Google';
     let text = '';
     let phrases = [];
     let currentIndex = 0;
@@ -91,6 +93,8 @@
     const lang = 'es';
     const langCountry = 'es-ES';
     const pitch = 1.5;
+    const secPause = 2000;
+    const secLongPause = 4000;
 
     window.speechSynthesis.onvoiceschanged = () => {
       voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith(lang));
@@ -110,7 +114,7 @@
       selector.addEventListener('change', loadText);
       if (lines[0]) {
         selector.value = lines[0];
-        loadText();
+        await loadText();
       }
     }
 
@@ -149,14 +153,17 @@
       return result.filter(p => p !== '');
     }
 
-    function speakCurrentPhrase() {
-      if (currentIndex >= phrases.length) return;
+    async function speakCurrentPhrase() {
+      if (currentIndex >= phrases.length) {
+        await loadNextFileAndRead();
+        return;
+      }
       if (isPaused || isRepeating) return;
 
       const phrase = phrases[currentIndex];
       if (phrase === '[pause]' || phrase === '[long pause]') {
         currentIndex++;
-        setTimeout(speakCurrentPhrase, phrase === '[pause]' ? 2000 : 4000);
+        setTimeout(speakCurrentPhrase, phrase === '[pause]' ? secPause : secLongPause);
         return;
       }
 
@@ -164,7 +171,7 @@
       utterance.lang = langCountry;
       utterance.pitch = pitch;
       utterance.rate = 1;
-      utterance.voice = voices.find(v => v.name.includes('Google español')) || voices[0];
+      utterance.voice = voices.find(v => v.name.includes(predefVoice)) || voices[0];
 
       highlightCurrentPhrase();
 
@@ -176,6 +183,23 @@
       };
 
       speechSynthesis.speak(utterance);
+    }
+
+    async function loadNextFileAndRead() {
+      const selector = document.getElementById('selector');
+      const options = Array.from(selector.options);
+      const currentIndexOption = options.findIndex(opt => opt.value === selector.value);
+      const nextIndex = currentIndexOption + 1;
+
+      if (nextIndex < options.length) {
+        selector.value = options[nextIndex].value;
+        await loadText();
+        speakCurrentPhrase();
+      } else {
+        // Al llegar al último archivo, no hace nada más.
+        // Si quieres que vuelva al primero, descomenta:
+        // selector.value = options[0].value; await loadText(); speakCurrentPhrase();
+      }
     }
 
     function highlightCurrentPhrase() {
@@ -228,13 +252,13 @@
       repeatUtterance.lang = langCountry;
       repeatUtterance.pitch = pitch;
       repeatUtterance.rate = 1;
-      repeatUtterance.voice = voices.find(v => v.name.includes('Google español')) || voices[0];
+      repeatUtterance.voice = voices.find(v => v.name.includes(predefVoice)) || voices[0];
 
       highlightCurrentPhrase();
 
       repeatUtterance.onend = () => {
         isRepeating = false;
-        isPaused = true; // queda en pausa tras repetir
+        isPaused = true;
         highlightCurrentPhrase();
       };
 

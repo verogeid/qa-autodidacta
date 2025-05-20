@@ -58,7 +58,7 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 
 13. [HTML5 y CSS3](./courses/dev-and-ia/html5/readme.md)
 14. 🚧 [React con TypeScript]<!-- (./courses/dev-and-ia/react/readme.md)--> 🚧
-15. 🚧 [FastAPI]<!-- (./courses/dev-and-ia/fastapi/readme.md)--> 🚧
+15. [FastAPI](./courses/dev-and-ia/fastapi/readme.md)
 16. 🚧 [C# en profundidad]<!-- (./courses/dev-and-ia/csharp/readme.md)--> 🚧
 17. 🚧 [IA Developer con Python]<!-- (./courses/dev-and-ia/ia-python/readme.md)--> 🚧
 18. [n8n: automatización de flujos](./courses/dev-and-ia/n8n/readme.md)

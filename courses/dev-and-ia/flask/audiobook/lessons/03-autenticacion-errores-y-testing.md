@@ -1,24 +1,43 @@
 Autenticación, errores y testing
 
-Para proteger nuestra aplicación necesitamos controlar el acceso de los usuarios. Flask ofrece varias herramientas para implementar autenticación. Una de las extensiones más comunes es Flask Login.
+Para que una aplicación web sea útil y segura, es fundamental implementar funcionalidades como el inicio de sesión, el manejo adecuado de errores y la capacidad de realizar pruebas automáticas. Estos elementos aseguran que la aplicación funcione correctamente, proteja la información de los usuarios y sea mantenible a largo plazo. Vamos a estudiar estos temas con detalle.
 
-Primero, debemos entender qué hace cada parte del proceso. La función login_user se encarga de iniciar la sesión del usuario una vez que sus credenciales han sido validadas. Esta función también puede recibir un parámetro llamado remember, que permite mantener la sesión activa incluso después de cerrar el navegador.
+La autenticación es el proceso que permite identificar a un usuario para concederle acceso a ciertas partes de la aplicación. Sin este paso, cualquier persona podría entrar a cualquier sección, lo que no es seguro ni práctico.
 
-Para cerrar sesión usamos la función logout_user. Esta termina la sesión del usuario actual de forma segura.
+En Flask, una de las herramientas más usadas para manejar autenticación es una extensión llamada flask_login. Esta extensión simplifica mucho la gestión de sesiones, permitiendo iniciar y cerrar sesión, recordar usuarios y proteger rutas de acceso.
 
-En cualquier parte de nuestra aplicación, si queremos saber quién es el usuario que ha iniciado sesión, usamos la variable current_user. Esta variable nos permite acceder a información como el nombre del usuario, su identificador y otros atributos que hayamos definido en nuestro modelo de usuario.
+Las funciones clave de flask_login son:
 
-Para proteger rutas que solo deben estar disponibles si el usuario ha iniciado sesión, usamos el decorador login_required. Este decorador se coloca justo antes de la definición de la función que maneja una ruta. Si alguien intenta acceder sin estar autenticado, será redirigido automáticamente a la página de inicio de sesión.
+login_user, que recibe un objeto que representa al usuario y lo marca como autenticado. También puede recibir un parámetro llamado remember. Si este se establece como verdadero, mantiene la sesión activa incluso después de cerrar el navegador. Esto es útil para mejorar la experiencia del usuario al evitar que tenga que volver a iniciar sesión constantemente.
 
-Las sesiones también son útiles para guardar datos temporales relacionados con el usuario. Flask permite usar un diccionario llamado session para guardar, por ejemplo, el nombre de usuario, su idioma preferido o cualquier otro dato que necesitemos mantener entre peticiones. Este diccionario se comporta como uno de Python y su contenido se almacena en una cookie firmada.
+logout_user, que cierra la sesión del usuario, eliminando la información que indica que está conectado. Después de llamarla, el usuario pasa a ser anónimo hasta que vuelva a iniciar sesión.
 
-Cuando hablamos de errores, queremos que la aplicación no se rompa de forma inesperada y que los usuarios reciban mensajes claros. Flask permite definir funciones que se ejecutan automáticamente cuando ocurre un error. Para capturar errores como el cuatrocientos cuatro o el quinientos, usamos app.errorhandler y le pasamos el código del error como argumento. Dentro de esa función podemos devolver una plantilla personalizada que informe al usuario de manera amigable.
+current_user es un objeto especial que siempre representa al usuario que está haciendo la petición actual. Puede ser un usuario autenticado o un usuario anónimo si no ha iniciado sesión. Gracias a este objeto podemos saber, en cualquier parte del código o las plantillas, quién está usando la aplicación en ese momento y adaptar la respuesta según su estado.
 
-En cuanto a testing, Flask ofrece un entorno integrado para escribir pruebas. Uno de los métodos más usados es test_client. Esta función nos permite simular peticiones como si un navegador estuviera interactuando con nuestra aplicación. Podemos hacer pruebas para verificar si una ruta responde correctamente, si un formulario devuelve el resultado esperado o si se muestra el mensaje de error adecuado.
+Para proteger ciertas rutas y evitar que usuarios no autorizados accedan, flask_login ofrece un decorador llamado login_required. Al aplicarlo a una función que maneja una ruta, se fuerza a que solo usuarios autenticados puedan acceder. Si un usuario no autenticado intenta acceder, será redirigido a la página de inicio de sesión o a una ruta configurada para ese propósito.
 
-Además, muchas personas utilizan Pytest como marco de pruebas junto con Flask. Es una combinación poderosa y flexible. Podemos organizar nuestras pruebas en funciones que comienzan con la palabra test, y dentro de ellas usamos aserciones para comprobar que todo funciona como debe.
+Además de estas funciones, Flask también permite trabajar con sesiones personalizadas usando un diccionario especial llamado session. Este diccionario actúa como una especie de memoria temporal para cada usuario conectado. Podemos guardar en él información útil como el idioma preferido del usuario, su tema de interfaz o cualquier otro dato que necesitemos entre peticiones. Internamente, Flask guarda este contenido en cookies firmadas para evitar manipulaciones externas.
 
-Algunas buenas prácticas que debemos seguir incluyen limpiar la base de datos antes y después de cada prueba, usar datos realistas y evitar pruebas que dependan unas de otras. También es recomendable probar tanto los casos exitosos como los que deberían fallar, para asegurarnos de que nuestra aplicación responde de manera controlada.
+Una aplicación robusta no solo funciona bien cuando todo va bien, sino que sabe reaccionar correctamente cuando algo falla. Por ejemplo, si alguien intenta acceder a una página que no existe, es preferible mostrar un mensaje claro que explique el problema en lugar de una página de error genérica o una pantalla en blanco.
 
-En resumen, con las funciones login_user, logout_user, current_user, el decorador login_required, la variable session, el método app.errorhandler y el uso de test_client, tenemos todo lo necesario para crear una aplicación segura, robusta y bien probada. Saber cómo y cuándo usarlos marca la diferencia entre una aplicación básica y una profesional.
+Flask permite definir funciones que gestionan errores específicos mediante decoradores que capturan códigos HTTP como 404 para "No encontrado" o 500 para "Error interno del servidor". Estas funciones pueden renderizar páginas personalizadas para informar al usuario y, al mismo tiempo, registrar el error para que los desarrolladores puedan revisarlo más tarde.
 
+Esto mejora la experiencia del usuario y ayuda a detectar y corregir problemas rápidamente.
+
+Probar manualmente que una aplicación funciona bien es posible, pero no escalable ni fiable. Por eso existen las pruebas automáticas, que permiten ejecutar cientos o miles de verificaciones rápidamente para asegurar que todo sigue funcionando tras cambios en el código.
+
+En Flask, el cliente de pruebas es una herramienta que simula peticiones HTTP a la aplicación sin necesidad de levantar un servidor real. Esto hace que las pruebas sean rápidas y fáciles de automatizar.
+
+Con el cliente de pruebas se pueden simular peticiones como GET, para solicitar información de la aplicación, y POST, para enviar datos que la aplicación debe procesar.
+
+Cuando se realiza una petición, el cliente de pruebas devuelve una respuesta con un código de estado HTTP que indica si la petición fue exitosa o si ocurrió un error, el contenido devuelto que puede ser HTML, JSON o texto plano, y las cabeceras de la respuesta.
+
+Las pruebas pueden verificar que el código de estado sea el esperado, que el contenido contenga ciertos datos o que las cabeceras tengan valores específicos. Esto asegura que la aplicación responde correctamente en distintas situaciones.
+
+Para escribir pruebas automáticas de forma más avanzada, muchas personas combinan Flask con Pytest. Este marco de pruebas permite organizar los tests en funciones cuyo nombre comienza con test_, realizar aserciones claras y automatizar la ejecución. Además, se puede integrar con herramientas externas para generar reportes o lanzar pruebas en un flujo de integración continua.
+
+Algunas buenas prácticas que debemos seguir incluyen limpiar la base de datos antes y después de cada prueba, usar datos realistas, evitar que las pruebas dependan unas de otras y verificar tanto los casos que deberían funcionar como los que deberían fallar. De este modo, nos aseguramos de que la aplicación es estable y responde de manera controlada ante cualquier escenario.
+
+También es clave mantener una arquitectura clara. Por ejemplo, separar la lógica de negocio del código que responde a las peticiones web facilita escribir pruebas más limpias y enfocadas. Usar nombres descriptivos para funciones y variables, evitar la duplicación de código y documentar tanto el código como los tests mejora la mantenibilidad del proyecto.
+
+Con esta base, tendrás el conocimiento necesario para implementar un sistema de autenticación seguro, gestionar errores de forma profesional y crear pruebas automáticas que garantizan la calidad de tu aplicación Flask. Estas habilidades son esenciales para cualquier desarrollador que quiera construir aplicaciones web confiables y profesionales.

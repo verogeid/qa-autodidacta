@@ -83,6 +83,7 @@
 
   <script>
     let voices = [];
+    const predefVoice = 'Microsoft';
     let text = '';
     let phrases = [];
     let currentIndex = 0;
@@ -92,6 +93,8 @@
     const lang = 'es';
     const langCountry = 'es-ES';
     const pitch = 1.5;
+    const secPause = 2000;
+    const secLongPause = 4000;
 
     window.speechSynthesis.onvoiceschanged = () => {
       voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith(lang));
@@ -160,7 +163,7 @@
       const phrase = phrases[currentIndex];
       if (phrase === '[pause]' || phrase === '[long pause]') {
         currentIndex++;
-        setTimeout(speakCurrentPhrase, phrase === '[pause]' ? 2000 : 4000);
+        setTimeout(speakCurrentPhrase, phrase === '[pause]' ? secPause : secLongPause);
         return;
       }
 
@@ -168,7 +171,7 @@
       utterance.lang = langCountry;
       utterance.pitch = pitch;
       utterance.rate = 1;
-      utterance.voice = voices.find(v => v.name.includes('Google español')) || voices[0];
+      utterance.voice = voices.find(v => v.name.includes(predefVoice)) || voices[0];
 
       highlightCurrentPhrase();
 
@@ -249,7 +252,7 @@
       repeatUtterance.lang = langCountry;
       repeatUtterance.pitch = pitch;
       repeatUtterance.rate = 1;
-      repeatUtterance.voice = voices.find(v => v.name.includes('Google español')) || voices[0];
+      repeatUtterance.voice = voices.find(v => v.name.includes(predefVoice)) || voices[0];
 
       highlightCurrentPhrase();
 

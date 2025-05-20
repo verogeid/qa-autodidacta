@@ -1,35 +1,48 @@
-Bonus track: Avanzando más allá con Flask
+Conceptos Avanzados en Flask: Profundizando en tu App
 
-Ya has recorrido todo el camino desde los fundamentos hasta el despliegue profesional con Flask. Pero como en todo viaje del desarrollo, siempre hay espacio para seguir creciendo. En este bonus track, exploraremos algunos temas que, aunque no son esenciales para construir una app profesional, sí marcan una gran diferencia cuando tu proyecto escala o cuando trabajas en entornos más complejos.
-
----
-
-CORS: abriendo tu API al mundo
-
-Si tu frontend vive en un dominio distinto al backend, por ejemplo en un servidor de React o Vue, necesitas permitir que tu API acepte peticiones externas. Flask tiene una extensión llamada Flask-CORS. Con solo unas líneas puedes habilitar CORS y especificar qué orígenes están permitidos. Esto es vital si tu app está separada por capas.
+Para llevar Flask a un nivel profesional, conviene dominar aspectos que optimizan, aseguran y hacen más mantenible tu aplicación.
 
 ---
 
-Versionado de API: pensando a largo plazo
+Logging avanzado
 
-Las APIs evolucionan. Para evitar romper aplicaciones antiguas cuando introduces cambios, es buena práctica versionar tus rutas. Puedes hacerlo con prefijos como `/api/v1/` o `/api/v2/`, y separar tu lógica internamente usando *Blueprints* diferentes. Esto te permite mantener varias versiones activas mientras los clientes migran poco a poco.
-
----
-
-Logging: que tu app te hable
-
-En desarrollo, los errores se ven fácilmente. Pero en producción, necesitas registrar lo que ocurre. Flask te permite configurar distintos niveles de logs: info, warning, error… Puedes escribir estos registros en archivos, enviarlos a la consola o incluso integrarlos con servicios externos. Saber qué pasó justo antes de un error puede ahorrarte horas de depuración.
+Registrar eventos, errores y estadísticas con niveles (info, warning, error) es vital para detectar y solucionar problemas. Flask se integra con el módulo logging de Python, que permite enviar logs a archivos, consola o servicios externos.
 
 ---
 
-Middleware: personaliza cada petición
+Middleware: before_request y after_request
 
-Flask permite ejecutar código justo antes y después de cada petición. Con `before_request` puedes, por ejemplo, validar tokens, registrar tiempos de respuesta o preparar variables comunes. Con `after_request`, puedes modificar respuestas, añadir cabeceras o registrar estadísticas. Es como tener un punto de control central en tu app.
+Flask permite ejecutar código antes y después de cada petición:
+
+- `before_request`: validar tokens, iniciar conexiones o medir tiempos.
+- `after_request`: modificar respuestas, añadir cabeceras o registrar métricas.
+
+Esto centraliza lógica común y mejora la seguridad y performance.
 
 ---
 
-Y ahora… ¿qué sigue?
+Versionado de API
 
-Has aprendido a construir, asegurar, probar y desplegar tu app. Con estos últimos temas, te adentras en un terreno más profesional y estratégico. No necesitas aplicarlos todos de golpe, pero conocerlos te da herramientas valiosas para afrontar nuevos retos.
+Para mantener compatibilidad cuando cambian rutas o formatos, usa prefijos como `/api/v1/` y Blueprints separados para cada versión. Así puedes mantener versiones antiguas activas mientras migras clientes.
 
-Porque ser experto no es saber todo, sino saber qué existe, cuándo usarlo y cómo aprenderlo.
+---
+
+Testing automatizado
+
+Flask facilita tests unitarios e integración con su cliente de prueba. Combina con pytest para ejecutar suites completas y garantizar calidad antes de desplegar.
+
+---
+
+Integración continua y despliegue (CI/CD)
+
+Automatiza pruebas, builds y despliegues con pipelines (GitHub Actions, GitLab CI). Esto acelera ciclos y reduce errores humanos.
+
+---
+
+Monitorización y métricas
+
+Implementa herramientas para supervisar la salud de tu app en producción: tiempos de respuesta, uso de recursos, errores. Prometheus, Grafana o servicios en la nube son opciones comunes.
+
+---
+
+Dominar estos conceptos te permitirá construir aplicaciones Flask escalables, confiables y preparadas para retos reales.

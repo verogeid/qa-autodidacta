@@ -1,13 +1,15 @@
 Introducción a FastAPI, entorno y estructura de proyecto
 
-FastAPI es un framework moderno y potente para crear APIs en Python. Lo que lo diferencia de otros frameworks es su enfoque en la velocidad y en la facilidad de uso. Está diseñado para ser intuitivo, rápido y aprovechar al máximo las ventajas del lenguaje.
+FastAPI es un framework moderno que permite construir APIs web en Python de forma sencilla, clara y muy rápida. Destaca por su rendimiento, su compatibilidad con herramientas actuales y su uso inteligente del tipado, lo que lo convierte en una opción ideal tanto para desarrolladores con experiencia como para quienes se inician en la construcción de APIs.
 
-Imagina que vas a construir una casa. Antes de levantar las paredes, necesitas unos buenos planos, herramientas adecuadas y un terreno preparado. Esta semana vas a preparar todo eso. Conocerás FastAPI, lo instalarás correctamente y establecerás la estructura básica de tu proyecto. Sin complicaciones, sin adornos, pero con la base sólida que luego te permitirá avanzar con confianza.
+Imagina que vas a construir una casa. No empiezas por el tejado ni por las paredes. Lo primero es preparar el terreno, trazar los planos y reunir las herramientas. Esta primera semana de tu curso es precisamente eso: una preparación sólida para todo lo que vendrá después.
 
-Empezarás por entender qué es FastAPI, para qué se utiliza y por qué es una excelente elección para construir APIs modernas. Escucharás hablar de conceptos como rutas, peticiones HTTP y tipado estático. No es necesario que memorices nada ahora. Solo que te suenen.
+Vas a descubrir qué es FastAPI y qué lo hace especial. Conocerás términos como rutas, peticiones, respuestas y tipos de datos. No hace falta que te los aprendas aún, solo que empieces a familiarizarte con ellos. Lo importante es entender el panorama general: FastAPI te ayuda a crear puertas de entrada a tu aplicación, y define cómo deben comportarse.
 
-También aprenderás a crear un entorno de trabajo profesional, separado del resto de proyectos de tu ordenador. Sabrás instalar las librerías necesarias y cómo organizar tu proyecto para no perderte a medida que este crezca.
+Además, aprenderás a configurar un entorno de trabajo profesional. Crearás un espacio aislado donde trabajar, para evitar conflictos con otros proyectos. Sabrás cómo instalar las librerías necesarias y cómo organizar tu estructura de carpetas y archivos, para que sea fácil de mantener a medida que el proyecto crezca.
 
-Por último, verás por qué separar las responsabilidades del código es importante. Así podrás crecer como desarrollador, colaborar en equipo o integrar tus pruebas o despliegues sin sobresaltos.
+Otro aspecto fundamental que abordarás es la separación de responsabilidades. Esto significa que cada parte de tu código debe encargarse solo de lo que le corresponde. No solo es una buena práctica, también es clave para que puedas trabajar en equipo, escribir pruebas automatizadas o desplegar tu aplicación sin dolores de cabeza.
 
-Esta semana es de preparación. No subestimes su valor. Sentar las bases te permitirá avanzar con seguridad en las semanas siguientes.
+Esta semana no vas a construir funcionalidades complejas. Vas a preparar el terreno. Y eso, aunque a veces pase desapercibido, es lo que marca la diferencia entre un proyecto frágil y uno profesional. Cuando las bases son sólidas, todo lo demás fluye con mayor facilidad.
+
+Al final de esta etapa, tendrás un proyecto bien organizado, con FastAPI instalado, un entorno de trabajo controlado y una estructura clara que te permitirá avanzar sin miedo hacia los siguientes desafíos.

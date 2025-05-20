@@ -1,4 +1,4 @@
-04: State, o cómo reaccionar a los cambios
+State, o cómo reaccionar a los cambios
 
 En React, el state representa los datos internos de un componente, aquellos que pueden cambiar con el tiempo y que deben reflejarse en pantalla automáticamente.
 

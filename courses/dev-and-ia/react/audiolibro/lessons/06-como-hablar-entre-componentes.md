@@ -1,4 +1,4 @@
-06: Cómo hablar entre componentes
+Cómo hablar entre componentes
 
 En una app real, los componentes no viven aislados. Muchos de ellos necesitan compartir información. Por ejemplo, un botón que cambia algo en otro componente, o una lista que muestra datos que vienen de más arriba.
 

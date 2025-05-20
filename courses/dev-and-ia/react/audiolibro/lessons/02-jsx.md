@@ -1,4 +1,4 @@
-02: JSX, la magia detrás de React
+JSX, la magia detrás de React
 
 JSX es una sintaxis especial que parece HTML pero se usa dentro de JavaScript. Es la forma en que React define qué se verá en pantalla, combinando estructura y lógica en un solo lugar.
 

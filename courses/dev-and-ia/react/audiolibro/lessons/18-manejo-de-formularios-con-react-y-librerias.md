@@ -1,4 +1,4 @@
-18: Manejo de formularios con React y librerías
+Manejo de formularios con React y librerías
 
 Crear formularios en React puede ser tedioso si los manejas solo con useState y eventos.
 

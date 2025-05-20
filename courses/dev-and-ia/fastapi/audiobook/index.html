@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>React - Audiolibro</title>
+  <title>FastAPI - Audiolibro</title>
   <style>
     body {
       font-family: sans-serif;
@@ -90,16 +90,16 @@
     let isRepeating = false;
     const lang = 'es';
     const langCountry = 'es-ES';
-    const pitch = 1.5;
+    const pitch = 1.2;
 
     window.speechSynthesis.onvoiceschanged = () => {
       voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith(lang));
     };
 
     async function loadSelector() {
-      const res = await fetch('https://verogeid.github.io/qa-autodidacta/courses/dev-and-ia/react/audiolibro/lessons.md');
+      const res = await fetch('https://verogeid.github.io/qa-autodidacta/courses/dev-and-ia/fastapi/audiobook/lessons.md');
       const lines = (await res.text()).split('\n').filter(Boolean);
-      const selector = document.getElementById('selector');
+      const selector = document.getElementById('selector');book
       selector.innerHTML = '';
       lines.forEach(file => {
         const option = document.createElement('option');
@@ -121,7 +121,7 @@
       isRepeating = false;
       currentIndex = 0;
       const file = document.getElementById('selector').value;
-      const res = await fetch(`https://verogeid.github.io/qa-autodidacta/courses/dev-and-ia/react/audiolibro/lessons/${file}`);
+      const res = await fetch(`https://verogeid.github.io/qa-autodidacta/courses/dev-and-ia/fastapi/audiobook/lessons/${file}`);
       text = await res.text();
       document.getElementById('text').textContent = text;
       phrases = splitTextToPhrases(text);

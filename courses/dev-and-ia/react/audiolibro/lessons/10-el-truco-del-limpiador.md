@@ -1,4 +1,4 @@
-10: El truco del limpiador
+El truco del limpiador
 
 Hay momentos en los que usas useEffect no solo para hacer algo, sino también para deshacerlo. Por ejemplo, si añades un event listener, deberías quitarlo cuando el componente se elimina. Para eso existe el cleanup.
 

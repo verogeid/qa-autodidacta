@@ -1,4 +1,4 @@
-11: El ninja silencioso
+El ninja silencioso
 
 useRef es como ese ninja que no hace ruido, pero siempre está ahí. No provoca renders, no interfiere, pero guarda valores entre renders.
 

@@ -1,4 +1,4 @@
-12: Los guardianes del rendimiento
+Los guardianes del rendimiento
 
 Cuando una app crece, cada render cuenta. Ahí entran useMemo y useCallback. Son como filtros inteligentes: evitan hacer trabajo extra cuando no ha cambiado nada.
 

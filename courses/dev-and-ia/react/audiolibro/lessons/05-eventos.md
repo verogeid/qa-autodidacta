@@ -1,4 +1,4 @@
-05: Eventos y cómo manejar la interacción del usuario
+Eventos y cómo manejar la interacción del usuario
 
 React no se limita a mostrar cosas en pantalla. También reacciona a lo que el usuario hace: pulsar un botón, escribir en un campo, mover el ratón o tocar una tecla.
 

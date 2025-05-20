@@ -1,4 +1,4 @@
-19: Gestión del estado global con Context API y Redux
+Gestión del estado global con Context API y Redux
 
 Cuando tu aplicación crece, compartir estado entre componentes puede ser complicado.
 

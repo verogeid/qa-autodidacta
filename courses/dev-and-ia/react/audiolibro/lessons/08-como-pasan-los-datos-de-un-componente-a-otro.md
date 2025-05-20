@@ -1,4 +1,4 @@
-08: Cómo pasan los datos de un componente a otro
+Cómo pasan los datos de un componente a otro
 
 React organiza la interfaz como si fuera un árbol: hay componentes padres que contienen hijos, y esos hijos pueden tener sus propios hijos. La comunicación entre ellos es clara: los datos bajan y los eventos suben.
 

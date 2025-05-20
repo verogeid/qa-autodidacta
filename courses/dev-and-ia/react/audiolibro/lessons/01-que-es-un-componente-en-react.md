@@ -1,4 +1,4 @@
-01: ¿Qué es un componente en React?
+¿Qué es un componente en React?
 
 En React, todo gira en torno a los componentes. Un componente es una pieza reutilizable de la interfaz que representa una parte de la pantalla. Piensa en ellos como bloques de construcción: cada uno tiene su propia estructura, lógica y estilo.
 

@@ -1,4 +1,4 @@
-13: useReducer y el control del caos
+useReducer y el control del caos
 
 Cuando el estado se complica, useState puede quedarse corto. Muchos setState, muchas dependencias cruzadas... un lío. useReducer llega para poner orden.
 

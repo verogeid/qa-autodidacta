@@ -1,4 +1,4 @@
-14: Context y cómo no volverse loco con las props
+Context y cómo no volverse loco con las props
 
 Cuando una prop tiene que viajar desde un componente padre hasta un bisnieto... algo huele mal. Mucho prop drilling ensucia y complica el código.
 

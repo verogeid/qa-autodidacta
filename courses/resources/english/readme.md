@@ -32,15 +32,28 @@ Este repositorio contiene un curso completo de inglés, organizado por semanas, 
 - [Semana 11: Storytelling profesional](./semana11/)
 - [Semana 12: Simulación de entrevistas técnicas](./semana12/)
 
+## Audiolibro
+
+Este curso ofrece además un método alternativo de aprendizaje en formato audiolibro, útil para reforzar los conceptos clave sin mostrar código.
+
+Puedes abrir el archivo principal [index.html](https://verogeid.github.io/qa-autodidacta/courses/resources/english/audiobook/index.html) directamente en tu navegador para empezar a escuchar.
+
+### Cómo usarlo
+
+1. Abre el archivo en un navegador moderno (Chrome, Edge, Firefox).  
+2. Selecciona la lección que quieres escuchar desde el menú desplegable.  
+3. El texto de la lección se mostrará en pantalla y podrás reproducirlo para que sea leído en voz alta.  
+
+### Notas
+
+- Cada archivo contiene el contenido de la lección en texto plano para facilitar la lectura y comprensión.  
+- La síntesis de voz utiliza la API nativa del navegador, por lo que no requiere conexión externa.
+
 ---
 
 ## 🧠 Recursos transversales
 
 Además de los contenidos semanales, puedes usar herramientas como:
-
-### Technical English for IT Professionals (Audiobook)
-
-⚠️ [Audiobook](https://verogeid.github.io/qa-autodidacta/courses/resources/english/audiobook/index.html)
 
 ### Comparador de pronunciación (Python)
 

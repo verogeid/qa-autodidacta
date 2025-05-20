@@ -67,7 +67,20 @@ Curso autodidacta de React con TypeScript, orientado a desarrolladores que desea
 
 ## Audiolibro
 
-Puede adquirir conocimientos también con el [audiolibro](./audiolibro/readme.md)
+Este curso ofrece además un método alternativo de aprendizaje en formato audiolibro, útil para reforzar los conceptos clave sin mostrar código.
+
+Puedes abrir el archivo principal [index.html](https://verogeid.github.io/qa-autodidacta/courses/dev-and-ia/react/audiolibro/index.html) directamente en tu navegador para empezar a escuchar.
+
+### Cómo usarlo
+
+1. Abre el archivo en un navegador moderno (Chrome, Edge, Firefox).  
+2. Selecciona la lección que quieres escuchar desde el menú desplegable.  
+3. El texto de la lección se mostrará en pantalla y podrás reproducirlo para que sea leído en voz alta.  
+
+### Notas
+
+- Cada archivo contiene el contenido de la lección en texto plano para facilitar la lectura y comprensión.  
+- La síntesis de voz utiliza la API nativa del navegador, por lo que no requiere conexión externa.
 
 ---
 

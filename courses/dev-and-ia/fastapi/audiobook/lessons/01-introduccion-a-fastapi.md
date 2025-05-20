@@ -1,4 +1,4 @@
-1. Introducción a FastAPI, entorno y estructura de proyecto
+Introducción a FastAPI, entorno y estructura de proyecto
 
 FastAPI es un framework moderno y potente para crear APIs en Python. Lo que lo diferencia de otros frameworks es su enfoque en la velocidad y en la facilidad de uso. Está diseñado para ser intuitivo, rápido y aprovechar al máximo las ventajas del lenguaje.
 

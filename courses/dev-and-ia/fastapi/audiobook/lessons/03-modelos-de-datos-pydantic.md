@@ -1,4 +1,4 @@
-3. Modelos de datos con Pydantic
+Modelos de datos con Pydantic
 
 Una API no solo maneja datos, los entiende. Y para eso necesitamos orden. Aquí entra en juego Pydantic. Con Pydantic, defines estructuras claras para tus datos. Le dices a tu aplicación qué forma deben tener los datos que recibe y que devuelve.
 

@@ -1,4 +1,4 @@
-6. Integración con bases de datos y tareas asíncronas
+Integración con bases de datos y tareas asíncronas
 
 Una API sin una base de datos es como una tienda sin inventario. Esta semana aprenderás a conectar tu aplicación FastAPI con una base de datos y a trabajar con tareas asíncronas para mejorar el rendimiento.
 

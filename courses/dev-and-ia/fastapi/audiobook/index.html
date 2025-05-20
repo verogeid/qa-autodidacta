@@ -38,6 +38,7 @@
     }
     main {
       padding: 1rem;
+      padding-bottom: 5rem; 
       max-width: 700px;
       margin: 0 auto;
       overflow-y: auto;
@@ -90,7 +91,7 @@
     let isRepeating = false;
     const lang = 'es';
     const langCountry = 'es-ES';
-    const pitch = 1.2;
+    const pitch = 1.5;
 
     window.speechSynthesis.onvoiceschanged = () => {
       voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith(lang));

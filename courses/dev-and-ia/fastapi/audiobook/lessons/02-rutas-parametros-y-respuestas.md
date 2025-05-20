@@ -1,4 +1,4 @@
-2. Rutas, validaciones y resultados
+Rutas, validaciones y resultados
 
 Ahora que ya tienes el terreno preparado, es hora de construir las primeras habitaciones de tu API. Empezamos a definir rutas, es decir, los caminos por los que el cliente puede comunicarse con tu aplicación.
 

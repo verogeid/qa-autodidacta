@@ -1,4 +1,4 @@
-4. Testing automatizado con Pytest y HTTPX
+Testing automatizado con Pytest y HTTPX
 
 Cuando escribes código, esperas que funcione. Pero no basta con probarlo una vez y asumir que siempre irá bien. El testing automatizado nos permite comprobar que todo sigue funcionando, incluso cuando hacemos cambios.
 

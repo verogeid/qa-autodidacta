@@ -1,4 +1,4 @@
-8. Despliegue, optimización y buenas prácticas finales
+Despliegue, optimización y buenas prácticas finales
 
 En esta última semana del curso nos centramos en preparar tu aplicación FastAPI para que funcione de manera óptima y segura en un entorno real de producción.
 

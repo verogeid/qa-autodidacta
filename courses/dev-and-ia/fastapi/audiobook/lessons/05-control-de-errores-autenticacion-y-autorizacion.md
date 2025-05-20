@@ -1,4 +1,4 @@
-5. Control de errores, autenticación y autorización con JWT y JWE
+Control de errores, autenticación y autorización con JWT y JWE
 
 Las APIs no solo deben funcionar: deben ser seguras y resilientes. Esta semana aprenderás a gestionar errores y proteger tu aplicación con mecanismos de autenticación y autorización.
 

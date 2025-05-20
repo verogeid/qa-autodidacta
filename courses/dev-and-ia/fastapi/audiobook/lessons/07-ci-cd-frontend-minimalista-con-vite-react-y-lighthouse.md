@@ -1,4 +1,4 @@
-7. CI/CD, frontend minimalista con Vite + React y Lighthouse
+CI/CD, frontend minimalista con Vite + React y Lighthouse
 
 El desarrollo moderno no termina cuando tu API funciona. Necesitas entregarla de forma segura, confiable y con una interfaz que permita a los usuarios interactuar con ella. Esta semana unimos los conceptos clave: automatización, interfaz y calidad.
 

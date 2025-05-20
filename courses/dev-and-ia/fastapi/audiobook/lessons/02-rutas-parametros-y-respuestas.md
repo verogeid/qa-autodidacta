@@ -1,13 +1,13 @@
-# Rutas, parámetros y respuestas
+2. Rutas, validaciones y resultados
 
-Esta semana te enfrentas a una de las piezas más importantes de una API: las rutas. Una API sin rutas es como una ciudad sin calles. Cada endpoint es una puerta de entrada al sistema, y FastAPI te permite definirlas de forma muy sencilla.
+Ahora que ya tienes el terreno preparado, es hora de construir las primeras habitaciones de tu API. Empezamos a definir rutas, es decir, los caminos por los que el cliente puede comunicarse con tu aplicación.
 
-Empezamos con rutas estáticas, como `/status`, pero pronto necesitarás capturar información dinámica, como el ID de un producto o el nombre de un usuario. Aquí es donde entran los parámetros en la ruta.
+Cada ruta es como una puerta. Una puerta que abre una función, una acción concreta. Por ejemplo, una ruta puede responder con una lista de usuarios, otra puede guardar datos nuevos. Tú decides qué puertas construyes y qué hace cada una.
 
-FastAPI aprovecha las anotaciones de tipo para validar automáticamente lo que recibe. Si esperas un número y te llega un texto, la API responderá con un error 422. Esto mejora la robustez sin que tengas que escribir validaciones a mano.
+Aprenderás también que no basta con construir puertas. Hay que asegurar que lo que entra por ellas tenga sentido. Para eso sirve la validación. FastAPI te permite definir qué tipo de datos esperas recibir. Si no coinciden, la API responde con un error claro. Esto protege tu aplicación y hace más fácil la vida de quien la utiliza.
 
-También verás los parámetros de consulta. Estos no forman parte de la ruta, pero aportan información adicional. Es lo que se ve después del símbolo de interrogación en una URL.
+El tercer punto clave es la respuesta. Una API no solo recibe datos, también devuelve resultados. Aprenderás a definir esos resultados de forma clara, usando estructuras que el cliente pueda entender fácilmente.
 
-Por último, aprenderás a construir respuestas estructuradas. No basta con enviar una cadena: una API bien hecha devuelve objetos claros, con claves descriptivas y valores útiles.
+Esta semana verás por qué FastAPI es tan apreciado. Su sistema de tipado automático y su documentación integrada hacen que el desarrollo sea más rápido y seguro. Mientras programas, ya estás documentando. Mientras validas, estás protegiendo tu código. Todo a la vez, con menos esfuerzo.
 
-Recuerda: cada ruta que defines es parte de la experiencia del consumidor de tu API. Hazlas simples, claras y predecibles.
+Al final de la semana tendrás una API que responde a distintas rutas, valida la entrada y devuelve resultados coherentes. Una base funcional para empezar a hacer cosas útiles.

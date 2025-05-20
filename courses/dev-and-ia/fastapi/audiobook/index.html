@@ -99,7 +99,7 @@
     async function loadSelector() {
       const res = await fetch('https://verogeid.github.io/qa-autodidacta/courses/dev-and-ia/fastapi/audiobook/lessons.md');
       const lines = (await res.text()).split('\n').filter(Boolean);
-      const selector = document.getElementById('selector');book
+      const selector = document.getElementById('selector');
       selector.innerHTML = '';
       lines.forEach(file => {
         const option = document.createElement('option');
@@ -110,7 +110,7 @@
       selector.addEventListener('change', loadText);
       if (lines[0]) {
         selector.value = lines[0];
-        loadText();
+        await loadText();
       }
     }
 
@@ -149,8 +149,11 @@
       return result.filter(p => p !== '');
     }
 
-    function speakCurrentPhrase() {
-      if (currentIndex >= phrases.length) return;
+    async function speakCurrentPhrase() {
+      if (currentIndex >= phrases.length) {
+        await loadNextFileAndRead();
+        return;
+      }
       if (isPaused || isRepeating) return;
 
       const phrase = phrases[currentIndex];
@@ -176,6 +179,23 @@
       };
 
       speechSynthesis.speak(utterance);
+    }
+
+    async function loadNextFileAndRead() {
+      const selector = document.getElementById('selector');
+      const options = Array.from(selector.options);
+      const currentIndexOption = options.findIndex(opt => opt.value === selector.value);
+      const nextIndex = currentIndexOption + 1;
+
+      if (nextIndex < options.length) {
+        selector.value = options[nextIndex].value;
+        await loadText();
+        speakCurrentPhrase();
+      } else {
+        // Al llegar al último archivo, no hace nada más.
+        // Si quieres que vuelva al primero, descomenta:
+        // selector.value = options[0].value; await loadText(); speakCurrentPhrase();
+      }
     }
 
     function highlightCurrentPhrase() {
@@ -234,7 +254,7 @@
 
       repeatUtterance.onend = () => {
         isRepeating = false;
-        isPaused = true; // queda en pausa tras repetir
+        isPaused = true;
         highlightCurrentPhrase();
       };
 

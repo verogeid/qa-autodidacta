@@ -1,11 +1,13 @@
-# Introducción a FastAPI
+1. Introducción a FastAPI, entorno y estructura de proyecto
 
-FastAPI es un framework pensado para acelerar el desarrollo de APIs en Python, combinando sencillez y potencia. A diferencia de otros frameworks más antiguos, aprovecha las capacidades modernas del lenguaje, como las anotaciones de tipos y la programación asíncrona.
+FastAPI es un framework moderno y potente para crear APIs en Python. Lo que lo diferencia de otros frameworks es su enfoque en la velocidad y en la facilidad de uso. Está diseñado para ser intuitivo, rápido y aprovechar al máximo las ventajas del lenguaje.
 
-En esta primera semana no te pedimos que programes funciones complejas. El objetivo es entender el *para qué*, no solo el *cómo*. Configurar un entorno es el primer paso real de cualquier proyecto, y si lo haces bien desde el inicio, te ahorrarás muchos problemas después.
+Imagina que vas a construir una casa. Antes de levantar las paredes, necesitas unos buenos planos, herramientas adecuadas y un terreno preparado. Esta semana vas a preparar todo eso. Conocerás FastAPI, lo instalarás correctamente y establecerás la estructura básica de tu proyecto. Sin complicaciones, sin adornos, pero con la base sólida que luego te permitirá avanzar con confianza.
 
-Vamos a ver qué aporta FastAPI, cómo lo vamos a ejecutar localmente y por qué necesitamos servidores como Uvicorn. También conocerás Swagger, una herramienta integrada que nos da una documentación automática de nuestra API.
+Empezarás por entender qué es FastAPI, para qué se utiliza y por qué es una excelente elección para construir APIs modernas. Escucharás hablar de conceptos como rutas, peticiones HTTP y tipado estático. No es necesario que memorices nada ahora. Solo que te suenen.
 
-Al final de esta semana, deberías sentirte cómodo arrancando un proyecto en FastAPI, sabiendo cómo se estructura y entendiendo lo que ves en pantalla cuando accedes al navegador.
+También aprenderás a crear un entorno de trabajo profesional, separado del resto de proyectos de tu ordenador. Sabrás instalar las librerías necesarias y cómo organizar tu proyecto para no perderte a medida que este crezca.
 
-Aprender bien FastAPI te permitirá crear APIs limpias, seguras, bien documentadas y listas para usarse en producción.
+Por último, verás por qué separar las responsabilidades del código es importante. Así podrás crecer como desarrollador, colaborar en equipo o integrar tus pruebas o despliegues sin sobresaltos.
+
+Esta semana es de preparación. No subestimes su valor. Sentar las bases te permitirá avanzar con seguridad en las semanas siguientes.

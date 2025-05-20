@@ -1,11 +1,13 @@
-# Semana 03 – Modelos de datos con Pydantic
+3. Modelos de datos con Pydantic
 
-En esta semana introducimos *Pydantic*, una herramienta clave para trabajar con datos en FastAPI.
+Una API no solo maneja datos, los entiende. Y para eso necesitamos orden. Aquí entra en juego Pydantic. Con Pydantic, defines estructuras claras para tus datos. Le dices a tu aplicación qué forma deben tener los datos que recibe y que devuelve.
 
-Gracias a su integración con el tipado de Python, podemos definir estructuras de datos (modelos) que serán automáticamente validadas. Esto significa que si nuestra API espera un nombre como texto, y le llega un número, devolverá un error explicando qué ocurrió. También nos permite establecer valores opcionales y realizar transformaciones o validaciones adicionales.
+Imagina que tu aplicación es una oficina de correos. Cada paquete que llega debe tener un formato correcto: remitente, dirección, contenido. Si falta algo o hay algo mal escrito, no lo aceptas. Eso es lo que hace Pydantic con tus datos.
 
-Además, al usar estos modelos, FastAPI genera automáticamente la documentación de la API, mejorando la experiencia tanto para los desarrolladores como para los consumidores de la API.
+Esta semana aprenderás a crear modelos con Pydantic, que son como plantillas. Dirás, por ejemplo: "Un usuario tiene nombre, email y edad. La edad debe ser un número, el email debe tener un formato válido". Y FastAPI usará esa plantilla para revisar todos los datos que pasen por tu API.
 
-Aprenderemos a separar los modelos en archivos propios, reutilizarlos, anidarlos y preparar estructuras de respuesta seguras que no expongan más datos de los necesarios.
+También verás cómo transformar datos: convertir una cadena a número, generar valores por defecto o excluir campos sensibles como contraseñas. Todo eso sin escribir mucho código. Pydantic se encarga del trabajo repetitivo.
 
-Este enfoque riguroso reduce los errores, documenta mejor nuestro código y facilita el mantenimiento a largo plazo. La validación y serialización de datos ya no depende de nosotros: la hace FastAPI por nosotros, de forma segura y predecible.
+Gracias a estos modelos, tu API será más robusta, más clara, más fácil de mantener. Y lo mejor: la documentación automática de FastAPI incluirá estas validaciones, ayudando a quienes usen tu API a saber qué esperar.
+
+Al final de la semana, tus rutas estarán respaldadas por modelos que validan, transforman y documentan los datos que manejas. La API empieza a tener estructura real, como un edificio con planos bien definidos.

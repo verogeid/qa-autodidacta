@@ -1,9 +1,13 @@
-# Semana 04 – Testing automatizado con Pytest y HTTPX
+4. Testing automatizado con Pytest y HTTPX
 
-Esta semana nos enfocamos en asegurar que nuestra API funcione correctamente mediante tests automatizados. Usar herramientas como *Pytest* y *HTTPX* nos permite detectar errores antes de llegar a producción y refactorizar con seguridad.
+Cuando escribes código, esperas que funcione. Pero no basta con probarlo una vez y asumir que siempre irá bien. El testing automatizado nos permite comprobar que todo sigue funcionando, incluso cuando hacemos cambios.
 
-El testing automatizado no solo valida que una ruta responde correctamente, también comprueba que las validaciones de entrada, los errores esperados y los datos devueltos se comporten como debe. Con *HTTPX* podemos simular peticiones asíncronas, algo imprescindible en FastAPI.
+Esta semana conocerás dos herramientas clave: Pytest y HTTPX. Pytest es el marco de pruebas más popular en Python. Es simple de usar, pero muy potente. HTTPX, por su parte, permite simular peticiones HTTP, como si fueras un cliente real interactuando con tu API.
 
-Además, aprendemos a usar *fixtures*, que nos ayudan a preparar entornos de prueba o datos repetidos. Esto hace nuestros tests más legibles, organizados y reutilizables.
+Empezarás escribiendo pruebas que llamen a tus endpoints, verifiquen los resultados y comprueben que las respuestas tienen el formato correcto. ¿Devuelve un 200 si todo va bien? ¿Un 422 si falta un dato? Con las pruebas, lo sabrás sin tener que abrir el navegador.
 
-La idea es que, después de esta semana, tengas un entorno básico de testeo listo para expandir según crezca tu API. Esto es clave en proyectos reales.
+También verás cómo organizar tus tests, agruparlos, y cómo utilizar fixtures para preparar datos comunes. Así evitas repetir código y haces tus pruebas más legibles y mantenibles.
+
+Lo importante aquí no es solo detectar errores, sino evitar que se cuelen sin darte cuenta. Las pruebas automatizadas se ejecutan cada vez que haces cambios. Son como una red de seguridad que te permite avanzar con confianza.
+
+Al terminar la semana, tendrás un conjunto de pruebas básicas que cubrirán tus rutas principales. Y lo mejor: sabrás cómo ampliarlas y mantenerlas. Con cada nueva funcionalidad, añadirás una nueva prueba. Tu código será más robusto, y tu equipo te lo agradecerá.

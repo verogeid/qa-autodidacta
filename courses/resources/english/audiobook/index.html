@@ -124,7 +124,7 @@
     let repeatPhrase = '';
     let timeoutId;
     const secPause = 2000;
-    const secLongPause = 4000;
+    const secLongPause = 5000;
 
     window.speechSynthesis.onvoiceschanged = () => {
       voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'));

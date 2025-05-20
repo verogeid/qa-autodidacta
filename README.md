@@ -28,7 +28,7 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 
 ## Índice de Cursos
 
-### 🧠 Fundamentos QA
+###  Fundamentos QA
 
 1. 🚧 [SSTQB Foundation Level 4]<!-- (./courses/qa-fundaments/sstqb/readme.md)--> 🚧
 
@@ -54,19 +54,27 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 11. 🚧 [K6]<!-- (./courses/performance/k6/readme.md)--> 🚧
 12. 🚧 [LightHouse]<!-- (./courses/performance/lighthouse/lighthouse/readme.md)--> 🚧
 
-### ⚡ Desarrollo e IA
+### ⚡ Desarrollo
 
 13. [HTML5 y CSS3](./courses/dev-and-ia/html5/readme.md)
 14. 🚧 [React con TypeScript]<!-- (./courses/dev-and-ia/react/readme.md)--> 🚧
-15. [FastAPI](./courses/dev-and-ia/fastapi/readme.md)
+15. 🚧 [Python]<!-- (./courses/dev-and-ia/python/readme.md)--> 🚧
 16. 🚧 [C# en profundidad]<!-- (./courses/dev-and-ia/csharp/readme.md)--> 🚧
-17. 🚧 [IA Developer con Python]<!-- (./courses/dev-and-ia/ia-python/readme.md)--> 🚧
-18. [n8n: automatización de flujos](./courses/dev-and-ia/n8n/readme.md)
+
+### API
+
+17. [FastAPI](./courses/dev-and-ia/fastapi/readme.md)
+18. [Flask](./courses/dev-and-ia/flask/readme.md)
+
+### 🧠 IA
+
+19. 🚧 [IA Developer con Python]<!-- (./courses/dev-and-ia/ia-python/readme.md)--> 🚧
+20. [n8n: automatización de flujos](./courses/dev-and-ia/n8n/readme.md)
 
 ### 🚁 Bonus Track
 
-19. [English for Tech: A2 to C1](./courses/resources/english/readme.md)
-20. 🚧 [Trinity: "Operator, I need a pilot program for a B-212 helicopter"]<!-- (./courses/resources/helicopter/readme.md)--> 🚧
+21. [English for Tech: A2 to C1](./courses/resources/english/readme.md)
+22. 🚧 [Trinity: "Operator, I need a pilot program for a B-212 helicopter"]<!-- (./courses/resources/helicopter/readme.md)--> 🚧
 
 ---
 

@@ -1,63 +1,86 @@
-# Tutorial Semana 5 - Integración de Pruebas en CI/CD
+# Semana 05 – Técnicas Estáticas: Revisiones y Análisis Estático
 
-## 1. Introducción a CI/CD
+## 🎯 Objetivos de aprendizaje
 
-CI/CD es un conjunto de prácticas que permiten la integración y despliegue continuos de software. El objetivo es tener un flujo de trabajo automatizado en el que el código se integra, prueba y despliega de manera continua, asegurando que los cambios en el código se validen rápidamente.
+- Distinguir entre técnicas estáticas y dinámicas de prueba.  
+- Comprender los beneficios del análisis estático y las revisiones.  
+- Identificar los diferentes tipos de revisiones: informal, walkthrough, revisión técnica e inspección.  
+- Reconocer los roles y responsabilidades en un proceso de revisión formal.  
+- Aplicar técnicas de revisión a diferentes productos de trabajo.  
+- Utilizar herramientas de análisis estático para detectar defectos sin ejecutar el código.
 
-- **Integración continua (CI)**: Consiste en integrar el código de manera frecuente en un repositorio compartido. Las pruebas automatizadas se ejecutan cada vez que se hace un commit.
-- **Despliegue continuo (CD)**: Permite que el software se despliegue automáticamente en un entorno de producción una vez que pasa todas las pruebas.
+---
 
-## 2. Herramientas para la Integración de Pruebas en CI/CD
+## 1. ¿Qué es la prueba estática?
 
-Las herramientas más comunes para integrar pruebas en un pipeline CI/CD son:
+La prueba estática es una técnica que permite identificar defectos en los productos de trabajo sin necesidad de ejecutar el software.  
+Se centra en la revisión de documentos, código fuente y otros artefactos para detectar errores, omisiones o inconsistencias.
 
-- **GitHub Actions**: Permite automatizar los flujos de trabajo en GitHub, incluyendo la ejecución de pruebas.
-- **Jenkins**: Plataforma de automatización de código abierto que soporta la integración y despliegue continuos.
-- **Travis CI**: Un servicio de integración continua que se integra con GitHub para realizar pruebas automatizadas.
-- **CircleCI**: Otra opción popular para integrar pruebas dentro de un flujo CI/CD.
-- **GitLab CI/CD**: Plataforma que ofrece CI/CD totalmente integrada en GitLab.
+---
 
-## 3. Cómo Configurar Pruebas Automatizadas en un Pipeline CI/CD
+## 2. Diferencias entre técnicas estáticas y dinámicas
 
-Un pipeline CI/CD típico se configura en dos partes: la **integración** y el **despliegue**. Para configurar las pruebas automatizadas, se deben seguir estos pasos:
+| Característica             | Técnicas Estáticas                            | Técnicas Dinámicas                      |
+|----------------------------|-----------------------------------------------|-----------------------------------------|
+| Ejecución del software     | No se requiere                                | Requiere ejecución                      |
+| Tipo de defectos detectados| Errores en documentos, código no ejecutado    | Errores en tiempo de ejecución          |
+| Momento de aplicación      | Etapas tempranas del desarrollo               | Etapas posteriores, durante pruebas     |
 
-1. **Configurar el archivo del pipeline**: En herramientas como GitHub Actions, este archivo es generalmente un archivo YAML donde defines los pasos a seguir para ejecutar las pruebas. Ejemplo:
+---
 
-  ```yaml
-  name: CI Pipeline
-  on: [push]
-  jobs:
-    test:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Check out code
-          uses: actions/checkout@v2
-        - name: Install dependencies
-          run: npm install
-        - name: Run tests
-          run: npm test
-  ```
+## 3. Revisiones: Tipos y procesos
 
-2. **Integrar la ejecución de pruebas**: Asegúrate de que las pruebas se ejecuten como parte del pipeline cada vez que haya un cambio en el código.
+Las revisiones son evaluaciones sistemáticas de productos de trabajo para identificar defectos y mejorar la calidad.
 
-## 4. Monitorización de Pruebas en CI/CD
+### Tipos de revisiones
 
-Una vez configuradas las pruebas, es importante monitorear su rendimiento dentro del pipeline CI/CD. Algunas métricas clave para observar son:
+1. **Revisión informal**: No estructurada, sin documentación formal.  
+2. **Walkthrough**: El autor guía a los participantes a través del documento para obtener comentarios.  
+3. **Revisión técnica**: Evaluación por parte de expertos técnicos para identificar defectos y mejorar la calidad.  
+4. **Inspección**: Proceso formal con roles definidos y criterios de entrada/salida.
 
-- **Tiempo de ejecución de pruebas**: La duración total del conjunto de pruebas.
-- **Número de pruebas exitosas/fallidas**: Cuántas pruebas han pasado y cuántas han fallado.
-- **Cobertura de pruebas**: Qué porcentaje del código está cubierto por las pruebas automatizadas.
+### Roles en una revisión formal
 
-Las herramientas de CI/CD, como *Jenkins* o *GitHub Actions*, permiten visualizar estos resultados de manera clara, mostrando gráficos y reportes detallados.
+- **Moderador**: Lidera y coordina la revisión.  
+- **Autor**: Creador del producto de trabajo.  
+- **Revisor**: Examina el producto para identificar defectos.  
+- **Escriba**: Documenta los hallazgos durante la revisión.
 
-## 5. Estrategias de Rollback y Manejo de Fallos en CI/CD
+---
 
-El manejo adecuado de fallos es esencial en un entorno CI/CD:
+## 4. Análisis estático mediante herramientas
 
-- **Rollback automático**: Si una nueva versión falla en las pruebas, el sistema puede revertir automáticamente a la última versión estable.
-- **Notificaciones**: Configura notificaciones automáticas para alertar a los desarrolladores o al equipo de QA en caso de que una prueba falle.
-- **Estrategias de retry**: Si una prueba falla debido a un error transitorio, implementa una estrategia de reintentos antes de marcar la prueba como fallida.
+El análisis estático automatizado utiliza herramientas para examinar el código fuente y otros artefactos sin ejecutarlos.
 
-## Resumen
+### Beneficios
 
-Esta semana, aprendiste sobre la integración de pruebas dentro de un flujo CI/CD, configurando un pipeline para ejecutar pruebas automatizadas y utilizando herramientas como GitHub Actions y Jenkins. También cubrimos la monitorización de pruebas y cómo manejar fallos de manera eficiente.
+- Detección temprana de defectos.  
+- Identificación de código muerto o redundante.  
+- Verificación de cumplimiento de estándares de codificación.  
+- Mejora de la mantenibilidad del código.
+
+### Herramientas comunes
+
+- **SonarQube**  
+- **ESLint** (JavaScript)  
+- **Pylint** (Python)  
+- **FindBugs** (Java)
+
+---
+
+## 5. Aplicación práctica
+
+Para consolidar los conocimientos adquiridos, se recomienda realizar ejercicios prácticos que incluyan:
+
+- Identificación de defectos en fragmentos de código utilizando herramientas de análisis estático.  
+- Simulación de una revisión formal con roles asignados.  
+- Evaluación de documentos de requisitos para detectar inconsistencias.
+
+---
+
+## 📚 Recursos adicionales
+
+- [ISTQB Foundation Level Syllabus 2018](https://www.istqb.org/downloads/send/2-foundation-level-documents/3-foundation-level-syllabus-2018.html)  
+- [Guía de SonarQube](https://docs.sonarqube.org/latest/)  
+- [Documentación de ESLint](https://eslint.org/docs/latest/)
+

@@ -1,6 +1,6 @@
 # Curso autodidacta SSTQB Foundation Level 4
 
-Este repositorio contiene un curso autodidacta y práctico para preparar el examen oficial **SSTQB Foundation Level 4**, adaptado a un ritmo semanal de **5 a 8 horas**. Está dividido en **12 semanas**, cada una con contenidos teóricos, tutorial paso a paso y ejercicios prácticos para afianzar los conocimientos.
+Este repositorio contiene un curso autodidacta y práctico para preparar el examen oficial **SSTQB Foundation Level 4**, adaptado a un ritmo semanal de **5 a 8 horas**. Está dividido en **12 temas**, cada uno con contenidos teóricos, tutorial paso a paso y ejercicios prácticos para afianzar los conocimientos.
 
 El enfoque es pedagógico, evolutivo y orientado a personas que deseen aprender desde cero, reforzar conceptos o prepararse de forma autodidacta. Se integran también buenas prácticas de desarrollo, automatización y herramientas modernas, en la medida que el temario oficial lo permite.
 
@@ -37,7 +37,7 @@ Cada carpeta de semana contiene:
 
 ## Bonus track: autoevaluaciones
 
-Incluye **cinco exámenes tipo test** diseñados para validar tu preparación real. Cada prueba está estructurada como el examen oficial SSTQB FL 4.
+Incluye **cinco exámenes tipo test** diseñados para validar tu preparación real. Cada prueba está estructurada como el examen oficial SSTQB FL 4, aunque con la mitad de preguntas.
 
 - [examen 01](./bonus-track/01-examen.md): Test de 20 preguntas tras la semana 4.
 - [examen 02](./bonus-track/02-examen.md): Test de 20 preguntas tras la semana 8.

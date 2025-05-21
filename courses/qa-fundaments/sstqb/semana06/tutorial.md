@@ -1,70 +1,69 @@
-# Tutorial Semana 6 - Buenas Prácticas en Pruebas Automatizadas
+# Semana 6 – Niveles y Tipos de Prueba
 
-## 1. Principios de Diseño de Pruebas Automatizadas
+## Niveles de prueba
 
-Las pruebas automatizadas deben ser **eficaces**, **sostenibles** y **reutilizables**. Algunos principios clave para el diseño de pruebas son:
+Los *niveles de prueba* representan etapas en el proceso de validación del software. Cada uno tiene objetivos, responsables y artefactos de entrada/salida distintos.
 
-- **Pruebas pequeñas y enfocadas**: Cada prueba debe cubrir un único comportamiento o característica.
-- **Pruebas independientes**: Cada prueba debe ser independiente de las demás. Esto significa que no deben depender del orden en que se ejecutan.
-- **Pruebas rápidas**: Las pruebas deben ejecutarse rápidamente para no frenar el flujo de trabajo. Si una prueba tarda demasiado, afectará la eficiencia de los pipelines CI/CD.
+### 1. Prueba unitaria (Unit Testing)
+- **Responsable**: Desarrolladores.
+- **Objetivo**: Verificar que cada unidad de código (función, módulo) funciona como se espera.
+- **Entrada**: Código fuente.
+- **Frecuencia**: Automatizada y continua.
 
-## 2. Estructura de Pruebas: Cómo Organizar y Dividir las Pruebas
+### 2. Prueba de integración
+- **Responsable**: Desarrolladores o equipo de integración.
+- **Objetivo**: Evaluar la interacción entre unidades o componentes.
+- **Tipos**:
+  - *Big Bang*
+  - *Incremental* (ascendente, descendente, mixto)
 
-Una estructura bien organizada facilita la legibilidad y el mantenimiento de las pruebas. Algunas prácticas recomendadas incluyen:
+### 3. Prueba de sistema
+- **Responsable**: Equipos de QA.
+- **Objetivo**: Validar el comportamiento del sistema completo según los requisitos funcionales y no funcionales.
+- **Importancia**: Verifica que los componentes integrados funcionan como un todo.
 
-- **Agrupar pruebas por módulo o componente**: Si estás probando una aplicación, organiza las pruebas según las diferentes funcionalidades o componentes.
-- **Uso de directorios y nombres claros**: Asigna nombres descriptivos a los archivos de prueba y los directorios, para que sea fácil localizar y entender el propósito de cada conjunto de pruebas.
+### 4. Prueba de aceptación
+- **Responsable**: Clientes, usuarios finales o Product Owner.
+- **Objetivo**: Confirmar que el sistema es apto para su uso.
+- **Tipos**:
+  - *UAT (User Acceptance Testing)*
+  - *Pruebas Alfa/Beta*
+  - *Contratos y normativas*
 
-Ejemplo de estructura:
+## Tipos de prueba
 
-```plaintext
-tests/
-  ├── login/
-  │   ├── login.spec.ts
-  │   ├── login.data.ts
-  ├── registration/
-  │   ├── registration.spec.ts
-  │   ├── registration.data.ts
-```
+Se dividen principalmente en dos grandes grupos: *funcionales* y *no funcionales*. También existen pruebas relacionadas con cambios y mantenimiento.
 
-## 3. Uso de Datos de Prueba
+### Pruebas funcionales
+Evalúan qué hace el sistema:
+- Basadas en requisitos del negocio.
+- Se enfocan en entradas/salidas.
+- Ejemplos: validación de formularios, reglas de negocio, flujos.
 
-- **Evitar datos codificados**: Los datos de prueba deben ser dinámicos y no estar codificados directamente en las pruebas. Esto facilita la reutilización y actualización de los datos.
-- **Uso de datos de prueba específicos**: Define un conjunto de datos que cubran los diferentes casos de prueba. Ejemplo:
+### Pruebas no funcionales
+Evalúan cómo se comporta el sistema:
+- Rendimiento (carga, estrés)
+- Usabilidad
+- Seguridad
+- Compatibilidad
+- Mantenibilidad
 
-```ts
-const validUser = {
-  username: "user123",
-  password: "securepassword"
-};
-```
+### Pruebas estructurales
+- Examinan la estructura interna del software.
+- Se basan en la lógica del código (white-box).
+- Se utilizan métricas como la cobertura de código.
 
-## 4. Reutilización de Pruebas y Patrones Comunes
+### Pruebas de mantenimiento
+- Re-testing: Verificar si una corrección ha solucionado el defecto.
+- Regression testing: Confirmar que el cambio no ha introducido nuevos errores.
+- Verificación tras migraciones, actualizaciones o desactivación de funciones.
 
-Asegúrate de reutilizar el código de prueba tanto como sea posible. Algunas técnicas son:
+## Relación entre nivel y tipo
 
-- **Funciones auxiliares**: Crea funciones reutilizables para operaciones comunes (por ejemplo, iniciar sesión, cargar datos, etc.).
-- **Patrones de diseño**: Usa patrones como Page Object Pattern para mejorar la legibilidad y la reutilización de pruebas en aplicaciones web.
+Los niveles indican **cuándo y quién** prueba. Los tipos indican **qué y cómo** se prueba. Por ejemplo:
+- En nivel de sistema puedes hacer pruebas funcionales, no funcionales y estructurales.
+- En aceptación puedes realizar pruebas funcionales o de usabilidad.
 
-## 5. Cómo Hacer Pruebas Legibles y Mantenibles
+## Conclusión
 
-- **Nombrado claro y consistente**: Usa nombres que describan claramente lo que hace cada prueba. Evita abreviaciones crípticas.
-- **Evitar la sobrecarga de código**: No hagas que tus pruebas sean demasiado complejas. Si una prueba se vuelve difícil de entender, es posible que esté probando demasiado.
-
-Ejemplo de nombre claro para una prueba:
-
-```ts
-it("should allow the user to log in with valid credentials", () => {
-  // test implementation
-});
-```
-
-## 6. Estrategias de Optimización de Pruebas
-
-- **Paralelización de pruebas**: Ejecuta las pruebas en paralelo para reducir el tiempo total de ejecución.
-- **Uso de mocks y stubs**: Para acelerar las pruebas, especialmente en pruebas de integración, puedes utilizar mocks y stubs para simular la interacción con servicios externos.
-- **Orden de ejecución eficiente**: Organiza las pruebas de manera que las más rápidas se ejecuten primero, para detectar fallos rápidamente.
-
-## Resumen
-
-Esta semana, aprendiste las buenas prácticas para diseñar, organizar y optimizar tus pruebas automatizadas. Estas prácticas te ayudarán a mantener tus pruebas limpias, rápidas y fáciles de mantener.
+Comprender los distintos niveles y tipos de prueba permite planificar estrategias efectivas, detectar errores de forma más temprana y garantizar que el software cumple tanto los requisitos técnicos como los de negocio.

@@ -1,17 +1,36 @@
-# Semana 2 - Planificación y Diseño de Pruebas
+# Semana 02 – Testing en el ciclo de vida del software
 
-En esta segunda semana, nos centraremos en la planificación y diseño de pruebas. Aprenderás a identificar los requisitos de pruebas, escribir casos de prueba efectivos y cómo organizar y gestionar el trabajo de testing de manera eficiente.
+**Esta semana profundizamos en cómo se integra el *testing* en los distintos modelos de desarrollo, desde cascada hasta ágil.** También entenderás las fases del *testing* a lo largo del ciclo de vida del software y su papel crucial durante el mantenimiento.
 
-## Contenidos
+---
 
-- Planificación de pruebas: cómo estructurar un plan de pruebas efectivo.
-- Técnicas de diseño de pruebas.
-- Creación de casos de prueba y su documentación.
-- Revisión y gestión de los casos de prueba.
-- Estrategias de trazabilidad entre requisitos y pruebas.
+## Contenidos principales
 
-## Objetivos de la semana
+- Modelos de desarrollo: *Waterfall*, iterativo, incremental y ágil.  
+- Cómo afecta cada modelo al momento y enfoque del *testing*.  
+- Relación entre fases de desarrollo y pruebas correspondientes.  
+- Tipos de mantenimiento y rol del *testing* en esta etapa.  
+- Riesgos asociados al *testing* tardío.
 
-- Ser capaz de planificar un ciclo de pruebas desde cero.
-- Aprender a crear y documentar casos de prueba efectivos.
-- Entender cómo gestionar la trazabilidad entre los requisitos y las pruebas.
+---
+
+## ¿Por qué es importante esta semana?
+
+Comprender cuándo y cómo se prueba en función del ciclo de vida del software permite diseñar mejores estrategias de calidad. Además, te prepara para participar activamente en entornos ágiles y adaptarte a modelos cambiantes.
+
+---
+
+## Objetivo de aprendizaje
+
+Al finalizar, sabrás cómo planificar y ejecutar *testing* de forma efectiva en diferentes contextos de desarrollo, incluidos entornos ágiles y fases de mantenimiento.
+
+---
+
+## Tags
+
+#SoftwareTesting #SDLC #AgileTesting #QA #TestingStrategy #CicloDeVida #QualityAssurance
+
+Total caracteres: 1,080 aprox.
+
+¿Deseas incluir una tabla resumen de fases o mantenerlo así para que sea más ligero?
+

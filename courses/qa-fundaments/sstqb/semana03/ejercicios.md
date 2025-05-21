@@ -29,19 +29,19 @@ c. Solo cuando el cliente lo solicita.
 
 ## Soluciones y explicaciones
 
-1. *El desarrollo y pruebas siguen fases secuenciales*
+1. *El desarrollo y pruebas siguen fases secuenciales*.
    El modelo en cascada es un proceso lineal donde cada fase debe completarse antes de pasar a la siguiente. Las pruebas no se hacen continuamente.  
 
-2. *Pruebas de integración*
+2. *Pruebas de integración*.
    Este nivel verifica que distintos módulos o componentes funcionen correctamente en conjunto.  
 
-3. *Verificar que un botón realiza la acción esperada*
+3. *Verificar que un botón realiza la acción esperada*.
    Las pruebas funcionales verifican que el software cumpla con sus funciones según los requisitos.  
 
-4. *Pruebas que se ejecutan para comprobar que cambios recientes no afectan funcionalidades existentes*
+4. *Pruebas que se ejecutan para comprobar que cambios recientes no afectan funcionalidades existentes*.
    Las pruebas de regresión aseguran que las nuevas modificaciones no rompan funcionalidades anteriores.  
 
-5. *Durante todo el ciclo, en cada sprint*
+5. *Durante todo el ciclo, en cada sprint*.
    En modelos ágiles, las pruebas se integran continuamente dentro de cada sprint para detectar errores rápidamente.
 
 ---

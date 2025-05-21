@@ -1,23 +1,71 @@
-# Ejercicios - Semana 9
+# Semana 9 – Ejercicios: Técnicas Dinámicas de Prueba
 
-## Prácticos
+## Ejercicio 1
 
-1. Diseña un mini plan de pruebas para una app de notas con funciones básicas (crear, editar, eliminar).
-2. Estima el tiempo necesario para probar 50 casos usando técnicas de juicio de experto y tasa histórica (5 casos/hora).
-3. Dibuja una tabla de trazabilidad entre estos requisitos y pruebas:
-   - R1: Crear nota.
-   - R2: Editar nota.
-   - R3: Eliminar nota.
+Define qué son las *pruebas dinámicas* y menciona dos ejemplos.
 
-4. Haz seguimiento ficticio de una ejecución con:
-   - 20 casos planificados.
-   - 15 ejecutados.
-   - 10 fallos encontrados.
-   - 4 fallos corregidos.
+---
 
-## Teóricos
+## Ejercicio 2
 
-5. ¿Por qué es clave planificar las pruebas incluso en entornos ágiles?
-6. ¿Qué riesgos se pueden mitigar con una buena trazabilidad?
-7. ¿Cuáles son las ventajas e inconvenientes de la estimación por experiencia?
-8. Explica qué decisiones tomarías si, en una semana, detectas más defectos de los esperados.
+Explica la diferencia entre *pruebas de caja negra* y *pruebas de caja blanca*.
+
+---
+
+## Ejercicio 3
+
+Completa con verdadero (V) o falso (F):
+
+a) Las pruebas de caja negra se centran en la funcionalidad externa.  
+b) Las pruebas de caja blanca requieren conocer la estructura interna del código.  
+c) Las pruebas de caja negra no necesitan diseño de casos de prueba.
+
+---
+
+## Ejercicio 4
+
+Menciona tres técnicas de diseño de pruebas basadas en caja negra.
+
+---
+
+## Ejercicio 5
+
+¿En qué fase del ciclo de vida del software se suelen aplicar las pruebas dinámicas?
+
+---
+
+## Ejercicio 6
+
+¿Qué ventajas tienen las pruebas dinámicas frente a las estáticas?
+
+---
+
+# Respuestas
+
+## Ejercicio 1
+
+Las pruebas dinámicas implican ejecutar el software para verificar su comportamiento. Ejemplos: pruebas funcionales y pruebas de rendimiento.
+
+## Ejercicio 2
+
+Las pruebas de caja negra verifican la funcionalidad sin conocer el código interno, mientras que las pruebas de caja blanca examinan la estructura interna y lógica del código.
+
+## Ejercicio 3
+
+a) V  
+b) V  
+c) F  
+
+## Ejercicio 4
+
+- Partición Equivalente  
+- Análisis de Valores Límites  
+- Tabla de Decisión  
+
+## Ejercicio 5
+
+Principalmente durante la fase de *testing* después del desarrollo, incluyendo pruebas de integración y sistema.
+
+## Ejercicio 6
+
+Permiten detectar defectos reales en ejecución y evaluar el comportamiento en condiciones reales, algo que no se puede lograr solo con análisis estático.

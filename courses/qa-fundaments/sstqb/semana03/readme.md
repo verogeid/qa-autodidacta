@@ -1,17 +1,17 @@
-# Semana 3 - Ejecución de Pruebas y Reportes de Defectos
+# Semana 3 - Ciclo de vida del software, niveles y tipos de pruebas
 
-En la tercera semana, nos centraremos en la ejecución de pruebas y la correcta documentación de los defectos encontrados. Aprenderás a ejecutar pruebas manuales y automatizadas, así como a registrar y gestionar defectos de manera efectiva para asegurar una correcta resolución.
+Explorarás cómo se encaja el testing dentro del ciclo de vida del desarrollo, los distintos niveles de pruebas (unidad, integración, sistema y aceptación) y los tipos de pruebas más relevantes según los objetivos del proyecto.
 
-## Contenidos
+**Objetivos:**
 
-- Ejecución de pruebas manuales y automatizadas.
-- Registro y gestión de defectos.
-- Uso de herramientas de seguimiento de defectos.
-- Cómo crear un reporte de defectos efectivo.
-- Estrategias de comunicación con los equipos de desarrollo.
+- Conocer los modelos de desarrollo y sus implicaciones en el testing.
+- Diferenciar niveles de pruebas.
+- Identificar tipos de pruebas: funcionales, no funcionales, estructurales y de regresión.
+- Entender cómo se aplica el testing en enfoques ágiles y tradicionales.
 
-## Objetivos de la semana
+---
 
-- Ser capaz de ejecutar tanto pruebas manuales como automatizadas.
-- Aprender a registrar y gestionar defectos con claridad.
-- Desarrollar habilidades de comunicación efectiva para reportar problemas.
+- [< Semana anterior](../semana02/readme.md)
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+- [Semana siguiente >](../semana04/readme.md)

@@ -1,6 +1,6 @@
-# Semana 2 - Psicología del testing, ética profesional y habilidades clave
+# Tema 2 - Psicología del testing, ética profesional y habilidades clave
 
-En esta semana te centrarás en el factor humano del testing: cómo comunicarte, colaborar y mantener una actitud crítica sin generar conflicto. También verás aspectos éticos y habilidades personales relevantes para un tester profesional.
+En esta tema te centrarás en el factor humano del testing: cómo comunicarte, colaborar y mantener una actitud crítica sin generar conflicto. También verás aspectos éticos y habilidades personales relevantes para un tester profesional.
 
 **Objetivos:**
 
@@ -11,7 +11,8 @@ En esta semana te centrarás en el factor humano del testing: cómo comunicarte,
 
 ---
 
-- [< Semana anterior](../semana01/readme.md)
+- [^ Índice del curso](../readme.md)
+- [< Tema anterior](../semana01/readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
-- [Semana siguiente >](../semana03/readme.md)
+- [Tema siguiente >](../semana03/readme.md)

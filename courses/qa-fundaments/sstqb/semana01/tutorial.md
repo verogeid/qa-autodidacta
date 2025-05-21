@@ -1,49 +1,50 @@
-# Tutorial Semana 1 - Fundamentos del Testing (v4.0)
+# Tutorial Semana 1 - Introducción al Testing de Software
 
-## 1. ¿Por qué se prueba software?
+## 1. ¿Qué es el testing de software?
 
-El testing ayuda a encontrar defectos antes de que afecten al usuario final, mejora la calidad del software y reduce el coste total del ciclo de vida.
+El **testing de software** es el proceso de evaluar un sistema o componente de software para detectar posibles errores y garantizar que se cumple con los requisitos establecidos. Es una actividad crítica para asegurar la calidad de las aplicaciones.
 
-## 2. Términos clave
+### ¿Por qué es importante el testing?
 
-- **Error** (*mistake*): acción humana incorrecta.
-- **Defecto** (*defect*): fallo en el software o artefactos derivados del error.
-- **Fallo** (*failure*): comportamiento incorrecto observado al ejecutar el software.
+- **Mejora la calidad**: Garantiza que el software funciona como se espera.
+- **Reduce el riesgo**: Detecta defectos antes de que lleguen al usuario final.
+- **Ahorro de costos**: Detectar errores en etapas tempranas reduce los costos de corrección.
 
-## 3. Aportes del testing
+## 2. Tipos de pruebas
 
-- Reducción de riesgos.
-- Mejora de la calidad percibida.
-- Visibilidad del progreso del desarrollo.
+Existen varios tipos de pruebas, cada una con un enfoque específico:
 
-## 4. Principios del testing (v4.0)
+### Pruebas de caja negra
 
-1. Testing muestra la presencia de defectos, no su ausencia.
-2. Testing temprano ahorra tiempo y dinero.
-3. Pruebas exhaustivas no son posibles.
-4. Agrupación de defectos.
-5. Pesticide paradox.
-6. Contexto importa.
-7. Testing contribuye a la confianza.
+- **Pruebas funcionales**: Verifican que el software cumpla con los requisitos funcionales definidos. Ejemplo: probar que un formulario en un sitio web se envíe correctamente.
 
-## 5. Actividades clave del proceso de pruebas
+### Pruebas de caja blanca
 
-- Planificación y control.
-- Análisis y diseño.
-- Implementación y ejecución.
-- Evaluación de criterios de salida.
-- Cierre.
+- **Pruebas de estructura**: Se enfocan en la estructura interna del software, como el código. Ejemplo: realizar pruebas unitarias.
 
-## 6. Mentalidad del tester
+### Pruebas no funcionales
 
-- Pensamiento crítico.
-- Colaboración con desarrolladores.
-- Comunicación efectiva con stakeholders.
-- Visión de negocio y usuario.
+- **Pruebas de rendimiento**: Evaluar cómo se comporta la aplicación bajo carga (tiempos de respuesta, estabilidad).
+- **Pruebas de seguridad**: Evaluar las vulnerabilidades del sistema.
 
-## Recursos recomendados
+## 3. El rol del QA en un equipo ágil
 
-- [ISTQB v4.0 Syllabus PDF](https://www.istqb.org/downloads/send/72-foundation-level-core/297-foundation-level-syllabus-4-0.html)
-- [Glossary oficial de ISTQB](https://glossary.istqb.org)
-- [Software Testing Fundamentals](https://softwaretestingfundamentals.com/)
+Como QA, tu objetivo es **asegurar la calidad del software** durante todo el ciclo de vida del proyecto. Este rol varía dependiendo del equipo y la metodología utilizada, pero en general se espera que participes en las siguientes actividades:
 
+- **Automatización de pruebas**: Desarrollar pruebas automáticas para garantizar la calidad continua.
+- **Revisión de código**: Verificar que las mejores prácticas sean seguidas y detectar posibles errores.
+- **Pruebas manuales**: Realizar pruebas exploratorias para detectar problemas no cubiertos por las pruebas automáticas.
+
+## 4. Metodologías ágiles
+
+En equipos ágiles como **Scrum** y **Kanban**, las pruebas se integran en todo el proceso de desarrollo, no solo al final. Las pruebas son continuas y se ajustan según el ritmo del desarrollo.
+
+## 5. Buenas prácticas en testing
+
+- **Desarrollo de pruebas antes del código**: La escritura de pruebas antes de desarrollar la funcionalidad se denomina **Test-Driven Development (TDD)**.
+- **Automatización de pruebas**: Siempre que sea posible, las pruebas deben ser automatizadas para facilitar la ejecución continua.
+- **Pruebas en entornos aislados**: Asegúrate de que las pruebas se realicen en entornos independientes para evitar interferencias.
+
+## Resumen
+
+En esta semana, has aprendido los fundamentos del testing de software, los tipos de pruebas que existen, y cómo un QA contribuye al proceso ágil de desarrollo. Ahora tienes una base sólida para las siguientes semanas, donde profundizaremos más en los aspectos técnicos y prácticos del testing.

@@ -1,22 +1,17 @@
-# Semana 1 - Fundamentos del Software Testing
+# Semana 1 - Introducción al Testing de Software
 
-Comenzamos el curso con una introducción a los fundamentos del *software testing*, según el estándar **ISTQB Foundation Level v4.0**. Esta semana te familiarizarás con los conceptos clave que te acompañarán durante toda la preparación.
+En esta primera semana, nos introduciremos en el mundo de las pruebas de software. Aprenderemos sobre la importancia del testing, los tipos de pruebas más comunes, y cómo un ingeniero de calidad (QA) juega un papel fundamental en el ciclo de vida del desarrollo del software.
 
 ## Contenidos
 
-- Propósito del testing.
-- Conceptos fundamentales: error, defecto, fallo.
-- Cómo contribuye el testing a la calidad.
-- Actividades esenciales del proceso de prueba.
-- Principios generales del testing (actualizados en v4.0).
-- Mentalidad del tester y colaboración en equipos modernos.
+- Definición de testing y su importancia en el desarrollo.
+- Tipos de pruebas y su clasificación.
+- El papel del ingeniero de QA en el ciclo de vida del software.
+- Introducción a las metodologías ágiles (Scrum, Kanban).
+- Buenas prácticas en testing.
 
-## Objetivo semanal
+## Objetivos de la semana
 
-Al finalizar esta semana serás capaz de:
-
-- Comprender el propósito del *software testing*.
-- Identificar errores, defectos y fallos en contextos reales.
-- Enumerar y aplicar los principios fundamentales del testing.
-- Reconocer el valor que aporta el testing a los equipos ágiles.
-
+- Entender los conceptos fundamentales del testing de software.
+- Familiarizarte con las distintas pruebas y su clasificación.
+- Conocer las responsabilidades de un QA dentro de un equipo de desarrollo ágil.

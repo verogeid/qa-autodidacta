@@ -1,79 +1,70 @@
-# Tutorial Semana 3 - Automatización con GitHub Actions
+# Tutorial Semana 3 - Ejecución de Pruebas y Reportes de Defectos
 
-## 1. ¿Qué es CI/CD?
+## 1. Ejecución de Pruebas
 
-- **CI** (*Integración Continua*): ejecutar pruebas automáticamente cada vez que hay un cambio.
-- **CD** (*Entrega/Despliegue Continuo*): automatiza el despliegue en producción o entornos intermedios.
+La **ejecución de pruebas** implica llevar a cabo las pruebas diseñadas y verificar si el software cumple con los requisitos establecidos.
 
-## 2. GitHub Actions: primeros pasos
+### a. Pruebas manuales
+Las **pruebas manuales** son aquellas que se realizan de forma directa por el tester, siguiendo los casos de prueba previamente definidos. Para ejecutar una prueba manual correctamente:
 
-1. Crea un archivo `.github/workflows/ci.yml`.
-2. Añade un flujo para validar código al hacer push:
+1. Revisa los requisitos del caso de prueba.
+2. Prepara el entorno necesario (datos de prueba, configuraciones, etc.).
+3. Realiza los pasos especificados en el caso de prueba.
+4. Verifica que los resultados coincidan con lo esperado.
+5. Registra los resultados de la prueba.
 
-```yaml
-name: Lint and Test
+### b. Pruebas automatizadas
+Las **pruebas automatizadas** utilizan scripts o herramientas para ejecutar los casos de prueba de forma repetitiva y sin intervención manual. Ejemplos de herramientas incluyen **Selenium**, **Cypress** y **JUnit**. Para ejecutar pruebas automatizadas:
 
-on: [push, pull_request]
+1. Asegúrate de tener el entorno de pruebas automatizadas configurado (herramientas y dependencias).
+2. Ejecuta los scripts de prueba.
+3. Verifica que los resultados sean los esperados.
+4. Revisa los logs para asegurarte de que no haya errores.
 
-jobs:
-  validate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - run: npm ci
-      - run: npx eslint .
-      - run: npx prettier --check .
-```
+## 2. Registro y Gestión de Defectos
 
-Haz un commit para activar el flujo.
+Cuando se encuentra un **defecto** durante la ejecución de las pruebas, es importante documentarlo adecuadamente para su posterior resolución.
 
-## 3. Añadir tests con Jest
+### Pasos para el registro de un defecto:
 
-```bash
-npm install --save-dev jest
-```
+1. **Identificar el defecto**: Determina si el comportamiento observado es un error o una desviación de los requisitos.
+2. **Reproducir el defecto**: Asegúrate de que el defecto sea reproducible.
+3. **Documentar el defecto**: Registra el defecto utilizando un sistema de gestión de defectos (Jira, Bugzilla, etc.).
+   - **Título**: Descripción breve del defecto.
+   - **Descripción detallada**: Detalles del error, incluyendo pasos para reproducirlo.
+   - **Gravedad**: Impacto del defecto en el software.
+   - **Estado**: Estado actual del defecto (nuevo, en progreso, resuelto).
+   - **Prioridad**: Urgencia para solucionarlo.
 
-Edita tu `package.json`:
+## 3. Herramientas de Seguimiento de Defectos
 
-```json
-"scripts": {
-  "test": "jest"
-}
-```
+Las herramientas de gestión de defectos ayudan a organizar y hacer un seguimiento de los errores encontrados. Algunas herramientas populares son **Jira**, **Bugzilla**, y **Trello**.
 
-Crea un archivo `sum.test.js`:
+Estas herramientas permiten:
 
-```js
-const sum = (a, b) => a + b;
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
-});
-```
+- Asignar defectos a miembros del equipo.
+- Realizar un seguimiento del progreso de la resolución.
+- Generar informes sobre defectos y su estado.
 
-Ejecuta localmente:
+## 4. Reportes de Defectos Efectivos
 
-```bash
-npm test
-```
+Un **reporte de defectos** bien escrito es crucial para asegurar que el defecto se resuelva rápidamente. Un buen reporte debe incluir:
 
-Y en el workflow:
+- **Título descriptivo**.
+- **Pasos para reproducir**.
+- **Resultado esperado y real**.
+- **Logs y capturas de pantalla**.
+- **Impacto del defecto**.
+- **Recomendaciones de solución** (si aplica).
 
-```yaml
-- run: npm test
-```
+## 5. Comunicación con el Equipo de Desarrollo
 
-## 4. Bonus: badge de estado
+La comunicación efectiva con el equipo de desarrollo es clave para la resolución de defectos. Cuando reportes un defecto:
 
-En el README principal:
+1. Sé claro y conciso.
+2. Proporciona toda la información necesaria para reproducir el defecto.
+3. Mantén una actitud colaborativa para encontrar una solución rápida.
 
-```markdown
-![CI](https://github.com/tu-usuario/tu-repo/actions/workflows/ci.yml/badge.svg)
-```
+## Resumen
 
-## Recursos
-
-- [GitHub Actions Docs](https://docs.github.com/en/actions)
-- [Jest Docs](https://jestjs.io/docs/getting-started)
+Esta semana aprendiste a ejecutar pruebas manuales y automatizadas, y cómo registrar y gestionar defectos de manera efectiva. La correcta documentación de defectos y una buena comunicación con el equipo de desarrollo son esenciales para una resolución eficiente de problemas.

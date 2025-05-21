@@ -1,49 +1,61 @@
-# Tutorial Semana 2 - Ciclo de vida y calidad
+# Tutorial Semana 2 - Planificación y Diseño de Pruebas
 
-## 1. Modelos de desarrollo y su relación con el testing
+## 1. Planificación de pruebas
 
-- *V-model*: las pruebas se planifican desde el inicio. Cada fase de desarrollo tiene su fase de prueba.
-- *Iterativo / incremental*: pruebas frecuentes tras cada entrega.
-- *Ágil*: pruebas continuas, enfoque en colaboración y automatización.
+La **planificación de pruebas** es esencial para garantizar que el software se someta a un conjunto adecuado de pruebas, cubriendo todos los escenarios posibles.
 
-## 2. Niveles de prueba
+### Pasos para la planificación
 
-1. **Pruebas unitarias**: a nivel de función o clase.
-2. **Integración**: interacción entre módulos.
-3. **Sistema**: sobre la aplicación completa.
-4. **Aceptación**: validación por parte del cliente o usuario.
+1. **Definir los objetivos de prueba**: ¿Qué se espera lograr con las pruebas? ¿Qué áreas del sistema necesitan ser validadas?
+2. **Identificar los requisitos de prueba**: Determina qué requisitos del software deben ser verificados.
+3. **Seleccionar las técnicas de prueba**: Elige qué tipo de pruebas realizar, como pruebas funcionales, de rendimiento, seguridad, etc.
+4. **Asignar recursos**: Asegúrate de tener el equipo adecuado y los entornos necesarios para realizar las pruebas.
+5. **Establecer el cronograma**: Define las fechas de inicio y fin de las pruebas, así como las fases de ejecución.
 
-## 3. Tipos de prueba
+## 2. Técnicas de diseño de pruebas
 
-- **Funcionales**: ¿hace lo que debe?
-- **No funcionales**: rendimiento, usabilidad, seguridad.
+Existen varias **técnicas de diseño de pruebas** que te ayudarán a crear casos de prueba efectivos:
 
-## 4. Revisión de artefactos
+### a. **Equivalencia de partición**
 
-- *Static testing*: revisión de requisitos, historias de usuario, código y test cases.
-- Tipos: *walkthroughs*, *inspections*, *peer reviews*.
+Divide el dominio de entrada en clases de equivalencia, donde se espera que todos los valores dentro de una misma clase se comporten igual.
 
-## 5. Herramientas de calidad previas al testing
+### b. **Análisis de valores límite**
 
-- **Prettier**: formateo uniforme.
-- **ESLint**: detección de errores de estilo o potenciales bugs.
-- **Markdownlint**: revisa la documentación.
-- **npm scripts**: automatiza análisis estático.
+Crea casos de prueba alrededor de los límites de entrada (mínimos y máximos) para identificar errores en los puntos de frontera.
 
-```bash
-# Inicializa un proyecto y añade linters
-npm init -y
-npm install --save-dev eslint prettier markdownlint-cli
-```
+### c. **Técnicas basadas en la experiencia**
 
-## 6. Comandos útiles
+Se basan en la experiencia del tester, como pruebas exploratorias, en las que se prueban áreas del software no planificadas, pero que pueden ser sensibles a defectos.
 
-```bash
-npx eslint src/
-npx prettier --check .
-npx markdownlint '**/*.md'
-```
+## 3. Creación de casos de prueba
 
-## Recurso adicional
+Los **casos de prueba** son documentos que describen los pasos que un tester debe seguir para verificar un aspecto específico del software. Un caso de prueba típico debe contener:
 
-- [*V-Model* explicado](https://reqtest.com/testing-blog/v-model-software-testing/)
+1. **ID del caso de prueba**.
+2. **Descripción**.
+3. **Precondiciones**.
+4. **Pasos a seguir**.
+5. **Datos de prueba**.
+6. **Resultado esperado**.
+7. **Estado del caso de prueba** (aprobado, fallido).
+
+## 4. Revisión y gestión de los casos de prueba
+
+La **gestión de los casos de prueba** incluye la organización de todos los casos en un repositorio centralizado, asegurando su trazabilidad con los requisitos del software.
+
+### Buenas prácticas
+
+- Mantén los casos de prueba en un sistema de gestión de pruebas.
+- Revisa los casos de prueba regularmente para mantenerlos actualizados.
+- Relaciona cada caso de prueba con el requisito o historia de usuario que cubre.
+
+## 5. Trazabilidad entre requisitos y pruebas
+
+La trazabilidad asegura que cada **requisito** del software esté cubierto por al menos un **caso de prueba**. Esto es esencial para garantizar que el software cumpla con lo que se espera.
+
+Puedes usar herramientas como **Jira** o **TestRail** para mantener la trazabilidad entre los requisitos y los casos de prueba.
+
+## Resumen
+
+Esta semana, aprendiste a planificar el proceso de pruebas, diseñar casos de prueba efectivos y gestionar la trazabilidad entre los requisitos y las pruebas. La planificación adecuada es clave para el éxito de cualquier ciclo de pruebas.

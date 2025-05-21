@@ -1,17 +1,18 @@
-# Semana 4 - Pruebas funcionales y de API
+# Semana 4 - Buenas Prácticas en Pruebas de Software
 
-Ahora que sabes cómo automatizar tareas y pruebas unitarias, es hora de abordar pruebas más cercanas al comportamiento real: funcionales y de API. Aprenderás a usar herramientas como Postman y Newman, y a integrarlas en pipelines.
+En la cuarta semana, nos centraremos en las **buenas prácticas** que deben seguir los equipos de QA para asegurar una alta calidad en el software. Aprenderás a aplicar las mejores estrategias para la ejecución de pruebas, el trabajo colaborativo y la gestión de incidencias, todo con el fin de mejorar el rendimiento y la calidad del software.
 
 ## Contenidos
 
-- ¿Qué son las pruebas funcionales?
-- ¿Qué es una API? ¿Cómo se prueba?
-- Introducción a Postman.
-- Automatización de tests con Newman.
-- Integración de pruebas de API en CI.
+- Principios y buenas prácticas en pruebas de software.
+- Técnicas de diseño de pruebas.
+- Gestión eficiente de tiempos y recursos en las pruebas.
+- Colaboración efectiva con equipos de desarrollo.
+- Establecimiento de métricas y KPIs para la medición de la calidad.
 
-## Objetivo semanal
+## Objetivos de la semana
 
-- Ejecutar pruebas funcionales con ejemplos reales.
-- Validar el comportamiento de una API REST.
-- Automatizar pruebas usando GitHub Actions.
+- Conocer y aplicar las mejores prácticas en el proceso de pruebas.
+- Aprender a diseñar pruebas eficientes y efectivas.
+- Colaborar de manera efectiva con el equipo de desarrollo.
+- Implementar métricas de calidad para evaluar el progreso de las pruebas.

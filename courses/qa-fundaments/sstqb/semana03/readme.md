@@ -1,17 +1,17 @@
-# Semana 3 - Automatización y primeros pipelines
+# Semana 3 - Ejecución de Pruebas y Reportes de Defectos
 
-Entramos en la automatización: cómo ejecutar linters y pruebas de forma automática al hacer cambios. Además, configuraremos nuestro primer flujo de trabajo en GitHub Actions. La automatización no es solo para grandes empresas: mejora la calidad desde el primer commit.
+En la tercera semana, nos centraremos en la ejecución de pruebas y la correcta documentación de los defectos encontrados. Aprenderás a ejecutar pruebas manuales y automatizadas, así como a registrar y gestionar defectos de manera efectiva para asegurar una correcta resolución.
 
 ## Contenidos
 
-- Introducción al CI/CD.
-- ¿Qué es GitHub Actions y para qué sirve?
-- Crear un pipeline básico.
-- Ejecutar linters y validaciones al hacer push/pull request.
-- Introducción a test runners (Jest como ejemplo).
+- Ejecución de pruebas manuales y automatizadas.
+- Registro y gestión de defectos.
+- Uso de herramientas de seguimiento de defectos.
+- Cómo crear un reporte de defectos efectivo.
+- Estrategias de comunicación con los equipos de desarrollo.
 
-## Objetivo semanal
+## Objetivos de la semana
 
-- Comprender qué es y para qué sirve CI.
-- Automatizar tareas básicas.
-- Familiarizarte con los workflows de GitHub.
+- Ser capaz de ejecutar tanto pruebas manuales como automatizadas.
+- Aprender a registrar y gestionar defectos con claridad.
+- Desarrollar habilidades de comunicación efectiva para reportar problemas.

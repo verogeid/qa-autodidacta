@@ -1,28 +1,17 @@
 # Ejercicios - Semana 2
 
-## Parte teórica
-
-1. Explica en tus palabras la diferencia entre pruebas unitarias, de integración, sistema y aceptación.
-2. ¿En qué se diferencian las pruebas funcionales de las no funcionales?
-3. ¿Qué beneficios aporta la revisión estática frente a esperar a ejecutar los tests?
-
 ## Parte práctica
 
-4. Clona este repositorio de ejemplo:  
-   <https://github.com/sindresorhus/slugify>
+1. **Crea un plan de pruebas básico** para un proyecto de software ficticio. Incluye los objetivos, requisitos de prueba, técnicas de prueba y cronograma.
+2. **Diseña tres casos de prueba** utilizando las técnicas de partición de equivalencia y análisis de valores límite para una función que reciba un número entero como entrada. Documenta el caso de prueba con el formato adecuado.
+3. **Realiza un análisis de trazabilidad** para un conjunto de requisitos de software y crea una tabla que relacione cada requisito con sus casos de prueba correspondientes.
 
-   - Ejecuta ESLint y Prettier sobre el código.
-   - Detecta errores o mejoras de estilo.
-   - Crea un script en `package.json` que ejecute los linters.
+## Parte teórica
 
-5. Lee este documento Markdown mal formateado:  
-   <https://raw.githubusercontent.com/DavidAnson/markdownlint/main/test/md030.md>
-
-   - Ejecuta `markdownlint` y corrige los errores.
-   - Reflexiona: ¿cómo ayuda esto al trabajo en equipo?
-
-6. En un archivo nuevo, dibuja el V-model con cada fase de desarrollo y su prueba asociada. Usa Markdown + PlantUML si puedes.
+4. ¿Por qué es importante realizar una planificación adecuada de las pruebas en un proyecto de software?
+5. Explica las diferencias entre las técnicas de partición de equivalencia y análisis de valores límite.
+6. Describe la importancia de mantener la trazabilidad entre requisitos y pruebas.
 
 ## Reflexión
 
-7. ¿Crees que deberíamos hacer revisiones antes de escribir código o después? Justifica con tu experiencia o intuición.
+7. Reflexiona sobre los beneficios de tener una gestión centralizada de los casos de prueba y cómo puede mejorar la eficiencia de un equipo de QA.

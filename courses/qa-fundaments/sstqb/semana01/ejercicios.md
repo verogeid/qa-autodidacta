@@ -1,24 +1,17 @@
-# Ejercicios - Semana 1 (Fundamentos del Testing)
-
-## Parte teórica
-
-1. Define con tus palabras: *error*, *defecto*, *fallo*.
-2. Explica por qué el testing no puede demostrar la ausencia de errores.
-3. Resume los 7 principios del testing v4.0 en una tabla.
+# Ejercicios - Semana 1
 
 ## Parte práctica
 
-4. Analiza este incidente: [Slack outage 2023](https://status.slack.com/2023-01-04).  
-   - ¿Qué falló?
-   - ¿Cómo habría ayudado el testing?
+1. **Investiga las diferencias entre las pruebas funcionales y las no funcionales**. Escribe un ejemplo de cada una.
+2. **Define las responsabilidades de un QA** dentro de un equipo de desarrollo ágil.
+3. **Realiza una pequeña investigación sobre las metodologías ágiles (Scrum y Kanban)** y describe sus diferencias principales.
 
-5. Estudia un login sencillo (usuario + contraseña).  
-   - Enumera al menos 5 pruebas posibles.
-   - ¿Qué defectos podrían encontrarse?
+## Parte teórica
 
-6. Crea un diagrama con las fases del proceso de pruebas. Puedes usar [PlantUML](https://plantuml.com/markdown).
+4. Explica por qué el testing es importante en el ciclo de vida del software.
+5. Describe cómo las pruebas de caja negra y caja blanca contribuyen a la calidad del software.
+6. ¿Cuál crees que es el beneficio de trabajar en un equipo ágil para un ingeniero de QA?
 
 ## Reflexión
 
-7. Escribe un párrafo sobre el valor que aporta el testing al negocio. Piensa en términos de prevención de errores, confianza del cliente y reputación de marca.
-
+7. Reflexiona sobre la importancia de la automatización de pruebas y cómo puede mejorar la eficiencia en un equipo ágil.

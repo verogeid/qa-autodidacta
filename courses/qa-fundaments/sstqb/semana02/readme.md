@@ -1,20 +1,17 @@
-# Semana 2 - Ciclo de vida del desarrollo y del testing
+# Semana 2 - Planificación y Diseño de Pruebas
 
-Esta semana profundizamos en la relación entre el desarrollo y el testing, entendiendo cuándo y cómo se deben aplicar las pruebas según el ciclo de vida del software. También sentaremos las bases para trabajar de forma profesional, incluyendo herramientas de análisis estático y convenciones de estilo.
+En esta segunda semana, nos centraremos en la planificación y diseño de pruebas. Aprenderás a identificar los requisitos de pruebas, escribir casos de prueba efectivos y cómo organizar y gestionar el trabajo de testing de manera eficiente.
 
 ## Contenidos
 
-- Modelos de desarrollo (ágil, iterativo, incremental, V-model).
-- Cómo se integra el testing en cada modelo.
-- Niveles de prueba: unitarias, integración, sistema y aceptación.
-- Tipos de prueba: funcionales y no funcionales.
-- Revisión de artefactos (*reviews*).
-- Introducción a herramientas de calidad (linters, validadores).
+- Planificación de pruebas: cómo estructurar un plan de pruebas efectivo.
+- Técnicas de diseño de pruebas.
+- Creación de casos de prueba y su documentación.
+- Revisión y gestión de los casos de prueba.
+- Estrategias de trazabilidad entre requisitos y pruebas.
 
-## Objetivo semanal
+## Objetivos de la semana
 
-Al finalizar esta semana serás capaz de:
-
-- Identificar cómo se relaciona el testing con el ciclo de desarrollo.
-- Diferenciar niveles y tipos de prueba.
-- Usar herramientas que mejoran la calidad antes de ejecutar pruebas.
+- Ser capaz de planificar un ciclo de pruebas desde cero.
+- Aprender a crear y documentar casos de prueba efectivos.
+- Entender cómo gestionar la trazabilidad entre los requisitos y las pruebas.

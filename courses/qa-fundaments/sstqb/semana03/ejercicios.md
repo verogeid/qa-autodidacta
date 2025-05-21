@@ -1,21 +1,17 @@
 # Ejercicios - Semana 3
 
-## Parte teórica
-
-1. Explica con tus palabras qué ventajas ofrece CI/CD para equipos pequeños o individuales.
-2. ¿Por qué es importante automatizar tareas como linters y tests?
-
 ## Parte práctica
 
-3. Crea un repositorio nuevo en GitHub.
-4. Añade un flujo `.github/workflows/ci.yml` que:
-   - Use Node.js 20.
-   - Ejecute `eslint`, `prettier`, y `npm test`.
+1. **Ejecuta un caso de prueba manual** para una función de login de una aplicación. Registra los resultados y reporta un defecto si ocurre alguno.
+2. **Crea un reporte de defecto** para un error que hayas encontrado durante la ejecución de las pruebas. Incluye todos los detalles necesarios (pasos para reproducir, resultado esperado y real, etc.).
+3. **Automatiza un caso de prueba simple** utilizando una herramienta como Cypress o Selenium. Asegúrate de que el caso de prueba automatizado sea ejecutable sin intervención manual.
 
-5. Añade un badge de estado en tu README principal.
-6. Crea un test básico con Jest (puede ser suma, resta o validación de strings).
-7. Sube todo al repositorio y verifica que los checks se ejecutan correctamente.
+## Parte teórica
+
+4. ¿Cuál es la diferencia entre pruebas manuales y automatizadas? ¿En qué situaciones es preferible usar una sobre la otra?
+5. Explica la importancia de un buen reporte de defectos para la resolución rápida de problemas.
+6. ¿Cómo puede un sistema de gestión de defectos ayudar a un equipo de QA a mantener la calidad del software?
 
 ## Reflexión
 
-8. ¿Qué aprendiste al ver fallar el workflow? ¿Qué cambiarías para la próxima vez?
+7. Reflexiona sobre la importancia de la trazabilidad de defectos en un proyecto de software. ¿Cómo puede ayudar a mejorar la eficiencia del equipo?

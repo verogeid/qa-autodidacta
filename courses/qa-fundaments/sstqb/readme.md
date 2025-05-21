@@ -1,81 +1,54 @@
-# Curso SSTQB desde cero (autodidacta)
+# Curso autodidacta SSTQB Foundation Level 4
 
-Este repositorio contiene un curso completo y autodidacta para preparar la certificación **SSTQB (ISTQB Foundation Level)**. El curso está diseñado para seguirse a razón de **5 a 8 horas semanales**, con teoría, ejercicios prácticos, ejemplos reales y herramientas de uso profesional como CI/CD, análisis de resultados y generación de reportes.
+Este repositorio contiene un curso autodidacta y práctico para preparar el examen oficial **SSTQB Foundation Level 4**, adaptado a un ritmo semanal de estudio de **5 a 8 horas**. Está dividido en **12 semanas**, cada una con sus contenidos teóricos, tutorial paso a paso y ejercicios para afianzar los conocimientos.
 
-## Objetivos del curso
+El enfoque es práctico, orientado a personas que deseen aprender desde cero, reforzar conceptos o prepararse de forma autodidacta. Incluye también integración con buenas prácticas de desarrollo, CI/CD y automatización, en la medida en que el temario lo permite.
 
-- Comprender los principios del *software testing*.
-- Familiarizarse con el vocabulario y conceptos clave del estándar ISTQB.
-- Dominar técnicas de diseño de pruebas.
-- Integrar buenas prácticas de testing en entornos de desarrollo modernos.
-- Prepararse para el examen oficial SSTQB.
+---
 
-## Estructura del curso
+## Estructura del repositorio
 
-Cada semana cuenta con:
+Cada carpeta de semana contiene:
 
-- `README.md`: Introducción teórica.
-- `tutorial.md`: Guía paso a paso para aplicar los conceptos.
-- `ejercicios.md`: Actividades para validar los conocimientos.
+- `README.md`: descripción de los contenidos.
+- `tutorial.md`: guía paso a paso.
+- `ejercicios.md`: ejercicios prácticos.
 
-## Contenido semanal
+---
 
-### Semana 1: Introducción al testing
+## Temario semanal
 
-- ¿Qué es testing?
-- Por qué es necesario.
-- Principios del testing.
-- Actividades básicas del proceso de pruebas.
+| Semana | Tema                                                                 |
+|--------|----------------------------------------------------------------------|
+| 1      | Introducción al testing. Principios y proceso de pruebas            |
+| 2      | Modelos de desarrollo y niveles de prueba                           |
+| 3      | Pruebas estáticas. Revisión de código y análisis                    |
+| 4      | Técnicas de diseño: caja negra, caja blanca y basadas en experiencia|
+| 5      | Gestión de pruebas y planificación                                  |
+| 6      | Monitorización, métricas y control del progreso                     |
+| 7      | Gestión de defectos, riesgos y cobertura                            |
+| 8      | Herramientas de testing. Selección, uso y automatización básica     |
+| 9      | Integración del testing en CI/CD y pipelines                        |
+| 10     | Pruebas no funcionales: rendimiento, seguridad, accesibilidad       |
+| 11     | Técnicas avanzadas de análisis de resultados y reporting            |
+| 12     | Preparación al examen. Simulacro y repaso general                   |
 
-### Semana 2: Ciclo de vida del software y pruebas
+## Bonus track: autoevaluaciones
 
-- Modelos de desarrollo.
-- Niveles y tipos de testing.
-- Pruebas en diferentes fases del desarrollo.
+Incluye **tres exámenes tipo test** y un **simulacro final**, diseñados para validar tu preparación real. Cada prueba está estructurada como el examen oficial SSTQB FL 4.
 
-### Semana 3: Técnicas estáticas
+- `bonus-track/examen-1.md`: Test de 20 preguntas tras la semana 4.
+- `bonus-track/examen-2.md`: Test de 20 preguntas tras la semana 8.
+- `bonus-track/examen-3.md`: Test de 20 preguntas tras la semana 11.
+- `bonus-track/simulacro-final.md`: Simulacro completo de 40 preguntas con tiempo límite recomendado (60 minutos).
 
-- Revisión de documentos.
-- Análisis estático de código.
-- Herramientas y buenas prácticas.
+---
 
-### Semana 4: Técnicas de diseño de pruebas (I)
+## Requisitos
 
-- Partición de clases de equivalencia.
-- Análisis de valores límite.
-- Pruebas de decisión.
-
-### Semana 5: Técnicas de diseño de pruebas (II)
-
-- Tablas de decisión.
-- Transición de estados.
-- Casos de uso.
-
-### Semana 6: Gestión de pruebas
-
-- Planificación.
-- Seguimiento y control.
-- Trazabilidad y métricas.
-
-### Semana 7: Herramientas de prueba y automatización
-
-- Categorías de herramientas.
-- CI/CD básico con GitHub Actions.
-- Introducción a Cypress.
-
-### Semana 8: Revisión general y simulacro de examen
-
-- Revisión por temas.
-- Simulacro real.
-- Consejos y errores comunes.
-
-## Herramientas utilizadas
-
-- **Visual Studio Code**
-- **Git + GitHub**
-- **GitHub Actions**
-- **Cypress / Playwright**
-- **Markdown / PlantUML**
+- No se requieren conocimientos previos de testing.
+- Se recomienda tener acceso a un entorno local de desarrollo.
+- Algunas semanas requieren conexión a internet para acceder a herramientas o entornos de prueba públicos.
 
 ---
 

@@ -1,87 +1,112 @@
-# Semana 05 – Ejercicios prácticos
+# Ejercicios - Tema 5: Técnicas de diseño
 
-## 1. Clasificación de técnicas
+## Pregunta 1  
+¿Cuál de las siguientes afirmaciones sobre la técnica de *partición de equivalencia* es correcta?
 
-**Ejercicio 1:** Clasifica las siguientes situaciones como *técnica estática* o *técnica dinámica*:
-
-a) Revisión de un documento de requisitos  
-b) Ejecución de un test unitario  
-c) Uso de ESLint en un proyecto frontend  
-d) Prueba exploratoria de una API REST  
-e) Inspección del código por parte de un compañero  
+a) Se basa en probar todos los valores posibles.  
+b) Divide los datos de entrada en grupos con comportamiento similar.  
+c) Requiere conocer el código fuente.  
+d) Es exclusiva de las pruebas de regresión.
 
 ---
 
-## 2. Tipos de revisión
+## Pregunta 2  
+¿Cuáles son ejemplos de técnicas de *caja negra*?
 
-**Ejercicio 2:** Indica el tipo de revisión más adecuado en cada caso y justifica:
-
-a) El equipo quiere repasar rápidamente un documento antes de enviarlo al cliente.  
-b) Un desarrollador quiere explicar su código a los demás para recoger sugerencias.  
-c) Un equipo de expertos analiza un módulo crítico de la aplicación para detectar defectos.  
-d) Se desea llevar un control formal de los hallazgos y roles definidos en la revisión.  
-
----
-
-## 3. Roles en una revisión formal
-
-**Ejercicio 3:** Imagina una revisión formal de código. Asigna los roles correctos a estas personas y justifica:
-
-- Ana es la autora del código.  
-- Luis lidera la reunión y decide cuándo continuar.  
-- Marta documenta los hallazgos.  
-- Diego revisa el código con atención técnica.
+a) Partición de equivalencia.  
+b) Valores límite.  
+c) Cobertura de decisiones.  
+d) Tabla de decisión.
 
 ---
 
-## 4. Análisis estático
+## Pregunta 3  
+¿Qué técnica permite representar visualmente los posibles cambios de estado de un sistema?
 
-**Ejercicio 4:** Usa una herramienta de análisis estático (como SonarQube, ESLint o Pylint) sobre un fragmento de código real o de ejemplo. Anota:
-
-- Cuántos defectos se detectan.  
-- Qué tipo de errores aparecen.  
-- Cuáles crees que serían críticos en producción.  
-
-(Si no puedes ejecutar la herramienta, analiza un resultado ya generado por internet y haz el mismo análisis.)
+a) Casos de uso.  
+b) Transiciones de estado.  
+c) Partición de equivalencia.  
+d) Exploratoria.
 
 ---
 
-## 5. Caso práctico de revisión
+## Pregunta 4  
+¿Cuál de estas afirmaciones se refiere a las *técnicas basadas en la experiencia*?
 
-**Ejercicio 5:** Simula una sesión de revisión técnica de un fragmento de código o documento.
-
-1. Define el artefacto a revisar.  
-2. Asigna roles.  
-3. Identifica al menos tres defectos.  
-4. Propón acciones de mejora.  
-
-Puedes hacerlo en grupo o redactarlo como si fueras cada uno de los participantes.
+a) Solo se aplican si hay documentación formal.  
+b) Exigen cobertura total del código.  
+c) Son útiles cuando se tiene intuición sobre errores comunes.  
+d) Son propias del desarrollo en cascada.
 
 ---
 
-## 6. Preguntas tipo test (nivel SSTQB)
+## Pregunta 5  
+¿Cuál es el objetivo de la cobertura de decisiones?
 
-**Ejercicio 6:** ¿Qué afirmaciones son verdaderas?
-
-a) Las revisiones formales no requieren documentación.  
-b) El análisis estático detecta errores de ejecución.  
-c) El moderador decide si se cumplen los criterios de salida.  
-d) Las inspecciones son más estructuradas que los walkthroughs.  
-e) Los análisis estáticos se usan únicamente en proyectos Java.
+a) Probar solo las líneas más críticas.  
+b) Ejecutar todos los bloques condicionales en sus distintos resultados.  
+c) Cubrir todos los estados posibles de un sistema.  
+d) Verificar si los usuarios han seguido un camino concreto.
 
 ---
 
-## Soluciones:
+## Pregunta 6  
+¿Qué ventaja ofrece una tabla de decisión frente a otros métodos?
 
-1-a) Estática  
-1-b) Dinámica  
-1-c) Estática  
-1-d) Dinámica  
-1-e) Estática  
-2-a) Revisión informal  
-2-b) Walkthrough  
-2-c) Revisión técnica  
-2-d) Inspección  
-3-Ana: autora, Luis: moderador, Marta: escriba, Diego: revisor  
-6-c y 6-d son correctas
+a) Es útil para representar múltiples combinaciones de condiciones.  
+b) Sirve para visualizar cómo se conecta el sistema internamente.  
+c) Permite ejecutar el código sin errores.  
+d) Solo se usa con software de alto riesgo.
 
+---
+
+## Pregunta 7  
+¿Cuál de los siguientes enfoques está más alineado con pruebas exploratorias?
+
+a) Probar con casos muy bien definidos por adelantado.  
+b) Ejecutar scripts automáticos.  
+c) Investigar libremente el sistema buscando comportamientos inesperados.  
+d) Revisar el código buscando omisiones.
+
+---
+
+## Pregunta 8  
+¿Qué técnica de diseño te obliga a observar cómo el software toma decisiones lógicas?
+
+a) Partición de equivalencia.  
+b) Casos de uso.  
+c) Cobertura de decisiones.  
+d) Transiciones de estado.
+
+---
+
+## Respuestas explicadas
+
+**Pregunta 1: b)**  
+La *partición de equivalencia* agrupa valores de entrada que deberían tener el mismo comportamiento. Probar uno de cada grupo es suficiente.
+
+**Pregunta 2: a, b, d**  
+Las técnicas de caja negra incluyen *partición de equivalencia*, *valores límite* y *tablas de decisión*. *Cobertura de decisiones* es caja blanca.
+
+**Pregunta 3: b)**  
+Las *transiciones de estado* permiten modelar cómo cambia el estado del sistema ante distintas acciones o eventos.
+
+**Pregunta 4: c)**  
+Las técnicas basadas en la experiencia no requieren documentación y se basan en la intuición del tester, como en la *adivinación de errores*.
+
+**Pregunta 5: b)**  
+La *cobertura de decisiones* busca comprobar todos los posibles resultados de una decisión lógica (verdadero/falso).
+
+**Pregunta 6: a)**  
+Una *tabla de decisión* representa varias condiciones y sus resultados de manera clara, especialmente útil si hay muchas combinaciones posibles.
+
+**Pregunta 7: c)**  
+La prueba exploratoria implica usar el sistema sin un guion fijo, observando comportamientos y descubriendo fallos de forma libre.
+
+**Pregunta 8: c)**  
+La *cobertura de decisiones* se centra en verificar que todas las rutas lógicas posibles han sido ejecutadas al menos una vez.
+
+---
+
+- [^ Índice del Tema](./readme.md)
+- [Tutorial](./tutorial.md)

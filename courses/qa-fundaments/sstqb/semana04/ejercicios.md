@@ -1,81 +1,50 @@
-# Semana 4 – Ejercicios: Gestión de Pruebas
+# Tema 4 - Ejercicios
 
-## Ejercicio 1
-**¿Cuál de los siguientes elementos no suele incluirse en un plan de pruebas?**
+1. ¿Cuál es una característica de las pruebas estáticas?  
+a) Requieren la ejecución del software.  
+b) Se centran en la verificación dinámica de funcionalidades.  
+c) Permiten detectar errores en etapas tempranas del desarrollo.  
 
-a) Objetivos de la prueba  
-b) Criterios de aceptación del cliente  
-c) Entregables de pruebas  
-d) Criterios de entrada y salida  
+2. ¿Qué tipo de revisión suele ser menos formal y más rápida?  
+a) Revisión técnica.  
+b) Revisión informal.  
+c) Inspección estructurada.  
 
----
+3. ¿Qué se busca en un walkthrough?  
+a) Detectar errores mediante herramientas automáticas.  
+b) Seguir una lista estricta de pasos y roles definidos.  
+c) Obtener retroalimentación del equipo mediante una revisión guiada por el autor.  
 
-## Ejercicio 2  
-**Durante el monitoreo de pruebas, se detecta que se han reportado más defectos de lo esperado. ¿Qué debería hacer el Test Manager?**
+4. ¿Cuál de las siguientes opciones describe una herramienta de análisis estático?  
+a) Una herramienta que simula escenarios de usuario.  
+b) Un sistema que revisa código sin ejecutarlo.  
+c) Una plataforma para pruebas funcionales.  
 
-a) Detener las pruebas inmediatamente  
-b) Informar y replanificar si es necesario  
-c) Eliminar los casos de prueba problemáticos  
-d) Continuar sin hacer cambios  
-
----
-
-## Ejercicio 3  
-**Identifica el riesgo de producto en la siguiente lista:**
-
-a) Cambios frecuentes de alcance  
-b) Falta de testers capacitados  
-c) Tiempo de respuesta excesivo del sistema  
-d) Retrasos en la entrega del entorno  
+5. ¿Para qué se usan las listas de verificación en pruebas estáticas?  
+a) Para validar resultados de pruebas exploratorias.  
+b) Para asegurar que se sigan criterios de calidad en la documentación.  
+c) Para automatizar flujos de integración continua.  
 
 ---
 
-## Ejercicio 4  
-**¿Cuál es la herramienta más adecuada para la gestión de versiones de scripts de prueba?**
+# Soluciones y explicaciones
 
-a) Trello  
-b) Git  
-c) JIRA  
-d) Postman  
+1. *Permiten detectar errores en etapas tempranas del desarrollo*.
+   Las pruebas estáticas no requieren ejecutar el código y permiten identificar fallos en documentación o código fuente antes de que se integre o pruebe dinámicamente.  
 
----
+2. *Revisión informal*.  
+   Son revisiones rápidas y sin una estructura fija, realizadas frecuentemente entre compañeros.  
 
-## Ejercicio 5  
-**El flujo correcto de gestión de incidencias es:**
+3. *Obtener retroalimentación del equipo mediante una revisión guiada por el autor*.  
+   En los *walkthroughs*, el autor guía al grupo por el documento o código para obtener opiniones.  
 
-a) Resolución → Asignación → Cierre  
-b) Detección → Clasificación → Asignación → Resolución → Cierre  
-c) Detección → Resolución → Cierre  
-d) Clasificación → Resolución → Verificación  
+4. *Un sistema que revisa código sin ejecutarlo*.  
+   Las herramientas de análisis estático examinan el código fuente para encontrar errores, malas prácticas o incumplimientos sin necesidad de ejecución.  
 
----
-
-## Ejercicio 6  
-**¿Qué informe de pruebas se utiliza para evaluar el estado final y recomendar la liberación?**
-
-a) Informe de avance  
-b) Registro de incidencias  
-c) Test Summary Report  
-d) Test Strategy  
+5. *Para asegurar que se sigan criterios de calidad en la documentación*.  
+   Las listas de verificación ayudan a garantizar que se evalúan todos los aspectos clave de un documento o código, aumentando su calidad.
 
 ---
 
-# Respuestas
-
-**Ejercicio 1: b)**  
-*Criterios de aceptación del cliente* no forman parte del plan de pruebas directamente; suelen encontrarse en requisitos o contratos.
-
-**Ejercicio 2: b)**  
-Un exceso de defectos puede indicar problemas graves; se debe informar y considerar replanificación.
-
-**Ejercicio 3: c)**  
-El *tiempo de respuesta excesivo del sistema* afecta al producto directamente, por tanto es un riesgo de producto.
-
-**Ejercicio 4: b)**  
-*Git* es el sistema más común para gestionar versiones de artefactos de prueba.
-
-**Ejercicio 5: b)**  
-Ese es el flujo más completo y correcto según las buenas prácticas del SSTQB.
-
-**Ejercicio 6: c)**  
-El *Test Summary Report* resume los resultados y permite tomar decisiones de liberación.
+- [^ Índice del Tema](./readme.md)
+- [Tutorial](./tutorial.md)

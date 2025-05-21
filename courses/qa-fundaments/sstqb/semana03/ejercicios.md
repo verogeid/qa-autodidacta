@@ -1,17 +1,29 @@
-# Ejercicios - Semana 3
+# Ejercicios Semana 3 – Técnicas de diseño de pruebas
 
-## Parte práctica
+1. **¿Cuál es la principal diferencia entre técnicas de caja negra y caja blanca?**
 
-1. **Ejecuta un caso de prueba manual** para una función de login de una aplicación. Registra los resultados y reporta un defecto si ocurre alguno.
-2. **Crea un reporte de defecto** para un error que hayas encontrado durante la ejecución de las pruebas. Incluye todos los detalles necesarios (pasos para reproducir, resultado esperado y real, etc.).
-3. **Automatiza un caso de prueba simple** utilizando una herramienta como Cypress o Selenium. Asegúrate de que el caso de prueba automatizado sea ejecutable sin intervención manual.
+2. **Menciona dos ejemplos de técnicas estáticas y explica su propósito.**
 
-## Parte teórica
+3. **Explica qué es la partición en clases de equivalencia y da un ejemplo sencillo.**
 
-4. ¿Cuál es la diferencia entre pruebas manuales y automatizadas? ¿En qué situaciones es preferible usar una sobre la otra?
-5. Explica la importancia de un buen reporte de defectos para la resolución rápida de problemas.
-6. ¿Cómo puede un sistema de gestión de defectos ayudar a un equipo de QA a mantener la calidad del software?
+4. **¿Qué técnica usarías para verificar que todas las sentencias de un programa se ejecutan al menos una vez?**
 
-## Reflexión
+5. **¿Por qué las técnicas basadas en la experiencia son importantes en testing?**
 
-7. Reflexiona sobre la importancia de la trazabilidad de defectos en un proyecto de software. ¿Cómo puede ayudar a mejorar la eficiencia del equipo?
+6. **¿Cuál de estas técnicas requiere conocimiento del código fuente: caja negra, caja blanca o basada en la experiencia?**
+
+---
+
+# Respuestas
+
+1. La técnica de caja negra se basa en las especificaciones y no requiere conocimiento del código, mientras que la caja blanca utiliza el conocimiento del código y la estructura interna para diseñar pruebas.
+
+2. Ejemplos de técnicas estáticas: revisión (manual de documentos para detectar defectos) y análisis estático (uso de herramientas para detectar errores sin ejecutar código).
+
+3. La partición en clases de equivalencia divide los posibles valores de entrada en grupos donde se espera que el sistema se comporte de forma similar. Ejemplo: para una edad válida entre 18 y 65, las clases pueden ser: menor de 18 (inválido), entre 18 y 65 (válido), mayor de 65 (inválido).
+
+4. La técnica de caja blanca llamada cobertura de sentencias.
+
+5. Porque permiten encontrar defectos que no se detectan con técnicas formales, aprovechando la intuición y experiencia del tester.
+
+6. La técnica de caja blanca requiere conocimiento del código fuente.

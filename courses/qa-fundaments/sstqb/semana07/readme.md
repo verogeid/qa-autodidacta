@@ -1,17 +1,17 @@
-# Semana 7 - Integración con CI/CD
+# Semana 7 - Seguimiento del progreso, métricas, cobertura y control de calidad
 
-En la séptima semana, profundizaremos en cómo integrar las pruebas automatizadas en un flujo de trabajo de **Integración Continua (CI)** y **Entrega Continua (CD)**. Aprenderás cómo ejecutar las pruebas automáticamente en cada cambio de código y cómo configurar un pipeline CI/CD para ejecutar las pruebas y obtener resultados en tiempo real.
+Esta semana analizarás cómo hacer seguimiento del testing mediante métricas útiles, asegurar la cobertura adecuada y generar reportes claros que ayuden a la toma de decisiones.
 
-## Contenidos
+**Objetivos:**
 
-- Introducción a CI/CD y su importancia.
-- Configuración de un pipeline básico CI/CD.
-- Integración de pruebas automatizadas en pipelines.
-- Estrategias para manejar fallos en el pipeline de CI/CD.
-- Análisis y reporte de resultados de pruebas en CI/CD.
+- Medir progreso y calidad de pruebas con métricas relevantes.
+- Evaluar cobertura de requisitos y código.
+- Identificar cuellos de botella en los ciclos de prueba.
+- Aprender a construir informes útiles para stakeholders.
 
-## Objetivos de la semana
+---
 
-- Comprender los conceptos de CI/CD y cómo aplicarlos a las pruebas automatizadas.
-- Integrar las pruebas en un pipeline CI/CD.
-- Configurar y automatizar los reportes de pruebas en un pipeline.
+- [< Semana anterior](../semana06/readme.md)
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+- [Semana siguiente >](../semana08/readme.md)

@@ -1,22 +1,25 @@
-# Ejercicios - Semana 12
+# Semana 12 – Ejercicios: Herramientas de Pruebas SSTQB
 
-## Simulacro
+1. ¿Cuáles son los principales tipos de herramientas de pruebas?
 
-1. Realiza el examen oficial de muestra del ISTQB.
-2. Evalúate a partir del mínimo exigido (65% de aciertos).
+2. Explica brevemente la función de una herramienta de gestión de pruebas.
 
-## Prácticos
+3. ¿Qué ventajas ofrece el uso de herramientas automatizadas?
 
-3. Crea tus propias tarjetas con definiciones de los siguientes conceptos:
-   - Test case
-   - Test plan
-   - Equivalence partitioning
-   - Boundary value analysis
-   - Regression testing
+4. Menciona dos limitaciones comunes al usar herramientas de pruebas.
 
-4. Describe cómo actuarías si te quedas en blanco en una pregunta que sabes que estudiaste.
+5. ¿Por qué es importante conocer las herramientas en el contexto del SSTQB?
 
-## Reflexión
+---
 
-5. Enumera tus tres mayores dificultades durante el curso y cómo las superaste.
-6. ¿Qué tema te resultó más interesante o aplicable a tu experiencia?
+# Respuestas
+
+1. Gestión de pruebas, ejecución automatizada, gestión de defectos, simulación/virtualización y análisis/medición.
+
+2. Ayudan a planificar, diseñar, ejecutar y reportar pruebas de manera organizada.
+
+3. Aumentan la productividad, aseguran repetibilidad, mejoran la documentación y reducen errores manuales.
+
+4. Costos de licencia/capacitación y dependencia tecnológica.
+
+5. Porque el syllabus incluye herramientas como parte del conocimiento básico para seleccionar y aplicar soluciones en testing.

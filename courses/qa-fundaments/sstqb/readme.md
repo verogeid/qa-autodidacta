@@ -35,12 +35,13 @@ Cada carpeta de semana contiene:
 
 ## Bonus track: autoevaluaciones
 
-Incluye **tres exámenes tipo test** y un **simulacro final**, diseñados para validar tu preparación real. Cada prueba está estructurada como el examen oficial SSTQB FL 4.
+Incluye **cinco exámenes tipo test** diseñados para validar tu preparación real. Cada prueba está estructurada como el examen oficial SSTQB FL 4.
 
-- `bonus-track/examen-1.md`: Test de 20 preguntas tras la semana 4.
-- `bonus-track/examen-2.md`: Test de 20 preguntas tras la semana 8.
-- `bonus-track/examen-3.md`: Test de 20 preguntas tras la semana 11.
-- `bonus-track/simulacro-final.md`: Simulacro completo de 40 preguntas con tiempo límite recomendado (60 minutos).
+- [examen 01](./bonus-track/01-examen.md): Test de 20 preguntas tras la semana 4.
+- [examen 02](./bonus-track/02-examen.md): Test de 20 preguntas tras la semana 8.
+- [examen 03](./bonus-track/03-examen.md): Test de 20 preguntas tras la semana 11.
+- [examen 04](./bonus-track/04-examen.md): Simulacro de 20 preguntas con tiempo límite recomendado (30 minutos).
+- [examen 05](./bonus-track/05-examen.md): Simulacro de 20 preguntas con tiempo límite recomendado (30 minutos).
 
 ---
 

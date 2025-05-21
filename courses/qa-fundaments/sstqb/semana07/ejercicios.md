@@ -1,19 +1,53 @@
-# Ejercicios - Semana 7
+# Semana 7 – Ejercicios: Pruebas Estáticas
 
-## Parte práctica
+## Preguntas tipo test
 
-1. **Configura un pipeline CI/CD básico** en tu repositorio utilizando GitHub Actions o cualquier otra herramienta de CI/CD (como GitLab CI, Jenkins, CircleCI, etc.). Asegúrate de que las pruebas automatizadas se ejecuten correctamente.
-2. **Integra las pruebas automatizadas** en el pipeline y asegúrate de que los resultados se muestren adecuadamente. Si usas Cypress, implementa Cypress Dashboard.
-3. **Configura notificaciones** para que te avise cada vez que una prueba falle en el pipeline.
-4. **Revisa los resultados** en tu plataforma de CI/CD y asegura que el reporte sea claro y fácil de entender.
+**1. ¿Cuál de los siguientes métodos de revisión es el más estructurado?**  
+a) Walkthrough  
+b) Revisión informal  
+c) Revisión técnica  
+d) Inspección  
 
-## Parte teórica
+**2. ¿Qué técnica de revisión se caracteriza por ser dirigida por el autor del documento?**  
+a) Revisión informal  
+b) Walkthrough  
+c) Inspección  
+d) Análisis estático  
 
-5. Explica la diferencia entre CI y CD. ¿Cómo se integran las pruebas automatizadas en cada fase?
-6. ¿Qué ventajas aporta la integración de pruebas en un pipeline CI/CD? ¿Qué desafíos puede traer esta integración?
-7. ¿Por qué es importante configurar notificaciones para fallos en el pipeline de CI/CD?
-8. ¿Qué herramientas usas para analizar los resultados de las pruebas? Explica cómo configurar un reporte visual si usas alguna herramienta.
+**3. ¿Cuál es un beneficio clave de las pruebas estáticas?**  
+a) Aumentar la cobertura del código  
+b) Detectar defectos sin ejecutar el software  
+c) Asegurar la validación de entradas  
+d) Garantizar el rendimiento del sistema  
 
-## Reflexión
+**4. ¿Cuál de los siguientes documentos puede revisarse con técnicas estáticas?**  
+a) Casos de prueba  
+b) Código fuente  
+c) Requisitos  
+d) Todas las anteriores  
 
-9. Reflexiona sobre cómo la integración de CI/CD con pruebas automatizadas mejora la calidad del software. ¿Cómo se podría optimizar el tiempo de ejecución de las pruebas dentro de un pipeline?
+**5. ¿Qué herramienta es adecuada para un análisis estático?**  
+a) Selenium  
+b) JMeter  
+c) ESLint  
+d) Postman  
+
+---
+
+## Respuestas
+
+1. d) Inspección  
+2. b) Walkthrough  
+3. b) Detectar defectos sin ejecutar el software  
+4. d) Todas las anteriores  
+5. c) ESLint
+
+---
+
+## Explicaciones
+
+1. La *inspección* es la técnica más formal, con roles definidos y pasos documentados.  
+2. En el *walkthrough*, el autor presenta su trabajo y dirige la sesión.  
+3. Las pruebas estáticas se hacen sin ejecutar el software, lo que permite detectar errores desde el principio.  
+4. Las revisiones pueden aplicarse a cualquier artefacto del ciclo de vida del software.  
+5. *ESLint* es una herramienta que revisa código sin ejecutarlo, propia del análisis estático.

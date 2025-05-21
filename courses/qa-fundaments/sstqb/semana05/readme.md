@@ -11,6 +11,7 @@ Esta semana practicarás las técnicas de diseño de casos de prueba. Aprenderá
 
 ---
 
+- [^ Índice del curso](../readme.md)
 - [< Semana anterior](../semana04/readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)

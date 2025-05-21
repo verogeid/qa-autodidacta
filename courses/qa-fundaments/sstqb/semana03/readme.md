@@ -1,4 +1,4 @@
-# Semana 3 - Ciclo de vida del software, niveles y tipos de pruebas
+# Tema 3 - Ciclo de vida del software, niveles y tipos de pruebas
 
 Explorarás cómo se encaja el testing dentro del ciclo de vida del desarrollo, los distintos niveles de pruebas (unidad, integración, sistema y aceptación) y los tipos de pruebas más relevantes según los objetivos del proyecto.
 
@@ -11,7 +11,8 @@ Explorarás cómo se encaja el testing dentro del ciclo de vida del desarrollo, 
 
 ---
 
-- [< Semana anterior](../semana02/readme.md)
+- [^ Índice del curso](../readme.md)
+- [< Tema anterior](../semana02/readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
-- [Semana siguiente >](../semana04/readme.md)
+- [Tema siguiente >](../semana04/readme.md)

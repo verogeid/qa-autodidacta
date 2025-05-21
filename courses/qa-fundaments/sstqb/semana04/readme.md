@@ -1,18 +1,17 @@
-# Semana 4 - Buenas Prácticas en Pruebas de Software
+# Semana 4 - Pruebas estáticas: revisiones, walkthroughs y análisis estático
 
-En la cuarta semana, nos centraremos en las **buenas prácticas** que deben seguir los equipos de QA para asegurar una alta calidad en el software. Aprenderás a aplicar las mejores estrategias para la ejecución de pruebas, el trabajo colaborativo y la gestión de incidencias, todo con el fin de mejorar el rendimiento y la calidad del software.
+Aprenderás a aplicar técnicas de pruebas que no requieren la ejecución del software. Las pruebas estáticas permiten encontrar errores tempranamente y mejorar la calidad desde la documentación.
 
-## Contenidos
+**Objetivos:**
 
-- Principios y buenas prácticas en pruebas de software.
-- Técnicas de diseño de pruebas.
-- Gestión eficiente de tiempos y recursos en las pruebas.
-- Colaboración efectiva con equipos de desarrollo.
-- Establecimiento de métricas y KPIs para la medición de la calidad.
+- Entender qué son las pruebas estáticas y su valor.
+- Diferenciar entre revisiones informales, técnicas y walkthroughs.
+- Introducirte en herramientas de análisis estático de código.
+- Usar listas de verificación y métricas de calidad documental.
 
-## Objetivos de la semana
+---
 
-- Conocer y aplicar las mejores prácticas en el proceso de pruebas.
-- Aprender a diseñar pruebas eficientes y efectivas.
-- Colaborar de manera efectiva con el equipo de desarrollo.
-- Implementar métricas de calidad para evaluar el progreso de las pruebas.
+- [< Semana anterior](../semana03/readme.md)
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+- [Semana siguiente >](../semana05/readme.md)

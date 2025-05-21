@@ -1,18 +1,17 @@
-# Semana 9 - Gestión de pruebas (parte I)
+# Semana 9 - Herramientas de testing: selección, integración y automatización
 
-Esta semana introduce los fundamentos de la planificación, seguimiento y control de pruebas, así como la importancia de la trazabilidad y estimación.
+Explorarás herramientas de apoyo al testing: desde la gestión de casos hasta la automatización de pruebas. Aprenderás a seleccionar herramientas según contexto y a integrarlas de forma progresiva.
 
-## Contenidos
+**Objetivos:**
 
-- Ciclo de vida de la gestión de pruebas.
-- Planificación de pruebas.
-- Trazabilidad entre requisitos y pruebas.
-- Estimación del esfuerzo de pruebas.
-- Factores que influyen en el esfuerzo.
-- Control de avance y desviaciones.
+- Conocer categorías de herramientas: gestión, reporte, ejecución, análisis, etc.
+- Aplicar criterios de selección según necesidades del proyecto.
+- Automatizar tareas repetitivas o críticas con herramientas básicas.
+- Introducir el versionado de pruebas y la colaboración en repositorios.
 
-## Objetivos
+---
 
-- Comprender cómo se planifica y gestiona una estrategia de pruebas.
-- Analizar los riesgos y recursos necesarios.
-- Medir el progreso del testing y aplicar medidas correctoras.
+- [< Semana anterior](../semana08/readme.md)
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+- [Semana siguiente >](../semana10/readme.md)

@@ -1,16 +1,17 @@
-# Semana 12 - Preparación al examen SSTQB FL
+# Semana 12 - Preparación al examen: simulacro, repaso y consejos finales
 
-Esta semana se centra en el repaso general de todo lo aprendido, la simulación de examen y estrategias para enfrentarse con éxito a la prueba oficial.
+Esta última semana es de consolidación. Harás un repaso estructurado, resolverás dudas frecuentes y practicarás con simulacros reales en condiciones similares al examen.
 
-## Contenidos
+**Objetivos:**
 
-- Repaso global por capítulos.
-- Técnicas de examen y gestión del tiempo.
-- Simulación de examen real.
-- Resolución de dudas frecuentes.
+- Revisar los conceptos clave de cada semana.
+- Aplicar estrategias para responder tipo test.
+- Resolver un simulacro con límite de tiempo.
+- Obtener consejos finales para el día del examen.
 
-## Objetivos
+---
 
-- Identificar tus puntos débiles antes del examen.
-- Familiarizarte con el formato del examen.
-- Practicar con preguntas tipo.
+- [< Semana anterior](../semana11/readme.md)
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+- [^ Indice](../readme.md)

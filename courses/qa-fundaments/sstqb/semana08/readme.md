@@ -1,19 +1,17 @@
-# Semana 8 - Pruebas basadas en la experiencia
+# Semana 8 - Gestión de defectos, riesgos y mejora continua
 
-En esta semana estudiarás técnicas que se apoyan en el conocimiento, intuición y experiencia del tester para detectar defectos que otras técnicas no capturan.
+El enfoque estará en cómo reportar y gestionar defectos de forma efectiva, aplicar principios de gestión de riesgos y usar el testing como motor de mejora continua del producto y del proceso.
 
-## Contenidos
+**Objetivos:**
 
-- Qué son las *experience-based techniques*.
-- Exploratory testing: fundamentos y sesiones estructuradas.
-- Checklist-based testing.
-- Error guessing.
-- Pruebas heurísticas.
-- Documentación mínima viable.
+- Redactar informes de defectos claros, objetivos y reproducibles.
+- Clasificar defectos según impacto y severidad.
+- Introducir gestión de riesgos y su vínculo con las pruebas.
+- Contribuir a la mejora continua mediante lecciones aprendidas.
 
-## Objetivos de la semana
+---
 
-- Conocer técnicas prácticas que complementan las pruebas sistemáticas.
-- Aplicar *exploratory testing* en contextos reales.
-- Diseñar y aplicar listas de verificación.
-- Utilizar errores comunes conocidos para adivinar fallos potenciales.
+- [< Semana anterior](../semana07/readme.md)
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+- [Semana siguiente >](../semana09/readme.md)

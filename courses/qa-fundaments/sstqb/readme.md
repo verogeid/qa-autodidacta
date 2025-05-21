@@ -1,8 +1,8 @@
 # Curso autodidacta SSTQB Foundation Level 4
 
-Este repositorio contiene un curso autodidacta y práctico para preparar el examen oficial **SSTQB Foundation Level 4**, adaptado a un ritmo semanal de estudio de **5 a 8 horas**. Está dividido en **12 semanas**, cada una con sus contenidos teóricos, tutorial paso a paso y ejercicios para afianzar los conocimientos.
+Este repositorio contiene un curso autodidacta y práctico para preparar el examen oficial **SSTQB Foundation Level 4**, adaptado a un ritmo semanal de **5 a 8 horas**. Está dividido en **12 semanas**, cada una con contenidos teóricos, tutorial paso a paso y ejercicios prácticos para afianzar los conocimientos.
 
-El enfoque es práctico, orientado a personas que deseen aprender desde cero, reforzar conceptos o prepararse de forma autodidacta. Incluye también integración con buenas prácticas de desarrollo, CI/CD y automatización, en la medida en que el temario lo permite.
+El enfoque es pedagógico, evolutivo y orientado a personas que deseen aprender desde cero, reforzar conceptos o prepararse de forma autodidacta. Se integran también buenas prácticas de desarrollo, automatización y herramientas modernas, en la medida que el temario oficial lo permite.
 
 ---
 
@@ -20,18 +20,20 @@ Cada carpeta de semana contiene:
 
 | Semana | Tema                                                                 |
 |--------|----------------------------------------------------------------------|
-| 1      | Introducción al testing. Principios y proceso de pruebas            |
-| 2      | Modelos de desarrollo y niveles de prueba                           |
-| 3      | Pruebas estáticas. Revisión de código y análisis                    |
-| 4      | Técnicas de diseño: caja negra, caja blanca y basadas en experiencia|
-| 5      | Gestión de pruebas y planificación                                  |
-| 6      | Monitorización, métricas y control del progreso                     |
-| 7      | Gestión de defectos, riesgos y cobertura                            |
-| 8      | Herramientas de testing. Selección, uso y automatización básica     |
-| 9      | Integración del testing en CI/CD y pipelines                        |
-| 10     | Pruebas no funcionales: rendimiento, seguridad, accesibilidad       |
-| 11     | Técnicas avanzadas de análisis de resultados y reporting            |
-| 12     | Preparación al examen. Simulacro y repaso general                   |
+| 1      | Introducción al testing: principios, proceso y roles del tester     |
+| 2      | Psicología del testing, ética profesional y habilidades clave       |
+| 3      | Ciclo de vida del software, niveles y tipos de pruebas              |
+| 4      | Pruebas estáticas: revisiones, walkthroughs y análisis estático     |
+| 5      | Técnicas de diseño: caja negra, caja blanca y basadas en experiencia|
+| 6      | Gestión de pruebas: planificación, estimación y trazabilidad        |
+| 7      | Seguimiento del progreso, métricas, cobertura y control de calidad  |
+| 8      | Gestión de defectos, riesgos y mejora continua                      |
+| 9      | Herramientas de testing: selección, integración y automatización    |
+| 10     | Pruebas no funcionales: rendimiento, usabilidad, seguridad y más    |
+| 11     | Testing en DevOps: CI/CD, pipelines y automatización práctica       |
+| 12     | Preparación al examen: simulacro, repaso y consejos finales         |
+
+---
 
 ## Bonus track: autoevaluaciones
 

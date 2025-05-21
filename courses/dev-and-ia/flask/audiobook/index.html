@@ -153,6 +153,18 @@
       return result.filter(p => p !== '');
     }
 
+    function sanitizeForSpeech(phrase) {
+      return phrase
+        .replace(/\bGET\b/g, 'guet')
+        .replace(/\bPOST\b/g, 'post')
+        .replace(/\bPUT\b/g, 'put')
+        .replace(/\bPATCH\b/g, 'patch')
+        .replace(/\bDELETE\b/g, 'delete')
+        .replace(/\bJSON\b/g, 'yeison')
+        .replace(/\bjson\b/g, 'yeison')
+        .replace(/\bURLs\b/g, 'URLes');
+    }
+
     async function speakCurrentPhrase() {
       if (currentIndex >= phrases.length) {
         await loadNextFileAndRead();
@@ -167,7 +179,7 @@
         return;
       }
 
-      utterance = new SpeechSynthesisUtterance(phrase);
+      utterance = new SpeechSynthesisUtterance(sanitizeForSpeech(phrase));
       utterance.lang = langCountry;
       utterance.pitch = pitch;
       utterance.rate = 1;

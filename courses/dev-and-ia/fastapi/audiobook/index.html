@@ -93,8 +93,8 @@
     const lang = 'es';
     const langCountry = 'es-ES';
     const pitch = 1.5;
-    const secPause = 2000;
-    const secLongPause = 4000;
+    const secPause = 1000;
+    const secLongPause = 3000;
 
     window.speechSynthesis.onvoiceschanged = () => {
       voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith(lang));

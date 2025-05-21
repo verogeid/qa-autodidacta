@@ -155,12 +155,13 @@
 
     function sanitizeForSpeech(phrase) {
       return phrase
-        .replace(/\bGET\b/g, 'get')
+        .replace(/\bGET\b/g, 'guet')
         .replace(/\bPOST\b/g, 'post')
         .replace(/\bPUT\b/g, 'put')
         .replace(/\bPATCH\b/g, 'patch')
         .replace(/\bDELETE\b/g, 'delete')
-        .replace(/\bJSON\b/g, 'yeison');
+        .replace(/\bJSON\b/g, 'yeison')
+        .replace(/\bURLs\b/g, 'URLes');
     }
 
     async function speakCurrentPhrase() {

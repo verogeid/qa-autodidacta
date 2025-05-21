@@ -1,6 +1,6 @@
-# Semana 1 - Introducción al testing: principios, proceso y roles del tester
+# Tema 1 - Introducción al testing: principios, proceso y roles del tester
 
-Esta semana aprenderás los fundamentos del testing de software: por qué es necesario, qué principios lo guían y cómo se integra en el ciclo de vida del software. También conocerás los roles más comunes del tester y su interacción con el equipo de desarrollo.
+En este tema aprenderás los fundamentos del testing de software: por qué es necesario, qué principios lo guían y cómo se integra en el ciclo de vida del software. También conocerás los roles más comunes del tester y su interacción con el equipo de desarrollo.
 
 **Objetivos:**
 
@@ -14,4 +14,4 @@ Esta semana aprenderás los fundamentos del testing de software: por qué es nec
 - [^ Índice](../readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
-- [Siguiente semana >](../semana02/readme.md)
+- [Siguiente tema >](../semana02/readme.md)

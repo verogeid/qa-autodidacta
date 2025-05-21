@@ -1,103 +1,54 @@
-# Semana 4 – Gestión de Pruebas (*Test Management*)
+# Tema 4 - Pruebas estáticas: revisiones, walkthroughs y análisis estático
 
-## Objetivo
-Comprender cómo se planifica, monitorea y controla la actividad de pruebas. Aborda desde la estrategia hasta la finalización formal del proceso, incluyendo riesgos, entregables y roles clave.
+En este tema aprenderás sobre las pruebas estáticas, técnicas fundamentales para detectar errores sin necesidad de ejecutar el software. Estas pruebas se centran en analizar documentos, código y otros artefactos para mejorar la calidad desde etapas tempranas, evitando así errores costosos en fases posteriores.
 
----
+## ¿Qué son las pruebas estáticas y por qué son importantes?
 
-## 1. Planificación de pruebas
+Las pruebas estáticas consisten en examinar el software y su documentación sin correr el programa. Es como revisar un plano arquitectónico antes de construir un edificio: detectar problemas a tiempo evita errores graves durante la obra.
 
-### 1.1. ¿Qué es un plan de pruebas?
-Un documento que describe el alcance, enfoque, recursos y calendario de las actividades de prueba. Define:
+Este tipo de pruebas ayuda a identificar defectos en requisitos, diseño, código y documentación, permitiendo corregirlos antes de la implementación o la ejecución.
 
-- Objetivos de la prueba
-- Criterios de entrada y salida
-- Roles y responsabilidades
-- Entregables y cronograma
+## Tipos de pruebas estáticas
 
-### 1.2. Niveles de planificación
-- *Estratégica*: visión a largo plazo, alineada con la organización.
-- *Táctica*: definición por proyecto o sistema.
-- *Operativa*: planificación diaria o semanal de tareas.
+### Revisiones
 
----
+Las revisiones son inspecciones formales o informales donde un grupo de personas examina los documentos o código para encontrar defectos. Hay distintos niveles:
 
-## 2. Monitorización y control de pruebas
+- **Revisión informal:** Un colega revisa el trabajo sin procedimientos estrictos.
+- **Revisión técnica:** Un grupo de expertos con roles definidos revisa siguiendo un proceso estructurado.
+- **Inspección:** El método más formal y riguroso con roles definidos (moderador, autor, revisor) y registro detallado de defectos.
 
-### 2.1. ¿Qué es?
-Proceso de evaluar si las actividades van según lo planificado y aplicar correcciones si es necesario.
+Piensa en las revisiones como cuando varias personas leen un texto para corregir ortografía y coherencia antes de imprimirlo.
 
-### 2.2. Indicadores comunes
-- Número de defectos abiertos/cerrados
-- Cobertura de pruebas
-- Tiempo estimado vs. real
-- % de ejecución de pruebas
+### Walkthroughs
 
-### 2.3. Herramientas de apoyo
-TestRail, Zephyr, Xray, dashboards personalizados, hojas de cálculo.
+Un walkthrough es una presentación guiada donde el autor del documento o código explica paso a paso su trabajo a un equipo, que hace preguntas y comenta. No busca defectos directos, sino comprender el contenido y fomentar la discusión para detectar posibles problemas.
 
----
+Se parece a un paseo guiado por un museo, donde el guía explica y los visitantes hacen preguntas para entender mejor.
 
-## 3. Gestión de riesgos
+### Análisis estático de código
 
-### 3.1. Tipos de riesgos
-- *Producto*: calidad, seguridad, rendimiento, compatibilidad.
-- *Proyecto*: retrasos, falta de recursos, cambios frecuentes.
+El análisis estático es el uso de herramientas automáticas que examinan el código sin ejecutarlo, detectando errores comunes, problemas de estilo o seguridad. Estas herramientas facilitan encontrar defectos que pueden pasar desapercibidos en revisiones manuales.
 
-### 3.2. Gestión de riesgos
-1. Identificar riesgos
-2. Evaluar impacto y probabilidad
-3. Planificar mitigación y contingencias
-4. Monitorear
+Ejemplos de herramientas incluyen *SonarQube*, *ESLint* o *Checkstyle*.
+
+## Listas de verificación y métricas
+
+Las listas de verificación son guías que ayudan a asegurar que ciertos aspectos clave se revisen en documentos o código, como cumplimiento de normas, estructura correcta o ausencia de errores comunes.
+
+Las métricas cuantifican atributos del código o documentos, por ejemplo, número de líneas, complejidad ciclomática o porcentaje de cobertura documental, para evaluar calidad y detectar áreas problemáticas.
+
+## Aplicación práctica en el ciclo de vida del software
+
+Las pruebas estáticas se aplican desde las fases iniciales, como análisis de requisitos, diseño y codificación, complementando las pruebas dinámicas que requieren ejecutar el software.
+
+Al realizar pruebas estáticas temprano, se reducen errores y costos posteriores, mejorando la calidad general del producto.
 
 ---
 
-## 4. Gestión de la configuración
-
-### 4.1. ¿Qué implica?
-Controlar versiones de artefactos de prueba, como scripts, datos, documentación y resultados.
-
-### 4.2. Herramientas
-Git, SVN, Azure DevOps, Jenkins (en CI/CD).
+Con esta base, estarás preparado para entender y aplicar las pruebas estáticas en tus proyectos, además de superar las preguntas del SSTQB relacionadas con este tema.
 
 ---
 
-## 5. Gestión de incidencias
-
-### 5.1. ¿Qué es una incidencia?
-Cualquier evento que requiere investigación y resolución, como bugs, errores en casos de prueba, problemas de entorno.
-
-### 5.2. Flujo típico
-1. Detección y documentación
-2. Clasificación (severidad/prioridad)
-3. Asignación
-4. Resolución y revalidación
-5. Cierre
-
----
-
-## 6. Informes de prueba
-
-### 6.1. Informe de avance (*Test Progress Report*)
-- Resumen de lo que se ha ejecutado
-- Incidencias abiertas
-- Desviaciones del plan
-
-### 6.2. Informe de resumen (*Test Summary Report*)
-- Evaluación final del estado de pruebas
-- Cumplimiento de objetivos
-- Recomendación de liberación o no
-
----
-
-## 7. Roles clave en la gestión
-
-- **Test Manager**: planificación, asignación de tareas, seguimiento.
-- **Tester**: diseño y ejecución.
-- **Stakeholders**: evaluación de resultados y toma de decisiones.
-
----
-
-## Conclusión
-
-Una gestión eficaz de pruebas no solo garantiza una mejor cobertura y calidad, también permite prever riesgos, anticiparse a retrasos y comunicar resultados con claridad. Estas prácticas son esenciales para superar con éxito el examen SSTQB.
+- [^ Índice del Tema](./readme.md)  
+- [Ejercicios](./ejercicios.md)

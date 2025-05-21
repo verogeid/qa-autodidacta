@@ -30,7 +30,7 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 
 ### 🔍 Fundamentos QA
 
-1. 🚧 [SSTQB Foundation Level 4]<!-- (./courses/qa-fundaments/sstqb/readme.md)--> 🚧
+1. 🚧 [SSTQB Foundation Level 4](./courses/qa-fundaments/sstqb/readme.md) 🚧
 
 ### 🛠️ Gestión y Herramientas
 

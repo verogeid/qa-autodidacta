@@ -1,21 +1,29 @@
-# Ejercicios - Semana 11
+# Semana 11 – Ejercicios: Técnicas de Diseño de Pruebas SSTQB
 
-## Prácticos
+1. ¿Cuál es la diferencia principal entre técnicas de caja negra y caja blanca?
 
-1. Crea una tabla comparativa entre TestRail y Xray según:
-   - Facilidad de integración.
-   - Reportes.
-   - Curva de aprendizaje.
+2. Describe la técnica de *Partición Equivalente* y da un ejemplo sencillo.
 
-2. Enumera 3 herramientas útiles para automatizar pruebas no funcionales. Describe un uso típico de cada una.
+3. ¿Por qué es útil la técnica de *Análisis de Valores Límite*?
 
-3. Imagina que tu equipo quiere introducir Cypress. ¿Qué pasos seguirías para evaluar y adoptarlo?
+4. Explica cómo funciona una *Tabla de Decisión* y para qué tipo de pruebas es adecuada.
 
-4. Haz una lista de herramientas que integrarías en un pipeline CI/CD básico para un proyecto web y justifica cada una.
+5. Menciona dos técnicas de caja blanca y qué buscan cubrir.
 
-## Teóricos
+6. ¿Por qué se recomienda combinar técnicas de diseño de pruebas?
 
-5. ¿Qué problemas pueden surgir al automatizar todo el testing desde el inicio?
-6. ¿Por qué es importante tener una estrategia progresiva de automatización?
-7. ¿Cuál es el rol de la comunidad y el soporte cuando eliges una herramienta?
-8. Explica la diferencia entre automatización funcional y no funcional.
+---
+
+# Respuestas
+
+1. Caja negra se basa en la especificación sin conocer el código; caja blanca usa el conocimiento interno del código para diseñar pruebas.
+
+2. Divide los datos en grupos (clases) donde se espera que el sistema se comporte igual. Ejemplo: edades entre 18-65 son válidas; se prueba un valor dentro, uno fuera y uno en el límite.
+
+3. Porque los errores suelen ocurrir en los límites de las clases equivalentes; ayuda a detectarlos.
+
+4. Es una tabla que combina condiciones con acciones para probar todas las combinaciones posibles, útil en lógica compleja.
+
+5. Cobertura de Sentencias (ejecutar todas las líneas) y Cobertura de Decisiones (probar cada decisión lógica).
+
+6. Porque ninguna técnica cubre todos los casos; combinarlas mejora la eficacia y cobertura.

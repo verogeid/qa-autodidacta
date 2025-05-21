@@ -1,86 +1,102 @@
-# Semana 05 – Técnicas Estáticas: Revisiones y Análisis Estático
+# Tema 5 - Técnicas de diseño: caja negra, caja blanca y basadas en experiencia
 
-## 🎯 Objetivos de aprendizaje
-
-- Distinguir entre técnicas estáticas y dinámicas de prueba.  
-- Comprender los beneficios del análisis estático y las revisiones.  
-- Identificar los diferentes tipos de revisiones: informal, walkthrough, revisión técnica e inspección.  
-- Reconocer los roles y responsabilidades en un proceso de revisión formal.  
-- Aplicar técnicas de revisión a diferentes productos de trabajo.  
-- Utilizar herramientas de análisis estático para detectar defectos sin ejecutar el código.
+Diseñar casos de prueba no es cuestión de suerte, sino de aplicar técnicas que nos permitan cubrir situaciones clave con el menor esfuerzo posible. Esta semana aprenderás cómo aplicar tres enfoques fundamentales: *caja negra*, *caja blanca* y técnicas *basadas en la experiencia*.
 
 ---
 
-## 1. ¿Qué es la prueba estática?
+## ¿Qué son las técnicas de diseño?
 
-La prueba estática es una técnica que permite identificar defectos en los productos de trabajo sin necesidad de ejecutar el software.  
-Se centra en la revisión de documentos, código fuente y otros artefactos para detectar errores, omisiones o inconsistencias.
-
----
-
-## 2. Diferencias entre técnicas estáticas y dinámicas
-
-| Característica             | Técnicas Estáticas                            | Técnicas Dinámicas                      |
-|----------------------------|-----------------------------------------------|-----------------------------------------|
-| Ejecución del software     | No se requiere                                | Requiere ejecución                      |
-| Tipo de defectos detectados| Errores en documentos, código no ejecutado    | Errores en tiempo de ejecución          |
-| Momento de aplicación      | Etapas tempranas del desarrollo               | Etapas posteriores, durante pruebas     |
+Las técnicas de diseño de pruebas son métodos sistemáticos para crear casos de prueba eficaces. Su objetivo es maximizar la cobertura de errores con el menor número de pruebas posibles. Según el tipo de información que tengamos del sistema, elegiremos una técnica u otra.
 
 ---
 
-## 3. Revisiones: Tipos y procesos
+## Técnicas de *caja negra*
 
-Las revisiones son evaluaciones sistemáticas de productos de trabajo para identificar defectos y mejorar la calidad.
+Las técnicas de *caja negra* se basan en los requisitos y el comportamiento esperado del sistema, sin considerar cómo está implementado por dentro. Es como probar una calculadora: sabes qué debe hacer, pero no cómo funciona por dentro.
 
-### Tipos de revisiones
+### Partición de equivalencia
 
-1. **Revisión informal**: No estructurada, sin documentación formal.  
-2. **Walkthrough**: El autor guía a los participantes a través del documento para obtener comentarios.  
-3. **Revisión técnica**: Evaluación por parte de expertos técnicos para identificar defectos y mejorar la calidad.  
-4. **Inspección**: Proceso formal con roles definidos y criterios de entrada/salida.
+Consiste en dividir los datos de entrada en grupos (particiones) que el sistema trata de la misma forma. Si un dato de una partición falla, probablemente todos los de esa partición también lo hagan.
 
-### Roles en una revisión formal
+**Ejemplo:** Un campo que solo acepta edades entre 18 y 65:
+- Una partición válida: 18 a 65.
+- Particiones inválidas: menor de 18 y mayor de 65.
 
-- **Moderador**: Lidera y coordina la revisión.  
-- **Autor**: Creador del producto de trabajo.  
-- **Revisor**: Examina el producto para identificar defectos.  
-- **Escriba**: Documenta los hallazgos durante la revisión.
+### Valores límite
 
----
+Los errores suelen aparecer cerca de los límites. Esta técnica se centra en probar los extremos de las particiones válidas e inválidas.
 
-## 4. Análisis estático mediante herramientas
+**Ejemplo:** Para el rango 18 a 65, se prueban:
+- Valores válidos: 18 y 65.
+- Valores justo fuera: 17 y 66.
 
-El análisis estático automatizado utiliza herramientas para examinar el código fuente y otros artefactos sin ejecutarlos.
+### Tabla de decisión
 
-### Beneficios
+Se utiliza cuando hay múltiples condiciones que afectan el resultado. Se crean combinaciones de condiciones y sus salidas esperadas en forma de tabla.
 
-- Detección temprana de defectos.  
-- Identificación de código muerto o redundante.  
-- Verificación de cumplimiento de estándares de codificación.  
-- Mejora de la mantenibilidad del código.
+**Ejemplo:** Un sistema da acceso solo si:
+- Es mayor de edad.
+- Tiene membresía activa.
 
-### Herramientas comunes
+La tabla muestra todas las combinaciones posibles de esas condiciones.
 
-- **SonarQube**  
-- **ESLint** (JavaScript)  
-- **Pylint** (Python)  
-- **FindBugs** (Java)
+### Transiciones de estado
 
----
+Se aplica a sistemas que tienen distintos estados y reacciones según el estado actual y la entrada. Se crean pruebas para cubrir las transiciones y condiciones inválidas.
 
-## 5. Aplicación práctica
+**Ejemplo:** Cajero automático: estados como *inactivo*, *esperando PIN*, *retirando efectivo*.
 
-Para consolidar los conocimientos adquiridos, se recomienda realizar ejercicios prácticos que incluyan:
+### Caso de uso
 
-- Identificación de defectos en fragmentos de código utilizando herramientas de análisis estático.  
-- Simulación de una revisión formal con roles asignados.  
-- Evaluación de documentos de requisitos para detectar inconsistencias.
+Se basa en los escenarios definidos por el usuario final. Cada flujo de uso se convierte en un caso de prueba.
 
 ---
 
-## 📚 Recursos adicionales
+## Técnicas de *caja blanca*
 
-- [ISTQB Foundation Level Syllabus 2018](https://www.istqb.org/downloads/send/2-foundation-level-documents/3-foundation-level-syllabus-2018.html)  
-- [Guía de SonarQube](https://docs.sonarqube.org/latest/)  
-- [Documentación de ESLint](https://eslint.org/docs/latest/)
+Estas técnicas requieren conocer el código. Se centran en cómo está construido el sistema, y en qué caminos toma.
+
+### Cobertura de sentencias
+
+Cada línea de código debe ejecutarse al menos una vez.
+
+### Cobertura de decisiones
+
+Cada decisión (*if*, *switch*, etc.) debe evaluarse en todas sus salidas posibles (*true*, *false*).
+
+**Símil:** Si el código es un laberinto, las técnicas de caja blanca se aseguran de recorrer todos los caminos posibles.
+
+---
+
+## Técnicas *basadas en la experiencia*
+
+Aquí, el conocimiento del tester es clave. Se aplican cuando no hay requisitos claros o se quiere hacer una validación adicional.
+
+### Adivinación de errores (*error guessing*)
+
+Basada en la experiencia sobre errores comunes. El tester propone pruebas para casos donde "suele fallar".
+
+### Pruebas exploratorias
+
+No siguen un guion fijo. El tester explora libremente el sistema buscando defectos, documentando sobre la marcha.
+
+**Símil:** Como un detective que investiga pistas sin tener claro dónde empezar.
+
+---
+
+## Buenas prácticas
+
+- Usa combinaciones de técnicas para mayor cobertura.
+- Prioriza según el riesgo.
+- Asegura la trazabilidad entre casos y requisitos.
+- Documenta entradas esperadas, condiciones y resultados.
+
+---
+
+Con estas técnicas, serás capaz de diseñar pruebas robustas, con lógica y sentido. Esto no solo mejora la calidad del software, también eleva tu valor como tester.
+
+---
+
+- [^ Índice del Tema](./readme.md)
+- [Ejercicios](./ejercicios.md)
 

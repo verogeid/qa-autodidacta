@@ -1,18 +1,77 @@
-# Ejercicios - Semana 6
+# Semana 6 – Ejercicios: Niveles y Tipos de Prueba
 
-## Parte práctica
+## Ejercicio 1  
+**¿Cuál de los siguientes niveles de prueba se enfoca en la validación de los requisitos del usuario?**
 
-1. **Organiza las pruebas de un proyecto existente** siguiendo las mejores prácticas de estructuración. Asegúrate de usar una convención de nombres coherente y agrupar las pruebas por módulos.
-2. **Implementa funciones auxiliares** que permitan reutilizar código en múltiples pruebas. Por ejemplo, crea una función para realizar login en una aplicación.
-3. **Optimiza el tiempo de ejecución de las pruebas** en tu proyecto habilitando la paralelización de pruebas o utilizando mocks/stubs.
+a) Pruebas de sistema  
+b) Pruebas de integración  
+c) Pruebas de aceptación  
+d) Pruebas unitarias  
 
-## Parte teórica
+---
 
-4. Explica la diferencia entre pruebas pequeñas y pruebas grandes. ¿Cuáles son las ventajas de hacer pruebas pequeñas?
-5. ¿Por qué es importante la independencia de las pruebas? Explica cómo garantizar que las pruebas no dependan unas de otras.
-6. ¿Cómo gestionas los datos de prueba en tus proyectos? ¿Qué técnicas usas para evitar datos codificados?
-7. ¿Por qué el uso de un patrón como el Page Object Pattern puede mejorar la mantenibilidad de las pruebas?
+## Ejercicio 2  
+**¿Qué nivel de prueba normalmente se lleva a cabo por los desarrolladores?**
 
-## Reflexión
+a) Prueba de sistema  
+b) Prueba de aceptación  
+c) Prueba de integración  
+d) Prueba unitaria  
 
-8. Reflexiona sobre la importancia de la optimización de las pruebas. ¿Cómo puede mejorar el tiempo de entrega de software si las pruebas se ejecutan de manera eficiente?
+---
+
+## Ejercicio 3  
+**Relaciona cada tipo de prueba con su objetivo principal:**
+
+1. Prueba funcional  
+2. Prueba de rendimiento  
+3. Prueba de usabilidad  
+4. Prueba de mantenimiento  
+
+a) Evaluar la eficiencia del sistema bajo carga  
+b) Verificar que el sistema cumple los requisitos de negocio  
+c) Confirmar que es fácil de usar  
+d) Comprobar que el sistema puede actualizarse sin fallos  
+
+---
+
+## Ejercicio 4  
+**¿Cuál es un ejemplo de prueba no funcional?**
+
+a) Verificar el login con credenciales válidas  
+b) Verificar que los datos se almacenan correctamente en la base de datos  
+c) Medir el tiempo de carga de una página  
+d) Probar diferentes roles de usuario  
+
+---
+
+## Ejercicio 5  
+**¿Cuál de las siguientes afirmaciones sobre los niveles de prueba es correcta?**
+
+a) Las pruebas de integración se realizan antes de las pruebas unitarias  
+b) Las pruebas de aceptación validan los requisitos técnicos  
+c) Las pruebas de sistema se centran en la funcionalidad del sistema completo  
+d) Las pruebas unitarias requieren datos reales de producción  
+
+---
+
+# Respuestas
+
+**Ejercicio 1: c)**  
+Las *pruebas de aceptación* verifican que el software cumple los requisitos del usuario final.
+
+**Ejercicio 2: d)**  
+Las *pruebas unitarias* son responsabilidad de los desarrolladores.
+
+**Ejercicio 3:**  
+1 → b)  
+2 → a)  
+3 → c)  
+4 → d)  
+Cada tipo de prueba tiene un objetivo específico: *funcionalidad, rendimiento, experiencia de usuario y capacidad de mantenimiento*, respectivamente.
+
+**Ejercicio 4: c)**  
+Medir el *tiempo de carga* corresponde a una *prueba no funcional*, en este caso de rendimiento.
+
+**Ejercicio 5: c)**  
+Las *pruebas de sistema* evalúan el sistema como un todo, incluyendo su comportamiento funcional y no funcional.

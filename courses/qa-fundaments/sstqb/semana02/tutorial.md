@@ -1,61 +1,65 @@
-# Tutorial Semana 2 - Planificación y Diseño de Pruebas
+# Semana 2 – Testing en el ciclo de vida del software
 
-## 1. Planificación de pruebas
+## Objetivos
 
-La **planificación de pruebas** es esencial para garantizar que el software se someta a un conjunto adecuado de pruebas, cubriendo todos los escenarios posibles.
+- Entender los diferentes modelos de desarrollo de software y cómo impactan en el testing  
+- Identificar las fases del testing en el ciclo de vida del software  
+- Conocer la importancia del testing en mantenimiento y metodologías ágiles  
 
-### Pasos para la planificación
+---
 
-1. **Definir los objetivos de prueba**: ¿Qué se espera lograr con las pruebas? ¿Qué áreas del sistema necesitan ser validadas?
-2. **Identificar los requisitos de prueba**: Determina qué requisitos del software deben ser verificados.
-3. **Seleccionar las técnicas de prueba**: Elige qué tipo de pruebas realizar, como pruebas funcionales, de rendimiento, seguridad, etc.
-4. **Asignar recursos**: Asegúrate de tener el equipo adecuado y los entornos necesarios para realizar las pruebas.
-5. **Establecer el cronograma**: Define las fechas de inicio y fin de las pruebas, así como las fases de ejecución.
+## 1. Modelos de desarrollo y testing
 
-## 2. Técnicas de diseño de pruebas
+### 1.1 Modelo en cascada (Waterfall)
 
-Existen varias **técnicas de diseño de pruebas** que te ayudarán a crear casos de prueba efectivos:
+- Secuencial, cada fase debe completarse antes de pasar a la siguiente  
+- Testing se realiza tras la codificación completa  
+- Riesgo alto de encontrar defectos tarde y costosos de arreglar  
 
-### a. **Equivalencia de partición**
+### 1.2 Modelos iterativos e incrementales
 
-Divide el dominio de entrada en clases de equivalencia, donde se espera que todos los valores dentro de una misma clase se comporten igual.
+- *Iterativo:* el producto evoluciona con versiones sucesivas, cada iteración mejora funcionalidades  
+- *Incremental:* se construye el producto por partes completas, entregando funcionalidades parciales pero funcionales  
+- Permiten testing continuo y feedback temprano  
 
-### b. **Análisis de valores límite**
+### 1.3 Modelos ágiles
 
-Crea casos de prueba alrededor de los límites de entrada (mínimos y máximos) para identificar errores en los puntos de frontera.
+- Testing integrado en el sprint desde el inicio  
+- Pruebas automáticas y manuales combinadas  
+- Feedback rápido y entrega continua  
 
-### c. **Técnicas basadas en la experiencia**
+---
 
-Se basan en la experiencia del tester, como pruebas exploratorias, en las que se prueban áreas del software no planificadas, pero que pueden ser sensibles a defectos.
+## 2. Fases del testing en el ciclo de vida del software
 
-## 3. Creación de casos de prueba
+| Fase de desarrollo        | Fase de testing correspondiente         |
+|--------------------------|----------------------------------------|
+| Requisitos de usuario    | Pruebas de aceptación                   |
+| Requisitos funcionales    | Pruebas del sistema                     |
+| Diseño técnico           | Pruebas de integración                  |
+| Codificación             | Pruebas unitarias                       |
 
-Los **casos de prueba** son documentos que describen los pasos que un tester debe seguir para verificar un aspecto específico del software. Un caso de prueba típico debe contener:
+---
 
-1. **ID del caso de prueba**.
-2. **Descripción**.
-3. **Precondiciones**.
-4. **Pasos a seguir**.
-5. **Datos de prueba**.
-6. **Resultado esperado**.
-7. **Estado del caso de prueba** (aprobado, fallido).
+## 3. Testing en mantenimiento
 
-## 4. Revisión y gestión de los casos de prueba
+- Tipos de mantenimiento: correctivo, perfectivo, adaptativo, preventivo  
+- Testing en mantenimiento asegura que los cambios no introduzcan nuevos defectos (pruebas de regresión)  
+- Es crucial para la calidad continua y la satisfacción del usuario  
 
-La **gestión de los casos de prueba** incluye la organización de todos los casos en un repositorio centralizado, asegurando su trazabilidad con los requisitos del software.
+---
 
-### Buenas prácticas
+## 4. Riesgos del testing tardío
 
-- Mantén los casos de prueba en un sistema de gestión de pruebas.
-- Revisa los casos de prueba regularmente para mantenerlos actualizados.
-- Relaciona cada caso de prueba con el requisito o historia de usuario que cubre.
+- Incremento en el coste y tiempo para corregir defectos  
+- Mayor probabilidad de fallos en producción  
+- Retroalimentación insuficiente para mejorar requisitos y diseño  
 
-## 5. Trazabilidad entre requisitos y pruebas
-
-La trazabilidad asegura que cada **requisito** del software esté cubierto por al menos un **caso de prueba**. Esto es esencial para garantizar que el software cumpla con lo que se espera.
-
-Puedes usar herramientas como **Jira** o **TestRail** para mantener la trazabilidad entre los requisitos y los casos de prueba.
+---
 
 ## Resumen
 
-Esta semana, aprendiste a planificar el proceso de pruebas, diseñar casos de prueba efectivos y gestionar la trazabilidad entre los requisitos y las pruebas. La planificación adecuada es clave para el éxito de cualquier ciclo de pruebas.
+- El modelo de desarrollo influye en cuándo y cómo se realiza el testing  
+- Testing temprano y continuo reduce riesgos y mejora la calidad  
+- El testing en mantenimiento es clave para la evolución segura del software  
+- Metodologías ágiles integran testing durante todo el ciclo

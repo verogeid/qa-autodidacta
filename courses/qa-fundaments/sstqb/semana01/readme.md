@@ -11,6 +11,7 @@ Esta semana aprenderás los fundamentos del testing de software: por qué es nec
 
 ---
 
+- [^ Índice](../readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
 - [Siguiente semana >](../semana02/readme.md)

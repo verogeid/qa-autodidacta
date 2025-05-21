@@ -1,47 +1,103 @@
-# Tutorial Semana 4 - Buenas Prácticas en Pruebas de Software
+# Semana 4 – Gestión de Pruebas (*Test Management*)
 
-## 1. Principios y Buenas Prácticas
+## Objetivo
+Comprender cómo se planifica, monitorea y controla la actividad de pruebas. Aborda desde la estrategia hasta la finalización formal del proceso, incluyendo riesgos, entregables y roles clave.
 
-Las buenas prácticas en pruebas de software son esenciales para lograr una **calidad sostenible** en el ciclo de vida del software. Algunos de los principios fundamentales incluyen:
+---
 
-- **Pruebas tempranas**: Comienza a probar desde las primeras fases del proyecto, como en la fase de desarrollo y diseño.
-- **Pruebas continuas**: Asegúrate de que las pruebas se realicen de manera continua a lo largo del ciclo de vida del desarrollo, no solo al final del proyecto.
-- **Automatización de pruebas**: Siempre que sea posible, automatiza las pruebas repetitivas y de regresión para ahorrar tiempo y recursos.
-- **Pruebas basadas en riesgos**: Prioriza las pruebas según los riesgos y la importancia de los módulos del software.
+## 1. Planificación de pruebas
 
-## 2. Técnicas de Diseño de Pruebas
+### 1.1. ¿Qué es un plan de pruebas?
+Un documento que describe el alcance, enfoque, recursos y calendario de las actividades de prueba. Define:
 
-El diseño de pruebas es fundamental para asegurar que se cubran todas las posibles situaciones. Algunas técnicas incluyen:
+- Objetivos de la prueba
+- Criterios de entrada y salida
+- Roles y responsabilidades
+- Entregables y cronograma
 
-- **Técnicas de caja negra**: Se centran en la entrada y salida del sistema, sin tener en cuenta la estructura interna. Ejemplos incluyen la prueba de equivalencia y el análisis de valores límite.
-- **Técnicas de caja blanca**: Se centran en la estructura interna del software, como el código y los flujos de control. Ejemplos incluyen pruebas de caminos y análisis de cobertura.
-- **Pruebas exploratorias**: Implican pruebas ad-hoc donde los testers exploran el sistema sin una planificación estricta.
+### 1.2. Niveles de planificación
+- *Estratégica*: visión a largo plazo, alineada con la organización.
+- *Táctica*: definición por proyecto o sistema.
+- *Operativa*: planificación diaria o semanal de tareas.
 
-## 3. Gestión Eficiente de Tiempos y Recursos
+---
 
-Para realizar un proceso de pruebas eficiente, es necesario gestionar adecuadamente los tiempos y los recursos. Algunas estrategias clave incluyen:
+## 2. Monitorización y control de pruebas
 
-- **Planificación**: Define los objetivos de las pruebas, los recursos necesarios y las fechas clave.
-- **Priorización de pruebas**: Asegúrate de que las pruebas más críticas se realicen primero.
-- **Distribución de tareas**: Asigna tareas de prueba de manera equitativa entre los miembros del equipo, maximizando sus fortalezas.
+### 2.1. ¿Qué es?
+Proceso de evaluar si las actividades van según lo planificado y aplicar correcciones si es necesario.
 
-## 4. Colaboración Efectiva con el Equipo de Desarrollo
+### 2.2. Indicadores comunes
+- Número de defectos abiertos/cerrados
+- Cobertura de pruebas
+- Tiempo estimado vs. real
+- % de ejecución de pruebas
 
-La colaboración estrecha con los desarrolladores es clave para el éxito de las pruebas. Algunas recomendaciones incluyen:
+### 2.3. Herramientas de apoyo
+TestRail, Zephyr, Xray, dashboards personalizados, hojas de cálculo.
 
-- **Comunicación constante**: Mantén reuniones regulares con el equipo de desarrollo para discutir avances, problemas y cambios.
-- **Feedback constructivo**: Aporta comentarios de manera positiva y constructiva para que el equipo de desarrollo pueda solucionar los problemas rápidamente.
-- **Participación en revisiones de código**: Ayuda a los desarrolladores a identificar posibles problemas de calidad antes de que se conviertan en defectos.
+---
 
-## 5. Establecimiento de Métricas y KPIs
+## 3. Gestión de riesgos
 
-Las métricas y KPIs (indicadores clave de desempeño) son esenciales para evaluar la calidad del software y el progreso de las pruebas. Algunas métricas importantes incluyen:
+### 3.1. Tipos de riesgos
+- *Producto*: calidad, seguridad, rendimiento, compatibilidad.
+- *Proyecto*: retrasos, falta de recursos, cambios frecuentes.
 
-- **Tasa de defectos**: Número de defectos encontrados en relación al número total de pruebas realizadas.
-- **Cobertura de pruebas**: Proporción del código o funcionalidades cubiertas por las pruebas.
-- **Tiempo de respuesta**: Tiempo que tarda en completarse una prueba o un conjunto de pruebas.
-- **Manejo de incidencias**: Número de defectos resueltos en un periodo determinado.
+### 3.2. Gestión de riesgos
+1. Identificar riesgos
+2. Evaluar impacto y probabilidad
+3. Planificar mitigación y contingencias
+4. Monitorear
 
-## Resumen
+---
 
-Esta semana aprendiste sobre las mejores prácticas en pruebas de software, técnicas de diseño de pruebas y la importancia de la colaboración efectiva con el equipo de desarrollo. Además, se cubrió la gestión de tiempos y recursos en las pruebas y el establecimiento de métricas de calidad.
+## 4. Gestión de la configuración
+
+### 4.1. ¿Qué implica?
+Controlar versiones de artefactos de prueba, como scripts, datos, documentación y resultados.
+
+### 4.2. Herramientas
+Git, SVN, Azure DevOps, Jenkins (en CI/CD).
+
+---
+
+## 5. Gestión de incidencias
+
+### 5.1. ¿Qué es una incidencia?
+Cualquier evento que requiere investigación y resolución, como bugs, errores en casos de prueba, problemas de entorno.
+
+### 5.2. Flujo típico
+1. Detección y documentación
+2. Clasificación (severidad/prioridad)
+3. Asignación
+4. Resolución y revalidación
+5. Cierre
+
+---
+
+## 6. Informes de prueba
+
+### 6.1. Informe de avance (*Test Progress Report*)
+- Resumen de lo que se ha ejecutado
+- Incidencias abiertas
+- Desviaciones del plan
+
+### 6.2. Informe de resumen (*Test Summary Report*)
+- Evaluación final del estado de pruebas
+- Cumplimiento de objetivos
+- Recomendación de liberación o no
+
+---
+
+## 7. Roles clave en la gestión
+
+- **Test Manager**: planificación, asignación de tareas, seguimiento.
+- **Tester**: diseño y ejecución.
+- **Stakeholders**: evaluación de resultados y toma de decisiones.
+
+---
+
+## Conclusión
+
+Una gestión eficaz de pruebas no solo garantiza una mejor cobertura y calidad, también permite prever riesgos, anticiparse a retrasos y comunicar resultados con claridad. Estas prácticas son esenciales para superar con éxito el examen SSTQB.

@@ -1,46 +1,55 @@
-# Tutorial Semana 11 - Herramientas de soporte al testing
+# Semana 11 – Técnicas de Diseño de Pruebas SSTQB
 
-## 1. Clasificación de herramientas
+## Introducción
 
-- Gestión de pruebas (TestRail, Xray).
-- Gestión de requisitos (Jira, Azure DevOps).
-- Automatización funcional (Selenium, Cypress).
-- Automatización no funcional (JMeter, Lighthouse).
-- Control de versiones (Git, GitHub).
-- Integración continua (GitHub Actions, GitLab CI).
-- Análisis estático y cobertura (SonarQube, Istanbul).
-- Gestión de incidencias (Jira, Bugzilla).
-- Reportes y dashboards (Allure, ReportPortal).
+Las técnicas de diseño de pruebas son métodos estructurados para crear casos de prueba efectivos que cubran los requisitos y ayuden a encontrar defectos.
 
-## 2. Beneficios
+---
 
-- Repetibilidad.
-- Reducción de errores humanos.
-- Velocidad.
-- Visibilidad del proceso.
+## Categorías de Técnicas
 
-## 3. Riesgos
+### 1. Técnicas de caja negra (funcionales)
 
-- Coste de implantación.
-- Curva de aprendizaje.
-- Falsos positivos/negativos.
-- Dependencia excesiva.
+- Basadas en la especificación del software, sin conocimiento del código.
 
-## 4. Introducción de herramientas
+- Ejemplos:
 
-Fases:
+  - **Partición Equivalente**: Divide los datos de entrada en clases equivalentes para reducir casos.
 
-1. Evaluación de necesidades.
-2. Piloto controlado.
-3. Formación.
-4. Automatización progresiva.
+  - **Análisis de Valores Limite**: Prueba en los límites de las clases equivalentes.
 
-## 5. Selección de herramientas
+  - **Tabla de Decisión**: Evalúa combinaciones de condiciones y acciones.
 
-Criterios:
+  - **Pruebas de Estado**: Basadas en cambios de estado del sistema.
 
-- Compatibilidad con stack.
-- Soporte y comunidad.
-- Licenciamiento.
-- Integraciones CI/CD.
-- Escalabilidad.
+### 2. Técnicas de caja blanca (estructurales)
+
+- Basadas en el conocimiento del código fuente.
+
+- Ejemplos:
+
+  - **Cobertura de Sentencias**: Asegura que todas las sentencias del código se ejecuten.
+
+  - **Cobertura de Decisiones**: Prueba todas las decisiones lógicas.
+
+  - **Cobertura de Condiciones**: Prueba todas las condiciones booleanas.
+
+---
+
+## Uso Combinado
+
+- Se recomienda combinar técnicas para lograr mayor cobertura.
+
+---
+
+## Conclusión
+
+Dominar las técnicas de diseño de pruebas es esencial para crear casos de prueba efectivos y superar el examen SSTQB.
+
+---
+
+## Referencias SSTQB
+
+Revisa el syllabus oficial para profundizar en cada técnica.
+
+

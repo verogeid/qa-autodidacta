@@ -1,18 +1,17 @@
-# Semana 10 - Gestión de pruebas (parte II)
+# Semana 10 - Pruebas no funcionales: rendimiento, usabilidad, seguridad y más
 
-En esta semana profundizaremos en la gestión de configuración, el riesgo como base del testing y los informes de estado y cierre. Aprenderás a documentar el progreso del testing y evaluar cuándo finalizar las pruebas.
+Aprenderás a identificar, planificar y ejecutar pruebas no funcionales, esenciales para validar la calidad más allá del comportamiento funcional.
 
-## Contenidos
+**Objetivos:**
 
-- Gestión de la configuración.
-- Evaluación y reporte del progreso.
-- Informes de estado y cierre.
-- Testing basado en riesgos.
-- Indicadores clave (KPIs).
-- Factores de salida (exit criteria).
+- Diferenciar entre tipos de pruebas no funcionales.
+- Diseñar pruebas de rendimiento, accesibilidad y seguridad básicas.
+- Usar herramientas sencillas para medir tiempos de respuesta.
+- Evaluar la experiencia de usuario desde la perspectiva del tester.
 
-## Objetivos
+---
 
-- Aplicar conceptos de gestión de configuración a entornos de pruebas.
-- Elaborar reportes útiles para el equipo y stakeholders.
-- Tomar decisiones informadas sobre la continuidad o cierre del ciclo de pruebas.
+- [< Semana anterior](../semana09/readme.md)
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+- [Semana siguiente >](../semana11/readme.md)

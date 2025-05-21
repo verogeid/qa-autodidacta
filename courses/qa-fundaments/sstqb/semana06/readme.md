@@ -1,4 +1,4 @@
-# Semana 6 - Gestión de pruebas: planificación, estimación y trazabilidad
+# Tema 6 - Gestión de pruebas: planificación, estimación y trazabilidad
 
 Profundizarás en cómo se planifican y controlan las pruebas. Aprenderás a estimar esfuerzos, asignar prioridades y asegurar que las pruebas están alineadas con los objetivos del producto.
 
@@ -11,7 +11,8 @@ Profundizarás en cómo se planifican y controlan las pruebas. Aprenderás a est
 
 ---
 
-- [< Semana anterior](../semana05/readme.md)
+- [^ Índice del curso](../readme.md)
+- [< Tema anterior](../semana05/readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
-- [Semana siguiente >](../semana07/readme.md)
+- [Tema siguiente >](../semana07/readme.md)

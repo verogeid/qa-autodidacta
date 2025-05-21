@@ -1,65 +1,40 @@
-# Semana 2 – Testing en el ciclo de vida del software
+# Tema 02 - Psicología del testing, ética profesional y habilidades clave
 
-## Objetivos
+En el testing de software, el factor humano es fundamental. No basta con conocer técnicas o herramientas; saber comunicarte bien, colaborar y mantener una actitud crítica constructiva es vital para el éxito del proyecto. Esta semana aprenderás a manejar estas habilidades para convertirte en un tester profesional y ético.
 
-- Entender los diferentes modelos de desarrollo de software y cómo impactan en el testing  
-- Identificar las fases del testing en el ciclo de vida del software  
-- Conocer la importancia del testing en mantenimiento y metodologías ágiles  
+## Psicología en testing
 
----
+El testing no es solo técnica, es también interacción humana. Un tester debe ser crítico pero respetuoso, saber escuchar y argumentar sin generar conflicto. Por ejemplo, cuando encuentres un error, lo importante no es culpar a nadie, sino explicar el impacto para mejorar el producto.
 
-## 1. Modelos de desarrollo y testing
+## Gestión de conflictos y comunicación
 
-### 1.1 Modelo en cascada (Waterfall)
+El tester trabaja con desarrolladores y otros roles. Las diferencias de opinión pueden surgir, pero es clave gestionar los conflictos con empatía. Esto implica:
 
-- Secuencial, cada fase debe completarse antes de pasar a la siguiente  
-- Testing se realiza tras la codificación completa  
-- Riesgo alto de encontrar defectos tarde y costosos de arreglar  
+- Escuchar activamente.  
+- Usar lenguaje claro y no técnico cuando sea necesario.  
+- Expresar desacuerdos con hechos, no con opiniones.  
+- Buscar soluciones conjuntas en lugar de señalar culpables.
 
-### 1.2 Modelos iterativos e incrementales
+## Ética profesional en testing
 
-- *Iterativo:* el producto evoluciona con versiones sucesivas, cada iteración mejora funcionalidades  
-- *Incremental:* se construye el producto por partes completas, entregando funcionalidades parciales pero funcionales  
-- Permiten testing continuo y feedback temprano  
+El tester tiene la responsabilidad de actuar con integridad y transparencia:
 
-### 1.3 Modelos ágiles
+- Reportar defectos con objetividad.  
+- No ocultar información relevante.  
+- Respetar la confidencialidad de los datos.  
+- Defender la calidad del producto sin comprometer la honestidad.
 
-- Testing integrado en el sprint desde el inicio  
-- Pruebas automáticas y manuales combinadas  
-- Feedback rápido y entrega continua  
+## Habilidades blandas esenciales
 
----
+Para ser un buen tester, necesitas desarrollar estas habilidades personales:
 
-## 2. Fases del testing en el ciclo de vida del software
+- **Comunicación:** expresar ideas de forma clara y escuchar al equipo.  
+- **Análisis:** entender el contexto y los riesgos para diseñar pruebas efectivas.  
+- **Pensamiento crítico:** cuestionar sin prejuicios y evaluar la información con objetividad.
 
-| Fase de desarrollo        | Fase de testing correspondiente         |
-|--------------------------|----------------------------------------|
-| Requisitos de usuario    | Pruebas de aceptación                   |
-| Requisitos funcionales    | Pruebas del sistema                     |
-| Diseño técnico           | Pruebas de integración                  |
-| Codificación             | Pruebas unitarias                       |
+Estas habilidades complementan el conocimiento técnico y te permiten aportar valor real al equipo.
 
 ---
 
-## 3. Testing en mantenimiento
-
-- Tipos de mantenimiento: correctivo, perfectivo, adaptativo, preventivo  
-- Testing en mantenimiento asegura que los cambios no introduzcan nuevos defectos (pruebas de regresión)  
-- Es crucial para la calidad continua y la satisfacción del usuario  
-
----
-
-## 4. Riesgos del testing tardío
-
-- Incremento en el coste y tiempo para corregir defectos  
-- Mayor probabilidad de fallos en producción  
-- Retroalimentación insuficiente para mejorar requisitos y diseño  
-
----
-
-## Resumen
-
-- El modelo de desarrollo influye en cuándo y cómo se realiza el testing  
-- Testing temprano y continuo reduce riesgos y mejora la calidad  
-- El testing en mantenimiento es clave para la evolución segura del software  
-- Metodologías ágiles integran testing durante todo el ciclo
+- [^ Índice del Tema](./readme.md)
+- [Ejercicios](./ejercicios.md)

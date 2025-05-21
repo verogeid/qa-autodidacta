@@ -1,29 +1,59 @@
 # Ejercicios Semana 3 – Técnicas de diseño de pruebas
 
-1. **¿Cuál es la principal diferencia entre técnicas de caja negra y caja blanca?**
+1. **¿Qué técnica se utiliza para reducir el número de casos de prueba mientras se mantiene una buena cobertura funcional?**  
+   a) Análisis de valores límite  
+   b) Partición en clases de equivalencia  
+   c) Pruebas exploratorias  
+   d) Caminos básicos
 
-2. **Menciona dos ejemplos de técnicas estáticas y explica su propósito.**
+2. **Un campo acepta números entre 1 y 999. ¿Cuál de los siguientes valores es un caso válido de clase de equivalencia?**  
+   a) 0  
+   b) 1000  
+   c) 500  
+   d) -1
 
-3. **Explica qué es la partición en clases de equivalencia y da un ejemplo sencillo.**
+3. **¿Cuál de las siguientes afirmaciones es *correcta* sobre técnicas de caja blanca?**  
+   a) Se basan en la experiencia del tester.  
+   b) Se aplican sin conocer la lógica interna.  
+   c) Evalúan rutas lógicas del código.  
+   d) Son útiles solo para pruebas de sistema.
 
-4. **¿Qué técnica usarías para verificar que todas las sentencias de un programa se ejecutan al menos una vez?**
+4. **Elige el conjunto correcto de técnicas dinámicas de diseño de pruebas según la clasificación CTFL v4.0:**  
+   a) Revisiones, inspecciones, análisis estático  
+   b) TDD, BDD, DDD  
+   c) Partición en clases, valores límite, transiciones de estado  
+   d) Caminos lógicos, equivalencia de código, pruebas unitarias
 
-5. **¿Por qué las técnicas basadas en la experiencia son importantes en testing?**
+5. **¿Qué técnica es más adecuada para sistemas con flujos múltiples o conmutación de estados?**  
+   a) Análisis de valores límite  
+   b) Exploratoria  
+   c) Tablas de decisión  
+   d) Pruebas de transición de estados
 
-6. **¿Cuál de estas técnicas requiere conocimiento del código fuente: caja negra, caja blanca o basada en la experiencia?**
+6. **¿Qué técnica es especialmente útil cuando los requisitos no están completamente definidos?**  
+   a) Partición en clases  
+   b) Exploratoria  
+   c) Análisis de causa-efecto  
+   d) Transición de estados
 
 ---
 
 # Respuestas
 
-1. La técnica de caja negra se basa en las especificaciones y no requiere conocimiento del código, mientras que la caja blanca utiliza el conocimiento del código y la estructura interna para diseñar pruebas.
+1. **b) Partición en clases de equivalencia**  
+   Reduce los casos de prueba dividiendo los datos en grupos relevantes.
 
-2. Ejemplos de técnicas estáticas: revisión (manual de documentos para detectar defectos) y análisis estático (uso de herramientas para detectar errores sin ejecutar código).
+2. **c) 500**  
+   Es un valor dentro del rango válido, por lo tanto, representa una clase de equivalencia válida.
 
-3. La partición en clases de equivalencia divide los posibles valores de entrada en grupos donde se espera que el sistema se comporte de forma similar. Ejemplo: para una edad válida entre 18 y 65, las clases pueden ser: menor de 18 (inválido), entre 18 y 65 (válido), mayor de 65 (inválido).
+3. **c) Evalúan rutas lógicas del código**  
+   Las técnicas de caja blanca analizan la estructura interna del software.
 
-4. La técnica de caja blanca llamada cobertura de sentencias.
+4. **c) Partición en clases, valores límite, transiciones de estado**  
+   Son técnicas dinámicas del diseño de pruebas funcionales según ISTQB.
 
-5. Porque permiten encontrar defectos que no se detectan con técnicas formales, aprovechando la intuición y experiencia del tester.
+5. **d) Pruebas de transición de estados**  
+   Ideal para sistemas con múltiples estados y reglas de cambio.
 
-6. La técnica de caja blanca requiere conocimiento del código fuente.
+6. **b) Exploratoria**  
+   Se basa en la habilidad, experiencia y creatividad del tester cuando no hay documentación suficiente.

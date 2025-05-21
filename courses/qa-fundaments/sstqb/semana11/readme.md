@@ -1,16 +1,17 @@
-# Semana 11 - Herramientas de soporte al testing
+# Semana 11 - Testing en DevOps: CI/CD, pipelines y automatización práctica
 
-Durante esta semana conocerás las distintas herramientas que pueden ayudarte en cada fase del proceso de testing. Aprenderás cuándo y cómo introducirlas, qué beneficios aportan y qué riesgos debes tener en cuenta.
+Verás cómo el testing se integra en entornos de integración y entrega continua. Aprenderás a trabajar en pipelines y colaborar con desarrollo y operaciones.
 
-## Contenidos
+**Objetivos:**
 
-- Tipos de herramientas de testing.
-- Beneficios y riesgos de las herramientas.
-- Consideraciones al introducir herramientas.
-- Proceso de selección y evaluación.
+- Entender el rol del testing en DevOps y CI/CD.
+- Configurar tareas automatizadas de testing en pipelines básicos.
+- Usar sistemas de control de versiones para seguimiento de pruebas.
+- Identificar qué pruebas se automatizan en cada etapa del pipeline.
 
-## Objetivos
+---
 
-- Reconocer herramientas clave según el tipo de testing.
-- Evitar errores comunes al implementar herramientas.
-- Documentar criterios de selección y evaluación.
+- [< Semana anterior](../semana10/readme.md)
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+- [Semana siguiente >](../semana12/readme.md)

@@ -1,70 +1,55 @@
-# Tutorial Semana 3 - Ejecución de Pruebas y Reportes de Defectos
+# Semana 3 – Técnicas de diseño de pruebas
 
-## 1. Ejecución de Pruebas
+## Objetivos
 
-La **ejecución de pruebas** implica llevar a cabo las pruebas diseñadas y verificar si el software cumple con los requisitos establecidos.
+- Comprender las principales técnicas de diseño de pruebas  
+- Diferenciar técnicas estáticas y dinámicas  
+- Aplicar técnicas de caja negra, caja blanca y basadas en la experiencia  
 
-### a. Pruebas manuales
-Las **pruebas manuales** son aquellas que se realizan de forma directa por el tester, siguiendo los casos de prueba previamente definidos. Para ejecutar una prueba manual correctamente:
+---
 
-1. Revisa los requisitos del caso de prueba.
-2. Prepara el entorno necesario (datos de prueba, configuraciones, etc.).
-3. Realiza los pasos especificados en el caso de prueba.
-4. Verifica que los resultados coincidan con lo esperado.
-5. Registra los resultados de la prueba.
+## 1. Técnicas de prueba estáticas
 
-### b. Pruebas automatizadas
-Las **pruebas automatizadas** utilizan scripts o herramientas para ejecutar los casos de prueba de forma repetitiva y sin intervención manual. Ejemplos de herramientas incluyen **Selenium**, **Cypress** y **JUnit**. Para ejecutar pruebas automatizadas:
+- **Revisión:** análisis manual o asistido de documentos sin ejecutar el código  
+- **Análisis estático:** uso de herramientas para detectar defectos sin ejecución  
+- Sirven para encontrar defectos tempranamente y mejorar calidad  
 
-1. Asegúrate de tener el entorno de pruebas automatizadas configurado (herramientas y dependencias).
-2. Ejecuta los scripts de prueba.
-3. Verifica que los resultados sean los esperados.
-4. Revisa los logs para asegurarte de que no haya errores.
+---
 
-## 2. Registro y Gestión de Defectos
+## 2. Técnicas de diseño de pruebas dinámicas
 
-Cuando se encuentra un **defecto** durante la ejecución de las pruebas, es importante documentarlo adecuadamente para su posterior resolución.
+### 2.1 Técnicas de caja negra (funcionales)
 
-### Pasos para el registro de un defecto:
+- Basadas en especificaciones sin conocer la implementación interna  
+- Ejemplos: partición en clases de equivalencia, análisis de valores límite, pruebas de transición de estados  
+- Útiles para validar requisitos y comportamientos  
 
-1. **Identificar el defecto**: Determina si el comportamiento observado es un error o una desviación de los requisitos.
-2. **Reproducir el defecto**: Asegúrate de que el defecto sea reproducible.
-3. **Documentar el defecto**: Registra el defecto utilizando un sistema de gestión de defectos (Jira, Bugzilla, etc.).
-   - **Título**: Descripción breve del defecto.
-   - **Descripción detallada**: Detalles del error, incluyendo pasos para reproducirlo.
-   - **Gravedad**: Impacto del defecto en el software.
-   - **Estado**: Estado actual del defecto (nuevo, en progreso, resuelto).
-   - **Prioridad**: Urgencia para solucionarlo.
+### 2.2 Técnicas de caja blanca (estructurales)
 
-## 3. Herramientas de Seguimiento de Defectos
+- Basadas en la lógica interna y estructura del código  
+- Ejemplos: cobertura de sentencias, cobertura de decisiones, cobertura de condiciones  
+- Ayudan a verificar la ejecución completa del código  
 
-Las herramientas de gestión de defectos ayudan a organizar y hacer un seguimiento de los errores encontrados. Algunas herramientas populares son **Jira**, **Bugzilla**, y **Trello**.
+### 2.3 Técnicas basadas en la experiencia
 
-Estas herramientas permiten:
+- Basadas en el conocimiento previo, intuición y experiencia del tester  
+- Ejemplos: pruebas exploratorias, pruebas ad-hoc, pruebas basadas en errores comunes  
+- Complementan las técnicas formales para encontrar defectos inesperados  
 
-- Asignar defectos a miembros del equipo.
-- Realizar un seguimiento del progreso de la resolución.
-- Generar informes sobre defectos y su estado.
+---
 
-## 4. Reportes de Defectos Efectivos
+## 3. Comparación rápida
 
-Un **reporte de defectos** bien escrito es crucial para asegurar que el defecto se resuelva rápidamente. Un buen reporte debe incluir:
+| Técnica               | Basada en       | Ejemplo de uso                      | Ventaja principal                |
+|-----------------------|-----------------|-----------------------------------|--------------------------------|
+| Caja negra            | Requisitos      | Validar entradas válidas y no válidas | No requiere conocimiento del código |
+| Caja blanca           | Código fuente   | Verificar cobertura de sentencias  | Ayuda a detectar caminos no ejecutados |
+| Basadas en experiencia | Intuición y experiencia | Exploración de nuevas áreas de riesgo | Descubre defectos no previstos |
 
-- **Título descriptivo**.
-- **Pasos para reproducir**.
-- **Resultado esperado y real**.
-- **Logs y capturas de pantalla**.
-- **Impacto del defecto**.
-- **Recomendaciones de solución** (si aplica).
-
-## 5. Comunicación con el Equipo de Desarrollo
-
-La comunicación efectiva con el equipo de desarrollo es clave para la resolución de defectos. Cuando reportes un defecto:
-
-1. Sé claro y conciso.
-2. Proporciona toda la información necesaria para reproducir el defecto.
-3. Mantén una actitud colaborativa para encontrar una solución rápida.
+---
 
 ## Resumen
 
-Esta semana aprendiste a ejecutar pruebas manuales y automatizadas, y cómo registrar y gestionar defectos de manera efectiva. La correcta documentación de defectos y una buena comunicación con el equipo de desarrollo son esenciales para una resolución eficiente de problemas.
+- Las técnicas de diseño son clave para planificar pruebas efectivas  
+- Combinar técnicas estáticas y dinámicas mejora la detección de defectos  
+- La experiencia del tester es un recurso valioso en el testing  

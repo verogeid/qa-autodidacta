@@ -20,18 +20,18 @@ Cada carpeta de semana contiene:
 
 | Semana | Tema                                                                 |
 |--------|----------------------------------------------------------------------|
-| 1      | Introducción al testing: principios, proceso y roles del tester     |
-| 2      | Psicología del testing, ética profesional y habilidades clave       |
-| 3      | Ciclo de vida del software, niveles y tipos de pruebas              |
-| 4      | Pruebas estáticas: revisiones, walkthroughs y análisis estático     |
-| 5      | Técnicas de diseño: caja negra, caja blanca y basadas en experiencia|
-| 6      | Gestión de pruebas: planificación, estimación y trazabilidad        |
-| 7      | Seguimiento del progreso, métricas, cobertura y control de calidad  |
-| 8      | Gestión de defectos, riesgos y mejora continua                      |
-| 9      | Herramientas de testing: selección, integración y automatización    |
-| 10     | Pruebas no funcionales: rendimiento, usabilidad, seguridad y más    |
-| 11     | Testing en DevOps: CI/CD, pipelines y automatización práctica       |
-| 12     | Preparación al examen: simulacro, repaso y consejos finales         |
+| 1      | [Introducción al testing: principios, proceso y roles del tester](./semana01/readme.md)     |
+| 2      | [Psicología del testing, ética profesional y habilidades clave](./semana02/readme.md)       |
+| 3      | [Ciclo de vida del software, niveles y tipos de pruebas](./semana03/readme.md)              |
+| 4      | [Pruebas estáticas: revisiones, walkthroughs y análisis estático](./semana04/readme.md)     |
+| 5      | [Técnicas de diseño: caja negra, caja blanca y basadas en experiencia](./semana05/readme.md)|
+| 6      | [Gestión de pruebas: planificación, estimación y trazabilidad](./semana06/readme.md)        |
+| 7      | [Seguimiento del progreso, métricas, cobertura y control de calidad](./semana07/readme.md)  |
+| 8      | [Gestión de defectos, riesgos y mejora continua](./semana08/readme.md)                      |
+| 9      | [Herramientas de testing: selección, integración y automatización](./semana09/readme.md)    |
+| 10     | [Pruebas no funcionales: rendimiento, usabilidad, seguridad y más](./semana10/readme.md)    |
+| 11     | [Testing en DevOps: CI/CD, pipelines y automatización práctica](./semana11/readme.md)       |
+| 12     | [Preparación al examen: simulacro, repaso y consejos finales](./semana12/readme.md)         |
 
 ---
 

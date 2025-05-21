@@ -1,4 +1,4 @@
-# Semana 5 - Técnicas de diseño: caja negra, caja blanca y basadas en experiencia
+# Tema 5 - Técnicas de diseño: caja negra, caja blanca y basadas en experiencia
 
 Esta semana practicarás las técnicas de diseño de casos de prueba. Aprenderás a diseñar pruebas efectivas según los objetivos, riesgos y requisitos del software.
 

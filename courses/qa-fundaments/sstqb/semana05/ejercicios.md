@@ -69,7 +69,10 @@ c) El moderador decide si se cumplen los criterios de salida.
 d) Las inspecciones son más estructuradas que los walkthroughs.  
 e) Los análisis estáticos se usan únicamente en proyectos Java.
 
-Soluciones:
+---
+
+## Soluciones:
+
 1-a) Estática  
 1-b) Dinámica  
 1-c) Estática  

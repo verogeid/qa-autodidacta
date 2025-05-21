@@ -1,18 +1,17 @@
-# Semana 6 - Buenas Prácticas en Pruebas Automatizadas
+# Semana 6 - Gestión de pruebas: planificación, estimación y trazabilidad
 
-En la sexta semana, exploraremos las **buenas prácticas en pruebas automatizadas**. Aprenderás cómo escribir pruebas de manera eficiente, reutilizable y fácil de mantener. Estas prácticas son esenciales para garantizar que las pruebas sean efectivas y no se conviertan en un lastre para el equipo de desarrollo y QA.
+Profundizarás en cómo se planifican y controlan las pruebas. Aprenderás a estimar esfuerzos, asignar prioridades y asegurar que las pruebas están alineadas con los objetivos del producto.
 
-## Contenidos
+**Objetivos:**
 
-- Principios de diseño de pruebas automatizadas.
-- Estructura de pruebas: cómo organizar y dividir las pruebas.
-- Uso de datos de prueba: buenas prácticas para generar y gestionar datos.
-- Reutilización de pruebas y patrones comunes.
-- Cómo hacer pruebas legibles y fáciles de mantener.
-- Estrategias de optimización de pruebas.
+- Comprender los elementos clave del plan de pruebas.
+- Estimar esfuerzo y duración de pruebas.
+- Organizar test suites según riesgo, valor y criticidad.
+- Mantener la trazabilidad entre requisitos, casos de prueba y defectos.
 
-## Objetivos de la semana
+---
 
-- Comprender los principios básicos del diseño de pruebas automatizadas.
-- Aprender cómo organizar y estructurar las pruebas de manera eficiente.
-- Aplicar técnicas de reutilización de pruebas y optimización del tiempo de ejecución.
+- [< Semana anterior](../semana05/readme.md)
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+- [Semana siguiente >](../semana07/readme.md)

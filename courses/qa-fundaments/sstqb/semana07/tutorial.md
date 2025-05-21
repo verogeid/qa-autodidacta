@@ -1,92 +1,72 @@
-# Tutorial Semana 7 - Integración con CI/CD
+# Semana 7 – Pruebas Estáticas
 
-## 1. Introducción a CI/CD
+## ¿Qué son las pruebas estáticas?
 
-**CI (Integración Continua)** es una práctica de desarrollo donde los desarrolladores integran su código en un repositorio compartido varias veces al día. El código se prueba automáticamente para detectar errores lo más temprano posible.
+Las *pruebas estáticas* permiten detectar defectos **sin ejecutar el código**. Se aplican sobre documentos, requisitos, casos de prueba, código fuente y scripts. Son una herramienta poderosa para la prevención temprana de errores.
 
-**CD (Entrega Continua)** lleva la CI un paso más allá, asegurando que el código esté siempre listo para ser desplegado a producción.
+### Beneficios clave
+- Detección temprana de defectos.
+- Reducción de costes de corrección.
+- Mejora en la calidad del software.
+- Aplicable en cualquier fase del desarrollo.
 
-La integración de las pruebas automatizadas en estos flujos de trabajo permite detectar errores rápidamente y garantiza que cada cambio de código no rompa la aplicación.
+## Técnicas de prueba estática
 
-## 2. Configuración de un Pipeline Básico CI/CD
+### 1. Revisión informal
+- Basada en la lectura libre de documentos.
+- No estructurada.
+- Suele usarse entre pares (peer review).
 
-Para integrar las pruebas automatizadas, necesitas configurar un pipeline CI/CD. En este tutorial, usaremos **GitHub Actions** como ejemplo.
+### 2. Revisión técnica
+- Enfocada en encontrar defectos técnicos.
+- Participan desarrolladores o expertos.
+- Suele tener moderador y registro de hallazgos.
 
-1. **Crear un archivo de flujo de trabajo (workflow)**:
-   En tu repositorio, crea una carpeta `.github/workflows/` y dentro de ella, un archivo `.yml` para definir el flujo de trabajo.
+### 3. Revisión formal (inspección)
+- Muy estructurada.
+- Incluye roles definidos: autor, lector, moderador, registrador, revisor.
+- Basada en checklist y métricas.
 
-2. **Ejemplo de configuración básica en GitHub Actions**:
+### 4. Walkthrough (recorrido guiado)
+- El autor presenta su trabajo al grupo.
+- El objetivo es clarificar y mejorar, no juzgar.
+- Se fomenta el aprendizaje y la colaboración.
 
-```yaml
-name: Run Tests
+## Análisis estático con herramientas
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+- Herramientas que examinan el código sin ejecutarlo.
+- Detectan problemas de estilo, posibles errores, vulnerabilidades, código duplicado.
+- Útiles para lenguajes compilados y no compilados.
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - name: Install dependencies
-        run: npm install
-      - name: Run tests
-        run: npm test
-```
+### Ejemplos:
+- *Linters*
+- *Análisis de complejidad ciclomática*
+- *Herramientas SAST (Static Application Security Testing)*
 
-3. **Descripción de los pasos**:
+## Revisión de documentación
 
-- `actions/checkout@v2`: Extrae el código del repositorio.
-- `actions/setup-node@v2`: Configura la versión de Node.js en el entorno.
-- `npm install`: Instala las dependencias del proyecto.
-- `npm test`: Ejecuta las pruebas definidas en el proyecto.
+Las pruebas estáticas no se limitan al código. También se aplican a:
+- Especificaciones de requisitos
+- Historias de usuario
+- Planes de prueba
+- Casos de uso
+- Manuales de usuario
 
-## 3. Integración de Pruebas Automatizadas en Pipelines
+### ¿Qué se busca detectar?
+- Ambigüedad
+- Inconsistencias
+- Omisiones
+- Términos no definidos
+- Requisitos no verificables
 
-Una vez que el flujo de trabajo básico está configurado, debes asegurarte de que tus pruebas automatizadas se ejecuten en cada cambio. Esto se logra en el paso de "Run tests" de tu pipeline.
+## Factores de éxito en las revisiones
 
-Si utilizas Cypress, por ejemplo, el paso para ejecutar las pruebas sería:
+- Checklists bien definidos
+- Participación activa
+- Ambiente de colaboración
+- Documentación clara
+- Roles establecidos
 
-```yaml
-      - name: Run Cypress tests
-        run: npm run cypress:run
-```
+## Conclusión
 
-Si usas Jest o cualquier otra herramienta de pruebas, el comando adecuado para ejecutarlas será algo similar a npm test.
-
-## 4. Estrategias para Manejar Fallos en el Pipeline de CI/CD
-
-Cuando un pipeline de CI/CD falla, es crucial manejarlo de manera efectiva:
-
-- **Notificaciones**: Configura notificaciones para recibir alertas cuando un trabajo falle. Esto puede ser mediante **Slack**, **Correo Electrónico** o **GitHub Notifications**.
-- **Reintentos automáticos**: Algunas plataformas CI/CD permiten configurar reintentos automáticos para pruebas inestables.
-
-## 5. Análisis y Reporte de Resultados de Pruebas en CI/CD
-
-Una vez que las pruebas se ejecutan, es importante analizar los resultados. Puedes configurar herramientas como **Allure Reports** o **Cypress Dashboard** para generar reportes visuales que te ayuden a interpretar los resultados rápidamente.
-
-### Ejemplo de reportes de Cypress con GitHub Actions
-
-  ```yaml
-      - name: Cypress Dashboard
-        uses: cypress-io/github-action@v2
-        with:
-          record: true
-          parallel: true
-  ```
-
-Este paso sube los resultados de Cypress a Cypress Dashboard, donde podrás visualizar los resultados detallados de tus pruebas.
-
-## Resumen
-
-Esta semana, aprendiste cómo integrar las pruebas automatizadas en un flujo de trabajo CI/CD, lo que permite ejecutar pruebas automáticamente en cada cambio y obtener reportes al instante.
+Las pruebas estáticas son esenciales para mejorar la calidad desde las fases más tempranas. Aunque no reemplazan a las pruebas dinámicas, permiten encontrar defectos que luego serían costosos de corregir. Dominar estas técnicas es clave para cualquier profesional del aseguramiento de calidad.

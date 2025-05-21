@@ -1,36 +1,53 @@
-# Tutorial Semana 12 - Preparación para el examen SSTQB FL
+# Semana 12 – Herramientas de Pruebas SSTQB
 
-## 1. Repaso de contenidos clave
+## Introducción
 
-Repasa los siguientes bloques:
+Las herramientas de pruebas automatizan tareas y mejoran la eficiencia del proceso de testing. En el examen SSTQB se espera conocer tipos, ventajas y limitaciones.
 
-- Principios fundamentales del testing.
-- Ciclo de vida del desarrollo y el testing.
-- Técnicas estáticas y dinámicas.
-- Gestión del testing.
-- Herramientas y automatización.
+---
 
-Relee tus apuntes, esquemas o tarjetas de memoria.
+## Tipos de Herramientas de Pruebas
 
-## 2. Estrategias para el examen
+- **Herramientas de gestión de pruebas:** Para planificar, diseñar, ejecutar y reportar pruebas (Ej: JIRA, TestRail).
 
-- Lee bien cada pregunta antes de responder.
-- No dediques más de 1 minuto por pregunta en primera pasada.
-- Marca las dudas y vuelve al final.
-- Descarta respuestas obviamente incorrectas.
+- **Herramientas de ejecución automatizada:** Para correr pruebas automatizadas (Ej: Selenium, Cypress).
 
-## 3. Simulación de examen
+- **Herramientas de gestión de defectos:** Para registrar y rastrear errores (Ej: Bugzilla, Mantis).
 
-Realiza un test oficial de práctica cronometrado. Aquí tienes uno:
+- **Herramientas de simulación y virtualización:** Para simular componentes o sistemas no disponibles.
 
-[Simulacro oficial ISTQB Foundation Level](https://www.istqb.org/exams/sample-exams)
+- **Herramientas de análisis y medición:** Para medir la cobertura, rendimiento, entre otros.
 
-Puntúate según la plantilla oficial y analiza tus errores.
+---
 
-## 4. Checklist final
+## Ventajas de Usar Herramientas
 
-- [ ] Has repasado todos los capítulos.
-- [ ] Has hecho al menos un simulacro.
-- [ ] Te sabes las definiciones clave.
-- [ ] Has dormido bien la noche anterior.
-- [ ] Tienes localizados el lugar y la fecha del examen.
+- Aumento de la productividad.
+
+- Repetibilidad y consistencia.
+
+- Mejora en la documentación.
+
+- Reducción de errores manuales.
+
+---
+
+## Limitaciones
+
+- Costos de licencia y capacitación.
+
+- Dependencia tecnológica.
+
+- Posible resistencia del equipo.
+
+---
+
+## Conclusión
+
+Conocer tipos, ventajas y desventajas es clave para el examen y para seleccionar herramientas adecuadas en proyectos reales.
+
+---
+
+## Referencias SSTQB
+
+Consulta el syllabus oficial para más detalles y ejemplos.

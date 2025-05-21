@@ -1,4 +1,4 @@
-# Semana 4 - Pruebas estáticas: revisiones, walkthroughs y análisis estático
+# Tema 4 - Pruebas estáticas: revisiones, walkthroughs y análisis estático
 
 Aprenderás a aplicar técnicas de pruebas que no requieren la ejecución del software. Las pruebas estáticas permiten encontrar errores tempranamente y mejorar la calidad desde la documentación.
 
@@ -12,7 +12,7 @@ Aprenderás a aplicar técnicas de pruebas que no requieren la ejecución del so
 ---
 
 - [^ Índice del curso](../readme.md)
-- [< Semana anterior](../semana03/readme.md)
+- [< Tema anterior](../semana03/readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
-- [Semana siguiente >](../semana05/readme.md)
+- [Tema siguiente >](../semana05/readme.md)

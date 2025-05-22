@@ -48,3 +48,29 @@ Esto aparecerá automáticamente en Swagger y en la respuesta al hacer una petic
 ---
 
 Esta semana nos centramos en aprender a capturar información del cliente desde la URL y devolverla de forma clara y tipada.
+
+---
+
+- [^ Índice](./readme.md)
+- [Ejercicios](./ejercicios.md)
+- [Soluciones](./soluciones.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana01/tutorial.md)
+- [Siguiente >](../semana03/tutorial.md)
+
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

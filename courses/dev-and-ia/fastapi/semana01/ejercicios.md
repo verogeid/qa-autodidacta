@@ -17,7 +17,7 @@ Estos ejercicios no se corrigen automáticamente. Solo asegúrate de que entiend
 ---
 
 - [^ Índice del curso](../readme.md)
-- [Siguiente >](../semana08/ejercicios.md)
+- [Siguiente >](../semana02/ejercicios.md)
 
 
 ---

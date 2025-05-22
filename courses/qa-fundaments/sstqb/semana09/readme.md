@@ -1,4 +1,4 @@
-# Semana 9 - Herramientas de testing: selección, integración y automatización
+# Tema 9 - Herramientas de testing: selección, integración y automatización
 
 Explorarás herramientas de apoyo al testing: desde la gestión de casos hasta la automatización de pruebas. Aprenderás a seleccionar herramientas según contexto y a integrarlas de forma progresiva.
 

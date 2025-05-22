@@ -51,7 +51,7 @@ Esto asegura que, aunque no lleguemos a probar todo, lo más importante está cu
 
 ---
 
-Trazabilidad: [pause] conectar los puntos. [pause]
+Trazabilidad: conectar los puntos. [pause]
 
 La trazabilidad es como tener un mapa o lista que conecta cada invitado con el plato que debe traer y la canción que quiere escuchar. [pause] En testing, la trazabilidad une los requisitos [pause] (lo que el cliente pide) con los casos de prueba [pause] (las pruebas que verifican esos requisitos) y los defectos que encontramos. [pause]
 

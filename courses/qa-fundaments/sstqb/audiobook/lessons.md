@@ -5,3 +5,5 @@
 05-tecnicas-de-diseno-caja-negra-caja-blanca-y-basadas-en-experiencia.md
 06-gestion-de-pruebas-planificacion-estimacion-y-trazabilidad.md
 07-seguimiento-del-proceso-metricas-cobertura-y-control-de-calidad.md
+08-gestion-de-defectos-riesgos-y-mejora-continua.md
+09-herramientas-de-testing-seleccion-integracion-y-automatizacion.md

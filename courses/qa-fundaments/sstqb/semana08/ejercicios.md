@@ -1,94 +1,55 @@
-# Semana 8 – Ejercicios: Análisis Estático de Código
+# Ejercicios Tema 8 - Gestión de defectos, riesgos y mejora continua
 
-## Ejercicio 1
+1. ¿Cuál de estas características debe tener un buen informe de defecto?  
+   a) Claro  
+   b) Reproducible  
+   c) Subjetivo  
+   d) Objetivo  
 
-Explica con tus propias palabras qué es el *análisis estático* y por qué es útil en QA.
+2. ¿Qué significa que un defecto tenga alta severidad?  
+   a) Es difícil de reproducir  
+   b) Es urgente arreglarlo  
+   c) Tiene poco impacto en el negocio  
+   d) No afecta a los usuarios  
 
----
+3. ¿Cuál es un ejemplo de gestión de riesgos en testing?  
+   a) Ignorar áreas poco usadas del software  
+   b) Priorizar pruebas en las funciones críticas  
+   c) Hacer todas las pruebas en el último minuto  
+   d) No comunicar riesgos al equipo  
 
-## Ejercicio 2
+4. Selecciona las acciones que contribuyen a la mejora continua:  
+   a) Revisar errores frecuentes y buscar soluciones  
+   b) Documentar lecciones aprendidas  
+   c) Repetir siempre el mismo proceso sin cambios  
+   d) Compartir conocimientos con el equipo  
 
-Enumera **tres defectos** que puede detectar una herramienta de análisis estático pero **no** una prueba dinámica.
-
----
-
-## Ejercicio 3
-
-Relaciona cada herramienta con el lenguaje correspondiente:
-
-- ESLint  
-- SonarQube  
-- Pylint  
-- Checkstyle  
-
-Lenguajes:
-1. Java  
-2. JavaScript  
-3. Python  
-4. Multi-lenguaje  
-
----
-
-## Ejercicio 4
-
-¿Qué significa "complejidad ciclomática" y por qué puede ser un indicador de riesgo?
+5. ¿Por qué es importante que un informe de defecto sea reproducible?  
+   a) Para que cualquiera pueda replicar el error y entenderlo  
+   b) Para que el desarrollador no tenga que buscar el problema  
+   c) Para que el usuario final pueda arreglarlo solo  
+   d) Para evitar que se reporte el mismo error varias veces  
 
 ---
 
-## Ejercicio 5
+## Soluciones y explicaciones
 
-Verdadero o falso:
+1. Respuesta correcta: a), b), d)  
+   Un informe debe ser claro, reproducible y objetivo para ser efectivo. La subjetividad genera confusión.
 
-a) El análisis estático se realiza con el programa en ejecución.  
-b) Una revisión de código puede considerarse una técnica de análisis estático.  
-c) El análisis estático sustituye por completo a las pruebas dinámicas.  
+2. Respuesta correcta: b)  
+   Alta severidad indica que el defecto es urgente y debe arreglarse rápido.
+
+3. Respuesta correcta: b)  
+   Priorizar pruebas en áreas críticas es una forma de gestionar riesgos eficazmente.
+
+4. Respuesta correcta: a), b), d)  
+   La mejora continua requiere analizar errores, documentar aprendizajes y compartirlos; repetir el mismo proceso sin cambios no mejora nada.
+
+5. Respuesta correcta: a)  
+   La reproducibilidad es clave para que el equipo pueda verificar y solucionar el defecto.
 
 ---
 
-## Ejercicio 6
-
-Nombra al menos **dos ventajas** y **dos limitaciones** del análisis estático.
-
----
-
-# Respuestas
-
-## Ejercicio 1
-
-El análisis estático consiste en revisar el código fuente sin ejecutarlo para detectar errores, malas prácticas o problemas de estilo. Es útil porque permite encontrar defectos tempranamente y reduce el coste de corrección.
-
-## Ejercicio 2
-
-- Uso de variables no inicializadas  
-- Código muerto (nunca ejecutado)  
-- Infracciones a estándares de codificación  
-
-## Ejercicio 3
-
-- ESLint → 2 (JavaScript)  
-- SonarQube → 4 (Multi-lenguaje)  
-- Pylint → 3 (Python)  
-- Checkstyle → 1 (Java)  
-
-## Ejercicio 4
-
-La complejidad ciclomática mide el número de caminos lógicos independientes en un programa. Un valor alto indica que el código es más difícil de probar y mantener, lo cual incrementa el riesgo de defectos.
-
-## Ejercicio 5
-
-a) Falso  
-b) Verdadero  
-c) Falso  
-
-## Ejercicio 6
-
-**Ventajas:**
-
-- Detecta errores antes de ejecutar el software.  
-- Mejora la calidad del código de forma continua.
-
-**Limitaciones:**
-
-- No detecta errores en tiempo de ejecución.  
-- Puede generar falsos positivos.
-
+- [^ Índice del Tema](./readme.md)
+- [Tutorial](./tutorial.md)

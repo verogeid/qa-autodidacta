@@ -1,62 +1,51 @@
-# Semana 8 – Análisis Estático de Código
+# Tema 8 - Gestión de defectos, riesgos y mejora continua
 
-## Introducción
+## Gestión de defectos
 
-El *análisis estático* forma parte de las pruebas estáticas. Se refiere al proceso de evaluar el código fuente, sin ejecutarlo, para detectar errores, vulnerabilidades o incumplimientos de estándares.
+Cuando encuentras un error en el software, se llama *defecto* o *bug*. Es importante reportarlo bien para que el equipo de desarrollo pueda entenderlo y corregirlo rápidamente.
 
-## ¿Por qué es importante?
+Un buen informe de defecto debe ser:
 
-- Detecta defectos tempranamente.
-- Reduce costes de corrección.
-- Mejora la calidad del código.
-- Refuerza las prácticas de codificación seguras y consistentes.
+- **Claro:** Describe el problema sin ambigüedades.
+- **Objetivo:** Solo hechos, sin opiniones.
+- **Reproducible:** Indica cómo se puede repetir el error paso a paso.
 
-## ¿Qué puede detectar?
+Piensa en el informe de defecto como una receta que otros deben seguir para cocinar exactamente el mismo plato y ver qué salió mal.
 
-- Errores de sintaxis.
-- Código muerto (no ejecutado).
-- Violaciones de estándares de codificación.
-- Variables no inicializadas.
-- Problemas de complejidad ciclomática.
-- Posibles vulnerabilidades de seguridad.
+## Clasificación de defectos
 
-## Herramientas de análisis estático
+No todos los defectos son iguales. Se clasifican según:
 
-Algunas herramientas populares por lenguaje:
+- **Impacto:** Qué tan grave es el daño para el usuario o negocio.
+- **Severidad:** Qué tan difícil o urgente es arreglarlo.
 
-- **JavaScript**: ESLint
-- **Java**: Checkstyle, PMD, SpotBugs
-- **Python**: Pylint, Flake8
-- **C/C++**: CPPCheck
-- **Multi-lenguaje**: SonarQube
+Por ejemplo, un error que impide a un usuario comprar es crítico; otro que solo afecta un texto pequeño es menor.
 
-Estas herramientas pueden integrarse en pipelines CI/CD.
+## Gestión de riesgos
 
-## Métricas útiles
+*Riesgo* es la posibilidad de que algo malo ocurra. En testing, gestionamos riesgos para enfocarnos en lo más importante.
 
-- **Complejidad ciclomática**: mide rutas independientes en el código.
-- **Cobertura de código**: porcentaje de código cubierto por pruebas (no estática, pero relacionada).
-- **Duplicación de código**: identifica fragmentos repetidos.
+Imagina que vas a cruzar un puente viejo. El riesgo es que se caiga. Puedes:
 
-## Buenas prácticas
+- Inspeccionar el puente antes (probar).
+- Preparar un plan de emergencia.
+- Evitar cruzar si es muy peligroso.
 
-- Automatiza el análisis estático en cada commit o push.
-- Configura reglas acordes al equipo/proyecto.
-- Revisa los reportes y actúa sobre los hallazgos.
-- Usa revisiones de código junto al análisis automático.
+Lo mismo pasa con el software: priorizamos pruebas en áreas con más riesgo.
 
-## Limitaciones
+## Mejora continua
 
-- No detecta errores en tiempo de ejecución.
-- Puede generar *falsos positivos* o *falsos negativos*.
-- No sustituye a las pruebas dinámicas, pero las complementa.
+Testing no es solo encontrar errores, también es aprender y mejorar.
 
-## Relación con SSTQB
+Después de cada proyecto, el equipo debe revisar qué funcionó y qué no. Esto se llama *lecciones aprendidas*.
 
-El análisis estático es parte del temario SSTQB como técnica preventiva dentro del grupo de *pruebas estáticas*. Se debe conocer su funcionamiento, aplicaciones, ventajas y limitaciones.
+Así, el proceso de desarrollo y testing se hace mejor cada vez, evitando repetir los mismos errores.
 
 ---
 
-## Conclusión
+Este tema es fundamental para que el testing aporte valor real al proyecto y facilite la entrega de software de calidad.
 
-El análisis estático es una práctica esencial en entornos de desarrollo modernos. Complementa las pruebas dinámicas y mejora la calidad desde fases tempranas del ciclo de vida del software.
+---
+
+- [^ Índice del Tema](./readme.md)
+- [Ejercicios](./ejercicios.md)

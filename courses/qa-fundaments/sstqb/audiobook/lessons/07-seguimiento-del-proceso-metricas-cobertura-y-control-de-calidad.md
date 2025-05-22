@@ -39,4 +39,4 @@ Esto ayuda a tomar decisiones informadas y a evitar sorpresas. [pause]
 
 Terminamos aquí el tema 7. [pause] Recuerda que controlar el progreso y la calidad con métricas es vital para que el producto final sea confiable y cumpla con las expectativas. [pause]
 
-¡Nos vemos en la próxima semana! [long pause]
+¡Nos vemos en el próximo tema! [long pause]

@@ -10,4 +10,28 @@
 
 Puedes probar todas las rutas desde el navegador o desde Swagger.
 
+---
 
+- [^ Índice](./readme.md)
+- [Tutorial](./tutorial.md)
+- [Soluciones](./soluciones.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana01/ejercicios.md)
+- [Siguiente >](../semana03/ejercicios.md)
+
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

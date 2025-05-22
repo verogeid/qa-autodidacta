@@ -13,3 +13,15 @@ En esta semana aprenderemos a crear rutas personalizadas, aceptar parámetros de
 - FastAPI
 - Navegador web para probar endpoints
 - *Swagger UI* para documentación automática
+
+---
+
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+- [Soluciones](./soluciones.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana01/readme.md)
+- [Siguiente >](../semana03/readme.md)

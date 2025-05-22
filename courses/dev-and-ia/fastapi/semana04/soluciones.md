@@ -47,3 +47,28 @@ def test_user_email(new_user):
     assert response.status_code == 200
     assert response.json()["email"] == "carlos@test.com"
 ```
+
+---
+
+- [^ Índice](./readme.md)
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana03/soluciones.md)
+- [Siguiente >](../semana05/soluciones.md)
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

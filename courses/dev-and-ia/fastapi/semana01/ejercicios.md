@@ -7,3 +7,28 @@ Esta semana es introductoria, pero puedes realizar estos pasos opcionales si qui
 3. Añade un segundo endpoint `/status` que devuelva `{"status": "ok"}` y comprueba que aparece en Swagger.
 
 Estos ejercicios no se corrigen automáticamente. Solo asegúrate de que entiendes cada paso.
+
+---
+
+- [^ Índice](./readme.md)
+- [Tutorial](./tutorial.md)
+- [Soluciones](./soluciones.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [Siguiente >](../semana08/ejercicios.md)
+
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

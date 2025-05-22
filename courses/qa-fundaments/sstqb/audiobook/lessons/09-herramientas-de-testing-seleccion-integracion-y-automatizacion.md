@@ -1,6 +1,6 @@
 Herramientas de testing: selección, integración y automatización
 
-Bienvenido al tema nueve. Hoy hablaremos sobre las herramientas que usamos en testing, cómo elegirlas e integrarlas para facilitar nuestro trabajo.**
+Bienvenido al tema nueve. Hoy hablaremos sobre las herramientas que usamos en testing, cómo elegirlas e integrarlas para facilitar nuestro trabajo.
 
 ---
 

@@ -43,3 +43,28 @@ print(original)
 ## 5. ¿Qué riesgo implica no cifrar un JWT?
 
 Un JWT firmado garantiza integridad, pero no confidencialidad. Cualquiera que lo intercepte puede leer los datos. Cifrarlo con JWE protege la información del payload incluso si el token es capturado.
+
+---
+
+- [^ Índice](./readme.md)
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana04/soluciones.md)
+- [Siguiente >](../semana06/soluciones.md)
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

@@ -42,3 +42,28 @@ Ejecutar Lighthouse desde Chrome DevTools te dará puntuaciones. Por ejemplo, `9
 
 - Optimizar imágenes para mejorar el rendimiento.
 - Añadir atributos ARIA para mejorar accesibilidad.
+
+---
+
+- [^ Índice](./readme.md)
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana06/soluciones.md)
+- [Siguiente >](../semana08/soluciones.md)
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

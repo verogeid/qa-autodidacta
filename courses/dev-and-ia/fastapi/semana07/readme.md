@@ -19,6 +19,18 @@ En esta última semana aprenderemos a integrar y automatizar todo el flujo de tr
 
 ---
 
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+- [Soluciones](./soluciones.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana06/readme.md)
+- [Siguiente >](../semana08/readme.md)
+
+---
+
 ## Licencia
 
 Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.

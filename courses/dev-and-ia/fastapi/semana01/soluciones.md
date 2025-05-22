@@ -28,8 +28,7 @@ Recuerda ejecutar de nuevo `uvicorn` si hiciste cambios.
 ---
 
 - [^ Índice del curso](../readme.md)
-- [< Anterior](../semana01/soluciones.md)
-- [Siguiente >](../semana03/soluciones.md)
+- [Siguiente >](../semana02/soluciones.md)
 
 ---
 

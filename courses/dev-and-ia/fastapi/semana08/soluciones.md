@@ -25,3 +25,27 @@
    - Testing automático para detectar regresiones.  
    - Documentación clara y actualizada.  
    - Gestión de versiones y despliegues controlados.
+
+---
+
+- [^ Índice](./readme.md)
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana07/soluciones.md)
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

@@ -93,3 +93,30 @@ async def create_note_bg(title: str, content: str, background_tasks: BackgroundT
 - Usa un entorno de desarrollo separado del de producción.
 - Asegúrate de cerrar siempre las conexiones.
 - Las tareas en segundo plano deben ser seguras y tolerantes a fallos
+
+---
+
+- [^ Índice](./readme.md)
+- [Ejercicios](./ejercicios.md)
+- [Soluciones](./soluciones.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana05/tutorial.md)
+- [Siguiente >](../semana07/tutorial.md)
+
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)
+

@@ -21,3 +21,27 @@
 - Nombrado claro de nodos.
 - Uso de `Set` para simplificar datos intermedios.
 - Revisión de datos con nodos `Debug`.
+
+---
+
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana02/readme.md)
+- [Siguiente >](../semana04/readme.md)
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

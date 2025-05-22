@@ -8,3 +8,4 @@
 08-gestion-de-defectos-riesgos-y-mejora-continua.md
 09-herramientas-de-testing-seleccion-integracion-y-automatizacion.md
 10-pruebas-no-funcionales-rendimiento-usabilidad-seguridad-y-mas.md
+11-testing-en-devops-ci-cd-pipelines-y-automatizacion-practica.md

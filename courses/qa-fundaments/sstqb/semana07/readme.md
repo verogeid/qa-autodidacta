@@ -1,6 +1,6 @@
-# Semana 7 - Seguimiento del progreso, métricas, cobertura y control de calidad
+# Tema 7 - Seguimiento del progreso, métricas, cobertura y control de calidad
 
-Esta semana analizarás cómo hacer seguimiento del testing mediante métricas útiles, asegurar la cobertura adecuada y generar reportes claros que ayuden a la toma de decisiones.
+Hoy analizarás cómo hacer seguimiento del testing mediante métricas útiles, asegurar la cobertura adecuada y generar reportes claros que ayuden a la toma de decisiones.
 
 **Objetivos:**
 
@@ -11,7 +11,11 @@ Esta semana analizarás cómo hacer seguimiento del testing mediante métricas �
 
 ---
 
-- [< Semana anterior](../semana06/readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
-- [Semana siguiente >](../semana08/readme.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Tema anterior](../semana06/readme.md)
+- [Tema siguiente >](../semana08/readme.md)

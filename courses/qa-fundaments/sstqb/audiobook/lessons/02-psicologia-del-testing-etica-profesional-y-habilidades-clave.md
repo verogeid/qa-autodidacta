@@ -1,4 +1,4 @@
-Psicología del testing ética profesional y habilidades clave
+Psicología del testing, ética profesional y habilidades clave
 
 El testing de software no es solo una cuestión técnica sino humana [pause] Esta semana aprenderemos por qué es importante saber comunicarse y colaborar en un equipo de desarrollo. [pause]. También veremos cómo mantener una actitud crítica que ayude a mejorar el producto sin generar conflictos.
 

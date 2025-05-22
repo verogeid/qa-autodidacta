@@ -11,7 +11,11 @@ El enfoque estará en cómo reportar y gestionar defectos de forma efectiva, apl
 
 ---
 
-- [< Semana anterior](../semana07/readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
-- [Semana siguiente >](../semana09/readme.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Tema anterior](../semana07/readme.md)
+- [Tema siguiente >](../semana09/readme.md)

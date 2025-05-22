@@ -1,72 +1,49 @@
-# Semana 7 – Pruebas Estáticas
+# Tema 7 - Seguimiento del progreso, métricas, cobertura y control de calidad
 
-## ¿Qué son las pruebas estáticas?
+Para saber cómo va el testing, usamos *métricas*, que son formas de medir el progreso y la calidad.
 
-Las *pruebas estáticas* permiten detectar defectos **sin ejecutar el código**. Se aplican sobre documentos, requisitos, casos de prueba, código fuente y scripts. Son una herramienta poderosa para la prevención temprana de errores.
+**Imagina que las métricas son como el marcador de un partido de fútbol:** te muestran quién va ganando y cómo va el juego, sin necesidad de verlo todo.
 
-### Beneficios clave
-- Detección temprana de defectos.
-- Reducción de costes de corrección.
-- Mejora en la calidad del software.
-- Aplicable en cualquier fase del desarrollo.
+---
 
-## Técnicas de prueba estática
+## Métricas importantes
 
-### 1. Revisión informal
-- Basada en la lectura libre de documentos.
-- No estructurada.
-- Suele usarse entre pares (peer review).
+- **Porcentaje de pruebas ejecutadas:** cuánto se ha probado respecto al plan.
+- **Porcentaje de defectos detectados y corregidos:** cuántos errores se han encontrado y solucionado.
+- **Tasa de defectos abiertos:** cuántos errores aún quedan sin resolver.
 
-### 2. Revisión técnica
-- Enfocada en encontrar defectos técnicos.
-- Participan desarrolladores o expertos.
-- Suele tener moderador y registro de hallazgos.
+---
 
-### 3. Revisión formal (inspección)
-- Muy estructurada.
-- Incluye roles definidos: autor, lector, moderador, registrador, revisor.
-- Basada en checklist y métricas.
+## Cobertura de pruebas
 
-### 4. Walkthrough (recorrido guiado)
-- El autor presenta su trabajo al grupo.
-- El objetivo es clarificar y mejorar, no juzgar.
-- Se fomenta el aprendizaje y la colaboración.
+La cobertura mide qué parte del software o los requisitos hemos probado.
 
-## Análisis estático con herramientas
+**Piensa en la cobertura como las páginas que has leído de un libro:** si solo lees la introducción, no sabes qué pasa en la historia. Cuanto más leas, más entiendes.
 
-- Herramientas que examinan el código sin ejecutarlo.
-- Detectan problemas de estilo, posibles errores, vulnerabilidades, código duplicado.
-- Útiles para lenguajes compilados y no compilados.
+Hay varios tipos de cobertura:  
 
-### Ejemplos:
-- *Linters*
-- *Análisis de complejidad ciclomática*
-- *Herramientas SAST (Static Application Security Testing)*
+- Cobertura de requisitos: cuántos requisitos han sido probados.
+- Cobertura de código: cuánto código del programa ha sido ejecutado durante las pruebas.
 
-## Revisión de documentación
+---
 
-Las pruebas estáticas no se limitan al código. También se aplican a:
-- Especificaciones de requisitos
-- Historias de usuario
-- Planes de prueba
-- Casos de uso
-- Manuales de usuario
+## Cuellos de botella y control de calidad
 
-### ¿Qué se busca detectar?
-- Ambigüedad
-- Inconsistencias
-- Omisiones
-- Términos no definidos
-- Requisitos no verificables
+Un *cuello de botella* es una parte del proceso que limita el ritmo de todo el testing.
 
-## Factores de éxito en las revisiones
+**Es como una puerta estrecha en un pasillo lleno de gente:** aunque todos quieran pasar rápido, la puerta solo deja avanzar a pocos a la vez.
 
-- Checklists bien definidos
-- Participación activa
-- Ambiente de colaboración
-- Documentación clara
-- Roles establecidos
+Detectar y eliminar estos cuellos ayuda a que las pruebas avancen sin retrasos.
 
-## Conclusión
+---
 
-Las pruebas estáticas son esenciales para mejorar la calidad desde las fases más tempranas. Aunque no reemplazan a las pruebas dinámicas, permiten encontrar defectos que luego serían costosos de corregir. Dominar estas técnicas es clave para cualquier profesional del aseguramiento de calidad.
+## Informes para stakeholders
+
+Los informes de testing deben ser claros y útiles para los que toman decisiones (los stakeholders).
+
+Estos informes resumen el progreso, la calidad y los riesgos, y ayudan a decidir si el producto está listo o si necesita más pruebas.
+
+---
+
+- [^ Índice del Tema](./readme.md)
+- [Ejercicios](./ejercicios.md)

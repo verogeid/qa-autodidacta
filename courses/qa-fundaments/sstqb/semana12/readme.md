@@ -11,7 +11,11 @@ Esta última semana es de consolidación. Harás un repaso estructurado, resolve
 
 ---
 
-- [< Tema anterior](../semana11/readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Tema anterior](../semana11/readme.md)
 - [Tema siguiente >](../semana13/readme.md)

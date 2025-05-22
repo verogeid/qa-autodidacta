@@ -99,4 +99,3 @@ Con estas técnicas, serás capaz de diseñar pruebas robustas, con lógica y se
 
 - [^ Índice del Tema](./readme.md)
 - [Ejercicios](./ejercicios.md)
-

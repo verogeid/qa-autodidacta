@@ -11,7 +11,11 @@ Aprenderás a identificar, planificar y ejecutar pruebas no funcionales, esencia
 
 ---
 
-- [< Semana anterior](../semana09/readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
-- [Semana siguiente >](../semana11/readme.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Tema anterior](../semana09/readme.md)
+- [Tema siguiente >](../semana11/readme.md)

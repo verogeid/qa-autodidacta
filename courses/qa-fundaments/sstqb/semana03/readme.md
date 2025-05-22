@@ -11,8 +11,11 @@ Explorarás cómo se encaja el testing dentro del ciclo de vida del desarrollo, 
 
 ---
 
-- [^ Índice del curso](../readme.md)
-- [< Tema anterior](../semana02/readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Tema anterior](../semana02/readme.md)
 - [Tema siguiente >](../semana04/readme.md)

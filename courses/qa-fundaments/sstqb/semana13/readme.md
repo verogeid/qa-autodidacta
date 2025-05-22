@@ -6,7 +6,10 @@ En este tema profundizamos en la integración de herramientas de pruebas dentro 
 
 ---
 
-- [< Tema anterior](../semana12/readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
-- [^ Indice](../readme.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Tema anterior](../semana12/readme.md)

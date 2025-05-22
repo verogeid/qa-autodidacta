@@ -11,7 +11,11 @@ Explorarás herramientas de apoyo al testing: desde la gestión de casos hasta l
 
 ---
 
-- [< Semana anterior](../semana08/readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
-- [Semana siguiente >](../semana10/readme.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Tema anterior](../semana08/readme.md)
+- [Tema siguiente >](../semana10/readme.md)

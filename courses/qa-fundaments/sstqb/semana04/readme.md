@@ -11,8 +11,11 @@ Aprenderás a aplicar técnicas de pruebas que no requieren la ejecución del so
 
 ---
 
-- [^ Índice del curso](../readme.md)
-- [< Tema anterior](../semana03/readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Tema anterior](../semana03/readme.md)
 - [Tema siguiente >](../semana05/readme.md)

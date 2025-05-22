@@ -11,8 +11,11 @@ En este tema practicarás las técnicas de diseño de casos de prueba. Aprender�
 
 ---
 
-- [^ Índice del curso](../readme.md)
-- [< Tema anterior](../semana04/readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Tema anterior](../semana04/readme.md)
 - [Tema siguiente >](../semana06/readme.md)

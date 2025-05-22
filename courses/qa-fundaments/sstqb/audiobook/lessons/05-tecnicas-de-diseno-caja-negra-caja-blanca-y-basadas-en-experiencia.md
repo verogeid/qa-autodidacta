@@ -1,6 +1,6 @@
 Técnicas de diseño: caja negra, caja blanca y basadas en experiencia. [pause]
 
-En esta tema vamos a aprender cómo se diseñan los casos de prueba, es decir, cómo decidir qué probar para asegurarnos de que una aplicación funciona correctamente. [pause]
+En este tema vamos a aprender cómo se diseñan los casos de prueba, es decir, cómo decidir qué probar para asegurarnos de que una aplicación funciona correctamente. [pause]
 
 Podemos imaginar el software como una caja. A veces, solo vemos lo que entra y lo que sale; otras veces, podemos ver lo que hay dentro. Según eso, usamos técnicas distintas: [pause]. caja negra, caja blanca, o enfoques basados en la experiencia.
 

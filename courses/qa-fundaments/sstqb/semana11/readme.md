@@ -11,7 +11,11 @@ Verás cómo el testing se integra en entornos de integración y entrega continu
 
 ---
 
-- [< Semana anterior](../semana10/readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
-- [Semana siguiente >](../semana12/readme.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Tema anterior](../semana10/readme.md)
+- [Tema siguiente >](../semana12/readme.md)

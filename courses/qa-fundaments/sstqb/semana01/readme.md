@@ -11,7 +11,10 @@ En este tema aprenderás los fundamentos del testing de software: por qué es ne
 
 ---
 
-- [^ Índice](../readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice](../readme.md)
 - [Siguiente tema >](../semana02/readme.md)

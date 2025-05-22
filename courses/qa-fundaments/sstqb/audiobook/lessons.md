@@ -1,5 +1,7 @@
 01-introduccion-al-testing.md
 02-psicologia-del-testing-etica-profesional-y-habilidades-clave.md
 03-ciclo-de-vida-del-software-niveles-y-tipos-de-pruebas.md
-04-pruebas-estaticas.md
-05-tecnicas-de-diseno.md
+04-pruebas-estaticas-revisiones-walkthroughs-y-analisis-estatico.md
+05-tecnicas-de-diseno-caja-negra-caja-blanca-y-basadas-en-experiencia.md
+06-gestion-de-pruebas-planificacion-estimacion-y-trazabilidad.md
+07-seguimiento-del-proceso-metricas-cobertura-y-control-de-calidad.md

@@ -11,8 +11,11 @@ En esta tema te centrarás en el factor humano del testing: cómo comunicarte, c
 
 ---
 
-- [^ Índice del curso](../readme.md)
-- [< Tema anterior](../semana01/readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Tema anterior](../semana01/readme.md)
 - [Tema siguiente >](../semana03/readme.md)

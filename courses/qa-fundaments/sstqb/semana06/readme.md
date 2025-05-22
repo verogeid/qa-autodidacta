@@ -11,8 +11,11 @@ Profundizarás en cómo se planifican y controlan las pruebas. Aprenderás a est
 
 ---
 
-- [^ Índice del curso](../readme.md)
-- [< Tema anterior](../semana05/readme.md)
 - [Tutorial](./tutorial.md)
 - [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Tema anterior](../semana05/readme.md)
 - [Tema siguiente >](../semana07/readme.md)

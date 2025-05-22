@@ -55,3 +55,28 @@ def test_create_user():
 ```
 
 > Recuerda limpiar la base de datos entre tests para evitar falsos positivos.
+
+---
+
+- [^ Índice](./readme.md)
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana05/soluciones.md)
+- [Siguiente >](../semana07/soluciones.md)
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

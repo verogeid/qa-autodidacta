@@ -25,3 +25,16 @@ En esta semana aprenderemos a crear rutas personalizadas, aceptar parámetros de
 - [^ Índice del curso](../readme.md)
 - [< Anterior](../semana01/readme.md)
 - [Siguiente >](../semana03/readme.md)
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

@@ -27,3 +27,29 @@ Crea una ruta GET que devuelva una lista de productos de prueba con ese modelo c
 ## Ejercicio 3
 
 Crea un modelo `LoginData` con validación personalizada que no permita espacios en el `username`. Crea una ruta POST para validar logins y lanza un error si el username contiene espacios.
+
+---
+
+- [^ Índice](./readme.md)
+- [Tutorial](./tutorial.md)
+- [Soluciones](./soluciones.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana02/ejercicios.md)
+- [Siguiente >](../semana04/ejercicios.md)
+
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

@@ -1,6 +1,6 @@
 Ciclo de vida del software, niveles y tipos de pruebas. [pause]
 
-El ciclo de vida del software es el conjunto de fases que atraviesa un programa desde su inicio hasta su retirada. [pause]. entender esto es clave para saber cuándo y cómo aplicar las pruebas o testing. [pause]
+El ciclo de vida del software es el conjunto de fases que atraviesa un programa desde su inicio hasta su retirada. [pause]. Entender esto es clave para saber cuándo y cómo aplicar las pruebas o testing. [pause]
 
 Los modelos de desarrollo más comunes son el modelo en cascada, que trabaja en fases secuenciales, como una cadena donde cada paso espera al anterior para continuar, [pause] y el modelo ágil, que trabaja en ciclos cortos llamados sprints, donde se desarrolla y prueba continuamente permitiendo adaptarse a cambios. [pause]
 

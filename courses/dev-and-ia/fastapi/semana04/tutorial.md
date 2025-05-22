@@ -52,3 +52,29 @@ def test_with_fixture(client, sample_item):
     response = client.post("/items/", json=sample_item)
     assert response.status_code == 200
 ```
+
+---
+
+- [^ Índice](./readme.md)
+- [Ejercicios](./ejercicios.md)
+- [Soluciones](./soluciones.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana03/tutorial.md)
+- [Siguiente >](../semana05/tutorial.md)
+
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

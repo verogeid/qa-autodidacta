@@ -57,3 +57,28 @@ La documentación Swagger estará en <http://127.0.0.1:8000/docs>
 ---
 
 Esto es solo el principio. Entenderás que este primer servidor es simple, pero contiene ya el núcleo de una API funcional y extensible.
+
+---
+
+- [^ Índice](./readme.md)
+- [Ejercicios](./ejercicios.md)
+- [Soluciones](./soluciones.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [Siguiente >](../semana02/tutorial.md)
+
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

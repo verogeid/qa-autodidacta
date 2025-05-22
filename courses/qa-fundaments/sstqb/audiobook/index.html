@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Audiolibro</title>
+    <link rel="stylesheet" href="https://verogeid.github.io/qa-autodidacta/lib/speech.css" />
+</head>
+<body>
+    <header>
+        <h1>Audiobook</h1>
+        <div class="controls">
+        <div class="control-group">
+            <label for="selector">Tema:</label>
+            <select id="selector"></select>
+        </div>
+        </div>
+    </header>
+    <main><div id="text"></div></main>
+    <div class="buttons-container">
+        <button id="btnRead">▶️ Leer</button>
+        <button id="btnPause">⏸️ Pausar</button>
+        <button id="btnRepeat">🔁 Repetir frase</button>
+    </div>
+
+    <script type="module">
+        import { initAudiobook } from 'https://verogeid.github.io/qa-autodidacta/lib/speech.js';
+        const baseUrl = 'https://verogeid.github.io/qa-autodidacta/courses/qa-fundaments/sstqb/audiobook/';
+        initAudiobook(baseUrl);
+    </script>
+</body>
+</html>

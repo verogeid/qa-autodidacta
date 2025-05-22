@@ -88,4 +88,3 @@ Ayuda a definir lo importante, asiste a reuniones diarias y aporta soluciones.
 Su mirada crítica es clave para mejorar el producto.  
 No intenta romper el software. Se asegura de que esté bien construido.  
 [long pause]
-

@@ -27,3 +27,29 @@ Crea una función que reciba un token y lo devuelva cifrado con JWE. Después, o
 ## 5. ¿Qué riesgo implica no cifrar un JWT?
 
 Explica por qué solo firmar un JWT puede no ser suficiente en ciertos contextos.
+
+---
+
+- [^ Índice](./readme.md)
+- [Tutorial](./tutorial.md)
+- [Soluciones](./soluciones.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana04/ejercicios.md)
+- [Siguiente >](../semana06/ejercicios.md)
+
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

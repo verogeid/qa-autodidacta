@@ -15,3 +15,14 @@ En esta primera semana configuraremos todo lo necesario para trabajar con FastAP
 - *Visual Studio Code*
 - *Git* y *GitHub*
 - Navegador web para probar los endpoints
+
+---
+
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+- [Soluciones](./soluciones.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [Siguiente >](../semana02/readme.md)

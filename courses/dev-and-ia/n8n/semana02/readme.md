@@ -30,8 +30,8 @@
 ---
 
 - [^ Índice del curso](../readme.md)
-- [< Anterior](../semana02/readme.md)
-- [Siguiente >](../semana04/readme.md)
+- [< Anterior](../semana01/readme.md)
+- [Siguiente >](../semana03/readme.md)
 
 ---
 

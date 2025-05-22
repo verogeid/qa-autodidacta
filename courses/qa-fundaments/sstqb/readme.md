@@ -18,7 +18,7 @@ Cada carpeta de semana contiene:
 
 ## Temario semanal
 
-| Semana | Tema                                                                 |
+| Tema   | Contenido                                                            |
 |--------|----------------------------------------------------------------------|
 | 1      | [Introducción al testing: principios, proceso y roles del tester](./semana01/readme.md)     |
 | 2      | [Psicología del testing, ética profesional y habilidades clave](./semana02/readme.md)       |
@@ -32,6 +32,7 @@ Cada carpeta de semana contiene:
 | 10     | [Pruebas no funcionales: rendimiento, usabilidad, seguridad y más](./semana10/readme.md)    |
 | 11     | [Testing en DevOps: CI/CD, pipelines y automatización práctica](./semana11/readme.md)       |
 | 12     | [Preparación al examen: simulacro, repaso y consejos finales](./semana12/readme.md)         |
+| 13     | [Bonus track: Herramientas Avanzadas e Integración en Testing](./semana13/readme.md)         |
 
 ---
 

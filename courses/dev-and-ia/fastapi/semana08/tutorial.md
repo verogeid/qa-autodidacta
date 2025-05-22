@@ -26,3 +26,27 @@ Este comando arranca la app con 4 procesos, mejorando la concurrencia.
 - Documentar el código y las APIs.
 - Incluir logging detallado y monitoreo para detectar fallos.
 - Mantener tests actualizados para asegurar estabilidad.
+
+---
+
+- [^ Índice](./readme.md)
+- [Ejercicios](./ejercicios.md)
+- [Soluciones](./soluciones.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana07/tutorial.md)
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

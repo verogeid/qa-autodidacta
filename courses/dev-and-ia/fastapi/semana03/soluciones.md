@@ -67,3 +67,28 @@ def login(data: LoginData):
 ```
 
 En este caso, si el usuario introduce un username con espacios, obtendrá un error 422 con el mensaje personalizado.
+
+---
+
+- [^ Índice](./readme.md)
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana02/soluciones.md)
+- [Siguiente >](../semana04/soluciones.md)
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

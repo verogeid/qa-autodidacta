@@ -16,6 +16,18 @@ Veremos cómo:
 
 ---
 
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+- [Soluciones](./soluciones.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana02/readme.md)
+- [Siguiente >](../semana04/readme.md)
+
+---
+
 ## Licencia
 
 Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
@@ -26,15 +38,3 @@ Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
 
 © 2025 Diego González Fernández  
 [LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)
-
----
-
-- [Tutorial](./tutorial.md)
-- [Ejercicios](./ejercicios.md)
-- [Soluciones](./soluciones.md)
-
----
-
-- [^ Índice del curso](../readme.md)
-- [< Anterior](../semana02/readme.md)
-- [Siguiente >](../semana04/readme.md)

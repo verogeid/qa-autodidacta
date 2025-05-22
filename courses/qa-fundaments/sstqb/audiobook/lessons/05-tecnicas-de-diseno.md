@@ -74,7 +74,7 @@ Un tester con experiencia ya sabe por dónde suelen fallar las aplicaciones. Por
 
 Pruebas exploratorias. [pause]
 
-Aquí se navega por el sistema libremente, sin guion. Se observa, se prueba, se anota lo que va fallando. Es como investigar un misterio: [pause]. no sabes dónde está el fallo, pero tienes buen olfato.
+Aquí se navega por el sistema libremente, sin guión. Se observa, se prueba, se anota lo que va fallando. Es como investigar un misterio: [pause] no sabes dónde está el fallo, pero tienes buen olfato.
 
 ---
 

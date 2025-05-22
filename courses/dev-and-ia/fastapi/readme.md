@@ -26,14 +26,14 @@ Personas con conocimientos previos de programación que quieran dominar FastAPI 
 
 ## Temario (resumen por semanas)
 
-1. Introducción a FastAPI, entorno y estructura de proyecto  
-2. Rutas, validaciones y resultados  
-3. Modelos de datos con Pydantic  
-4. Testing automatizado con Pytest y HTTPX  
-5. Control de errores, autenticación y autorización con JWT y JWE  
-6. Integración con bases de datos y tareas asíncronas  
-7. CI/CD, frontend minimalista con Vite + React y Lighthouse  
-8. Despliegue, optimización y buenas prácticas finales
+1. [Introducción a FastAPI, entorno y estructura de proyecto](./semana01/readme.md)
+2. [Rutas, validaciones y resultados](./semana02/readme.md) 
+3. [Modelos de datos con Pydantic](./semana03/readme.md) 
+4. [Testing automatizado con Pytest y HTTPX](./semana04/readme.md)  
+5. [Control de errores, autenticación y autorización con JWT y JWE](./semana05/readme.md)  
+6. [Integración con bases de datos y tareas asíncronas](./semana06/readme.md)
+7. [CI/CD, frontend minimalista con Vite + React y Lighthouse](./semana07/readme.md) 
+8. [Despliegue, optimización y buenas prácticas finales](./semana08/readme.md)
 
 ## Audiolibro
 

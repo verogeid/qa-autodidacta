@@ -21,9 +21,15 @@ En esta semana aprenderás a conectar tu proyecto FastAPI con una base de datos 
 
 ---
 
-## Duración estimada
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+- [Soluciones](./soluciones.md)
 
-6-8 horas
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana05/readme.md)
+- [Siguiente >](../semana07/readme.md)
 
 ---
 

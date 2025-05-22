@@ -20,7 +20,7 @@
 
 ---
 
-- [^ Índice del curso](../readme.md
+- [^ Índice del curso](../readme.md)
 - [< Anterior](../semana05/ejercicios.md)
 - [Siguiente >](../semana07/ejercicios.md)
 

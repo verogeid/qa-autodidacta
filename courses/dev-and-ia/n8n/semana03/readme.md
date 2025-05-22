@@ -20,3 +20,27 @@
 - Reutilización de nodos mediante duplicado.
 - Minimizar uso innecesario de código si puede resolverse con `Set`.
 - Evitar ciclos lógicos confusos: claridad primero.
+
+---
+
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana02/readme.md)
+- [Siguiente >](../semana04/readme.md)
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

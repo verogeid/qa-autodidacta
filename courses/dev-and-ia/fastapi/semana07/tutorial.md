@@ -100,3 +100,29 @@ Cómo usarla:
 - Aplica mejoras según las recomendaciones para optimizar tu app.
 
 Al combinar CI/CD, un frontend funcional y auditorías de calidad, tendrás un proyecto profesional y listo para producción.
+
+---
+
+- [^ Índice](./readme.md)
+- [Ejercicios](./ejercicios.md)
+- [Soluciones](./soluciones.md)
+
+---
+
+- [^ Índice del curso](../readme.md)
+- [< Anterior](../semana06/tutorial.md)
+- [Siguiente >](../semana08/tutorial.md)
+
+
+---
+
+## Licencia
+
+Este proyecto está bajo licencia MIT. Puedes usarlo, modificarlo y compartirlo.
+
+---
+
+## Autor
+
+© 2025 Diego González Fernández  
+[LinkedIn](https://www.linkedin.com/in/diego-gonzalez-fernandez)

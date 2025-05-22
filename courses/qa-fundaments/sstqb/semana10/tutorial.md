@@ -1,71 +1,87 @@
-# Semana 10 – Gestión de Pruebas y Herramientas SSTQB
+# Tema 10 - Pruebas no funcionales: rendimiento, usabilidad, seguridad y más
 
-## Introducción
+Aprenderás a identificar, planificar y ejecutar pruebas no funcionales, esenciales para validar la calidad más allá del comportamiento funcional.
 
-La gestión de pruebas es un proceso fundamental para planificar, controlar y supervisar todas las actividades relacionadas con las pruebas de software. Implica la definición de objetivos, asignación de recursos, seguimiento del progreso y aseguramiento de la calidad.
+## Objetivos
 
----
-
-## Planificación de Pruebas
-
-- Definir el **alcance**, los **objetivos** y los **criterios de entrada y salida** para las pruebas.
-
-- Identificar **recursos**, como personal, ambientes, herramientas y tiempos.
-
-- Establecer un **plan de pruebas** que incluya las actividades, responsabilidades y cronogramas.
+- Diferenciar entre tipos de pruebas no funcionales.  
+- Diseñar pruebas de rendimiento, accesibilidad y seguridad básicas.  
+- Usar herramientas sencillas para medir tiempos de respuesta.  
+- Evaluar la experiencia de usuario desde la perspectiva del tester.  
 
 ---
 
-## Monitorización y Control
+## ¿Qué son las pruebas no funcionales?
 
-- Seguimiento del progreso de las pruebas respecto al plan.
-
-- Registro y gestión de **incidencias** y **defectos**.
-
-- Ajustes al plan en función de resultados y riesgos.
+Las pruebas no funcionales se centran en *cómo* funciona el software, no solo en *qué* hace. Por ejemplo, un coche puede tener todas las funciones (arrancar, frenar), pero si no es rápido, seguro o cómodo, no cumple su propósito completo.
 
 ---
 
-## Herramientas de Pruebas
+## Tipos principales de pruebas no funcionales
 
-### Tipos de herramientas:
-
-1. **Herramientas de gestión de pruebas:** para planificar, diseñar, ejecutar y reportar pruebas (ej. TestRail, Zephyr).
-
-2. **Herramientas de automatización:** para automatizar la ejecución de pruebas (ej. Selenium, Cypress).
-
-3. **Herramientas de seguimiento de defectos:** para registrar y gestionar fallos (ej. Jira, Bugzilla).
-
-4. **Herramientas de generación de datos:** para crear datos de prueba realistas.
+- **Rendimiento:** mide la velocidad y capacidad de respuesta.  
+- **Usabilidad:** evalúa qué tan fácil y agradable es usar el producto.  
+- **Seguridad:** protege la información y evita accesos no autorizados.  
+- **Accesibilidad:** asegura que personas con diferentes capacidades puedan usar el software.  
+- **Compatibilidad:** verifica que funcione en distintos dispositivos y entornos.  
 
 ---
 
-## Beneficios de Usar Herramientas
+## Rendimiento: el cuello de botella
 
-- Mejoran la eficiencia y la cobertura de pruebas.
+Imagina una carrera de bicicletas donde muchos corredores quieren pasar por un puente estrecho. Aunque todos corran rápido, el puente limita la velocidad total. En software, el rendimiento es similar: aunque el sistema sea potente, ciertos puntos (cuellos de botella) pueden ralentizar todo.
 
-- Facilitan la repetición y trazabilidad.
-
-- Permiten el análisis y reporte de resultados.
+Pruebas de rendimiento miden estos puntos para mejorar la velocidad y estabilidad.
 
 ---
 
-## Buenas Prácticas en la Gestión
+## Usabilidad: la experiencia del usuario
 
-- Mantener una comunicación clara con todos los involucrados.
+Piensa en el tablero de un coche: si los botones son grandes, están bien ubicados y claros, conducir es cómodo y seguro. Si todo está desordenado o confuso, el conductor puede frustrarse o cometer errores.
 
-- Documentar las actividades y resultados.
-
-- Evaluar continuamente el proceso para mejorar.
+En software, la usabilidad busca que el usuario tenga una experiencia sencilla, intuitiva y agradable.
 
 ---
 
-## Conclusión
+## Seguridad: proteger el tesoro
 
-Una buena gestión de pruebas y el uso adecuado de herramientas son claves para el éxito de un proyecto y para superar el examen SSTQB.
+La seguridad es como una cerradura en una caja fuerte. No basta con que la caja exista; debe proteger bien el contenido para que nadie lo robe o dañe.
+
+En testing, se evalúa que los datos estén seguros y que el sistema resista ataques o accesos no autorizados.
 
 ---
 
-## Referencias SSTQB
+## Planificación de pruebas no funcionales
 
-Consulta el syllabus oficial del ISTQB Foundation Level para detalles completos sobre gestión y herramientas.
+Así como no esperas a revisar la seguridad de una casa solo cuando ya está construida, las pruebas no funcionales deben planificarse desde el inicio del proyecto. Esto evita problemas graves y garantiza que el producto cumpla con las expectativas.
+
+---
+
+## Rol del tester en pruebas no funcionales
+
+El tester diseña casos de prueba que validen aspectos no funcionales, ejecuta pruebas con herramientas o manualmente y comunica resultados claros para que el equipo pueda mejorar continuamente el producto.
+
+---
+
+## Herramientas básicas para pruebas no funcionales
+
+- Medidores de tiempo de respuesta y carga.  
+- Validadores de accesibilidad (por ejemplo, para colores o tamaños).  
+- Escáneres básicos de seguridad.  
+
+---
+
+## Buenas prácticas
+
+- Integrar pruebas no funcionales desde fases tempranas.  
+- Priorizar pruebas según riesgos y criticidad.  
+- Documentar resultados con claridad y proponer mejoras.  
+
+---
+
+¿Quieres practicar? Revisa los ejercicios para aplicar estos conceptos.
+
+---
+
+- [^ Índice del Tema](./readme.md)
+- [Ejercicios](./ejercicios.md)

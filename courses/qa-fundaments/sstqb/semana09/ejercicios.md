@@ -40,32 +40,36 @@ Menciona tres técnicas de diseño de pruebas basadas en caja negra.
 
 ---
 
-# Respuestas
+## Respuestas
 
-## Ejercicio 1
+- Ejercicio 1
 
-Las pruebas dinámicas implican ejecutar el software para verificar su comportamiento. Ejemplos: pruebas funcionales y pruebas de rendimiento.
+  Las pruebas dinámicas implican ejecutar el software para verificar su comportamiento. Ejemplos: pruebas funcionales y pruebas de rendimiento.
 
-## Ejercicio 2
+- Ejercicio 2
 
-Las pruebas de caja negra verifican la funcionalidad sin conocer el código interno, mientras que las pruebas de caja blanca examinan la estructura interna y lógica del código.
+  Las pruebas de caja negra verifican la funcionalidad sin conocer el código interno, mientras que las pruebas de caja blanca examinan la estructura interna y lógica del código.
 
-## Ejercicio 3
+- Ejercicio 3
 
-a) V  
-b) V  
-c) F  
+  a) V  
+  b) V  
+  c) F  
 
-## Ejercicio 4
+- Ejercicio 4
+  - Partición Equivalente  
+  - Análisis de Valores Límites  
+  - Tabla de Decisión  
 
-- Partición Equivalente  
-- Análisis de Valores Límites  
-- Tabla de Decisión  
+- Ejercicio 5
 
-## Ejercicio 5
+  Principalmente durante la fase de *testing* después del desarrollo, incluyendo pruebas de integración y sistema.
 
-Principalmente durante la fase de *testing* después del desarrollo, incluyendo pruebas de integración y sistema.
+- Ejercicio 6
 
-## Ejercicio 6
+  Permiten detectar defectos reales en ejecución y evaluar el comportamiento en condiciones reales, algo que no se puede lograr solo con análisis estático.
 
-Permiten detectar defectos reales en ejecución y evaluar el comportamiento en condiciones reales, algo que no se puede lograr solo con análisis estático.
+---
+
+- [^ Índice del Tema](./readme.md)
+- [Tutorial](./tutorial.md)

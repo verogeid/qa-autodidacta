@@ -73,3 +73,8 @@ Dominar las técnicas dinámicas es fundamental para cualquier profesional de QA
 ## Referencias SSTQB
 
 Para profundizar, consulta la guía oficial de *Foundation Level* del ISTQB, que detalla las técnicas de diseño de pruebas dinámicas y su aplicación.
+
+---
+
+- [^ Índice del Tema](./readme.md)
+- [Ejercicios](./ejercicios.md)

@@ -18,3 +18,14 @@
 ## Recursos externos
 - [CSS – MDN](https://developer.mozilla.org/es/docs/Web/CSS)
 - [CSS Box Model – MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
+
+---
+
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice](../readme.md)
+- [< Tema anterior](../semana02/readme.md)
+- [Siguiente tema >](../semana04/readme.md)

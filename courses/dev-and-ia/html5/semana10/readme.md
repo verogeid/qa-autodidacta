@@ -1,4 +1,4 @@
-# Semana 10 – Organización de proyectos HTML/CSS y CI/CD
+# Tema 10 – Organización de proyectos HTML/CSS y CI/CD
 
 **Objetivo:** Aprender a estructurar correctamente un proyecto web, mantener el código limpio, implementar control de calidad automatizado y ejecutar integraciones en entornos CI/CD.
 
@@ -18,3 +18,14 @@
 - [HTML Validate](https://html-validate.org/)
 - [GitHub Actions Docs](https://docs.github.com/actions)
 - [Stylelint](https://stylelint.io/)
+
+---
+
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice](../readme.md)
+- [< Tema anterior](../semana09/readme.md)
+- [Siguiente tema >](../semana11/readme.md)

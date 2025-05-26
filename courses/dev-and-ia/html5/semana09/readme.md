@@ -1,4 +1,4 @@
-# Semana 9 – Animaciones y transiciones CSS
+# Tema 9 – Animaciones y transiciones CSS
 
 **Objetivo:** Aprender a aplicar transiciones suaves y animaciones visuales con CSS para mejorar la experiencia de usuario sin sobrecargar la interfaz.
 
@@ -17,3 +17,14 @@
 ## Recursos externos
 - [CSS Transitions](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Transitions)
 - [CSS Animations](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Animations)
+
+---
+
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice](../readme.md)
+- [< Tema anterior](../semana08/readme.md)
+- [Siguiente tema >](../semana10/readme.md)

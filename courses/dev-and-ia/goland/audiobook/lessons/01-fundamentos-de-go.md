@@ -1,111 +1,49 @@
-Fundamentos de Go
-
-Imagina que vas a aprender un lenguaje llamado Go, o Golang. Fue creado por Google para que los programas sean simples, rápidos y eficientes.
+Fundamentos de Go extendido
 
 ---
 
-1. Tu primer programa
+Imagina que estás aprendiendo un lenguaje llamado Go, creado para que tus programas sean rápidos y simples.
 
-Lo primero que harás es mostrar un mensaje en pantalla. Para eso, en Go usamos la función fmt.Println [pause]. Esta función pertenece al paquete llamado fmt, que sirve para formatear texto.
+Empezamos con lo más básico: mostrar mensajes en pantalla.
 
-fmt.Println muestra el texto que le des en pantalla y automáticamente pasa a la siguiente línea. Por ejemplo, si quieres saludar al usuario, usarás esta función con el texto entre comillas.
+Usamos una función llamada fmt.Println que imprime texto y pasa a la siguiente línea. Esta función está dentro de un conjunto llamado paquete fmt, que sirve para manejar texto y formatos.
 
-[pause]
-
----
-
-2. Variables y tipos
-
-En Go, una variable es un espacio donde guardas datos. Cada variable tiene un tipo, como string para texto, int para números enteros y bool para valores verdadero o falso.
-
-Para crear una variable, le das un nombre y especificas su tipo. Por ejemplo, puedes guardar un nombre en una variable llamada nombre de tipo string.
-
-[pause]
+Para escribir un programa en Go, siempre necesitamos un lugar de inicio llamado función main. Todo lo que pongas dentro de esta función será lo primero que se ejecute cuando corras tu programa.
 
 ---
 
-3. Entrada del usuario
+Las variables son espacios para guardar información, como nombres o números.
 
-Si quieres que el programa reciba información del usuario, usas la función fmt.Scan [pause].
+En Go, cada variable tiene un tipo, que indica qué clase de datos puede almacenar. Por ejemplo, string es para texto, int para números enteros y bool para valores verdadero o falso.
 
-Esta función espera que alguien escriba algo y luego guarda ese valor en una variable que tú le indiques.
-
-Para que fmt.Scan funcione correctamente, debes pasarle la referencia de la variable, que en Go se indica con el símbolo & delante del nombre.
-
-[pause]
+Cuando declaras una variable, le das un nombre y le dices su tipo. También puedes dejar que Go adivine el tipo con una sintaxis especial.
 
 ---
 
-4. Funciones y reutilización
-
-Una función es un bloque de código que puedes usar varias veces.
-
-Por ejemplo, la función sumar puede recibir dos números y devolver su suma.
-
-Cada función tiene un nombre, parámetros que recibe y un valor que puede devolver.
-
-Así, cuando necesites sumar dos números, solo llamas a la función y reutilizas ese código.
-
-[pause]
+Para recibir datos desde el usuario, usas fmt.Scan. Esta función espera que alguien escriba algo y lo guarda en una variable que tú le indiques. Para que funcione bien, debes pasar la dirección de esa variable usando un símbolo especial llamado ampersand.
 
 ---
 
-5. Decisiones con if
+Las funciones son bloques de código que puedes usar varias veces. Piensa en ellas como máquinas que reciben datos, hacen algo y te dan un resultado.
 
-El programa puede tomar decisiones con la sentencia if [pause].
-
-Esta estructura evalúa una condición. Si es verdadera, ejecuta un bloque de código; si no, puede ejecutar otro bloque con else.
-
-Por ejemplo, si una persona tiene 18 años o más, mostramos un mensaje que dice Mayor de edad; si no, mostramos Menor de edad.
-
-[pause]
+Por ejemplo, una función sumar recibe dos números, los suma y te devuelve el resultado. Esto te ayuda a no repetir el mismo código muchas veces.
 
 ---
 
-6. Repeticiones con for
-
-Cuando quieres repetir acciones varias veces, usas un bucle for [pause].
-
-En Go, el bucle for puede controlar cuántas veces se repite un bloque de código usando una variable contador.
-
-Por ejemplo, puedes contar del 1 al 5 mostrando cada número en pantalla.
-
-[pause]
+Las decisiones en tu programa las controlas con la sentencia if. Esta evalúa una condición y ejecuta código solo si la condición es verdadera. También puedes usar else para el caso contrario.
 
 ---
 
-7. Elegir entre opciones: switch
-
-Si tienes varias opciones posibles y quieres elegir solo una, usas la sentencia switch [pause].
-
-Esta estructura compara un valor y ejecuta el bloque correspondiente a ese caso.
-
-Si ninguna opción coincide, puedes usar default para un caso por defecto.
-
-Por ejemplo, dependiendo del día que escriba el usuario, mostrarás mensajes diferentes.
-
-[pause]
+Si necesitas repetir una acción varias veces, usas un bucle llamado for. Con este, puedes contar, procesar listas o ejecutar cualquier código varias veces seguidas.
 
 ---
 
-8. Multiplicar valores con funciones
-
-Las funciones también pueden trabajar con números decimales, como el tipo float64 [pause].
-
-Por ejemplo, una función llamada multiplicaPorDos puede recibir un número decimal, multiplicarlo por dos y devolver el resultado.
-
-Así reutilizas código para cualquier número que quieras procesar.
+Cuando tienes varias opciones posibles, como diferentes casos para un día de la semana, usas la sentencia switch. Esta compara un valor y ejecuta el bloque que corresponda, o uno por defecto si no hay coincidencias.
 
 ---
 
-Conclusión
+En resumen, con estos conceptos tienes la base para empezar a crear programas en Go.
 
-En este primer tema has aprendido lo básico para crear programas en Go.
-
-Has visto cómo mostrar mensajes, usar variables con diferentes tipos, recibir datos del usuario, tomar decisiones con if, repetir acciones con for, elegir opciones con switch y crear funciones para reutilizar código.
-
-Recuerda que entender cada concepto es más importante que memorizar el código.
-
-Si comprendes el propósito y uso de cada sentencia, estarás preparado para avanzar y dominar Go.
+No te preocupes si no entiendes todo a la primera. La práctica y la paciencia son claves para dominar cualquier lenguaje.
 
 [long pause]

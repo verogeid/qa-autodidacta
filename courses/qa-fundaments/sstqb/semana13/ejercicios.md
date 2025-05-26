@@ -12,7 +12,7 @@
 
 ---
 
-# Respuestas
+## Respuestas
 
 1. Porque permite automatizar y optimizar las fases del testing, garantizando un flujo constante y eficaz.
 
@@ -23,3 +23,8 @@
 4. Proporciona feedback rápido, detecta errores temprano y mantiene la calidad constante.
 
 5. Porque cada aplicación tiene necesidades distintas, y la herramienta debe adaptarse para ser efectiva y eficiente.
+
+---
+
+- [^ Índice del Tema](./readme.md)
+- [Tutorial](./tutorial.md)

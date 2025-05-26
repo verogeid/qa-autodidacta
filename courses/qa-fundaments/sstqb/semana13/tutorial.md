@@ -10,7 +10,7 @@ Las herramientas no funcionan aisladas. En un proyecto, suelen integrarse para c
 - Integración continua (CI/CD) y entrega continua (CD).
 - Análisis y reportes.
 
-Ejemplo: Usar Jira para gestión, Selenium para automatización y Jenkins para integración continua.
+Ejemplo: Usar Jira para gestión, Cypress para automatización y Jenkins para integración continua.
 
 ## Selección de Herramientas Según Proyecto
 
@@ -24,7 +24,7 @@ Elegir herramientas depende de:
 
 ## Ejemplos Populares
 
-- Selenium / Cypress: automatización web.
+- Playwright / Cypress: automatización web.
 - Jenkins / GitHub Actions: integración continua.
 - JIRA / TestRail: gestión de pruebas.
 - Postman / Newman: pruebas API.
@@ -39,3 +39,8 @@ Elegir herramientas depende de:
 ## Consideraciones Finales
 
 Conocer no solo las herramientas sino su combinación estratégica es clave para optimizar el proceso de testing y responder con seguridad en el examen SSTQB.
+
+---
+
+- [^ Índice del Tema](./readme.md)
+- [Ejercicios](./ejercicios.md)

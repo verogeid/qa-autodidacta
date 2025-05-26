@@ -18,4 +18,13 @@
 - [HTML semántico – MDN](https://developer.mozilla.org/es/docs/Glossary/Semantics)
 - [Accesibilidad web – WAI](https://www.w3.org/WAI/fundamentals/accessibility-intro/)
 
+---
 
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice](../readme.md)
+- [< Tema anterior](../semana01/readme.md)
+- [Siguiente tema >](../semana03/readme.md)

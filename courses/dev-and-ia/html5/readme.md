@@ -21,18 +21,18 @@ Cada semana contiene:
 
 | Semana | Contenidos |
 |--------|------------|
-| 01 | Fundamentos HTML: estructura, etiquetas, atributos |
-| 02 | CSS básico: selectores, colores, cajas, unidades |
-| 03 | Maquetación con Flexbox |
-| 04 | Grid Layout: diseño responsivo en columnas |
-| 05 | Formularios accesibles y validados |
-| 06 | Posicionamiento, z-index, float, inline-block |
-| 07 | Animaciones, transiciones y pseudo-elementos |
-| 08 | Componentes y organización de estilos |
-| 09 | Responsive design: mobile-first, media queries |
-| 10 | Integración CI/CD y validaciones automatizadas |
-| 11 | Accesibilidad, semántica y performance |
-| 12 | Proyecto final integrador y deploy |
+| 01 | [Fundamentos HTML: estructura, etiquetas, atributos](./semana01/readme.md) |
+| 02 | [CSS básico: selectores, colores, cajas, unidades](./semana02/readme.md) |
+| 03 | [Maquetación con Flexbox](./semana03/readme.md) |
+| 04 | [Grid Layout: diseño responsivo en columnas](./semana04/readme.md) |
+| 05 | [Formularios accesibles y validados](./semana05/readme.md) |
+| 06 | [Posicionamiento, z-index, float, inline-block](./semana06/readme.md) |
+| 07 | [Animaciones, transiciones y pseudo-elementos](./semana07/readme.md) |
+| 08 | [Componentes y organización de estilos](./semana08/readme.md) |
+| 09 | [Responsive design: mobile-first, media queries](./semana09/readme.md) |
+| 10 | [Integración CI/CD y validaciones automatizadas](./semana10/readme.md) |
+| 11 | [Accesibilidad, semántica y performance](./semana11/readme.md) |
+| 12 | [Proyecto final integrador y deploy](./semana12/readme.md) |
 
 ## Requisitos
 

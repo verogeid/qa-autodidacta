@@ -1,4 +1,4 @@
-# Semana 7 – Formularios, inputs y validación visual
+# Tema 7 – Formularios, inputs y validación visual
 
 **Objetivo:** Aprender a construir formularios accesibles, visualmente coherentes y validar entradas usando solo HTML y CSS. Se explorarán distintos tipos de *inputs*, su estilo y mensajes visuales de error.
 
@@ -17,3 +17,14 @@
 ## Recursos externos
 - [HTML Form Guide](https://www.htmlformguide.com/)
 - [HTML5 Validation](https://developer.mozilla.org/es/docs/Learn/Forms/Form_validation)
+
+---
+
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice](../readme.md)
+- [< Tema anterior](../semana06/readme.md)
+- [Siguiente tema >](../semana08/readme.md)

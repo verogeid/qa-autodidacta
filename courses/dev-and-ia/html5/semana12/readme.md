@@ -1,4 +1,4 @@
-# Semana 12 – Proyecto final integrador HTML + CSS
+# Tema 12 – Proyecto final integrador HTML + CSS
 
 **Objetivo:** Aplicar todos los conocimientos adquiridos para desarrollar una landing page profesional accesible, optimizada y lista para producción.
 
@@ -20,3 +20,13 @@
 - [Figma Community](https://www.figma.com/community)
 
 **Importante:** Este proyecto será público en GitHub, útil como parte de tu portfolio.
+
+---
+
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice](../readme.md)
+- [< Tema anterior](../semana11/readme.md)

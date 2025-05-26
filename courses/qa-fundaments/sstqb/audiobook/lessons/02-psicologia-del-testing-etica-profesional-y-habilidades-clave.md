@@ -1,4 +1,4 @@
-Psicología del testing, ética profesional y habilidades clave
+Psicología del testing, ética profesional y habilidades clave. [pause]
 
 El testing de software no es solo una cuestión técnica sino humana.  
 Imagina que el software es un edificio y las personas son sus constructores. Para que el edificio sea seguro, todos deben colaborar y comunicarse bien. [pause]  

@@ -1,4 +1,4 @@
-¿Qué es el testing de software? [pause largo]
+¿Qué es el testing de software? [pause]
 
 Testing es el proceso de comprobar si un software funciona como se espera.  
 Sirve para detectar errores, mejorar la calidad y evitar problemas futuros.  

@@ -1,8 +1,10 @@
 Ciclo de vida del software, niveles y tipos de pruebas. [pause]
 
-El ciclo de vida del software es el conjunto de fases que atraviesa un programa desde su inicio hasta su retirada. [pause]. Entender esto es clave para saber cuándo y cómo aplicar las pruebas o testing. [pause]
+El ciclo de vida del software es el conjunto de fases que atraviesa un programa desde su inicio hasta su retirada. [pause] Entender esto es clave para saber cuándo y cómo aplicar las pruebas o testing. [pause]
 
 Los modelos de desarrollo más comunes son el modelo en cascada, que trabaja en fases secuenciales, como una cadena donde cada paso espera al anterior para continuar, [pause] y el modelo ágil, que trabaja en ciclos cortos llamados sprints, donde se desarrolla y prueba continuamente permitiendo adaptarse a cambios. [pause]
+
+El ciclo de vida de las pruebas, llamado STLC, tiene varias fases: planificación, diseño de casos, preparación del entorno, ejecución, registro de defectos y cierre. [pause] Esto ayuda a organizar las pruebas para que sean efectivas. [pause]
 
 Las pruebas se dividen en niveles según su alcance. Las pruebas de unidad verifican partes pequeñas del código como funciones o métodos. Es como comprobar pieza por pieza una máquina para asegurar que cada una funciona. [pause]
 
@@ -12,8 +14,10 @@ Las pruebas de sistema prueban el sistema completo para verificar que cumple con
 
 Las pruebas de aceptación se realizan para validar que el software satisface las necesidades del cliente o usuario final. Es la última comprobación antes de entregar el producto. [pause]
 
-Los tipos de pruebas más comunes son las pruebas funcionales, que verifican que el software hace lo que debe hacer, [pause] las pruebas no funcionales, que evalúan aspectos como rendimiento seguridad, usabilidad o confiabilidad, [pause] las pruebas estructurales, que se basan en el código para diseñar casos, [pause] y las pruebas de regresión, que se hacen después de cambios, para asegurar que nada antiguo se ha roto. [pause]
+También es importante entender la diferencia entre verificación y validación. [pause] La verificación asegura que el producto se construye correctamente, siguiendo los requisitos, como revisar la receta mientras cocinas. [pause] La validación confirma que el producto final cumple las necesidades del usuario, como probar el plato terminado. [pause]
 
-En modelos tradicionales como cascada las pruebas suelen planificarse después del desarrollo completo, mientras que en modelos ágiles las pruebas son continuas y colaborativas, integrándose en cada sprint. [pause]
+Los tipos de pruebas más comunes son las pruebas funcionales, que verifican que el software hace lo que debe hacer, [pause] las pruebas no funcionales, que evalúan aspectos como rendimiento, seguridad, usabilidad o confiabilidad, [pause] las pruebas estructurales, que se basan en el código para diseñar casos, [pause] y las pruebas de regresión, que se hacen después de cambios, para asegurar que nada antiguo se ha roto. [pause]
+
+En modelos tradicionales como cascada, las pruebas suelen planificarse después del desarrollo completo, mientras que en modelos ágiles las pruebas son continuas y colaborativas, integrándose en cada sprint. [pause]
 
 Conocer estos conceptos te ayudará a entender el lugar del testing en el desarrollo y a aplicar técnicas para asegurar la calidad del software. [long pause]

@@ -1,79 +1,53 @@
-Testing en DevOps: CI/CD, pipelines y automatización práctica. [pause]
+Testing en DevOps, CI/CD, pipelines y automatización práctica. [pause]
 
-DevOps combina desarrollo y operaciones para entregar software más rápido y de mejor calidad. En este modelo, el testing no es una etapa aislada, sino una parte continua del proceso. Es como tener un inspector que revisa cada paso de la producción, sin esperar al final para corregir errores. [pause]
+DevOps es más que una cultura: es una filosofía que une a desarrollo y operaciones como un equipo de baile sincronizado, donde cada paso debe ser coordinado para que la función salga perfecta. [pause]
 
-¿Qué es CI/CD?
+CI/CD significa Integración Continua y Entrega Continua, pilares fundamentales para acelerar y asegurar la calidad del software. [pause]
 
-CI/CD son las siglas de Integración Continua (Continuous Integration) y Entrega Continua (Continuous Delivery). [pause]
+La Integración Continua implica que cada pequeño cambio en el código se une y prueba automáticamente varias veces al día. Es como añadir ingredientes a una sopa y probar el sabor constantemente para no arruinar el plato. [pause]
 
-- CI significa integrar el código de todos los desarrolladores frecuentemente, varias veces al día. Cada integración se valida automáticamente con tests.  [pause]
-  Como si cada vez que añades un ingrediente a una receta, lo probaras al instante. [pause]
+La Entrega Continua automatiza que el software pase sin fricciones de la cocina a la mesa, es decir, de desarrollo a producción, sin que nadie tenga que moverlo manualmente. [pause]
 
-- CD significa que cada versión del software pasa por un proceso automatizado que lo prepara para ser entregado o publicado. [pause]
-  Como si tu receta pasara por una cinta transportadora automática hasta la mesa del comensal. [pause]
+Dentro de esta cultura, el testing es constante y automático, no un evento al final. Esto permite detectar fallos antes de que crezcan, como revisar la maquinaria de una fábrica en cada etapa para evitar que un error llegue al producto final. [pause]
 
-¿Qué papel juega el testing en DevOps? [pause]
+Veamos los tipos de pruebas que se ejecutan: [pause]
 
-En DevOps, el testing está presente desde el primer momento. No se espera a tener todo el producto acabado. Cada pequeña parte se prueba automáticamente. Esto permite:
+- Las pruebas unitarias examinan componentes mínimos, como revisar cada tornillo y engranaje de un reloj para asegurar que funcione correctamente. [pause]
 
-- Detectar errores rápidamente. [pause]
-- Reducir el tiempo de entrega. [pause]
-- Aumentar la confianza en los cambios. [pause]
+- Las pruebas de integración verifican que esos engranajes encajen y trabajen en conjunto, como asegurar que el motor y la transmisión de un coche funcionen coordinados. [pause]
 
-Tipos de pruebas en CI/CD. [pause]
+- Las pruebas end-to-end simulan el uso completo, como conducir el coche en carretera para detectar problemas en condiciones reales. [pause]
 
-No todas las pruebas son iguales, ni se colocan en la misma parte del pipeline. [pause]
+- Las pruebas de regresión aseguran que nuevas piezas o arreglos no rompan lo que ya estaba bien, como probar que después de cambiar una pieza, el coche siga funcionando sin problemas. [pause]
 
-- Pruebas unitarias: [pause] se ejecutan al principio. Verifican pequeñas funciones del código. [pause]
-- Pruebas de integración: [pause] comprueban que varios componentes funcionen juntos. [pause]
-- Pruebas end-to-end: [pause] simulan el comportamiento del usuario final. [pause]
-- Pruebas de rendimiento: [pause] miden velocidad y eficiencia. [pause]
-- Pruebas de seguridad: [pause] buscan vulnerabilidades. [pause]
+- Las pruebas de humo son chequeos rápidos para validar lo básico, como verificar que el coche arranque y frene antes de probarlo a fondo. [pause]
 
-Cada tipo se sitúa en un momento diferente del pipeline según su coste y rapidez. [pause]
+- Las pruebas de sanidad comprueban funcionalidades puntuales tras pequeños cambios, similar a revisar que el sistema de luces funcione luego de reparar un fusible. [pause]
 
-Herramientas prácticas. [pause]
+- Las pruebas de rendimiento miden la velocidad y consumo, como evaluar cuántos kilómetros por litro puede hacer el coche bajo distintas condiciones. [pause]
 
-En entornos DevOps, se usan muchas herramientas. Vamos a explicarlas como si fueran utensilios de cocina especializados, cada uno con su función. [pause]
+- Las pruebas de seguridad buscan vulnerabilidades, como probar que las puertas y ventanas del coche no puedan abrirse fácilmente desde fuera. [pause]
 
-- Postman/Newman. [pause]
-  Postman es como un probador de grifos. Sirve para enviar peticiones a una API y ver si responden bien. Newman es su versión para usar en recetas automáticas (scripts), dentro de pipelines. [pause]
+Para gestionar esta complejidad, se usan modelos que guían dónde enfocar las pruebas: [pause]
 
-- Cypress, Playwright, Selenium. [pause]
-  Imagina que programas a un robot para que use una página web como un humano: hace clic, rellena formularios, navega. Estas herramientas son los robots. [pause]
-  - Cypress es moderno, fácil y rápido para pruebas del navegador. [pause]
-  - Playwright es similar pero más flexible. [pause]
-  - Selenium es el veterano, muy extendido, aunque más lento y difícil de mantener. [pause]
+El Cuadrante de Marick divide las pruebas en cuatro grupos: pruebas técnicas para desarrolladores, pruebas guiadas por negocio, pruebas de experiencia de usuario y pruebas de soporte como rendimiento o seguridad. [pause]
 
-- Jest, Mocha, PyTest. [pause]  
-  Si tuvieras que probar funciones matemáticas o cálculos lógicos, usarías estas herramientas. [pause]
-  - Jest y Mocha se usan con JavaScript. [pause]
-  - PyTest con Python. [pause]
-  Ayudan a comprobar que los cálculos y procesos internos funcionan. [pause]
+La Pirámide de Testing indica que la mayoría de las pruebas deben ser unitarias (la base amplia), luego menos pruebas de integración (capa media), y pocas pruebas end-to-end (la punta), porque estas últimas son lentas y costosas. Es como una pirámide alimenticia, donde consumimos más alimentos básicos y menos platos elaborados. [pause]
 
-- GitHub Actions, GitLab CI, Jenkins. [pause]  
-  Son como chefs automáticos que siguen una receta paso a paso cada vez que alguien cambia algo en el código. Compilan, testean y despliegan sin intervención humana. [pause]
-  - GitHub Actions es perfecto si el código está en GitHub. [pause]
-  - GitLab CI es similar para GitLab. [pause]
-  - Jenkins es más técnico pero muy flexible. [pause]
+Herramientas comunes en DevOps son: [pause]
 
-- Allure, ReportPortal. [pause]  
-  Estas herramientas presentan los resultados de los tests de forma visual. Es como cambiar una hoja de Excel aburrida por un panel con gráficos claros que muestran cuántos tests pasaron, fallaron y por qué. [pause]
+- Postman para probar APIs, como verificar que las tuberías llevan el agua sin fugas. [pause]
 
-- Docker, Kubernetes. [pause]
-  Sirven para crear entornos iguales en cualquier ordenador. [pause]
-  - Docker empaqueta tu aplicación con todo lo necesario para que funcione (como una fiambrera que incluye cubiertos). [pause]
-  - Kubernetes organiza muchas “fiambreras Docker” y las reparte eficientemente entre varios servidores. [pause]
+- Cypress, Playwright y Selenium actúan como robots que navegan y prueban la web como usuarios reales. [pause]
 
-Conocer estas herramientas no significa dominarlas, sino entender para qué sirven y cuándo aplicarlas. Como en una cocina profesional: [pause] no necesitas ser experto en cada máquina, pero sí saber cuál te ayuda a preparar tu plato más rápido y con más calidad. [pause]
+- Jest, Mocha o PyTest ayudan con pruebas unitarias e integración. [pause]
 
-Buenas prácticas. [pause]
+- GitHub Actions, GitLab CI o Jenkins automatizan la construcción, pruebas y despliegue. [pause]
 
-- Asegúrate de que las pruebas fallan si algo no funciona (y no simplemente “pasan” siempre). [pause]
-- No pongas todas las pruebas en un solo paso del pipeline: [pause] distribúyelas. [pause]
-- Automatiza todo lo que sea repetitivo o propenso a errores humanos. [pause]
-- Usa control de versiones (como Git) también para tus scripts y tests. [pause]
+- Allure o ReportPortal muestran resultados visuales para entender fácilmente el estado del software. [pause]
 
----
+Además, contenedores como Docker y orquestadores como Kubernetes aseguran que los ambientes de prueba y producción sean idénticos, evitando problemas de "en mi máquina funciona". [pause]
 
-El testing en DevOps no es solo una técnica, es una mentalidad: [pause] colaborar, automatizar y mejorar continuamente. Cuanto antes pruebes, antes mejoras. Y cuanto mejor automatices, menos fallas llegarán al cliente final. [long pause]
+Las buenas prácticas incluyen distribuir las pruebas en el pipeline según su velocidad y costo, automatizarlas para evitar errores humanos, versionarlas para trazabilidad, y usar pruebas de humo y sanidad para validar rápido cambios pequeños. [pause]
+
+Testing en DevOps es una mentalidad que fomenta colaboración, automatización y mejora continua. Cuanto antes y mejor pruebes, más confiable y eficiente será el software que entregues. [long pause]

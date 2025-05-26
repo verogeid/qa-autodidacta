@@ -1,25 +1,45 @@
 Pruebas no funcionales: rendimiento, usabilidad, seguridad y más [pause]
 
-Bienvenido al tema diez. Hoy vamos a hablar de cómo evaluar aspectos del software que no son solo lo que hace, sino cómo lo hace.
+Bienvenido al tema diez. Hoy vamos a explorar cómo evaluar no solo *qué* hace un software, sino *cómo* lo hace, aspectos que marcan la diferencia en la experiencia final.
 
 ---
 
-Primero, imagina que compras un coche. No solo te importa que arranque o que frene, sino también que sea rápido, seguro, cómodo y que funcione bien en cualquier clima. Eso es lo que llamamos aspectos no funcionales. [pause]
+Imagina que compras un coche. No basta con que arranque y frene bien, sino que también sea rápido, seguro, cómodo y que funcione sin problemas en distintos climas o terrenos. Eso es lo que llamamos aspectos no funcionales. [pause]
 
-Las pruebas no funcionales evalúan esos aspectos: [pause] rendimiento, usabilidad, seguridad, accesibilidad y más. [pause]
+Las pruebas no funcionales examinan estas características: rendimiento, usabilidad, seguridad, accesibilidad, compatibilidad y más. [pause]
 
-Hablemos del rendimiento. [pause] Imagina un embudo por donde pasa agua: [pause] aunque tengas mucha agua, el cuello del embudo limita el flujo. Así pasa con el software: [pause] aunque el sistema sea potente, hay puntos que limitan la velocidad, llamados cuellos de botella. Las pruebas de rendimiento buscan detectar y eliminar esos cuellos para que todo funcione rápido y estable. [pause]
+---
 
-Ahora, la usabilidad. [pause] Piensa en un tablero de coche donde los botones están bien ubicados y son fáciles de usar, eso hace que conducir sea seguro y agradable. [pause] En software, si la interfaz es confusa, el usuario se frustra y comete errores. Por eso medimos la usabilidad. [pause]
+Hablemos primero del rendimiento. [pause] Visualiza un embudo por donde pasa agua. Aunque tengas mucha agua, el cuello del embudo limita el flujo total. [pause]
 
-La seguridad es como poner una cerradura en una caja fuerte. El software debe proteger la información para que nadie no autorizado pueda acceder o dañarla. Las pruebas de seguridad evalúan qué tan fuerte es esa cerradura. [pause]
+En software, aunque el sistema tenga mucha capacidad, ciertos puntos, llamados *cuellos de botella*, limitan la velocidad y estabilidad. [pause] Las pruebas de rendimiento detectan estos cuellos para que el sistema sea rápido y estable, incluso cuando muchos usuarios lo usan al mismo tiempo. [pause]
 
-También están las pruebas de accesibilidad, que aseguran que cualquier persona, con o sin discapacidad, pueda usar el producto sin problemas. [pause]
+---
 
-Es importante planificar estas pruebas desde el principio, no dejarlas para el final, para evitar problemas y entregar un producto de calidad. [pause]
+Ahora la usabilidad. [pause] Piensa en un tablero de coche con botones grandes y bien ubicados, que facilita conducir con seguridad y sin distracciones. [pause]
 
-Como tester, diseñarás casos para estas pruebas, usarás herramientas para medir tiempos o escanear vulnerabilidades, y documentarás todo para que el equipo pueda mejorar. [pause]
+Si el tablero está desordenado, confunde y genera frustración. En software pasa igual: una interfaz clara y sencilla mejora la experiencia y reduce errores. [pause] Por eso medimos la usabilidad. [pause]
 
-Recuerda: [pause] evaluar solo el "qué hace" el software no basta, debemos conocer "cómo lo hace". [pause]
+---
 
-Eso es todo para esta introducción a las pruebas no funcionales. Te animo a practicar con los ejercicios y seguir aprendiendo. [long pause]
+La seguridad es como la cerradura de una caja fuerte. No solo basta con que exista la caja, sino que debe tener una cerradura resistente que impida robos o daños. [pause]
+
+En software, las pruebas de seguridad evalúan si los datos están protegidos contra accesos no autorizados, ataques o vulnerabilidades. [pause]
+
+---
+
+Las pruebas de accesibilidad buscan que cualquier persona, sin importar sus capacidades, pueda usar el producto sin dificultades. [pause] Es como asegurar que un edificio tenga rampas y señales para todos. [pause]
+
+---
+
+Estas pruebas deben planificarse desde el inicio del proyecto, no dejarlas para el final. [pause] Así evitamos fallos graves y entregamos un producto que cumple todas las expectativas. [pause]
+
+---
+
+Como tester, diseñarás casos que validen estos aspectos, usarás herramientas para medir tiempos, evaluar cargas o escanear vulnerabilidades, y documentarás resultados para ayudar a mejorar el producto. [pause]
+
+Recuerda: evaluar solo el *qué* hace el software no es suficiente, debemos conocer *cómo* lo hace para garantizar calidad completa. [pause]
+
+---
+
+Eso es todo por esta introducción. Te invito a practicar con los ejercicios y continuar profundizando en pruebas no funcionales. [long pause]

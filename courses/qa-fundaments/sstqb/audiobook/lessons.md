@@ -10,3 +10,4 @@
 10-pruebas-no-funcionales-rendimiento-usabilidad-seguridad-y-mas.md
 11-testing-en-devops-ci-cd-pipelines-y-automatizacion-practica.md
 12-preparacion-al-examen.md
+13-herramientas-avanzadas-e-integracion-en-testing.md

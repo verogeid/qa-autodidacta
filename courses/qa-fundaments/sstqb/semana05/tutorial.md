@@ -19,7 +19,8 @@ Las técnicas de *caja negra* se basan en los requisitos y el comportamiento esp
 Consiste en dividir los datos de entrada en grupos (particiones) que el sistema trata de la misma forma. Si un dato de una partición falla, probablemente todos los de esa partición también lo hagan.
 
 **Ejemplo:** Un campo que solo acepta edades entre 18 y 65:
-- Una partición válida: 18 a 65.
+
+- Una partición válida: 18 a 65.  
 - Particiones inválidas: menor de 18 y mayor de 65.
 
 ### Valores límite
@@ -27,7 +28,8 @@ Consiste en dividir los datos de entrada en grupos (particiones) que el sistema 
 Los errores suelen aparecer cerca de los límites. Esta técnica se centra en probar los extremos de las particiones válidas e inválidas.
 
 **Ejemplo:** Para el rango 18 a 65, se prueban:
-- Valores válidos: 18 y 65.
+
+- Valores válidos: 18 y 65.  
 - Valores justo fuera: 17 y 66.
 
 ### Tabla de decisión
@@ -35,7 +37,8 @@ Los errores suelen aparecer cerca de los límites. Esta técnica se centra en pr
 Se utiliza cuando hay múltiples condiciones que afectan el resultado. Se crean combinaciones de condiciones y sus salidas esperadas en forma de tabla.
 
 **Ejemplo:** Un sistema da acceso solo si:
-- Es mayor de edad.
+
+- Es mayor de edad.  
 - Tiene membresía activa.
 
 La tabla muestra todas las combinaciones posibles de esas condiciones.
@@ -84,11 +87,16 @@ No siguen un guion fijo. El tester explora libremente el sistema buscando defect
 
 ---
 
+**Recordatorio importante:**  
+No olvides que, además de cubrir casos esperados, es clave validar también casos negativos, extremos y situaciones poco comunes. Estos escenarios suelen revelar errores ocultos que las pruebas estándar no detectan.
+
+---
+
 ## Buenas prácticas
 
-- Usa combinaciones de técnicas para mayor cobertura.
-- Prioriza según el riesgo.
-- Asegura la trazabilidad entre casos y requisitos.
+- Usa combinaciones de técnicas para mayor cobertura.  
+- Prioriza según el riesgo.  
+- Asegura la trazabilidad entre casos y requisitos.  
 - Documenta entradas esperadas, condiciones y resultados.
 
 ---
@@ -97,5 +105,5 @@ Con estas técnicas, serás capaz de diseñar pruebas robustas, con lógica y se
 
 ---
 
-- [^ Índice del Tema](./readme.md)
+- [^ Índice del Tema](./readme.md)  
 - [Ejercicios](./ejercicios.md)

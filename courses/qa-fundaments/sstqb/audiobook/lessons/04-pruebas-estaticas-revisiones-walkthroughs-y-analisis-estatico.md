@@ -1,64 +1,89 @@
-Pruebas estáticas: revisiones, walkthroughs y análisis estático
+Pruebas estáticas: revisiones, walkthroughs y análisis estático. [pause]
 
-En esta sesión hablaremos de las pruebas estáticas, una categoría fundamental en el testing que no requiere ejecutar el software para encontrar defectos. Comprender estas técnicas es clave para mejorar la calidad desde etapas tempranas y aprobar el examen SSTQB.
+En esta sesión vamos a explorar un conjunto de técnicas que permiten encontrar errores en software sin necesidad de ejecutarlo. Sí, como lo oyes: se puede detectar un fallo sin abrir la aplicación, sin hacer clics ni pruebas automáticas. Esto se llama *testing estático*, y entenderlo bien es clave tanto para tu futuro profesional como para superar el examen SSTQB. [pause]
 
 ¿Qué son las pruebas estáticas? [pause]
 
-Las pruebas estáticas consisten en revisar artefactos del proyecto, como documentos, diagramas o código fuente, sin ejecutar el programa. Su objetivo es identificar errores, omisiones o inconsistencias de forma temprana y económica.
+Imagina que estás revisando un plano antes de construir una casa. Si hay un error en ese dibujo, no hace falta levantar paredes para darte cuenta: solo con observarlo puedes anticiparte y evitar desastres. [pause]
 
-Existen dos grandes tipos: [pause]
+Las pruebas estáticas funcionan igual: revisan documentos, requisitos, diagramas o código *sin ejecutarlos*. Así se detectan errores de forma temprana, barata y muy eficaz. [pause]
 
-- Revisiones manuales: [pause]. realizadas por personas que examinan el contenido.
-- Análisis estático automatizado: [pause]. con herramientas que inspeccionan el código sin ejecución.
+Podemos dividirlas en dos grandes grupos: [pause]
+
+- Revisiones hechas por personas. [pause]
+- Análisis estático realizado por herramientas. [pause]
+
+Veámoslos en detalle. [pause]
 
 Revisiones. [pause]
 
-Las revisiones son inspecciones manuales del trabajo realizado y se clasifican en: [pause]
+Las revisiones consisten en leer con atención lo que se ha producido en el proyecto: un código, un diseño, o un documento. El objetivo es detectar fallos, omisiones o cosas que no se entienden bien. [pause]
 
-- Revisiones informales: [pause]. No siguen una estructura formal, suelen ser rápidas y entre compañeros para detectar errores básicos.
-- Walkthroughs: [pause]. El autor presenta el trabajo al equipo y explica su contenido, buscando comentarios y sugerencias. Son semi-formales y fomentan el aprendizaje colaborativo.
-- Revisiones técnicas o inspecciones formales: [pause]. Siguen un proceso estructurado con roles asignados (moderador, autor, revisores), listas de verificación y reportes de hallazgos. Son las más completas y permiten detectar defectos profundos. [pause]
+Hay varios tipos según su nivel de formalidad: [pause]
 
-Cada tipo aporta beneficios distintos y se pueden combinar según las necesidades del proyecto.
+- Revisión informal. [pause]
+  Aquí, un compañero echa un vistazo a tu trabajo y te dice si ve algo raro. No hay reglas ni papeles que firmar. Es como pedirle a alguien que lea un mensaje antes de enviarlo. [pause]
 
-Walkthroughs en detalle.[pause].
+- Walkthrough. [pause]
+  El autor del trabajo lo presenta al grupo y lo explica paso a paso. La idea no es señalar errores, sino compartir conocimiento, resolver dudas y aprender en equipo. Es como mostrarle a alguien tu receta favorita y escuchar sus sugerencias. [pause]
 
-En un walkthrough, el autor lidera la revisión guiando a los participantes a través del documento o código, aclarando dudas y recibiendo feedback. No hay presión ni un proceso rígido, lo que favorece la comunicación abierta y la identificación de problemas que a veces se pasan por alto.
+- Revisión técnica o inspección formal. [pause]
+  Aquí ya hablamos de un proceso serio: hay roles definidos, documentos que cumplir y registros que dejar. Se designa un moderador, se usan listas de verificación, y se anotan todos los defectos encontrados. Es como una auditoría de calidad, donde todo está documentado. [pause]
+
+Cada tipo aporta cosas distintas, y no son excluyentes: puedes combinarlos según el momento del proyecto o la cultura del equipo. [pause]
+
+Walkthrough en detalle. [pause]
+
+Un walkthrough es un recorrido guiado por el propio autor, que presenta lo que ha hecho y lo explica a los demás. No hay presión: se trata de entender el trabajo, resolver dudas y recibir comentarios útiles. [pause]
+
+Es una técnica fantástica para equipos nuevos, para formar a personas, o para asegurar que todos entienden un cambio importante. [pause]
 
 Análisis estático de código. [pause]
 
-El análisis estático usa herramientas automáticas para examinar el código fuente sin ejecutarlo. Estas herramientas detectan: [pause]
+Ahora vamos con la otra gran rama: el análisis automático. Aquí no intervienen personas leyendo documentos, sino herramientas que escanean el código para detectar errores. [pause]
 
-- Errores de sintaxis o de estilo. [pause]
-- Código no utilizado o duplicado. [pause]
-- Violaciones de normas de codificación. [pause]
-- Potenciales vulnerabilidades de seguridad. [pause]
-- Complejidad ciclomática (mide la cantidad de rutas lógicas en el código). [pause]
+Es como usar un corrector ortográfico, pero en lugar de palabras mal escritas, detecta cosas como: [pause]
 
-Aunque no detectan defectos de comportamiento, reducen la cantidad de errores y mejoran la mantenibilidad del software. [pause]
+- Código duplicado o innecesario. [pause]
+- Errores de formato o sintaxis. [pause]
+- Incumplimiento de normas internas. [pause]
+- Vulnerabilidades de seguridad. [pause]
+- Complejidad excesiva del código. [pause]
 
-Listas de verificación (Checklists). [pause]
+Por ejemplo, si una función tiene muchas decisiones internas, podría ser difícil de mantener. La herramienta lo señala para que puedas simplificarlo. [pause]
 
-En las revisiones formales, se utilizan listas de verificación para asegurar que se evalúan aspectos clave como: [pause]
+Este análisis no detecta si el software hace lo que debe, pero sí ayuda a mantener un código más limpio, seguro y fácil de entender. [pause]
 
-- Claridad y coherencia del contenido. [pause]
-- Cumplimiento con requisitos y estándares. [pause]
-- Ausencia de ambigüedades y errores comunes. [pause]
+Listas de verificación. [pause]
 
-Estas listas ayudan a mantener la calidad y evitar omisiones durante la revisión. [pause]
+Cuando haces una revisión formal, no puedes confiar solo en tu memoria. Por eso se usan listas de verificación, también llamadas checklists. [pause]
 
-Métricas de calidad documental y de código. [pause]
+Estas listas recuerdan qué cosas revisar, como: [pause]
 
-Las métricas apoyan la gestión de la calidad. Algunas comunes son: [pause]
+- ¿Está claro lo que se dice? [pause]
+- ¿Cumple con los requisitos definidos? [pause]
+- ¿Hay errores comunes, como nombres confusos o estructuras mal usadas? [pause]
 
-- Complejidad ciclomática: [pause]. Indica la complejidad del código midiendo sus caminos lógicos. Un valor alto sugiere código difícil de mantener y propenso a errores. [pause]
-- Densidad de defectos: [pause]. Número de defectos encontrados por tamaño del artefacto. [pause]
-- Cobertura de reglas: [pause]. Porcentaje de cumplimiento de las normas definidas. [pause]
+Son como una lista para revisar el coche antes de un viaje largo: te aseguras de que no se te olvida nada importante. [pause]
 
-El análisis de estas métricas ayuda a priorizar esfuerzos de mejora. [pause]
+Métricas de calidad. [pause]
+
+Las métricas son números que te ayudan a medir la calidad de lo que estás revisando. [pause]
+
+Algunas métricas clave son: [pause]
+
+- Complejidad ciclomática: mide cuántas rutas lógicas hay en un trozo de código. Si hay muchas, puede ser difícil de mantener. [pause]
+
+- Densidad de defectos: indica cuántos errores se han encontrado en relación al tamaño del código o documento. [pause]
+
+- Cobertura de reglas: qué porcentaje de normas internas se están cumpliendo. [pause]
+
+Estas métricas sirven para decidir dónde poner el foco y cómo mejorar. [pause]
 
 Resumen. [pause]
 
-Las pruebas estáticas son esenciales para detectar defectos sin ejecutar el software, permitiendo ahorrar tiempo y costos. Comprenden revisiones manuales (informales, walkthroughs e inspecciones) y análisis estático automatizado con herramientas. Usar listas de verificación y métricas de calidad potencia su efectividad. [pause]
+Las pruebas estáticas te permiten mejorar un proyecto sin necesidad de ejecutarlo. Pueden ser manuales —como las revisiones informales, los walkthroughs o las inspecciones formales—, o automáticas —como el análisis estático de código con herramientas. [pause]
 
-Entender y aplicar correctamente estas técnicas es fundamental para tu éxito en el examen SSTQB y para cualquier proyecto de software que busque alta calidad. [long pause]
+Usar listas de verificación y analizar métricas ayuda a que estas revisiones sean más eficaces. [pause]
+
+Aprender y aplicar estas técnicas es clave no solo para pasar el examen SSTQB, sino también para trabajar con calidad desde el primer día. [long pause]

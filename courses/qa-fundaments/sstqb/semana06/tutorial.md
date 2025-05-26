@@ -10,84 +10,164 @@ Un *plan de pruebas* es un documento que dice qué se va a probar, cómo, quién
 
 ### 🔍 ¿Qué contiene un plan de pruebas?
 
-- **Objetivo:** qué se quiere lograr (por ejemplo, asegurar que los formularios funcionan correctamente).
-- **Alcance:** qué se va a probar y qué no (por ejemplo, probamos la web pero no su versión móvil).
-- **Recursos:** personas, herramientas, entornos de pruebas.
-- **Criterios de entrada/salida:** cuándo empezamos a probar y cuándo podemos dar por terminadas las pruebas.
-- **Riesgos:** cosas que podrían ir mal (falta de tiempo, problemas con los datos…).
+- **Objetivo:** qué se quiere lograr (por ejemplo, asegurar que los formularios funcionan correctamente).  
+- **Alcance:** qué se va a probar y qué no (por ejemplo, probamos la web pero no su versión móvil).  
+- **Recursos:** personas, herramientas, entornos de pruebas.  
+- **Criterios de entrada/salida:** condiciones claras para empezar y finalizar pruebas. Ejemplo:  
+  - *Entrada*: build estable con >80% pruebas unitarias pasadas.  
+  - *Salida*: 95% pruebas críticas aprobadas y sin defectos abiertos de severidad alta.  
+- **Riesgos:** posibles problemas que puedan afectar (falta de datos, retrasos, recursos limitados).  
 - **Cronograma:** calendario con fechas importantes y entregas.
+
+---
+
+## 📋 Test Policy vs Test Strategy: gestión y diferencias clave
+
+Para gestionar bien las pruebas, es fundamental entender dos conceptos del ISTQB: **Test Policy** y **Test Strategy**.
+
+### ¿Qué es una Test Policy?
+
+La *Test Policy* es como la ley o las reglas del país donde construyes la casa. Define el **propósito general y los principios** de las pruebas en toda la organización. Responde a preguntas grandes como:
+
+- ¿Por qué hacemos testing?  
+- ¿Qué nivel de calidad queremos?  
+- ¿Quién es responsable de las pruebas?  
+- ¿Cómo aseguramos que las pruebas se alinean con los objetivos del negocio?
+
+Es un documento **global, de alto nivel**, que marca el rumbo y asegura que todas las áreas sigan las mismas reglas.
+
+### ¿Qué es una Test Strategy?
+
+La *Test Strategy* es el plan específico que usas para construir esa casa según la ley. Define **cómo se aplicarán esos principios de la Test Policy en un proyecto o producto concreto**. Detalla:
+
+- Qué tipos de pruebas se harán (funcionales, rendimiento, seguridad…).  
+- Qué técnicas y herramientas se usarán.  
+- Cómo se gestionarán los riesgos.  
+- Cómo se medirán y reportarán los resultados.
+
+Es un documento **más detallado y táctico**, adaptado al contexto de cada proyecto.
+
+### Simil 1
+
+Si la *Test Policy* es el conjunto de reglas de tráfico en una ciudad, la *Test Strategy* es el mapa y plan para llegar a un destino específico respetando esas reglas.
+
+### Simil 2 (para reforzar)
+
+La *Test Policy* es el menú completo de un restaurante (define qué platos hay y la calidad esperada), mientras que la *Test Strategy* es tu elección de plato específico y cómo lo preparan para ti según tus gustos o alergias.
+
+---
+
+## 🔄 ¿Cuándo y cómo se revisan?
+
+Ambos documentos no son estáticos. La *Test Policy* suele revisarse cuando la empresa cambia sus objetivos o procesos grandes. La *Test Strategy* se adapta en cada proyecto o cuando cambian requisitos, riesgos o herramientas.
+
+Revisar y actualizar es clave para que sigan siendo útiles y reflejen la realidad.
 
 ---
 
 ## ⏱️ ¿Cómo se estima el esfuerzo de pruebas?
 
-Cuando planeas unas vacaciones, calculas cuántos días puedes estar fuera y cuánto dinero gastarás. En testing hacemos algo similar: estimamos cuánto tiempo y recursos vamos a necesitar para las pruebas.
+Cuando planeas unas vacaciones, calculas cuántos días puedes estar fuera y cuánto dinero gastarás. En testing hacemos algo similar: estimamos tiempo y recursos para las pruebas.
 
-### Métodos para estimar:
+### Métodos para estimar
 
-- **Por experiencia:** si en el proyecto anterior tardamos 2 semanas, podemos usarlo como referencia.
-- **Basado en funcionalidades:** si hay 20 pantallas que probar, se calcula cuánto tiempo lleva cada una.
-- **Porcentaje de desarrollo:** si el desarrollo dura 3 meses, se puede dedicar un 25% a pruebas, por ejemplo.
+- **Por experiencia:** referencia en proyectos anteriores similares.  
+- **Basado en funcionalidades:** cálculo por número y complejidad de funcionalidades (por ejemplo, 20 pantallas × 2 horas cada una).  
+- **Porcentaje del desarrollo:** asignar un % del tiempo total de desarrollo (ejemplo: 25%).  
+- **Wideband Delphi:** estimación en grupo basada en consenso de expertos.  
+- **Function Point Analysis:** mide tamaño funcional para estimar esfuerzo.  
+- **Use Case Points:** estimación basada en casos de uso.
 
-🔧 *Ninguna técnica es perfecta, pero nos ayuda a no ir a ciegas.*
+🔧 *Ninguna técnica es perfecta, pero combinarlas reduce incertidumbre.*
+
+### Riesgos comunes en la estimación y cómo mitigarlos
+
+- Falta de datos históricos → usar prototipos o estimaciones consultivas.  
+- Cambios frecuentes en requisitos → usar estimaciones iterativas y flexibles.  
+- Recursos insuficientes → priorizar pruebas críticas y hacer pruebas exploratorias.
 
 ---
 
 ## 📊 ¿Cómo se priorizan las pruebas?
 
-No todo se prueba con la misma urgencia. Se comienza por lo más importante o lo que más riesgo tiene si falla.
+No todo se prueba con la misma urgencia. Se comienza por lo más importante o lo que tiene mayor riesgo.
 
-### Ejemplo:
+### Ejemplo
 
-Imagina que pruebas una app de salud. Es más urgente probar:
+En una app de salud es más urgente probar:
 
-- La pantalla de emergencias médicas  
-...que...
+- Pantalla de emergencias médicas  
+...que...  
+- Botón para cambiar el color del fondo.
 
-- El botón para cambiar el color del fondo.
+### Factores clave para priorizar
 
-### Factores clave para priorizar:
-
-- **Riesgo:** ¿Qué pasa si esto falla?
-- **Valor para el usuario:** ¿Es algo que se usa a diario?
-- **Criticidad:** ¿Tiene relación con seguridad o dinero?
+- **Riesgo:** ¿Qué impacto tiene si falla?  
+- **Valor para el usuario:** ¿Se usa a diario?  
+- **Criticidad:** ¿Afecta a la seguridad o dinero?  
+- **Severidad vs Prioridad:** no son lo mismo; la severidad es el impacto del defecto, la prioridad es el orden en que se corrige/prueba.
 
 ---
 
 ## 🔗 ¿Qué es la trazabilidad?
 
-Trazabilidad es saber de dónde viene cada cosa y a dónde lleva. Como cuando ves el historial de un paquete: sabes desde que lo pidió el cliente hasta que se entregó. En testing:
+Trazabilidad es saber de dónde viene cada cosa y a dónde lleva. Como ver el historial de un paquete: desde que se pidió hasta que se entregó.
 
-- Un requisito debe tener un caso de prueba.
-- Un caso de prueba puede generar un defecto.
-- Un defecto debe poder rastrearse hasta su causa.
+En testing:
 
-### Tipos:
+- Un requisito debe tener al menos un caso de prueba.  
+- Un caso de prueba puede generar uno o más defectos.  
+- Un defecto debe poder rastrearse hasta su requisito y caso de prueba asociado.
 
-- **Directa:** desde el requisito → caso de prueba → ejecución.
-- **Inversa:** desde el defecto → caso de prueba → requisito.
+### Tipos de trazabilidad
 
-Esto es clave para demostrar que todo lo importante se ha probado.
+- **Directa:** requisito → caso de prueba → ejecución.  
+- **Inversa:** defecto → caso de prueba → requisito.
+
+Esto es clave para demostrar que todo lo importante se ha probado y para auditorías.
+
+### Trazabilidad en herramientas
+
+Herramientas como **JIRA** + **Xray** o **TestRail** automatizan enlaces entre requisitos, casos y defectos, facilitando reportes y seguimiento.
 
 ---
 
 ## 🛠️ Herramientas que ayudan
 
-Aunque al principio uses papel o Excel, en proyectos reales usamos herramientas como:
+Aunque al principio uses papel o Excel, en proyectos reales se emplean herramientas especializadas:
 
-- **JIRA**: para gestionar tareas y defectos.
-- **TestRail**, **Xray**: para gestionar casos de prueba.
-- **Trello** o **Notion**: si estás en proyectos pequeños o personales.
+- **JIRA:** gestión de tareas y defectos.  
+- **TestRail, Xray:** gestión de casos de prueba y trazabilidad.  
+- **Trello, Notion:** para proyectos pequeños o personales.
 
 ---
 
 ## 🧠 Conclusión
 
-Gestionar las pruebas no es solo probar: es organizar, prever y dar visibilidad. Un buen plan de pruebas ahorra tiempo y errores. Una estimación realista evita frustraciones. Y la trazabilidad te permite demostrar que se ha hecho el trabajo bien.
+Gestionar las pruebas es más que ejecutar pruebas: es planificar, organizar, estimar, priorizar y garantizar que todo está controlado y documentado.
 
-Todo esto, bien hecho, da confianza al equipo… y sobre todo, al cliente.
+Un buen plan de pruebas evita errores y retrabajo. Una estimación realista ayuda a gestionar expectativas. La *Test Policy* da visión y reglas globales, mientras que la *Test Strategy* adapta esas reglas a cada proyecto para ser efectiva.
+
+La trazabilidad asegura transparencia y calidad, y junto con la priorización, optimiza recursos y tiempo. Todo esto da confianza al equipo y, sobre todo, al cliente.
 
 ---
 
-- [^ Índice del Tema](./readme.md)
+## 📚 Glosario básico
+
+- **Requisito:** lo que debe hacer el sistema o producto.  
+- **Caso de prueba:** conjunto de acciones para verificar un requisito.  
+- **Defecto:** error o problema encontrado durante las pruebas.  
+- **Test Policy:** reglas y objetivos globales de pruebas en la organización.  
+- **Test Strategy:** plan concreto de pruebas para un proyecto o producto.  
+- **Trazabilidad:** relación entre requisitos, casos de prueba y defectos.  
+- **Estimación:** cálculo del esfuerzo o tiempo necesario para probar.  
+- **Priorización:** decidir qué pruebas se hacen primero según su importancia o riesgo.  
+- **Riesgo:** posibilidad de que algo falle con impacto negativo.  
+- **Criterios de entrada/salida:** condiciones para empezar y terminar las pruebas.  
+- **Severidad:** impacto del defecto en el sistema.  
+- **Prioridad:** orden para corregir o probar un defecto o funcionalidad.
+
+---
+
+- [^ Índice del Tema](./readme.md)  
 - [Ejercicios](./ejercicios.md)

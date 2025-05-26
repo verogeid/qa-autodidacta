@@ -2,56 +2,77 @@
 
 ## ¿Qué es DevOps?
 
-*DevOps* es una cultura de trabajo que une a desarrollo (*Dev*) y operaciones (*Ops*). Busca entregar software más rápido, seguro y con calidad. En este enfoque, el *testing* ya no es un paso aislado, sino que se integra en todo el proceso.
+*DevOps* es una cultura que une a los equipos de desarrollo (*Dev*) y operaciones (*Ops*) para entregar software más rápido, con mayor calidad y seguridad.  
+Imagina una fábrica donde desarrollo crea el producto y operaciones lo entrega; DevOps es como un equipo de baile sincronizado que trabaja en perfecta armonía, revisando y mejorando cada paso.
 
 ## ¿Qué es CI/CD?
 
-- **CI** (Integración Continua): cada cambio en el código se integra frecuentemente. Se ejecutan pruebas automáticamente para evitar errores tempranos.
-- **CD** (Entrega/Despliegue Continuo): una vez que algo pasa los tests, se puede entregar al entorno real sin intervención manual.
+- **CI (Integración Continua)** es como probar cada ingrediente mientras cocinas para asegurarte que la receta salga bien, integrando y probando el código de todos los desarrolladores varias veces al día automáticamente.  
+- **CD (Entrega/Despliegue Continuo)** es la cinta transportadora que lleva la comida desde la cocina a la mesa sin que nadie tenga que intervenir manualmente, automatizando que el software llegue a producción o a usuarios finales con rapidez y seguridad.
 
-*Simil*: imagina una fábrica de pan automatizada. Cada pan (cambio de código) pasa por un control de calidad antes de salir. Si algo está mal, se detiene antes de que llegue al cliente.
+## Pipelines y testing
 
-## Testing en pipelines
+Un *pipeline* es una cadena automatizada de pasos que llevan el código desde el repositorio hasta producción: compilación, testing y despliegue.
 
-En un *pipeline*, definimos una serie de pasos automatizados. Algunos ejemplos:
+Las pruebas se ejecutan en fases para asegurar calidad:
 
-1. Instalar dependencias.
-2. Ejecutar pruebas unitarias.
-3. Lanzar pruebas de integración.
-4. Generar reportes de cobertura o errores.
-5. Desplegar si todo fue bien.
+- **Tests unitarios:** validan piezas pequeñas, como comprobar cada tornillo del motor.  
+- **Tests de integración:** verifican que esas piezas encajen y funcionen juntas, como motor y transmisión.  
+- **Tests end-to-end (E2E):** simulan la experiencia real del usuario, como probar el coche completo en carretera.  
+- **Tests de rendimiento y seguridad:** miden velocidad, recursos y protegen contra ataques.
 
-Las pruebas se colocan en distintas fases del pipeline según su propósito. Por ejemplo:
+## Tipos clave de testing en DevOps
 
-- **Tests unitarios**: al principio, para validar funciones individuales.
-- **Tests de integración y API**: después de construir el sistema.
-- **Tests end-to-end (E2E)**: al final, simulando usuarios reales.
+- **Unitarios:** validan pequeños bloques aislados.  
+- **Integración:** aseguran la colaboración entre componentes.  
+- **End-to-end:** prueban flujos reales del usuario.  
+- **Regresión:** verifican que lo nuevo no rompa lo antiguo.  
+- **Humo (Smoke):** chequeos rápidos para validar lo esencial.  
+- **Sanidad (Sanity):** verifican funcionalidades específicas tras cambios menores.  
+- **Rendimiento:** miden velocidad y uso de recursos.  
+- **Seguridad:** buscan vulnerabilidades.
 
-## Versionado y colaboración
+*Simil:* Construir un coche es como un pipeline de testing:  
+Los tests unitarios son piezas individuales; la integración, que todas encajen; los E2E, la prueba en carretera; y humo y sanidad, los chequeos rápidos antes de la gran prueba.
 
-Las pruebas también deben versionarse, igual que el código. Así sabemos:
+## Modelos de testing: Cuadrante de Marick y Pirámide de Testing
 
-- Quién las creó o modificó.
-- Cuándo fallaron y por qué.
-- Qué versión del sistema se estaba probando.
+- **Cuadrante de Marick** divide las pruebas en cuatro áreas que mezclan enfoque técnico y de negocio:  
+  1. Pruebas automatizadas para desarrolladores (unit y componentes).  
+  2. Pruebas guiadas por negocio (funcionales, exploratorias).  
+  3. Pruebas de experiencia usuario (E2E).  
+  4. Pruebas de soporte (rendimiento, seguridad).
 
-Usar *Git* u otros sistemas de control ayuda a mantener el historial y colaborar.
+- **Pirámide de Testing** muestra la proporción ideal:  
+  - Base grande: muchos tests unitarios (rápidos y baratos).  
+  - Capa media: menos tests de integración.  
+  - Cima pequeña: pocos tests E2E (lentos y costosos).
 
-## Herramientas de testing: ¿quién es quién?
+*Simil:* Como una pirámide de alimentos, donde se consume más lo básico y menos los platos elaborados.
 
-- **Postman**: prueba *APIs*. Útil para asegurar que el backend responde correctamente.
-- **Cypress**: simula la interacción de un usuario con una app web. Rápido, moderno y fácil de integrar en pipelines.
-- **Selenium**: automatiza navegadores. Más versátil pero más complejo.
-- **Jest**: framework de pruebas unitarias para JavaScript.
-- **PyTest**: framework de pruebas para Python. Muy usado en backends.
+## Herramientas comunes
 
-🧰 Imagina una caja de herramientas. No usarías un destornillador para clavar un clavo. Cada herramienta de testing tiene su momento y lugar.
+- **Postman/Newman:** pruebas API, como comprobar si las tuberías llevan agua sin fugas.  
+- **Cypress, Playwright, Selenium:** robots que simulan usuarios reales en el navegador.  
+- **Jest, Mocha, PyTest:** frameworks para tests unitarios e integración.  
+- **GitHub Actions, GitLab CI, Jenkins:** orquestadores de pipelines y automatización.  
+- **Allure, ReportPortal:** informes visuales claros.  
+- **Docker, Kubernetes:** entornos idénticos para evitar el “en mi máquina funciona”.
+
+## Buenas prácticas en testing DevOps
+
+- Distribuir los tests según rapidez y costo dentro del pipeline.  
+- Automatizar para reducir errores humanos.  
+- Asegurar que los tests fallen cuando deben, no solo pasen.  
+- Versionar los tests para trazabilidad.  
+- Ejecutar regresiones para evitar romper funcionalidades.  
+- Usar pruebas de humo y sanidad para chequeos rápidos tras cambios pequeños.
 
 ## Conclusión
 
-Integrar testing en DevOps ayuda a detectar errores más rápido, ahorrar tiempo y entregar con confianza. Automatizar no significa "probar todo", sino poner inteligencia en qué, cuándo y cómo se prueba.
+Testing en DevOps no es solo ejecutar pruebas, es una mentalidad de colaboración continua para entregar software con confianza y calidad. Aplicar correctamente tipos de testing y modelos optimiza tiempo, recursos y resultados.
 
 ---
 
-- [^ Índice del Tema](./readme.md)
-- [Ejercicios](./ejercicios.md)
+- [^ Índice del Tema](./readme.md)  
+- [Ejercicios](./ejercicios.md)  

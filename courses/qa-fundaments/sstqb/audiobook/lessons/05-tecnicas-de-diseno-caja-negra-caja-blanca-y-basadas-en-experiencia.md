@@ -78,10 +78,40 @@ Aquí se navega por el sistema libremente, sin guión. Se observa, se prueba, se
 
 ---
 
+Conceptos avanzados en diseño de pruebas. [pause]
+
+Ahora vamos a ver algunas ideas más complejas pero útiles para profundizar en el diseño de pruebas. [pause]
+
+Pruebas de condición múltiple. [pause]
+
+Imagina que tienes que probar un semáforo con varias luces que dependen de diferentes sensores. No basta con probar cada sensor solo; hay que probar combinaciones de ellos para asegurarnos de que el semáforo funcione bien en todas las situaciones. [pause]
+
+Aquí usamos combinaciones lógicas para cubrir todas las posibles condiciones juntas. Es como probar todas las mezclas de ingredientes en una receta para que el plato siempre quede bien. [pause]
+
+Análisis de causa raíz. [pause]
+
+Cuando encontramos un error, no basta con arreglarlo rápido. Tenemos que entender por qué pasó. Es como cuando una planta se está secando: no solo le das agua, también buscas si la tierra está mala o si no le da sol. [pause]
+
+Este análisis ayuda a prevenir que el mismo fallo vuelva a ocurrir. [pause]
+
+Pruebas basadas en modelos. [pause]
+
+Piensa en un videojuego donde el personaje puede estar en distintos lugares y hacer diferentes acciones. Un modelo es como un mapa de todos esos estados y movimientos posibles. [pause]
+
+Probar con modelos significa recorrer ese mapa para asegurar que todas las rutas y estados funcionan correctamente. [pause]
+
+Automatización y diseño de pruebas. [pause]
+
+Diseñar pruebas pensando en que luego serán automáticas es fundamental. Hay que ser claros, precisos y evitar pasos innecesarios. [pause]
+
+Imagina que preparas un robot para que haga tareas en una fábrica: si las instrucciones no están bien diseñadas, el robot no funcionará. [pause]
+
+Conclusión. [pause]
+
 Las técnicas de diseño permiten trabajar con cabeza. No se trata de probar por probar, sino de saber por qué y cómo. Usarlas bien mejora la calidad, reduce errores y muestra el valor de nuestro trabajo. [pause]
 
-Puedes usar una sola técnica o combinarlas. Elige según lo que sepas del sistema y lo que más riesgo conlleve.
+Puedes usar una sola técnica o combinarlas. Elige según lo que sepas del sistema y lo que más riesgo conlleve. [pause]
 
----
+Estos conceptos avanzados te ayudarán a diseñar pruebas más completas, eficientes y con mayor impacto en la calidad del software. [pause]
 
-Con estas herramientas, estarás listo para diseñar pruebas con criterio, mejorar la cobertura y prepararte para el examen SSTQB.
+Con práctica, podrás responder preguntas del syllabus más complejas y destacar en tu preparación SSTQB. [pause]

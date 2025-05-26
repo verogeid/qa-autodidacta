@@ -1,42 +1,63 @@
 Seguimiento del progreso, métricas, cobertura y control de calidad [pause]
 
-Bienvenido a este tema donde aprenderemos cómo controlar y medir el avance de las pruebas para asegurar la calidad del software. [pause]
+Bienvenido a este tema, donde aprenderemos a medir y controlar el avance de las pruebas para asegurar la calidad del software. Veremos qué son las métricas, cómo interpretarlas, qué es la cobertura de pruebas, cómo detectar cuellos de botella, y cómo preparar informes claros para quienes toman decisiones. [pause]
 
-Métricas en testing. [pause]
+Empecemos por las métricas en testing. [pause]
 
-Imagina que quieres preparar una receta compleja. Para saber si vas bien, vas anotando qué pasos ya hiciste y cuáles faltan. [pause] En testing, usamos métricas, que son números o indicadores que nos dicen cómo va el trabajo, sin tener que ver cada detalle. [pause]
+Las métricas son números o indicadores que nos muestran cómo va el trabajo de pruebas sin tener que revisar cada detalle. Imagina que estás siguiendo una receta complicada. Para no perderte, apuntas cada paso que haces y lo que falta. Así sabes si vas bien o necesitas acelerar. [pause]
 
-Por ejemplo, podemos medir el porcentaje de pruebas ejecutadas. Si el plan es hacer 100 pruebas y ya hicimos 60, el porcentaje es 60%. Esto nos ayuda a saber si vamos adelantados o atrasados. [pause]
+En testing, una métrica común es el porcentaje de pruebas ejecutadas. Si el plan dice que hay 100 pruebas y ya hiciste 60, llevas un 60%. Esto te indica si vas adelantado o atrasado. [pause]
 
-Cobertura de pruebas. [pause]
+Pero no basta con contar pruebas: también importa su importancia o riesgo. Por ejemplo, probar funciones críticas primero puede cambiar cómo valoramos ese 60%. [pause]
 
-La cobertura es como una manta que usamos para tapar el software. Cuanto más grande y completa sea la manta, mejor protegemos el producto. [pause]
+Otras métricas importantes son:
 
-- La cobertura de requisitos indica cuántos requisitos (las funciones o características que debe tener el software) hemos probado. [pause]
-- La cobertura de código muestra qué líneas o bloques del programa han sido ejecutados por las pruebas. [pause]
+- Porcentaje de defectos detectados y corregidos, que muestra qué errores encontramos y solucionamos.  
+- Tasa de defectos abiertos, que indica los problemas pendientes.  
+- Tasa de defectos reabiertos, que mide si los arreglos fueron efectivos o causaron más errores.  
+- Análisis de tendencias: comparar estas métricas en el tiempo ayuda a predecir problemas o mejoras. [pause]
 
-Tener buena cobertura reduce la probabilidad de que algo importante quede sin revisar. [pause]
+Estas métricas nos ayudan a decidir dónde enfocar recursos, qué priorizar y cuándo el software puede estar listo. Sin ellas, sería como cocinar sin saber si la receta va bien o falta algo. [pause]
 
-Cuellos de botella. [pause]
+Pasemos ahora a la cobertura de pruebas. [pause]
 
-Un cuello de botella es una parte del proceso que ralentiza todo lo demás, como una puerta estrecha en una fiesta llena de gente. [pause]
+La cobertura es una medida de cuánto del software o sus requisitos hemos probado. Imagina una manta que usamos para cubrir el producto: cuanto más grande y ajustada sea, mejor protegido estará contra errores. [pause]
 
-En testing, puede ser una fase lenta o una persona que recibe muchas tareas y no puede avanzar rápido. Detectar estos cuellos es clave para mejorar la eficiencia. [pause]
+Hay varios tipos de cobertura:
 
-Informes para stakeholders. [pause]
+- Cobertura de requisitos: qué porcentaje de requisitos fueron validados con pruebas. Si hay 10 funciones y pruebas 8, la cobertura es 80%.  
+- Cobertura de código: qué porcentaje del código ha sido ejecutado. Puede ser líneas, ramas o condiciones.  
+- Cobertura de decisiones: mide si todas las condiciones lógicas en el código fueron evaluadas.  
+- Cobertura funcional: confirma que las funciones esperadas están testeadas.  
+- Cobertura de riesgos: se enfoca en probar las áreas con mayor impacto o probabilidad de fallos. [pause]
 
-Los stakeholders son todas las personas interesadas en el proyecto: [pause] jefes, clientes, desarrolladores. [pause]
+Una baja cobertura puede ser como leer solo la introducción de un libro: te pierdes detalles que pueden provocar errores no detectados. [pause]
 
-Un buen informe debe ser claro y mostrar:
+Ahora hablemos de cuellos de botella. [pause]
 
-- Qué porcentaje de pruebas se ha completado. [pause]
-- Los riesgos o problemas detectados. [pause]
-- Recomendaciones para decidir si el producto está listo o necesita más trabajo. [pause]
+Un cuello de botella es cualquier parte del proceso que limita la velocidad total, como una puerta estrecha por donde pasa mucha gente. [pause]
 
-Esto ayuda a tomar decisiones informadas y a evitar sorpresas. [pause]
+En testing, puede ser un ambiente lento, retrasos en revisión o personas con demasiadas tareas. Detectar y eliminar estos cuellos mejora el flujo y evita retrasos importantes. [pause]
 
----
+Finalmente, los informes para stakeholders. [pause]
 
-Terminamos aquí el tema 7. [pause] Recuerda que controlar el progreso y la calidad con métricas es vital para que el producto final sea confiable y cumpla con las expectativas. [pause]
+Los stakeholders son quienes toman decisiones: jefes, clientes o desarrolladores interesados en el proyecto. Necesitan informes claros, que resuman progreso, calidad y riesgos. [pause]
 
-¡Nos vemos en el próximo tema! [long pause]
+Un buen informe debe responder:
+
+- ¿Qué porcentaje de pruebas se completó?  
+- ¿Qué riesgos o problemas existen?  
+- ¿Es seguro lanzar o se necesita más trabajo? [pause]
+
+Esto evita sorpresas y facilita decisiones acertadas. [pause]
+
+Para cerrar, repasemos:
+
+- Las métricas son indicadores que muestran progreso y calidad.  
+- La cobertura mide cuánto del producto se probó.  
+- Los cuellos de botella limitan la velocidad y deben identificarse.  
+- Los informes resumen todo para guiar decisiones. [pause]
+
+Controlar el progreso y calidad con estas herramientas es clave para entregar software confiable y que cumpla expectativas. [pause]
+
+Gracias por escuchar. En el próximo tema seguiremos profundizando en testing. [long pause]

@@ -1,52 +1,96 @@
 # Tema 4 - Pruebas estáticas: revisiones, walkthroughs y análisis estático
 
-En este tema aprenderás sobre las pruebas estáticas, técnicas fundamentales para detectar errores sin necesidad de ejecutar el software. Estas pruebas se centran en analizar documentos, código y otros artefactos para mejorar la calidad desde etapas tempranas, evitando así errores costosos en fases posteriores.
+En este tema aprenderás sobre las pruebas estáticas, técnicas fundamentales para detectar errores **sin necesidad de ejecutar el software**. Estas pruebas permiten mejorar la calidad desde las primeras fases del desarrollo, evitando errores costosos más adelante.
 
 ## ¿Qué son las pruebas estáticas y por qué son importantes?
 
-Las pruebas estáticas consisten en examinar el software y su documentación sin correr el programa. Es como revisar un plano arquitectónico antes de construir un edificio: detectar problemas a tiempo evita errores graves durante la obra.
+Las pruebas estáticas examinan documentos, requisitos o código *sin ejecutarlos*. Es como revisar un plano antes de construir: si algo está mal dibujado, mejor detectarlo antes de poner un ladrillo.
 
-Este tipo de pruebas ayuda a identificar defectos en requisitos, diseño, código y documentación, permitiendo corregirlos antes de la implementación o la ejecución.
+Estas pruebas permiten:
+
+- Identificar errores temprano.
+- Reducir costes de corrección.
+- Mejorar la calidad y comprensión del producto.
+- Aumentar la productividad de los equipos.
 
 ## Tipos de pruebas estáticas
 
-### Revisiones
+### ✅ Revisiones
 
-Las revisiones son inspecciones formales o informales donde un grupo de personas examina los documentos o código para encontrar defectos. Hay distintos niveles:
+Las revisiones implican la lectura y análisis estructurado de documentos o código por parte de varias personas. Hay distintos tipos según su formalidad:
 
-- **Revisión informal:** Un colega revisa el trabajo sin procedimientos estrictos.
-- **Revisión técnica:** Un grupo de expertos con roles definidos revisa siguiendo un proceso estructurado.
-- **Inspección:** El método más formal y riguroso con roles definidos (moderador, autor, revisor) y registro detallado de defectos.
+#### 🔹 Revisión informal
 
-Piensa en las revisiones como cuando varias personas leen un texto para corregir ortografía y coherencia antes de imprimirlo.
+Un compañero revisa tu trabajo y da su opinión. No hay reglas estrictas ni actas. Es rápida y útil para encontrar errores evidentes.  
+*Ejemplo:* alguien lee tu correo antes de enviarlo.
 
-### Walkthroughs
+#### 🔹 Walkthrough (paseo guiado)
 
-Un walkthrough es una presentación guiada donde el autor del documento o código explica paso a paso su trabajo a un equipo, que hace preguntas y comenta. No busca defectos directos, sino comprender el contenido y fomentar la discusión para detectar posibles problemas.
+El autor presenta su trabajo y lo explica al equipo. El objetivo es aprender, compartir ideas y detectar malentendidos.  
+No hay roles fijos, pero se puede usar una lista de verificación.  
+*Simil:* es como explicar tu receta a un grupo que opina y pregunta.
 
-Se parece a un paseo guiado por un museo, donde el guía explica y los visitantes hacen preguntas para entender mejor.
+#### 🔹 Revisión técnica
 
-### Análisis estático de código
+Más estructurada. Se asignan roles formales y se usan documentos de soporte. El objetivo es detectar defectos técnicos.  
+Suele usarse en equipos técnicos para revisar diseño o código.
 
-El análisis estático es el uso de herramientas automáticas que examinan el código sin ejecutarlo, detectando errores comunes, problemas de estilo o seguridad. Estas herramientas facilitan encontrar defectos que pueden pasar desapercibidos en revisiones manuales.
+#### 🔹 Inspección formal
 
-Ejemplos de herramientas incluyen *SonarQube*, *ESLint* o *Checkstyle*.
+Es la más rigurosa. Tiene un proceso definido, criterios de entrada y salida, métricas, y roles con responsabilidades claras.  
+*Simil:* es como una auditoría con checklist, actas y responsables.
 
-## Listas de verificación y métricas
+##### 🎭 Roles en una inspección formal
 
-Las listas de verificación son guías que ayudan a asegurar que ciertos aspectos clave se revisen en documentos o código, como cumplimiento de normas, estructura correcta o ausencia de errores comunes.
+- **Moderador**: organiza, dirige la revisión y asegura que se sigue el proceso.
+- **Autor**: quien creó el documento. Explica si es necesario, pero no lidera.
+- **Revisor**: examina el contenido en busca de errores técnicos o de calidad.
+- **Registrador (escriba)**: toma nota de los defectos encontrados y decisiones.
 
-Las métricas cuantifican atributos del código o documentos, por ejemplo, número de líneas, complejidad ciclomática o porcentaje de cobertura documental, para evaluar calidad y detectar áreas problemáticas.
+##### ✅ Beneficios de una inspección
 
-## Aplicación práctica en el ciclo de vida del software
+- Detecta defectos de forma sistemática.
+- Mejora la comprensión común del producto.
+- Ayuda a formar a miembros nuevos del equipo.
 
-Las pruebas estáticas se aplican desde las fases iniciales, como análisis de requisitos, diseño y codificación, complementando las pruebas dinámicas que requieren ejecutar el software.
+## 🔍 Análisis estático de código
 
-Al realizar pruebas estáticas temprano, se reducen errores y costos posteriores, mejorando la calidad general del producto.
+Es el uso de herramientas que examinan el código automáticamente sin ejecutarlo. Detectan:
+
+- Errores comunes.
+- Malas prácticas.
+- Problemas de seguridad.
+- Incumplimientos de estilo o estándares.
+
+Ejemplos de herramientas:
+
+- *SonarQube*  
+- *ESLint*  
+- *Checkstyle*
+
+*Simil:* es como un corrector ortográfico que te avisa de errores al escribir.
+
+## 🧾 Listas de verificación y métricas
+
+- **Listas de verificación**: ayudan a no olvidar aspectos clave al revisar.
+  *Ejemplo:* verificar nombres claros, buenas prácticas o formato correcto.
+
+- **Métricas**: permiten cuantificar atributos del código o documentos.
+  *Ejemplos:* líneas de código, complejidad ciclomática, número de defectos por revisión.
+
+## 📈 ¿Cuándo se aplican las pruebas estáticas?
+
+Desde el inicio del ciclo de vida del software:
+
+- En los requisitos: para detectar ambigüedades.
+- En el diseño: para validar la lógica antes de implementarla.
+- En el código: para asegurar calidad antes de ejecutar pruebas dinámicas.
+
+*Simil:* es como revisar el plano, los cálculos y la maqueta antes de encender una máquina.
 
 ---
 
-Con esta base, estarás preparado para entender y aplicar las pruebas estáticas en tus proyectos, además de superar las preguntas del SSTQB relacionadas con este tema.
+Con esta base, podrás aplicar pruebas estáticas en tus proyectos y estarás preparado para responder cualquier pregunta del examen SSTQB sobre este tema.
 
 ---
 

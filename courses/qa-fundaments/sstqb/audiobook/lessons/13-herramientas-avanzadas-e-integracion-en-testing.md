@@ -23,5 +23,4 @@ Integrar bien estas herramientas nos da muchas ventajas: un flujo automático si
 Por eso, conocer no solo las herramientas, sino cómo combinarlas es fundamental para lograr un proceso de testing eficiente y para responder con confianza en el examen ISTQB. [pause]
 
 Recuerda: la integración es como el motor que hace que todo el sistema funcione con precisión, como un reloj suizo.
-
-[pausa larga]
+[long pause]

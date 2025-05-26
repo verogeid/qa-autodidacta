@@ -1,4 +1,4 @@
-# Semana 5 – Tipografía, colores y variables CSS
+# Tema 5 – Tipografía, colores y variables CSS
 
 **Objetivo:** Aprender a definir estilos tipográficos consistentes, paletas de color accesibles y usar *variables CSS* para mantener código limpio y escalable.
 
@@ -18,3 +18,14 @@
 - [Google Fonts](https://fonts.google.com/)
 - [Contrast Checker – WebAIM](https://webaim.org/resources/contrastchecker/)
 - [CSS Variables – MDN](https://developer.mozilla.org/es/docs/Web/CSS/var)
+
+---
+
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice](../readme.md)
+- [< Tema anterior](../semana04/readme.md)
+- [Siguiente tema >](../semana06/readme.md)

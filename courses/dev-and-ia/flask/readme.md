@@ -50,7 +50,7 @@
 
 Este curso ofrece un método alternativo de aprendizaje en formato audiolibro, útil para reforzar los conceptos clave sin necesidad de código.
 
-Puedes abrir el archivo principal [index.html](https://verogeid.github.io/qa-autodidacta/courses/dev-and-ia/flask/audiobook/index.html) en tu navegador para comenzar a escuchar.
+Puedes abrir el archivo principal [index.html](https://verogeid.github.io/qa-autodidacta/courses/dev-and-ia/flask/audiobook/index.html?t=1) en tu navegador para comenzar a escuchar.
 
 ### Cómo usarlo
 

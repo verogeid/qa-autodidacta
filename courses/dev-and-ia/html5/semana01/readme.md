@@ -17,3 +17,13 @@
 ## Recursos externos
 - [Documentación oficial HTML – MDN](https://developer.mozilla.org/es/docs/Web/HTML)
 - [Validador HTML – W3C](https://validator.w3.org/)
+
+---
+
+- [Tutorial](./tutorial.md)
+- [Ejercicios](./ejercicios.md)
+
+---
+
+- [^ Índice](../readme.md)
+- [Siguiente tema >](../semana02/readme.md)

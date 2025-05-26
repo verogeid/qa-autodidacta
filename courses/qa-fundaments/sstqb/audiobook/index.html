@@ -23,11 +23,17 @@
         <button id="btnRepeat">🔁</button>
     </div>
 
-    <script type="module">
-        import { initAudiobook } from 'https://verogeid.github.io/qa-autodidacta/lib/speech.js';
-        const baseUrl = 'https://verogeid.github.io/qa-autodidacta/courses/qa-fundaments/sstqb/audiobook/';
-        const strTitle = 'SSTQB FL 4.0 (AudioBook)';
-        initAudiobook(strTitle, baseUrl);
-    </script>
+    <script>
+    const timestamp = Date.now();
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.textContent = `
+    import { initAudiobook } from 'https://verogeid.github.io/qa-autodidacta/lib/speech.js?t=${timestamp}';
+    const baseUrl = 'https://verogeid.github.io/qa-autodidacta/courses/qa-fundaments/sstqb/audiobook/';
+    const strTitle = 'SSTQB FL 4.0 (AudioBook)';
+    initAudiobook(strTitle, baseUrl);
+    `;
+    document.body.appendChild(script);
+</script>
 </body>
 </html>

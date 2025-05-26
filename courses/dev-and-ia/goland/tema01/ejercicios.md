@@ -62,3 +62,12 @@ Escribe una función llamada `multiplicaPorDos` que reciba un número decimal y 
 ---
 
 Estos ejercicios no requieren paquetes externos. Son una base sólida para dominar la lógica y sintaxis fundamental de Go.
+
+---
+
+- [^ Índice del tema](./readme.md)
+
+---
+
+- [Tutorial](./tutorial.md)
+- [Soluciones](./soluciones.md)

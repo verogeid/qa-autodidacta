@@ -1,4 +1,4 @@
-Fundamentos de Go extendido
+Fundamentos de Go
 
 ---
 

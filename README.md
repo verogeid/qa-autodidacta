@@ -34,46 +34,47 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 
 ### 🛠️ Gestión y Herramientas
 
-3. 🚧 [Docker para testers]<!-- (./courses/containers/docker/readme.md)--> 🚧
-4. 🚧 [Kubernetes]<!-- (./courses/containers/kubernetes/readme.md)--> 🚧
+2. 🚧 [Docker para testers]<!-- (./courses/containers/docker/readme.md)--> 🚧
+3. 🚧 [Kubernetes]<!-- (./courses/containers/kubernetes/readme.md)--> 🚧
 
 ### 🧪 Automatización de Pruebas
 
-5. 🚧 [Playwright: Automatización de pruebas]<!-- (./courses/automation/playwright/readme.md)--> 🚧
-6. 🚧 [Katalon Studio: Pruebas Mobile]<!-- (./courses/automation/katalon/readme.md)--> 🚧
-7. [Postman y Newman: Pruebas API](./courses/automation/postman/readme.md)
+4. 🚧 [Playwright: Automatización de pruebas]<!-- (./courses/automation/playwright/readme.md)--> 🚧
+5. 🚧 [Katalon Studio: Pruebas Mobile]<!-- (./courses/automation/katalon/readme.md)--> 🚧
+6. [Postman y Newman: Pruebas API](./courses/automation/postman/readme.md)
 
 ### ⚙️ Integración y Entrega Continua
 
-8. 🚧 [Jenkins]<!-- (./courses/ci-cd/jenkins/readme.md)--> 🚧
-9. 🚧 [GitHub Actions]<!-- (./courses/ci-cd/github-actions/readme.md)--> 🚧
+7. 🚧 [Jenkins]<!-- (./courses/ci-cd/jenkins/readme.md)--> 🚧
+8. 🚧 [GitHub Actions]<!-- (./courses/ci-cd/github-actions/readme.md)--> 🚧
 
 ### 📈 Performance y Carga
 
-10. 🚧 [JMeter]<!-- (./courses/performance/jmeter/readme.md)--> 🚧
-11. 🚧 [K6]<!-- (./courses/performance/k6/readme.md)--> 🚧
-12. 🚧 [LightHouse]<!-- (./courses/performance/lighthouse/lighthouse/readme.md)--> 🚧
+9. 🚧 [JMeter]<!-- (./courses/performance/jmeter/readme.md)--> 🚧
+10. 🚧 [K6]<!-- (./courses/performance/k6/readme.md)--> 🚧
+11. 🚧 [LightHouse]<!-- (./courses/performance/lighthouse/lighthouse/readme.md)--> 🚧
 
 ### ⚡ Desarrollo
 
-13. [HTML5 y CSS3](./courses/dev-and-ia/html5/readme.md)
-14. 🚧 [React con TypeScript]<!-- (./courses/dev-and-ia/react/readme.md)--> 🚧
-15. 🚧 [Python]<!-- (./courses/dev-and-ia/python/readme.md)--> 🚧
-16. 🚧 [C# en profundidad]<!-- (./courses/dev-and-ia/csharp/readme.md)--> 🚧
+12. [HTML5 y CSS3](./courses/dev-and-ia/html5/readme.md)
+13. 🚧 [React con TypeScript]<!-- (./courses/dev-and-ia/react/readme.md)--> 🚧
+14. 🚧 [Python]<!-- (./courses/dev-and-ia/python/readme.md)--> 🚧
+15. 🚧 [C# en profundidad]<!-- (./courses/dev-and-ia/csharp/readme.md)--> 🚧
+16. 🚧 [Go Language (GoLang)]<!-- (./courses/dev-and-ia/golang/readme.md)--> 🚧
 
-  #### 📡 Dev API
+    #### 📡 Dev API
 
-  17. [FastAPI](./courses/dev-and-ia/fastapi/readme.md)
-  18. [Flask](./courses/dev-and-ia/flask/readme.md)
+    17. [FastAPI](./courses/dev-and-ia/fastapi/readme.md)
+    18. [Flask](./courses/dev-and-ia/flask/readme.md)
 
-  #### 🧠 IA
+    #### 🧠 IA
 
-  19. 🚧 [IA Developer con Python]<!-- (./courses/dev-and-ia/ia-python/readme.md)--> 🚧
-  20. [n8n: automatización de flujos](./courses/dev-and-ia/n8n/readme.md)
+    19. 🚧 [IA Developer con Python]<!-- (./courses/dev-and-ia/ia-python/readme.md)--> 🚧
+    20. [n8n: automatización de flujos](./courses/dev-and-ia/n8n/readme.md)
 
 ### 🚁 Bonus Track
 
-21. [English for Tech: A2 to C1](./courses/resources/english/readme.md)
+21. 🚧 [English for Tech: A2 to C1](./courses/resources/english/readme.md) 🚧
 22. 🚧 [Trinity: "Operator, I need a pilot program for a B-212 helicopter"]<!-- (./courses/resources/helicopter/readme.md)--> 🚧
 
 ---

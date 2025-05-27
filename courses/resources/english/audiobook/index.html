@@ -27,13 +27,17 @@
     const timestamp = Date.now();
     const script = document.createElement('script');
     script.type = 'module';
-    script.textContent = `
-    import { initAudiobook } from 'https://verogeid.github.io/qa-autodidacta/lib/englishspeech.js?t=${timestamp}';
-    const baseUrl = 'https://verogeid.github.io/qa-autodidacta/courses/resources/english/audiobook/';
-    const strTitle = 'Inglés Técnico (AudioBook)';
-    initAudiobook(strTitle, baseUrl);
-    `;
+    // Construct the full URL for the module
+    script.src = `https://verogeid.github.io/qa-autodidacta/lib/englishspeech.js?t=${timestamp}`;
+    
+    // Add an event listener to ensure the module is loaded before initialization
+    script.onload = () => {
+        const baseUrl = 'https://verogeid.github.io/qa-autodidacta/courses/resources/english/audiobook/';
+        const strTitle = 'Inglés Técnico (AudioBook)';
+        // Call the function from the loaded module
+        initAudiobook(strTitle, baseUrl);
+    };
     document.body.appendChild(script);
-</script>
+    </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-P?# Curso autodidacta: Playwright con C# para QA en entorno industrial
+# Curso autodidacta: Playwright con C# para QA en entorno industrial
 
 Este curso autodidacta está diseñado para aprender a automatizar pruebas usando **Playwright con C#**, orientado específicamente a contextos industriales.  
 Incluye diseño de entorno simulado, integración CI/CD y foco en calidad del software en sistemas críticos.

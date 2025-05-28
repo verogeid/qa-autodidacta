@@ -17,10 +17,10 @@ Al final de este bloque, estarás listo para automatizar tu primer test básico 
 
 ---
 
-[Ir al tutorial](./tutorial.md)
-[Ir a los ejercicios](./ejercicios.md)
-[Ver soluciones](./soluciones.md)
+- [Ir al tutorial](./tutorial.md)
+- [Ir a los ejercicios](./ejercicios.md)
+- [Ver soluciones](./soluciones.md)
 
 ---
 
-[^ Índice del curso](../readme.md)
+- [^ Índice del curso](../readme.md)

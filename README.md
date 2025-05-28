@@ -39,7 +39,7 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 
 ### 🧪 Automatización de Pruebas
 
-4. 🚧 [Playwright con C#: QA industrial]<!-- (./courses/automation/playwright/readme.md)--> 🚧
+4. 🚧 [Playwright con C#: QA industrial](./courses/automation/playwright/readme.md) 🚧
 5. 🚧 [Katalon Studio: Pruebas Mobile]<!-- (./courses/automation/katalon/readme.md)--> 🚧
 6. [Postman y Newman: Pruebas API](./courses/automation/postman/readme.md)
 

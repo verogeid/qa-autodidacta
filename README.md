@@ -39,7 +39,7 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 
 ### 🧪 Automatización de Pruebas
 
-4. 🚧 [Playwright: Automatización de pruebas]<!-- (./courses/automation/playwright/readme.md)--> 🚧
+4. 🚧 [Playwright con C#: QA industrial]<!-- (./courses/automation/playwright/readme.md)--> 🚧
 5. 🚧 [Katalon Studio: Pruebas Mobile]<!-- (./courses/automation/katalon/readme.md)--> 🚧
 6. [Postman y Newman: Pruebas API](./courses/automation/postman/readme.md)
 
@@ -59,23 +59,22 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 12. [HTML5 y CSS3](./courses/dev-and-ia/html5/readme.md)
 13. 🚧 [React con TypeScript]<!-- (./courses/dev-and-ia/react/readme.md)--> 🚧
 14. 🚧 [Python]<!-- (./courses/dev-and-ia/python/readme.md)--> 🚧
-15. 🚧 [C# en profundidad]<!-- (./courses/dev-and-ia/csharp/readme.md)--> 🚧
-16. 🚧 [Go Language (GoLang)]<!-- (./courses/dev-and-ia/golang/readme.md)--> 🚧
+15. 🚧 [Go Language (GoLang)]<!-- (./courses/dev-and-ia/golang/readme.md)--> 🚧
 
     #### 📡 Dev API
 
-    17. [FastAPI](./courses/dev-and-ia/fastapi/readme.md)
-    18. [Flask](./courses/dev-and-ia/flask/readme.md)
+    16. [FastAPI](./courses/dev-and-ia/fastapi/readme.md)
+    17. [Flask](./courses/dev-and-ia/flask/readme.md)
 
     #### 🧠 IA
 
-    19. 🚧 [IA Developer con Python]<!-- (./courses/dev-and-ia/ia-python/readme.md)--> 🚧
-    20. [n8n: automatización de flujos](./courses/dev-and-ia/n8n/readme.md)
+    18. 🚧 [IA Developer con Python]<!-- (./courses/dev-and-ia/ia-python/readme.md)--> 🚧
+    19. [n8n: automatización de flujos](./courses/dev-and-ia/n8n/readme.md)
 
 ### 🚁 Bonus Track
 
-21. 🚧 [English for Tech: A2 to C1](./courses/resources/english/readme.md) 🚧
-22. 🚧 [Trinity: "Operator, I need a pilot program for a B-212 helicopter"]<!-- (./courses/resources/helicopter/readme.md)--> 🚧
+20. 🚧 [English for Tech: A2 to C1](./courses/resources/english/readme.md) 🚧
+21. 🚧 [Trinity: "Operator, I need a pilot program for a B-212 helicopter"]<!-- (./courses/resources/helicopter/readme.md)--> 🚧
 
 ---
 

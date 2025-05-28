@@ -17,7 +17,7 @@ No es apto para perfiles sin experiencia en programación. Se requiere:
 
 ## Contenido del curso
 
-### Tema 1: Introducción al stack Playwright + C#
+### Tema 1: [Introducción al stack Playwright + C#](./tema01/readme.md)
 - Objetivos y motivación
 - Instalación, entorno y estructura de un proyecto básico
 - Crear y entender un test sencillo con Playwright en C#

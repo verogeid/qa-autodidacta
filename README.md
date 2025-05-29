@@ -57,9 +57,9 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 ### ⚡ Desarrollo
 
 12. [HTML5 y CSS3](./courses/dev-and-ia/html5/readme.md)
-13. 🚧 [React con TypeScript]<!-- (./courses/dev-and-ia/react/readme.md)--> 🚧
-14. 🚧 [Python]<!-- (./courses/dev-and-ia/python/readme.md)--> 🚧
-15. 🚧 [Go Language (GoLang)]<!-- (./courses/dev-and-ia/golang/readme.md)--> 🚧
+13. 🚧 [React con TypeScript](./courses/dev-and-ia/react/readme.md) 🚧
+14. 🚧 [Python](./courses/dev-and-ia/python/readme.md) 🚧
+15. 🚧 [Go Language (GoLang)](./courses/dev-and-ia/golang/readme.md) 🚧
 
     #### 📡 Dev API
 
@@ -68,7 +68,7 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 
     #### 🧠 IA
 
-    18. 🚧 [IA Developer con Python]<!-- (./courses/dev-and-ia/ia-python/readme.md)--> 🚧
+    18. 🚧 [IA Developer con Python](./courses/dev-and-ia/ia-python/readme.md) 🚧
     19. [n8n: automatización de flujos](./courses/dev-and-ia/n8n/readme.md)
 
 ### 🚁 Bonus Track

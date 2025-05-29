@@ -35,64 +35,66 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 ### 🛠️ Gestión y Herramientas
 
 2. 🚧 [Docker para testers](./courses/containers/docker/readme.md)
-3. 🚧 [Kubernetes](./courses/containers/kubernetes/readme.md)
+3. 🚧 [Jira](./courses/tools/jira/readme.md)
+4. 🚧 [Kubernetes](./courses/containers/kubernetes/readme.md)
 
 ### 🧪 Automatización de Pruebas
 
-4. 🚧 [Playwright con C#: QA industrial](./courses/automation/playwright/readme.md)
 5. 🚧 [Katalon Studio: Pruebas Mobile](./courses/automation/katalon/readme.md)
-6. [Postman y Newman: Pruebas API](./courses/automation/postman/readme.md)
+6. 🚧 [Playwright con C#: QA industrial](./courses/automation/playwright/readme.md)
+7. [Postman y Newman: Pruebas API](./courses/automation/postman/readme.md)
 
 ### ⚙️ Integración y Entrega Continua
 
-7. 🚧 [GitHub Actions](./courses/ci-cd/github-actions/readme.md)
-8. 🚧 [Jenkins](./courses/ci-cd/jenkins/readme.md)
-9. 🚧 [Bamboo](./courses/ci-cd/bamboo/readme.md)
+8. 🚧 [Bamboo](./courses/ci-cd/bamboo/readme.md)
+9. 🚧 [GitHub Actions](./courses/ci-cd/github-actions/readme.md)
+10. 🚧 [Jenkins](./courses/ci-cd/jenkins/readme.md)
 
 ### 📈 Performance y Carga
 
-10. 🚧 [Axe-Core](./courses/performance/axe-core/readme.md)
-11. 🚧 [JMeter](./courses/performance/jmeter/readme.md)
-12. 🚧 [K6](./courses/performance/k6/readme.md)
-13. 🚧 [LightHouse](./courses/performance/lighthouse/lighthouse/readme.md)
+11. 🚧 [Axe-Core](./courses/performance/axe-core/readme.md)
+12. 🚧 [JMeter](./courses/performance/jmeter/readme.md)
+13. 🚧 [K6](./courses/performance/k6/readme.md)
+14. 🚧 [LightHouse](./courses/performance/lighthouse/lighthouse/readme.md)
 
 ### ⚡ Desarrollo
 
-14. [HTML5 y CSS3](./courses/dev-and-ia/html5/readme.md)
-15. 🚧 [React con TypeScript](./courses/dev-and-ia/react/readme.md)
-16. 🚧 [Python](./courses/dev-and-ia/python/readme.md)
-17. 🚧 [Go Language (GoLang)](./courses/dev-and-ia/golang/readme.md)
+15. 🚧 [Go Language (GoLang)](./courses/dev-and-ia/golang/readme.md)
+16. [HTML5 y CSS3](./courses/dev-and-ia/html5/readme.md)
+17. 🚧 [Python](./courses/dev-and-ia/python/readme.md)
+18. 🚧 [React con TypeScript](./courses/dev-and-ia/react/readme.md)
+19. 🚧 [TypeScript](./courses/dev-and-ia/typescript/readme.md)
 
     #### 📡 Dev API
 
-    18. [FastAPI](./courses/dev-and-ia/fastapi/readme.md)
-    19. [Flask](./courses/dev-and-ia/flask/readme.md)
+    20. [FastAPI](./courses/dev-and-ia/fastapi/readme.md)
+    21. [Flask](./courses/dev-and-ia/flask/readme.md)
 
     #### 🧠 IA
 
-    20. 🚧 [IA Developer con Python](./courses/dev-and-ia/ia-python/readme.md)
-    21. [n8n: automatización de flujos](./courses/dev-and-ia/n8n/readme.md)
+    22. 🚧 [IA Developer con Python](./courses/dev-and-ia/ia-python/readme.md)
+    23. [n8n: automatización de flujos](./courses/dev-and-ia/n8n/readme.md)
 
 ### 🔐 Seguridad y Buenas Prácticas
 
-22. 🚧 [OWASP](./courses/security/owasp/readme.md)
-23. 🚧 [Seguridad para testers](./courses/security/security/readme.md)
+24. 🚧 [OWASP](./courses/security/owasp/readme.md)
+25. 🚧 [Seguridad para testers](./courses/security/security/readme.md)
 
 ### 📋 Documentación
 
-24. 🚧 [Árboles de decisión](./courses/documentation/decision-trees/readme.md)
-25. 🚧 [Confluence](./courses/documentation/confluence/readme.md)
-26. 🚧 [DFD: Diagramas de Flujo de Datos](./courses/documentation/dfd/readme.md)
-27. 🚧 [EDR: Diagramas Entidad Relación](./courses/documentation/edr/readme.md)
-28. 🚧 [Grafos de Gantt: Planificación de proyectos y paralelismo](./courses/documentation/gantt/readme.md)
-29. 🚧 [Markdown](./courses/documentation/markdown/readme.md)
-30. 🚧 [UML: Diagramas de Clases](./courses/documentation/xml/readme.md)
-31. 🚧 [XML](./courses/documentation/xml/readme.md)
+26. 🚧 [Árboles de decisión](./courses/documentation/decision-trees/readme.md)
+27. 🚧 [Confluence](./courses/documentation/confluence/readme.md)
+28. 🚧 [DFD: Diagramas de Flujo de Datos](./courses/documentation/dfd/readme.md)
+29. 🚧 [EDR: Diagramas Entidad Relación](./courses/documentation/edr/readme.md)
+30. 🚧 [Grafos de Gantt: Planificación de proyectos y paralelismo](./courses/documentation/gantt/readme.md)
+31. 🚧 [Markdown](./courses/documentation/markdown/readme.md)
+32. 🚧 [UML: Diagramas de Clases](./courses/documentation/xml/readme.md)
+33. 🚧 [XML](./courses/documentation/xml/readme.md)
 
 ### 🚁 Bonus Track
 
-32. 🚧 [English for Tech: A2 to C1](./courses/resources/english/readme.md)
-33. 🚧 [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./courses/resources/helicopter/readme.md)
+34. 🚧 [English for Tech: A2 to C1](./courses/resources/english/readme.md)
+35. 🚧 [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./courses/resources/helicopter/readme.md)
 
 ---
 

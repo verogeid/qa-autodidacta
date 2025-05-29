@@ -52,7 +52,7 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 
 9. 🚧 [JMeter]<!-- (./courses/performance/jmeter/readme.md)--> 🚧
 10. 🚧 [K6]<!-- (./courses/performance/k6/readme.md)--> 🚧
-11. 🚧 [LightHouse]<!-- (./courses/performance/lighthouse/lighthouse/readme.md)--> 🚧
+11. 🚧 [LightHouse](./courses/performance/lighthouse/lighthouse/readme.md) 🚧
 
 ### ⚡ Desarrollo
 

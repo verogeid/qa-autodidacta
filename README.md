@@ -74,7 +74,7 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 ### 🚁 Bonus Track
 
 20. 🚧 [English for Tech: A2 to C1](./courses/resources/english/readme.md) 🚧
-21. 🚧 [Trinity: "Operator, I need a pilot program for a B-212 helicopter"]<!-- (./courses/resources/helicopter/readme.md)--> 🚧
+21. 🚧 [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./courses/resources/helicopter/readme.md) 🚧
 
 ---
 

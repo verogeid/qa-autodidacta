@@ -40,41 +40,47 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 ### 🧪 Automatización de Pruebas
 
 4. 🚧 [Playwright con C#: QA industrial](./courses/automation/playwright/readme.md) 🚧
-5. 🚧 [Katalon Studio: Pruebas Mobile]<!-- (./courses/automation/katalon/readme.md)--> 🚧
+5. 🚧 [Katalon Studio: Pruebas Mobile](./courses/automation/katalon/readme.md) 🚧
 6. [Postman y Newman: Pruebas API](./courses/automation/postman/readme.md)
 
 ### ⚙️ Integración y Entrega Continua
 
-7. 🚧 [Jenkins]<!-- (./courses/ci-cd/jenkins/readme.md)--> 🚧
-8. 🚧 [GitHub Actions]<!-- (./courses/ci-cd/github-actions/readme.md)--> 🚧
+7. 🚧 [GitHub Actions](./courses/ci-cd/github-actions/readme.md) 🚧
+8. 🚧 [Jenkins](./courses/ci-cd/jenkins/readme.md) 🚧
+9. 🚧 [Bamboo](./courses/ci-cd/bamboo/readme.md) 🚧
 
 ### 📈 Performance y Carga
 
-9. 🚧 [JMeter](./courses/performance/jmeter/readme.md) 🚧
-10. 🚧 [K6](./courses/performance/k6/readme.md) 🚧
-11. 🚧 [LightHouse](./courses/performance/lighthouse/lighthouse/readme.md) 🚧
+10. 🚧 [JMeter](./courses/performance/jmeter/readme.md) 🚧
+11. 🚧 [K6](./courses/performance/k6/readme.md) 🚧
+12. 🚧 [LightHouse](./courses/performance/lighthouse/lighthouse/readme.md) 🚧
 
 ### ⚡ Desarrollo
 
-12. [HTML5 y CSS3](./courses/dev-and-ia/html5/readme.md)
-13. 🚧 [React con TypeScript](./courses/dev-and-ia/react/readme.md) 🚧
-14. 🚧 [Python](./courses/dev-and-ia/python/readme.md) 🚧
-15. 🚧 [Go Language (GoLang)](./courses/dev-and-ia/golang/readme.md) 🚧
+13. [HTML5 y CSS3](./courses/dev-and-ia/html5/readme.md)
+14. 🚧 [React con TypeScript](./courses/dev-and-ia/react/readme.md) 🚧
+15. 🚧 [Python](./courses/dev-and-ia/python/readme.md) 🚧
+16. 🚧 [Go Language (GoLang)](./courses/dev-and-ia/golang/readme.md) 🚧
 
     #### 📡 Dev API
 
-    16. [FastAPI](./courses/dev-and-ia/fastapi/readme.md)
-    17. [Flask](./courses/dev-and-ia/flask/readme.md)
+    17. [FastAPI](./courses/dev-and-ia/fastapi/readme.md)
+    18. [Flask](./courses/dev-and-ia/flask/readme.md)
 
     #### 🧠 IA
 
-    18. 🚧 [IA Developer con Python](./courses/dev-and-ia/ia-python/readme.md) 🚧
-    19. [n8n: automatización de flujos](./courses/dev-and-ia/n8n/readme.md)
+    19. 🚧 [IA Developer con Python](./courses/dev-and-ia/ia-python/readme.md) 🚧
+    20. [n8n: automatización de flujos](./courses/dev-and-ia/n8n/readme.md)
+
+### 📋 Documentación
+
+21. 🚧 [XML](./courses/documentation/xml/readme.md) 🚧
+22. 🚧 [Markdown](./courses/documentation/markdown/readme.md) 🚧
 
 ### 🚁 Bonus Track
 
-20. 🚧 [English for Tech: A2 to C1](./courses/resources/english/readme.md) 🚧
-21. 🚧 [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./courses/resources/helicopter/readme.md) 🚧
+23. 🚧 [English for Tech: A2 to C1](./courses/resources/english/readme.md) 🚧
+24. 🚧 [Trinity: "Operator, I need a pilot program for a B-212 helicopter"](./courses/resources/helicopter/readme.md) 🚧
 
 ---
 

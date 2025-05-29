@@ -35,6 +35,7 @@ Todos los cursos pueden seguirse a tu ritmo e incluyen teoría, práctica y cont
 ### 🛠️ Gestión y Herramientas
 
 2. 🚧 [Docker para testers](./courses/containers/docker/readme.md)
+2. 🚧 [Git](./courses/tools/git/readme.md)
 3. 🚧 [Jira](./courses/tools/jira/readme.md)
 4. 🚧 [Kubernetes](./courses/containers/kubernetes/readme.md)
 

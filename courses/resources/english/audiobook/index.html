@@ -1,39 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Audiolibro</title>
-    <link rel="stylesheet" href="https://verogeid.github.io/qa-autodidacta/lib/speech.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Audiolibro</title>
+  <link rel="stylesheet" href="https://verogeid.github.io/qa-autodidacta/lib/speech.css" />
 </head>
 <body>
-    <header>
-        <h1>Audiobook</h1>
-        <div class="controls">
-        <div class="control-group">
-            <label for="selector">Tema:</label>
-            <select id="selector"></select>
-        </div>
-        </div>
-    </header>
-    <main><div id="text"></div></main>
-    <div class="buttons-container">
-        <button id="btnRead">▶️</button>
-        <button id="btnPause">⏸️</button>
-        <button id="btnRepeat">🔁</button>
+  <header>
+    <h1>Audiobook</h1>
+    <div class="controls">
+      <div class="control-group">
+        <label for="selector">Tema:</label>
+        <select id="selector"></select>
+      </div>
     </div>
+  </header>
+  <main>
+    <div id="text"></div>
+  </main>
+  <footer></footer> <!-- Aquí se cargarán los botones dinámicos -->
 
-    <script>
-    const timestamp = Date.now();
-    const script = document.createElement('script');
-    script.type = 'module';
-    script.textContent = `
-    import { initAudiobook } from 'https://verogeid.github.io/qa-autodidacta/lib/englishspeech.js?t=${timestamp}';
-    const baseUrl = 'https://verogeid.github.io/qa-autodidacta/courses/resources/english/audiobook/';
-    const strTitle = 'Inglés Técnico (AudioBook)';
-    initAudiobook(strTitle, baseUrl);
-    `;
-    document.body.appendChild(script);
-</script>
+  <script type="module" src="../../../../lib/englishspeech.js"></script>
 </body>
 </html>

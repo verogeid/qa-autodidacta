@@ -15,8 +15,8 @@ export function parseMarkdown(text) {
       // Pausa larga para saltos de línea vacíos
       phrases.push({ textDisplay: '\n', textSpeech: '', pauseMs: 800 });
 
-      if (debugFlag) console.log('Phrases: ', phrases);
-      
+      if (debugFlag) console.log('Phrases snapshot:', [...phrases]);
+
       continue;
     }
 
@@ -24,6 +24,9 @@ export function parseMarkdown(text) {
     const parts = line.match(/[^.!?]+[.!?]?/g) || [line];
     for (const part of parts) {
       const phraseText = part.trim();
+
+      if (debugFlag) console.log('phraseText: ', phraseText);
+
       if (!phraseText) continue;
 
       phrases.push({

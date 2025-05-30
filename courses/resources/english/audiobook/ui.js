@@ -1,8 +1,6 @@
 // ui.js
 const debugFlag = true;
 
-import * as tts from './tts.js';
-
 export function createFooterControls() {
   const footer = document.querySelector('footer');
   if (!footer) {
@@ -11,11 +9,11 @@ export function createFooterControls() {
   }
 
   footer.innerHTML = `
-    <button id="btnPrev" ariaLabel: "Previous">⏪</button>
-    <button id="btnPlayPause" ariaLabel="PlayPause">▶️</button>
-    <button id="btnNext" ariaLabel="Next">⏩</button>
-    <button id="btnRepeat" ariaLabel="Repeat">🔁</button>
-    <button id="btnRestart" ariaLabel="Restart">⏮️</button>
+    <button id="btnPrev" aria-label="Previous">⏪</button>
+    <button id="btnPlayPause" aria-label="PlayPause">▶️</button>
+    <button id="btnNext" aria-label="Next">⏩</button>
+    <button id="btnRepeat" aria-label="Repeat">🔁</button>
+    <button id="btnRestart" aria-label="Restart">⏮️</button>
   `;
 }
 
@@ -28,7 +26,6 @@ export function highlightCurrentPhrase(phrases, currentIndex) {
 
   container.innerHTML = phrases.map((p, i) => {
     if (i === currentIndex) {
-      // Usar backticks para template literal
       return `<mark tabindex="0">${p.textDisplay}</mark>`;
     } else if (p.textDisplay === '\n') {
       return '<br>';
@@ -38,7 +35,7 @@ export function highlightCurrentPhrase(phrases, currentIndex) {
   }).join(' ');
 }
 
-export function initUI(phrases) {
+export function initUI(phrases, tts) {
   const btnPlayPause = document.getElementById('btnPlayPause');
   const btnPrev = document.getElementById('btnPrev');
   const btnNext = document.getElementById('btnNext');
@@ -53,10 +50,8 @@ export function initUI(phrases) {
   function updateButtons() {
     const playing = tts.isPlayingState();
     const paused = tts.isPausedState();
-    btnPlayPause.textContent = playing
-      ? (paused ? '▶️' : '⏸️')
-      : '▶️';
 
+    btnPlayPause.textContent = (playing && !paused) ? '⏸️' : '▶️';
     btnRepeat.style.backgroundColor = tts.isRepeatingState() ? '#AAF' : '';
   }
 
@@ -68,20 +63,8 @@ export function initUI(phrases) {
     if (debugFlag) console.log('btnPlayPause.onclick');
 
     if (tts.isPlayingState()) {
-      if (debugFlag) console.log('tts.isPlayingState()');
-
-      if (tts.isPausedState()) {
-        if (debugFlag) console.log('tts.isPausedState()');
-        tts.resume();
-      } else {
-        if (debugFlag) console.log('!tts.isPausedState()');
-        tts.pause();
-      }
+      tts.isPausedState() ? tts.resume() : tts.pause();
     } else {
-      if (debugFlag) console.log('!tts.isPlayingState()');
-
-      if (debugFlag) console.log('phrases', phrases);
-      
       if (phrases.length === 0) {
         alert('No hay frases para reproducir.');
         return;
@@ -115,7 +98,7 @@ export function initUI(phrases) {
 
   btnRestart.onclick = () => {
     tts.cancel();
-    tts.setPhrases(phrases); // Reiniciar índice a 0
+    tts.setPhrases(phrases);
     updateHighlight();
     updateButtons();
   };

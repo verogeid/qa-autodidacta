@@ -48,12 +48,12 @@ let phrases = [];
     createFooterControls();
 
     await loadAndParseFile(files[0]);
-    initUI(phrases);
+    initUI(phrases, tts);
 
     selector.onchange = async () => {
       tts.cancel();
       await loadAndParseFile(selector.value);
-      initUI(phrases);
+      initUI(phrases, tts);
     };
   }
 

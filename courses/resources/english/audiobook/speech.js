@@ -26,7 +26,7 @@ let phrases = [];
     }
     tts.setVoices(voices);
 
-    const files = await loadFileList('speechs.md');
+    const files = await loadFileList('./speechs.md');
     if (!files.length) {
       alert('No se encontraron archivos para leer.');
       return;

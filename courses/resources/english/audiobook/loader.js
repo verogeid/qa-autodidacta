@@ -14,14 +14,14 @@ export async function loadVoices() {
   });
 }
 
-export async function loadFileList(url) {
+export async function loadFileList(filePath) {
   try {
-    const res = await fetch(`${url}?ts=${Date.now()}`);
-    if (!res.ok) throw new Error(`Error cargando lista: ${res.statusText}`);
+    const res = await fetch(filePath);
+    if (!res.ok) throw new Error(`Error al cargar ${filePath}: ${res.status}`);
     const text = await res.text();
-    return text.split('\n').map(line => line.trim()).filter(line => line.length > 0);
-  } catch (e) {
-    console.error(e);
+    return text.split('\n').filter(line => line.trim());
+  } catch (err) {
+    console.error(err);
     return [];
   }
 }

@@ -53,8 +53,8 @@ export function initUI(phrases) {
     const playing = tts.isPlayingState();
     const paused = tts.isPausedState();
     btnPlayPause.textContent = playing
-      ? (paused ? 'Reanudar' : 'Pausar')
-      : 'Reproducir';
+      ? (paused ? '▶️' : '⏸️')
+      : '▶️';
 
     btnRepeat.style.backgroundColor = tts.isRepeatingState() ? '#AAF' : '';
   }

@@ -1,55 +1,58 @@
-import { loadVoices, loadFileList, loadMarkdownText } from './loader.js';
-    import { parseMarkdown } from './parser.js';
-    import * as tts from './tts.js';
-    import { createFooterControls, initUI, highlightCurrentPhrase } from './ui.js';
+// speech.js
+const ts = Date.now();
 
-    const selector = document.getElementById('selector');
-    const textContainer = document.getElementById('text');
+import { loadVoices, loadFileList, loadMarkdownText } from `./loader.js?ts=${ts}`;
+import { parseMarkdown } from `./parser.js?ts=${ts}`;
+import * as tts from `./tts.js?ts=${ts}`;
+import { createFooterControls, initUI, highlightCurrentPhrase } from `./ui.js?ts=${ts}`;
 
-    let phrases = [];
+const selector = document.getElementById('selector');
+const textContainer = document.getElementById('text');
 
-    async function loadAndParseFile(filename) {
-      const mdText = await loadMarkdownText('./speechs/' + filename);
-      phrases = parseMarkdown(mdText);
-      tts.setPhrases(phrases);
-      highlightCurrentPhrase(phrases, tts.getCurrentIndex());
-    }
+let phrases = [];
 
-    async function init() {
-      const voices = await loadVoices();
-      if (!voices.length) {
-        alert('No se encontraron voces disponibles en el navegador.');
-        return;
-      }
-      tts.setVoices(voices);
+async function loadAndParseFile(filename) {
+  const mdText = await loadMarkdownText('./speechs/' + filename);
+  phrases = parseMarkdown(mdText);
+  tts.setPhrases(phrases);
+  highlightCurrentPhrase(phrases, tts.getCurrentIndex());
+}
 
-      const files = await loadFileList('speechs.md');
-      if (!files.length) {
-        alert('No se encontraron archivos para leer.');
-        return;
-      }
+async function init() {
+  const voices = await loadVoices();
+  if (!voices.length) {
+    alert('No se encontraron voces disponibles en el navegador.');
+    return;
+  }
+  tts.setVoices(voices);
 
-      // Llenar selector con archivos
-      files.forEach(file => {
-        const opt = document.createElement('option');
-        opt.value = file;
-        opt.textContent = file;
-        selector.appendChild(opt);
-      });
+  const files = await loadFileList('speechs.md');
+  if (!files.length) {
+    alert('No se encontraron archivos para leer.');
+    return;
+  }
 
-      // Crear controles dinámicos en footer
-      createFooterControls();
+  // Llenar selector con archivos
+  files.forEach(file => {
+    const opt = document.createElement('option');
+    opt.value = file;
+    opt.textContent = file;
+    selector.appendChild(opt);
+  });
 
-      // Cargar primer archivo y configurar UI
-      await loadAndParseFile(files[0]);
-      initUI(phrases);
+  // Crear controles dinámicos en footer
+  createFooterControls();
 
-      // Cambiar archivo al seleccionar otro
-      selector.onchange = async () => {
-        tts.cancel();
-        await loadAndParseFile(selector.value);
-        initUI(phrases);
-      };
-    }
+  // Cargar primer archivo y configurar UI
+  await loadAndParseFile(files[0]);
+  initUI(phrases);
 
-    window.addEventListener('DOMContentLoaded', init);
+  // Cambiar archivo al seleccionar otro
+  selector.onchange = async () => {
+    tts.cancel();
+    await loadAndParseFile(selector.value);
+    initUI(phrases);
+  };
+}
+
+window.addEventListener('DOMContentLoaded', init);

@@ -21,6 +21,12 @@
   </main>
   <footer></footer> <!-- Aquí se cargarán los botones dinámicos -->
 
-  <script type="module" src="./speech.js"></script>
+  <script type="module">
+    const ts = Date.now();
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src = `./speech.js?ts=${ts}`;
+    document.body.appendChild(script);
+  </script>
 </body>
 </html>

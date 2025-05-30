@@ -43,6 +43,9 @@ export async function loadMarkdownText(filename, baseURL = import.meta.url) {
     const fullPath = new URL(filename, baseURL).href;
     const urlWithTs = addTimestampToUrl(fullPath);
     const res = await fetch(urlWithTs);
+
+    if (debugFlag) console.log(`Cargando...: ${res.text()}`);
+
     if (!res.ok) throw new Error(`Error cargando archivo: ${res.statusText}`);
     return await res.text();
   } catch (e) {

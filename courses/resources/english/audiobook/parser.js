@@ -1,4 +1,6 @@
 // parser.js
+const debugFlag = true;
+
 export function parseMarkdown(text) {
   if (!text) return [];
 
@@ -7,9 +9,14 @@ export function parseMarkdown(text) {
   const phrases = [];
 
   for (const line of lines) {
+    if (debugFlag) console.log('Line: ', line);
+
     if (!line.trim()) {
       // Pausa larga para saltos de línea vacíos
       phrases.push({ textDisplay: '\n', textSpeech: '', pauseMs: 800 });
+
+      if (debugFlag) console.log('Phrases: ', phrases);
+      
       continue;
     }
 

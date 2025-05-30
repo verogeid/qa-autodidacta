@@ -1,5 +1,5 @@
 // ui.js
-const debugFlag = true;
+const debugFlag = false;
 
 export function createFooterControls() {
   const footer = document.querySelector('footer');

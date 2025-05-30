@@ -1,5 +1,5 @@
 // tts.js
-const debugFlag = true;
+const debugFlag = false;
 
 let voices = [];
 let phrases = [];

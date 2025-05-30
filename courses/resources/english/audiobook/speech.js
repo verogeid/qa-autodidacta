@@ -1,5 +1,5 @@
 // speech.js
-const debugFlag = true;
+const debugFlag = false;
 
 const ts = Date.now();
 

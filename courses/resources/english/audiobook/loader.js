@@ -1,5 +1,5 @@
 // loader.js
-const debugFlag = true;
+const debugFlag = false;
 
 export async function loadVoices() {
   return new Promise((resolve) => {

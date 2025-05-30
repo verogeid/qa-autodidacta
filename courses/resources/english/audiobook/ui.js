@@ -71,6 +71,10 @@ export function initUI(phrases) {
         tts.pause();
       }
     } else {
+      if (phrases.length === 0) {
+        alert('No hay frases para reproducir.');
+        return;
+      }
       tts.speakCurrentPhrase(() => {
         updateHighlight();
         updateButtons();

@@ -1,4 +1,5 @@
 // ui.js
+const debugFlag = true;
 
 import * as tts from './tts.js';
 
@@ -64,13 +65,23 @@ export function initUI(phrases) {
   }
 
   btnPlayPause.onclick = () => {
+    if (debugFlag) console.log('btnPlayPause.onclick');
+
     if (tts.isPlayingState()) {
+      if (debugFlag) console.log('tts.isPlayingState()');
+
       if (tts.isPausedState()) {
+        if (debugFlag) console.log('tts.isPausedState()');
         tts.resume();
       } else {
+        if (debugFlag) console.log('!tts.isPausedState()');
         tts.pause();
       }
     } else {
+      if (debugFlag) console.log('!tts.isPlayingState()');
+
+      if (debugFlag) console.log('phrases', phrases);
+      
       if (phrases.length === 0) {
         alert('No hay frases para reproducir.');
         return;

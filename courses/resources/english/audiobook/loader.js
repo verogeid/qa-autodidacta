@@ -16,7 +16,7 @@ export async function loadVoices() {
 
 export async function loadFileList(url) {
   try {
-    const res = await fetch(url);
+    const res = await fetch(`${url}?ts=${Date.now()}`);
     if (!res.ok) throw new Error(`Error cargando lista: ${res.statusText}`);
     const text = await res.text();
     return text.split('\n').map(line => line.trim()).filter(line => line.length > 0);
@@ -28,7 +28,7 @@ export async function loadFileList(url) {
 
 export async function loadMarkdownText(filename) {
   try {
-    const res = await fetch(filename);
+    const res = await fetch(`${filename}?ts=${Date.now()}`);
     if (!res.ok) throw new Error(`Error cargando archivo: ${res.statusText}`);
     return await res.text();
   } catch (e) {

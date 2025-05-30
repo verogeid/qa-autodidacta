@@ -1,4 +1,6 @@
 // loader.js
+const debugFlag = true;
+
 export async function loadVoices() {
   return new Promise((resolve) => {
     let voices = speechSynthesis.getVoices();
@@ -20,10 +22,15 @@ function addTimestampToUrl(url) {
 
 export async function loadFileList(filePath) {
   try {
+    if (debugFlag) console.log(`filePath: ${filePath}`);
+
     const urlWithTs = addTimestampToUrl(filePath);
     const res = await fetch(urlWithTs);
     if (!res.ok) throw new Error(`Error al cargar ${filePath}: ${res.status}`);
     const text = await res.text();
+
+    if (debugFlag) console.log(`filePath text: ${text}`);
+
     return text.split('\n').filter(line => line.trim());
   } catch (err) {
     console.error(err);

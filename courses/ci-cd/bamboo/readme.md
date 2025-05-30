@@ -35,6 +35,7 @@ Se incluyen buenas prácticas, integración con otros servicios CI/CD, control d
 >
 > 🧠 En ese caso, te recomendamos completar **al menos** los siguientes temas:
 >
+> - Tema 01: *Introducción a Bamboo e instalación local*
 > - Tema 02: *Planes, Jobs y Tasks*
 > - Tema 03: *Triggers, Branches y Variables*
 > - Tema 04: *Integración con Git y despliegue*

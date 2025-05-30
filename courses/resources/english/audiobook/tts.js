@@ -1,4 +1,5 @@
 // tts.js
+const debugFlag = true;
 
 let voices = [];
 let phrases = [];
@@ -40,6 +41,10 @@ export function toggleRepeat() {
 export function speakCurrentPhrase(onEndCallback) {
   if (phrases.length === 0 || !voices.length) {
     console.warn('No hay frases o voces para reproducir.');
+    if (debugFlag) {
+      if (phrases.length === 0) console.log(`phrases.length: ${phrases.length}`);
+      if (!voices.length) console.log(`voices.lengthvoices.length}`);
+    } 
     return;
   }
 

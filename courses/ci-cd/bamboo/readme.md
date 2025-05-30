@@ -19,15 +19,33 @@ Para poder seguir este curso, **cada alumno deberá instalar Bamboo Data Center 
 
 ## Descripción
 
-Este curso se estructura en semanas de estudio con una dedicación de entre 5 y 8 horas semanales.
+Este curso se estructura en temas de estudio con una dedicación de entre 5 y 8 horas semanales.
 
 Se incluyen buenas prácticas, integración con otros servicios CI/CD, control de errores, depuración, análisis de resultados y reporting cuando aplica.
+
+> ⚠️ **Limitación de la licencia**
+>
+> Atlassian ofrece una licencia trial de 30 días para Bamboo Data Center. Una vez finalizada, podrás seguir accediendo en modo *read-only*, pero **no podrás crear ni ejecutar nuevos pipelines**. Adquirir una licencia completa **supone $1200 USD**, una cifra excesiva si solo se busca un uso educativo.
+>
+> Tienes tres opciones si necesitas más tiempo:
+>
+> - Continuar con un enfoque más teórico, revisando configuraciones en modo lectura.
+> - Arriesgarte a solicitar una segunda licencia trial con otro correo e instalación limpia.
+> - Reestructurar tu estudio y centrarte en los temas clave si ya dominas *GitHub Actions*.
+>
+> 🧠 En ese caso, te recomendamos completar **al menos** los siguientes temas:
+>
+> - Tema 02: *Planes, Jobs y Tasks*
+> - Tema 03: *Triggers, Branches y Variables*
+> - Tema 04: *Integración con Git y despliegue*
+> - Tema 07: *Gestión de errores y logs*
+> - Tema 09: *Buenas prácticas*
 
 ---
 
 ## Temario
 
-### Semana 01 - Introducción a Bamboo e instalación local
+### Tema 01 - Introducción a Bamboo e instalación local
 
 - Qué es Bamboo y para qué sirve
 - Diferencias con Jenkins y GitHub Actions
@@ -35,63 +53,63 @@ Se incluyen buenas prácticas, integración con otros servicios CI/CD, control d
 - Creación de usuario administrador
 - Primer pipeline sencillo
 
-### Semana 02 - Planes, Jobs y Tasks
+### Tema 02 - Planes, Jobs y Tasks
 
 - Concepto de *Plan*, *Job* y *Task*
 - Creación de un plan de build completo
 - Reutilización de configuraciones
 - Uso de tareas de shell
 
-### Semana 03 - Triggers, Branches y Variables
+### Tema 03 - Triggers, Branches y Variables
 
 - Activadores automáticos y manuales
 - Gestión de ramas en pipelines
 - Variables globales y locales
 - Parámetros dinámicos
 
-### Semana 04 - Integración con Git y despliegue básico
+### Tema 04 - Integración con Git y despliegue básico
 
 - Integración con GitHub/GitLab
 - Build automático al hacer push
 - Primer pipeline de despliegue
 - SSH y claves de acceso
 
-### Semana 05 - Testing y control de calidad
+### Tema 05 - Testing y control de calidad
 
 - Integración con JUnit, Mocha, Cypress u otros
 - Visualización de resultados de tests
 - Validación y linters
 - Ejecución condicional de tareas
 
-### Semana 06 - Integración con Docker y contenedores
+### Tema 06 - Integración con Docker y contenedores
 
 - Uso de Bamboo con Docker
 - Build de imágenes y ejecución
 - Publicación en Docker Hub
 - Buenas prácticas con contenedores
 
-### Semana 07 - Gestión de errores y logs
+### Tema 07 - Gestión de errores y logs
 
 - Revisión de logs en profundidad
 - Control de errores y estrategias de retry
 - Gestión de artefactos
 - Notificaciones por fallo
 
-### Semana 08 - Reporting y análisis
+### Tema 08 - Reporting y análisis
 
 - Reportes personalizados
 - Métricas clave de builds
 - Exportación de resultados
 - Integración con herramientas externas
 
-### Semana 09 - Buenas prácticas y casos reales
+### Tema 09 - Buenas prácticas y casos reales
 
 - Flujo recomendado CI/CD en Bamboo
 - Ejemplos reales de uso
 - Plantillas reutilizables
 - Automatización eficiente
 
-### Semana 10 - Proyecto final y evaluación
+### Tema 10 - Proyecto final y evaluación
 
 - Creación de un pipeline completo
 - Testing, despliegue, control de errores y reporting

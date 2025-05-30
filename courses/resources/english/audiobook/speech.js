@@ -52,5 +52,5 @@ let phrases = [];
     };
   }
 
-  window.addEventListener('DOMContentLoaded', init);
+  init();
 })();

@@ -15,6 +15,9 @@ export function setVoices(v) {
 
 export function setPhrases(p) {
   phrases = p;
+
+  if (debugFlag) console.log(`Frases recibidas en setPhrases: ${phrases}`);
+
   currentIndex = 0;
 }
 

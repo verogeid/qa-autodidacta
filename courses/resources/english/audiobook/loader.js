@@ -14,9 +14,14 @@ export async function loadVoices() {
   });
 }
 
+function addTimestampToUrl(url) {
+  return url.includes('?') ? `${url}&ts=${Date.now()}` : `${url}?ts=${Date.now()}`;
+}
+
 export async function loadFileList(filePath) {
   try {
-    const res = await fetch(filePath);
+    const urlWithTs = addTimestampToUrl(filePath);
+    const res = await fetch(urlWithTs);
     if (!res.ok) throw new Error(`Error al cargar ${filePath}: ${res.status}`);
     const text = await res.text();
     return text.split('\n').filter(line => line.trim());
@@ -29,7 +34,8 @@ export async function loadFileList(filePath) {
 export async function loadMarkdownText(filename, baseURL = import.meta.url) {
   try {
     const fullPath = new URL(filename, baseURL).href;
-    const res = await fetch(`${fullPath}?ts=${Date.now()}`);
+    const urlWithTs = addTimestampToUrl(fullPath);
+    const res = await fetch(urlWithTs);
     if (!res.ok) throw new Error(`Error cargando archivo: ${res.statusText}`);
     return await res.text();
   } catch (e) {

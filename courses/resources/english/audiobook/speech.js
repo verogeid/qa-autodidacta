@@ -15,6 +15,9 @@ let phrases = [];
   async function loadAndParseFile(filename) {
     const mdText = await loadMarkdownText(new URL(`speechs/${filename}`, import.meta.url).href);
     phrases = parseMarkdown(mdText);
+
+    if (debugFlag) console.log(`Frases recibidas de parseMarkdown: ${phrases}`);
+
     tts.setPhrases(phrases);
     highlightCurrentPhrase(phrases, tts.getCurrentIndex());
   }

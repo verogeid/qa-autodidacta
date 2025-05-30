@@ -1,4 +1,6 @@
 // speech.js
+const debugFlag = true;
+
 const ts = Date.now();
 
 const selector = document.getElementById('selector');

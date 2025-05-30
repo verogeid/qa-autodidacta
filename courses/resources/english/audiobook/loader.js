@@ -26,9 +26,10 @@ export async function loadFileList(filePath) {
   }
 }
 
-export async function loadMarkdownText(filename) {
+export async function loadMarkdownText(filename, baseURL = import.meta.url) {
   try {
-    const res = await fetch(`${filename}?ts=${Date.now()}`);
+    const fullPath = new URL(filename, baseURL).href;
+    const res = await fetch(`${fullPath}?ts=${Date.now()}`);
     if (!res.ok) throw new Error(`Error cargando archivo: ${res.statusText}`);
     return await res.text();
   } catch (e) {

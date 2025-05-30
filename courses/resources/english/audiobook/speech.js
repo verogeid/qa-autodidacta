@@ -1,3 +1,4 @@
+// speech.js
 const ts = Date.now();
 
 const selector = document.getElementById('selector');
@@ -12,7 +13,7 @@ let phrases = [];
   const { createFooterControls, initUI, highlightCurrentPhrase } = await import(`./ui.js?ts=${ts}`);
 
   async function loadAndParseFile(filename) {
-    const mdText = await loadMarkdownText('./speechs/' + filename);
+    const mdText = await loadMarkdownText(new URL(`speechs/${filename}`, import.meta.url).href);
     phrases = parseMarkdown(mdText);
     tts.setPhrases(phrases);
     highlightCurrentPhrase(phrases, tts.getCurrentIndex());

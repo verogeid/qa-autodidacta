@@ -9,7 +9,7 @@ import { loadVoices, loadFileList, loadMarkdownText } from './loader.js';
     let phrases = [];
 
     async function loadAndParseFile(filename) {
-      const mdText = await loadMarkdownText(filename);
+      const mdText = await loadMarkdownText('./speechs/' + filename);
       phrases = parseMarkdown(mdText);
       tts.setPhrases(phrases);
       highlightCurrentPhrase(phrases, tts.getCurrentIndex());

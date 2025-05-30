@@ -43,7 +43,7 @@ export function speakCurrentPhrase(onEndCallback) {
     console.warn('No hay frases o voces para reproducir.');
     if (debugFlag) {
       if (phrases.length === 0) console.log(`phrases.length: ${phrases.length}`);
-      if (!voices.length) console.log(`voices.lengthvoices.length}`);
+      if (!voices.length) console.log(`voices.length: ${voices.length}`);
     } 
     return;
   }

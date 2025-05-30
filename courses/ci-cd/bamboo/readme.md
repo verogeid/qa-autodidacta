@@ -1,14 +1,19 @@
 # Bamboo desde 0: Curso autodidacta
 
-Curso autodidacta paso a paso para aprender **Bamboo** desde cero, pensado para personas con conocimientos básicos de integración continua. Ideal si ya trabajas en QA, DevOps o desarrollo y quieres entender, configurar y automatizar flujos de CI/CD con Atlassian Bamboo.
+Curso autodidacta paso a paso para aprender **Bamboo** desde cero, pensado para personas con conocimientos básicos de integración continua. Ideal si ya trabajas en *QA*, *DevOps* o desarrollo y quieres entender, configurar y automatizar flujos de *CI/CD* con Atlassian Bamboo.
 
 ## Nota importante sobre la licencia
 
-Bamboo **no es un software gratuito** ni ofrece cuentas gratuitas permanentes. Para poder seguir este curso, **cada alumno deberá instalar Bamboo en su propia máquina local** usando la licencia de prueba gratuita de 30 días que Atlassian ofrece para la versión Server. Esto permitirá practicar con una instancia real y completa.
+Bamboo **no es un software gratuito** ni ofrece cuentas gratuitas permanentes. Atlassian **no incluye Bamboo** en su programa de licencias educativas ni Open Source, y **no concede excepciones**.
 
-Además, dado que este curso se publicará en abierto en GitHub, podrás acceder a recursos para solicitar una licencia gratuita para proyectos Open Source si tu proyecto cumple los requisitos.
+Para poder seguir este curso, **cada alumno deberá instalar Bamboo Data Center en su propia máquina local** usando la licencia de prueba gratuita de 30 días que Atlassian ofrece. Esto permitirá practicar con una instancia real y completa, aunque temporal.
 
 **No se compartirán instancias ni cuentas Bamboo**; cada alumno gestionará su propia instalación y licencia para asegurar la privacidad y autonomía de aprendizaje.
+
+> 🧪 *Este curso se apoya exclusivamente en entornos locales, con fines educativos y sin ánimo de lucro.*
+>
+> 👉 Puedes obtener más información y descargar la versión de prueba desde la web oficial de Atlassian:  
+<https://www.atlassian.com/software/bamboo/data-center>
 
 ---
 

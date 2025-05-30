@@ -1,10 +1,14 @@
 // speech.js
 const ts = Date.now();
 
-import { loadVoices, loadFileList, loadMarkdownText } from `./loader.js?ts=${ts}`;
-import { parseMarkdown } from `./parser.js?ts=${ts}`;
-import * as tts from `./tts.js?ts=${ts}`;
-import { createFooterControls, initUI, highlightCurrentPhrase } from `./ui.js?ts=${ts}`;
+async function initModules() {
+  const { loadVoices, loadFileList, loadMarkdownText } = await import(`./loader.js?ts=${ts}`);
+  const { parseMarkdown } = await import(`./parser.js?ts=${ts}`);
+  const tts = await import(`./tts.js?ts=${ts}`);
+  const { createFooterControls, initUI, highlightCurrentPhrase } = await import(`./ui.js?ts=${ts}`);
+
+  return { loadVoices, loadFileList, loadMarkdownText, parseMarkdown, tts, createFooterControls, initUI, highlightCurrentPhrase };
+}
 
 const selector = document.getElementById('selector');
 const textContainer = document.getElementById('text');

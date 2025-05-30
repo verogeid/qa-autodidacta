@@ -49,7 +49,7 @@ export async function loadMarkdownText(filename, baseURL = import.meta.url) {
     const text = await res.text();
 
     if (debugFlag) console.log(`Cargando...: ${text}`);
-    
+
     return text;
   } catch (e) {
     console.error(e);
